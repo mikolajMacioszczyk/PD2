@@ -1,7 +1,5 @@
 #  docker compose -f fhir-docker-compose.yml up
 
-version: '3.8'
-
 services:
   hapi-fhir:
     image: hapiproject/hapi:v8.0.0-1
@@ -9,14 +7,32 @@ services:
     ports:
       - "8080:8080"
     volumes:
-      - hapi_data:/data
+      - hapi-config:/data/hapi
+      - ./application.yaml:/data/hapi/application.yaml
     environment:
-      - HAPI_FHIR_DATASOURCE_URL=jdbc:h2:file:/data/hapi
-      - HAPI_FHIR_DATASOURCE_DRIVER=org.h2.Driver
-      - HAPI_FHIR_DATASOURCE_USERNAME=sa
-      - HAPI_FHIR_DATASOURCE_PASSWORD=
-      - HAPI_FHIR_JPA_VALIDATION_ENABLE=true
+      SPRING_CONFIG_LOCATION: 'file:///data/hapi/application.yaml'
+      HAPI_FHIR_DATASOURCE_URL: jdbc:postgresql://hapi-postgres:5432/hapi
+      HAPI_FHIR_DATASOURCE_DRIVER: org.postgresql.Driver
+      HAPI_FHIR_DATASOURCE_USERNAME: ${HAPI_DB_USER}
+      HAPI_FHIR_DATASOURCE_PASSWORD: ${HAPI_DB_PASSWORD}
+      HAPI_FHIR_JPA_VALIDATION_ENABLE: true
+    depends_on:
+      - hapi-postgres
     restart: unless-stopped
 
+  hapi-postgres:
+    image: postgres:17.4
+    container_name: hapi-postgres
+    restart: unless-stopped
+    environment:
+      POSTGRES_DB: hapi
+      POSTGRES_USER: ${HAPI_DB_USER}
+      POSTGRES_PASSWORD: ${HAPI_DB_PASSWORD}
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+    ports:
+      - "5432:5432"
+
 volumes:
-  hapi_data:
+  hapi-config:
+  pgdata:

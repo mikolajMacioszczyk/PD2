@@ -73,7 +73,7 @@ service_request.supportingInfo[0].reference.reference = f"MedicationStatement/{m
 service_request_id = post_resource(service_request)
 print("Service Request ID:", service_request_id)
 
-# TODO: docker volume
+# TODO: caching
 # TODO: ujednolicony coding
 # TODO: posprawdzaj kody
 # TODO: przemyśl: concept a reference
