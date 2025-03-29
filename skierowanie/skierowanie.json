@@ -1,0 +1,27 @@
+{
+    "skierowanie": {
+      "data_wystawienia": "20.03.2025",
+      "numer_skierowania": "SK/NEU/2025/0317",
+      "jednostka_kierująca": "Poradnia neurologiczna",
+      "do_poradni": "EMG",
+      "pacjent": {
+        "imie_nazwisko": "Jan Kowalski",
+        "pesel": "80010112345",
+        "telefon": "+48607123456",
+        "adres": "ul. Nowowiejska 48, 50-388 Wrocław"
+      },
+      "kod_ICD10": "R29.0",
+      "rozpoznanie": "tężyczka",
+      "rodzaj_badania": "próba tężyczkowa",
+      "cel_badania": "proszę o próbę tężyczkową celem potwierdzenia objawów tężyczki utajonej",
+      "informacja_o_przyjmowanych_lekach": "pacjent przyjmuje tianeptynę",
+      "uwagi_poranidni_specjalistycznej": "nasilające się objawy parestezji, wskazana szybka diagnostyka",
+      "data_zgloszenia_sie_pacjenta": "25.03.2025",
+      "wyznaczony_termin_porady": "02.04.2025",
+      "lekarz": {
+        "imie_nazwisko": "dr n. med. Anna Nowak",
+        "npwz": "2844964"
+      }
+    }
+  }
+  

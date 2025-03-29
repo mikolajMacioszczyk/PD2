@@ -1,0 +1,22 @@
+#  docker compose -f fhir-docker-compose.yml up
+
+version: '3.8'
+
+services:
+  hapi-fhir:
+    image: hapiproject/hapi:v8.0.0-1
+    container_name: hapi-fhir-server
+    ports:
+      - "8080:8080"
+    volumes:
+      - hapi_data:/data
+    environment:
+      - HAPI_FHIR_DATASOURCE_URL=jdbc:h2:file:/data/hapi
+      - HAPI_FHIR_DATASOURCE_DRIVER=org.h2.Driver
+      - HAPI_FHIR_DATASOURCE_USERNAME=sa
+      - HAPI_FHIR_DATASOURCE_PASSWORD=
+      - HAPI_FHIR_JPA_VALIDATION_ENABLE=true
+    restart: unless-stopped
+
+volumes:
+  hapi_data:

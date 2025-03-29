@@ -1,0 +1,28 @@
+{
+    "resourceType": "Condition",
+    "id": "100",
+    "clinicalStatus": {
+      "coding": [{ "system": "http://terminology.hl7.org/CodeSystem/condition-clinical", "code": "active" }]
+    },
+    "code": {
+      "coding": [{
+        "system": "http://snomed.info/sct",
+        "code": "91019004",
+        "display": "Paresthesia (finding)"
+      }],
+      "text": "Parestezje"
+    },
+    "severity": {
+      "coding": [{
+        "system": "http://snomed.info/sct",
+        "code": "24484000",
+        "display": "Severe"
+      }],
+      "text": "Objawy nasilone"
+    },
+    "subject": { "reference": "Patient/123" },
+    "note": [{
+      "text": "Objawy parestezji uległy pogorszeniu w ostatnim czasie."
+    }]
+  }
+  

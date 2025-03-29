@@ -1,0 +1,35 @@
+{
+    "resourceType": "Patient",
+    "id": "1",
+    "name": [
+        {
+            "use": "official",
+            "family": "Kowalski",
+            "given": [
+                "Jan"
+            ]
+        }
+    ],
+    "telecom": [
+        {
+            "system": "phone",
+            "value": "+48607123456"
+        }
+    ],
+    "address": [
+        {
+            "line": [
+                "ul. Nowowiejska 48"
+            ],
+            "city": "Wrocław",
+            "postalCode": "50-388",
+            "country": "PL"
+        }
+    ],
+    "identifier": [
+        {
+            "system": "http://hl7.org/fhir/sid/pl-pesel",
+            "value": "80010112345"
+        }
+    ]
+}

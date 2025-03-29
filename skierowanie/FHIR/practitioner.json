@@ -1,0 +1,15 @@
+{
+    "resourceType": "Practitioner",
+    "id": "2",
+    "name": [
+        {
+            "text": "dr n. med. Anna Nowak"
+        }
+    ],
+    "identifier": [
+        {
+            "system": "https://rejestr.nil.org.pl",
+            "value": "2844964"
+        }
+    ]
+}
