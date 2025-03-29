@@ -1,33 +1,58 @@
 import requests
 import json
 
+from fhir.resources.patient import Patient
+from fhir.resources.practitioner import Practitioner
+from fhir.resources.servicerequest import ServiceRequest
+
 FHIR_SERVER = "http://localhost:8080/fhir"
 
 patient_file = "patient.json"
 practitioner_file = "practitioner.json"
 service_request_file = "service-request.json"
 
-with open(patient_file, 'r', encoding='utf-8') as patient_json_data:
-    patient = json.load(patient_json_data)
+def load_fhir_resource(file_path, resource_class):
+    with open(file_path, 'r', encoding='utf-8') as f:
+        data = json.load(f)
+    return resource_class.model_validate(data)
 
-with open(practitioner_file, 'r', encoding='utf-8') as practitioner_json_data:
-    practitioner = json.load(practitioner_json_data)
-
-with open(service_request_file, 'r', encoding='utf-8') as service_request_json_data:
-    service_request = json.load(service_request_json_data)
+patient = load_fhir_resource("patient.json", Patient)
+practitioner = load_fhir_resource("practitioner.json", Practitioner)
+# service_request = load_fhir_resource("service-request.json", ServiceRequest)
 
 def post_resource(resource):
-    url = f"{FHIR_SERVER}/{resource['resourceType']}"
-    response = requests.post(url, headers={"Content-Type": "application/fhir+json"}, data=json.dumps(resource))
-    print(f"{resource['resourceType']} status: {response.status_code}")
-    print(response.text)
+    resource_type = resource.__class__.__name__
+    url = f"{FHIR_SERVER}/{resource_type}"
+    response = requests.post(
+        url,
+        headers={"Content-Type": "application/fhir+json"},
+        data=resource.json()
+    )
+    
+    print(f"{resource_type} status: {response.status_code}")
 
-post_resource(patient)
+    if response.status_code == 201:
+        location = response.headers.get("Location", "")
+        resource_id = location.split("/")[-1] if location else None
+        return resource_id
+    else:
+        return None
+
+patient_id = post_resource(patient)
+print("Patient ID:", patient_id)
 post_resource(practitioner)
+practitioner_id = post_resource(practitioner)
+print("Practitioner ID:", practitioner_id)
 # Condition
 # medical statement
-post_resource(service_request)
+# post_resource(service_request)
 
 # TODO: Lepszy skrypt (sprawdza czy istnieje, pobiera id z tworzonych i istniejących)
 # TODO: docker volume
 # TODO: ujednolicony coding
+# TODO: duplikaty:
+# "identifier": [
+#   {
+#     "system": "http://hospital.example.org/patients",
+#     "value": "12345"
+#   }
