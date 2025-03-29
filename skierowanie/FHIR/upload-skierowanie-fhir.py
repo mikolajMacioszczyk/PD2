@@ -24,7 +24,7 @@ patient = load_fhir_resource(patient_file, Patient)
 practitioner = load_fhir_resource(practitioner_file, Practitioner)
 condition_parasthesia = load_fhir_resource(condition_parasthesia_file, Condition)
 medication_statement_magnesium = load_fhir_resource(medication_statement_magnesium_file, MedicationStatement)
-# service_request = load_fhir_resource("service-request.json", ServiceRequest)
+service_request = load_fhir_resource("service-request.json", ServiceRequest)
 
 def post_resource(resource):
     resource_type = resource.__class__.__name__
@@ -35,11 +35,17 @@ def post_resource(resource):
         data=resource.json()
     )
     
-    print(f"{resource_type} status: {response.status_code}")
-
     if response.status_code == 201:
         location = response.headers.get("Location", "")
-        resource_id = location.split("/")[-1] if location else None
+        resource_id = None
+        if location:
+            parts = location.strip("/").split("/")
+            try:
+                idx = parts.index("_history")
+                resource_id = parts[idx - 1]
+            except ValueError:
+                if len(parts) >= 2:
+                    resource_id = parts[-2]
         return resource_id
     else:
         print(f"Request failed with status code {response.status_code}: {response.text}")
@@ -59,11 +65,18 @@ medication_statement_magnesium.subject.reference = f"Patient/{patient_id}"
 medication_statement_magnesium_id = post_resource(medication_statement_magnesium)
 print("Medication Statement Magnesium ID:", medication_statement_magnesium_id)
 
-# post_resource(service_request)
+service_request.subject.reference = f"Patient/{patient_id}"
+service_request.requester.reference = f"Practitioner/{practitioner_id}"
+service_request.reason[1].reference.reference = f"Condition/{condition_parasthesia_id}"
+service_request.supportingInfo[0].reference.reference = f"MedicationStatement/{medication_statement_magnesium_id}"
+
+service_request_id = post_resource(service_request)
+print("Service Request ID:", service_request_id)
 
 # TODO: docker volume
 # TODO: ujednolicony coding
 # TODO: posprawdzaj kody
+# TODO: przemyśl: concept a reference
 # TODO: Lepszy skrypt (wykorzystuje metody)
 # TODO: duplikaty:
 # "identifier": [
