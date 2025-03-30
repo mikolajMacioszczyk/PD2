@@ -1,10 +1,15 @@
+import json
 import urllib
 
 import requests
-from conf import FHIR_SERVER
+from fhir_conf import FHIR_SERVER, VERBOSE
 
+def load_fhir_resource(file_path, resource_class):
+    with open(file_path, 'r', encoding='utf-8') as f:
+        data = json.load(f)
+    return resource_class.model_validate(data)
 
-def post_resource(resource, verbose = False):
+def post_resource(resource, verbose = VERBOSE):
     resource_type = resource.__class__.__name__
     url = f"{FHIR_SERVER}/{resource_type}"
 
@@ -45,7 +50,7 @@ def post_resource(resource, verbose = False):
     else:
         raise Exception(f"Request failed with status code {response.status_code}: {response.text}")
     
-def create_or_get_by_identifier(resource, identifier_system, verbose=False):
+def create_or_get_by_identifier(resource, identifier_system, verbose = VERBOSE):
     resource_type = resource.__class__.__name__
     
     identifier_value = next((
