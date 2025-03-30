@@ -231,8 +231,6 @@ hapi:
       - https://snomed.info/*
       - http://unitsofmeasure.org/*
       - https://unitsofmeasure.org/*
-      - http://loinc.org/*
-      - https://loinc.org/*
     #    partitioning:
     #      allow_references_across_partitions: false
     #      partitioning_include_in_search_hashes: false

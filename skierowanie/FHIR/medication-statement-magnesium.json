@@ -6,8 +6,8 @@
         "concept": {
             "coding": [
                 {
-                    "system": "http://www.whocc.no/atc",
-                    "code": "A12CC",
+                    "system": "http://snomed.info/sct",
+                    "code": "72717003",
                     "display": "Magnesium"
                 }
             ],

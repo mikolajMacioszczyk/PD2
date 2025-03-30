@@ -17,9 +17,9 @@
     "concept": {
       "coding": [
         {
-          "system": "http://loinc.org",
-          "code": "34838-6",
-          "display": "EMG study"
+          "system": "http://snomed.info/sct",
+          "code": "42803009",
+          "display": "Electromyography"
         }
       ],
       "text": "próba tężyczkowa"
@@ -37,9 +37,9 @@
       "concept": {
         "coding": [
           {
-            "system": "http://hl7.org/fhir/sid/icd-10",
-            "code": "R29.0",
-            "display": "Tężyczka"
+            "system": "http://snomed.info/sct",
+            "code": "10629009",
+            "display": "Tetany"
           }
         ],
         "text": "tężyczka"
