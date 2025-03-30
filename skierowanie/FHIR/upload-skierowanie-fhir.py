@@ -1,4 +1,3 @@
-import requests
 import json
 
 from fhir.resources.patient import Patient
@@ -7,7 +6,8 @@ from fhir.resources.condition import Condition
 from fhir.resources.medicationstatement import MedicationStatement
 from fhir.resources.servicerequest import ServiceRequest
 
-FHIR_SERVER = "http://localhost:8080/fhir"
+from conf import FHIR_SERVER
+from utils import post_resource, create_or_get_by_identifier
 
 patient_file = "patient.json"
 practitioner_file = "practitioner.json"
@@ -26,35 +26,10 @@ condition_parasthesia = load_fhir_resource(condition_parasthesia_file, Condition
 medication_statement_magnesium = load_fhir_resource(medication_statement_magnesium_file, MedicationStatement)
 service_request = load_fhir_resource("service-request.json", ServiceRequest)
 
-def post_resource(resource):
-    resource_type = resource.__class__.__name__
-    url = f"{FHIR_SERVER}/{resource_type}"
-    response = requests.post(
-        url,
-        headers={"Content-Type": "application/fhir+json"},
-        data=resource.json()
-    )
-    
-    if response.status_code == 201:
-        location = response.headers.get("Location", "")
-        resource_id = None
-        if location:
-            parts = location.strip("/").split("/")
-            try:
-                idx = parts.index("_history")
-                resource_id = parts[idx - 1]
-            except ValueError:
-                if len(parts) >= 2:
-                    resource_id = parts[-2]
-        return resource_id
-    else:
-        print(f"Request failed with status code {response.status_code}: {response.text}")
-        return None
-
-patient_id = post_resource(patient)
+patient_id = create_or_get_by_identifier(patient, patient.identifier[0].system)
 print("Patient ID:", patient_id)
 
-practitioner_id = post_resource(practitioner)
+practitioner_id = create_or_get_by_identifier(practitioner, practitioner.identifier[0].system)
 print("Practitioner ID:", practitioner_id)
 
 condition_parasthesia.subject.reference = f"Patient/{patient_id}"
@@ -73,14 +48,7 @@ service_request.supportingInfo[0].reference.reference = f"MedicationStatement/{m
 service_request_id = post_resource(service_request)
 print("Service Request ID:", service_request_id)
 
-# TODO: caching
 # TODO: ujednolicony coding
 # TODO: posprawdzaj kody
 # TODO: przemyśl: concept a reference
 # TODO: Lepszy skrypt (wykorzystuje metody)
-# TODO: duplikaty:
-# "identifier": [
-#   {
-#     "system": "http://hospital.example.org/patients",
-#     "value": "12345"
-#   }
