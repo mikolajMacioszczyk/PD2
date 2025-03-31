@@ -1,0 +1,22 @@
+Badania laboratoryjne
+Adres: Bałtycka 21, 50-014 Wrocław
+
+Lekarz kierujący: Lekarz: dr n. med. Krzysztof Wiśniewski
+NPWZ: 2844964
+Data rejestracji: 20.03.2025
+Data/godz. pobrania: 20.03.2025 07:55
+
+Pacjent: Jan Kowalski
+PESEL: 80010112345
+Data urodzenia: 01.08.1980
+telefon: +48607123456
+Adres: ul. Nowowiejska 48, 50-388 Wrocław
+Płeć: Męska
+
+Morfologia krwi:
+Leukocyty: 3,24 [tys/µl], zakres referencyjny: 4,00-10,00
+Neutrofile: 2,07 [tys/µl], zakres referencyjny: 1,90-7,00
+
+Rozmaz krwi - ocena cyfrowa:
+Gran. Pałeczkowate: 0,8 [%], zakres referencyjny: 1,0-5,0
+Gran. Segmentowane: 55,8 [%], zakres referencyjny: 40,0-70,0

@@ -3,9 +3,9 @@
     "id": "2",
     "name": [
         {
-            "family": "Nowak",
+            "family": "Wiśniewski",
             "given": [
-                "Anna"
+                "Krzysztof"
             ],
             "prefix": [
                 "dr n. med."
@@ -15,7 +15,7 @@
     "identifier": [
         {
             "system": "urn:oid:2.16.840.1.113883.3.4424.1.6.2",
-            "value": "2844964"
+            "value": "2844965"
         }
     ]
 }

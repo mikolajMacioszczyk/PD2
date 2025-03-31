@@ -10,6 +10,7 @@ Porszę o badanie
 
 Pana: Jan Kowalski
 PESEL: 80010112345
+Data urodzenia: 01.08.1980
 telefon: +48607123456
 Adres: ul. Nowowiejska 48, 50-388 Wrocław
 

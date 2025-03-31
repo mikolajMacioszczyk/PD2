@@ -1,0 +1,12 @@
+{
+    "resourceType": "Location",
+    "id": "wroclaw-baltycka",
+    "name": "Laboratorium",
+    "address": {
+        "line": [
+            "Bałtycka 21"
+        ],
+        "city": "Wrocław",
+        "postalCode": "50-014"
+    }
+}

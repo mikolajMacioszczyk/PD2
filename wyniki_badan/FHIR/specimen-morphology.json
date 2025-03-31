@@ -1,0 +1,23 @@
+{
+    "resourceType": "Specimen",
+    "id": "specimen-morphology",
+    "type": {
+        "coding": [
+            {
+                "system": "http://snomed.info/sct",
+                "code": "122555007",
+                "display": "Venous blood specimen"
+            }
+        ]
+    },
+    "subject": {
+        "reference": "Patient/jan-kowalski"
+    },
+    "receivedTime": "2025-03-20T07:55:00+01:00",
+    "collection": {
+        "collectedDateTime": "2025-03-20T07:55:00+01:00",
+        "collector": {
+            "reference": "Practitioner/krzysztof-wisniewski"
+        }
+    }
+}

@@ -4,3 +4,13 @@ Narzędzia:
 - http://terminology.hl7.org/CodeSystem/condition-clinical: https://terminology.hl7.org/CodeSystem-condition-clinical.html
 - http://terminology.hl7.org/CodeSystem/condition-category: https://terminology.hl7.org/CodeSystem-condition-clinical.html
 - http://terminology.hl7.org/CodeSystem/condition-ver-status: https://terminology.hl7.org/CodeSystem-condition-ver-status.html
+
+
+Wdrożenia:
+- Centrum e-Zdrowia: FHIR
+
+# Observation dla każdego paramtru
+# Połączyć observation ze Specimen
+# DiagnosticReport
+# połączyć DiagnosticReport ze Speciment
+# połączyć DiagnosticReport z ServiceRequest

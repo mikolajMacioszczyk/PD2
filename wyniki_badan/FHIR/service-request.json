@@ -1,0 +1,22 @@
+{
+    "resourceType": "ServiceRequest",
+    "id": "blood-test-request",
+    "status": "active",
+    "intent": "order",
+    "code": {
+        "coding": [
+            {
+                "system": "http://snomed.info/sct",
+                "code": "3413006",
+                "display": "Blood cell morphology (procedure)"
+            }
+        ]
+    },
+    "subject": {
+        "reference": "Patient/jan-kowalski"
+    },
+    "requester": {
+        "reference": "Practitioner/krzysztof-wisniewski"
+    },
+    "authoredOn": "2025-03-20"
+}
