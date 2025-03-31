@@ -1,0 +1,17 @@
+{
+    "resourceType": "ActivityDefinition",
+    "id": "EMG",
+    "status": "active",
+    "description": "Electromyography procedure definition",
+    "kind": "ServiceRequest",
+    "code": {
+        "coding": [
+            {
+                "system": "http://snomed.info/sct",
+                "code": "42803009",
+                "display": "Electromyography"
+            }
+        ],
+        "text": "Electromyography"
+    }
+}
