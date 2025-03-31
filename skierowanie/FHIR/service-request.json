@@ -28,20 +28,14 @@
   "authoredOn": "2025-03-20",
   "reason": [
     {
-      "concept": {
-        "coding": [
-          {
-            "system": "http://snomed.info/sct",
-            "code": "10629009",
-            "display": "Tetany"
-          }
-        ],
-        "text": "tężyczka"
+      "reference": {
+        "reference": "Condition/paresthesia",
+        "display": "Paresthesia (finding)"
       }
     },
     {
       "reference": {
-        "reference": "Condition/100",
+        "reference": "Condition/tentany",
         "display": "Paresthesia (finding)"
       }
     }

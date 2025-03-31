@@ -5,7 +5,8 @@
     "coding": [
       {
         "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
-        "code": "active"
+        "code": "active",
+        "display": "Active"
       }
     ]
   },
@@ -16,8 +17,7 @@
         "code": "91019004",
         "display": "Paresthesia (finding)"
       }
-    ],
-    "text": "Parestezje"
+    ]
   },
   "severity": {
     "coding": [
@@ -26,8 +26,7 @@
         "code": "24484000",
         "display": "Severe"
       }
-    ],
-    "text": "Objawy nasilone"
+    ]
   },
   "subject": {
     "reference": "Patient/123"
