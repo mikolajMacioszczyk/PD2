@@ -64,5 +64,3 @@ def upload_skierowanie_full(patient_file = default_patient_file,
 
 if __name__ == "__main__":
     upload_skierowanie_full()
-
-# TODO: verify CodeSystem

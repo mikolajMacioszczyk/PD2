@@ -6,9 +6,9 @@
     {
       "coding": [
         {
-          "system": "http://terminology.hl7.org/CodeSystem/service-category",
-          "code": "diagnostic",
-          "display": "Diagnostic procedure"
+          "system": "http://snomed.info/sct",
+          "code": "108252007",
+          "display": "Laboratory procedure"
         }
       ]
     }
