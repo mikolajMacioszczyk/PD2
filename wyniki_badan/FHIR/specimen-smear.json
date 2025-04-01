@@ -1,24 +1,28 @@
 {
-    "resourceType": "Specimen",
-    "id": "specimen-smear",
-    "type": {
-      "coding": [
-        {
-          "system": "http://snomed.info/sct",
-          "code": "303248007",
-          "display": "Blood smear specimen"
-        }
-      ]
-    },
-    "subject": {
-      "reference": "Patient/jan-kowalski"
-    },
-    "receivedTime": "2025-03-20T07:55:00+01:00",
-    "collection": {
-      "collectedDateTime": "2025-03-20T07:55:00+01:00",
-      "collector": {
-        "reference": "Practitioner/krzysztof-wisniewski"
+  "resourceType": "Specimen",
+  "id": "specimen-smear",
+  "type": {
+    "coding": [
+      {
+        "system": "http://snomed.info/sct",
+        "code": "303248007",
+        "display": "Blood smear specimen"
       }
+    ]
+  },
+  "subject": {
+    "reference": "Patient/jan-kowalski"
+  },
+  "receivedTime": "2025-03-20T07:55:00+01:00",
+  "collection": {
+    "collectedDateTime": "2025-03-20T07:55:00+01:00",
+    "collector": {
+      "reference": "Practitioner/krzysztof-wisniewski"
+    }
+  },
+  "container": {
+    "location": {
+      "reference": "Location/wroclaw-baltycka"
     }
   }
-  
+}

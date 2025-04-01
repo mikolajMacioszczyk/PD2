@@ -19,5 +19,10 @@
         "collector": {
             "reference": "Practitioner/krzysztof-wisniewski"
         }
+    },
+    "container": {
+        "location": {
+            "reference": "Location/wroclaw-baltycka"
+        }
     }
 }
