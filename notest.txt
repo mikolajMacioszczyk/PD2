@@ -8,8 +8,3 @@ Narzędzia:
 
 Wdrożenia:
 - Centrum e-Zdrowia: FHIR
-
-# Połączyć observation ze Specimen
-# DiagnosticReport
-# połączyć DiagnosticReport ze Speciment
-# połączyć DiagnosticReport z ServiceRequest

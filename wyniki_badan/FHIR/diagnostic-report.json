@@ -1,0 +1,92 @@
+{
+    "resourceType": "DiagnosticReport",
+    "id": "diagnostic-report",
+    "status": "final",
+    "category": [
+        {
+            "coding": [
+                {
+                    "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+                    "code": "laboratory",
+                    "display": "Laboratory"
+                }
+            ]
+        }
+    ],
+    "code": {
+        "coding": [
+            {
+                "system": "http://snomed.info/sct",
+                "code": "26604007",
+                "display": "Complete blood count (procedure)"
+            }
+        ]
+    },
+    "basedOn": [
+        {
+            "reference": "ServiceRequest/blood-test-request"
+        }
+    ],
+    "specimen": [
+        {
+            "reference": "Specimen/specimen-morfology"
+        },
+        {
+            "reference": "Specimen/specimen-smear"
+        }
+    ],
+    "subject": {
+        "reference": "Patient/jan-kowalski"
+    },
+    "effectiveDateTime": "2025-03-20T07:55:00+01:00",
+    "result": [
+        {
+            "reference": "Observation/basophiles"
+        },
+        {
+            "reference": "Observation/eosinophiles"
+        },
+        {
+            "reference": "Observation/erythrocytes"
+        },
+        {
+            "reference": "Observation/granulocytes"
+        },
+        {
+            "reference": "Observation/hematocrit"
+        },
+        {
+            "reference": "Observation/hemoglobin"
+        },
+        {
+            "reference": "Observation/leukocytes"
+        },
+        {
+            "reference": "Observation/lymphocytes"
+        },
+        {
+            "reference": "Observation/monocytes"
+        },
+        {
+            "reference": "Observation/neutrophils"
+        },
+        {
+            "reference": "Observation/basophils"
+        },
+        {
+            "reference": "Observation/eosinophil"
+        },
+        {
+            "reference": "Observation/lymphocytes"
+        },
+        {
+            "reference": "Observation/monocytes"
+        },
+        {
+            "reference": "Observation/neutrophil-band"
+        },
+        {
+            "reference": "Observation/neutrophil-segmented"
+        }
+    ]
+}
