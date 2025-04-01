@@ -1,0 +1,35 @@
+{
+    "resourceType": "Observation",
+    "id": "hematocrit",
+    "status": "final",
+    "code": {
+        "coding": [
+            {
+                "system": "http://snomed.info/sct",
+                "code": "28317006",
+                "display": "Hematocrit determination"
+            }
+        ]
+    },
+    "subject": {
+        "reference": "Patient/jan-kowalski"
+    },
+    "effectiveDateTime": "2025-03-20T07:55:00+01:00",
+    "valueQuantity": {
+        "value": 44.5,
+        "unit": "%"
+    },
+    "specimen": {
+        "reference": "Specimen/specimen-morfology"
+    },
+    "referenceRange": [
+        {
+            "low": {
+                "value": 40.0
+            },
+            "high": {
+                "value": 52.0
+            }
+        }
+    ]
+}

@@ -9,7 +9,6 @@ Narzędzia:
 Wdrożenia:
 - Centrum e-Zdrowia: FHIR
 
-# Observation dla każdego paramtru
 # Połączyć observation ze Specimen
 # DiagnosticReport
 # połączyć DiagnosticReport ze Speciment

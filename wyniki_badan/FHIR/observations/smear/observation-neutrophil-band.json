@@ -1,0 +1,35 @@
+{
+    "resourceType": "Observation",
+    "id": "neutrophil-band",
+    "status": "final",
+    "code": {
+        "coding": [
+            {
+                "system": "http://snomed.info/sct",
+                "code": "25340006",
+                "display": "Neutrophil band count"
+            }
+        ]
+    },
+    "subject": {
+        "reference": "Patient/jan-kowalski"
+    },
+    "effectiveDateTime": "2025-03-20T07:55:00+01:00",
+    "valueQuantity": {
+        "value": 0.8,
+        "unit": "%"
+    },
+    "specimen": {
+        "reference": "Specimen/specimen-morfology"
+    },
+    "referenceRange": [
+        {
+            "low": {
+                "value": 1.0
+            },
+            "high": {
+                "value": 5.0
+            }
+        }
+    ]
+}
