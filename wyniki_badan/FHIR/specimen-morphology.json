@@ -18,11 +18,14 @@
         "collectedDateTime": "2025-03-20T07:55:00+01:00",
         "collector": {
             "reference": "Practitioner/krzysztof-wisniewski"
-        }
-    },
-    "container": {
-        "location": {
-            "reference": "Location/wroclaw-baltycka"
-        }
+        },
+        "extension": [
+            {
+                "url": "http://hl7.org/fhir/StructureDefinition/specimen-collectionLocation",
+                "valueReference": {
+                    "reference": "Location/wroclaw-baltycka"
+                }
+            }
+        ]
     }
 }
