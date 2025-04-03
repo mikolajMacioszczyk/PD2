@@ -1,0 +1,433 @@
+Title,Authors,Publication Year,DOI
+Comparing concepts for electronic health record architectures,Blobel B.,2002,10.3233/978-1-60750-934-9-209
+Architecture of secure portable and interoperable electronic health records,Blobel B.,2002,10.1007/3-540-46080-2_103
+,S. A. Barretto; J. Warren; A. Goodchild,2004,10.1109/HICSS.2004.1265353
+Designing guideline-based workflow-enabled electronic health records,Barretto S.A.; Warren J.; Goodchild A.,2004,10.1109/hicss.2004.1265353
+Nursing constraint models for electronic health records: A vision for domain knowledge governance,Hovenga E.; Garde S.; Heard S.,2005,10.1016/j.ijmedinf.2005.07.013
+An ontological infrastructure for the semantic integration of clinical archetypes,Fernández-Breis J.T.; Menárguez-Tortosa M.; Moner D.; Valencia-García R.; Maldonado J.A.; Vivancos-Vicente P.J.; Miranda-Mena T.G.; Martínez-Béjar R.,2006,10.1007/11961239_14
+Advanced and secure architectural EHR approaches,Blobel B.,2006,10.1016/j.ijmedinf.2005.07.017
+Demographic management in a federated healthcare environment,Román I.; Roa L.M.; Reina-Tosina J.; Madinabeitia G.,2006,10.1016/j.ijmedinf.2006.04.006
+Semantic interoperability: HL7 version 3 compared to advanced architecture standards,Blobel B.G.M.E.; Engel K.; Pharow P.,2006,10.1055/s-0038-1634087
+Using semantic technologies to promote interoperability between electronic healthcare records' information models,Fernández-Breis J.T.; Vivancos-Vicente P.J.; Menárguez-Tortosa M.; Moner D.; Maldonado J.A.; Valencia-García R.; Miranda-Mena T.G.,2006,10.1109/IEMBS.2006.259686
+An ehealth case study: Applying semantic web service technology in the healthcare environment,Valle E.D.; Cerizza D.; Celino I.; Dogac A.; Laleci G.B.; Kabak Y.; Okcan A.; Gulderen O.; Namli T.; Bicer V.,2007,10.1007/3-540-70894-4_14
+Towards semantic interoperability for electronic health records: Domain knowledge governance for openEHR archetypes,Garde S.; Knaup P.; Hovenga E.J.S.; Heard S.,2007,10.1160/ME5001
+Using OpenEHR in SICTI an electronic health record system for critical medicine,Filgueira R.; Odriazola A.; Simini F.,2007,10.1088/1742-6596/90/1/012001
+Expressing clinical data sets with openEHR archetypes: A solid basis for ubiquitous computing,Garde S.; Hovenga E.; Buck J.; Knaup P.,2007,10.1016/j.ijmedinf.2007.02.004
+Julius - A template based supplementary electronic health record system,Chen R.; Enberg G.; Klein G.O.,2007,10.1186/1472-6947-7-10
+Integration of tools for binding archetypes to SNOMED CT,Sundvall E.; Qamar R.; Nyström M.; Forss M.; Petersson H.; Karlsson D.; Åhlfeldt H.; Rector A.,2008,10.1186/1472-6947-8-S1-S7
+Combining OpenEHR archetype definitions with SWRL rules - a translation approach,Lezcano L.; Sicilia M.-A.; Serrano-Balazote P.,2008,10.1007/978-3-540-87781-3_9
+A Semantic Web-based System for Managing Clinical Archetypes,"Fernandez-Breis JT, Menarguez-Tortosa M, Martinez-Costa C, Fernandez-Breis E, Herrero-Sempere J, Moner D, Sanchez J, Valencia-Garcia R, Robles M.",2008,10.1109/IEMBS.2008.4649448
+PPEPR: Plug and play Electronic Patient Records,Sahay R.; Akhtar W.; Fox R.,2008,10.1145/1363686.1364232
+Using detailed clinical models to bridge the gap between clinicians and HIT,Goossen W.T.F.,2008,10.3233/978-1-58603-922-6-3
+A Semantic Web-based system for Managing clinical Archetypes,Fernandez-Breis J.T.; Menarguez-Tortosa M.; Martinez-Costa C.; Fernandez-Breis E.; Herrero-Sempere J.; Moner D.; Sanchez J.; Valencia-Garcia R.; Robles M.,2008,10.1109/iembs.2008.4649448
+International developments in openEHR archetypes and templates,Leslie H.,2008,10.1177/183335830803700104
+Archetype-based conversion of EHR content models: Pilot experience with a regional EHR system,Chen R.; Klein G.O.; Sundvall E.; Karlsson D.; Hlfeldt H.,2009,10.1186/1472-6947-9-33
+An openEHR-based clinical Decision Support System: A case study,Kashfi H.,2009,10.3233/978-1-60750-044-5-348
+"Generic screen representations for future-proof systems, is it possible?. There is more to a GUI than meets the eye",van der Linden H.; Austin T.; Talmon J.,2009,10.1016/j.cmpb.2009.03.003
+Towards ISO 13606 and openEHR archetype-based semantic interoperability,Martínez-Costa C.; Menárguez-Tortosa M.; Fernández-Breis J.T.,2009,10.3233/978-1-60750-044-5-260
+Can openEHR archetypes be used in a national context? The Danish archetype proof-of-concept project,Bernstein K.; Tvede I.; Petersen J.; Bredegaard K.,2009,10.3233/978-1-60750-044-5-147
+Archetype-based electronic health records: A literature review and evaluation of their applicability to health data interoperability and access,Wollersheim D.; Sari A.; Rahayu W.,2009,10.1177/183335830903800202
+Personal healthcare information system,Sain M.; Lee H.; Chung W.-Y.,2009,10.1109/NCM.2009.347
+A review of the openEHR implementation in Indonesian National Health Information System: Integrated health post,Setiawan A.W.; Handayani A.; Setiawan A.D.; Saptawati G.A.P.; Suksmono A.B.; Mengko T.R.,2009,10.1007/978-3-642-03904-1_65
+Archetype-based knowledge management for semantic interoperability of electronic health records,Garde S.; Chen R.; Leslie H.; Beale T.; Mcnicoll I.; Heard S.,2009,10.3233/978-1-60750-044-5-1007
+A migration to an openEHR-based clinical application,Kashfi H.; Torgersson O.,2009,10.3233/978-1-60750-044-5-152
+Towards a comprehensive electronic patient record to support an innovative individual care concept for premature infants using the openEHR approach,Buck J.; Garde S.; Kohl C.D.; Knaup-Gregori P.,2009,10.1016/j.ijmedinf.2009.03.001
+Collaborative development of clinical templates as a national resource,Hoy D.; Hardiker N.R.; McNicoll I.T.; Westwell P.; Bryans A.,2009,10.1016/j.ijmedinf.2008.06.003
+Comparing the apgar score representation in HL7 and OpenEHR formalisms,Cuggia M.; Bayat S.; Rossille D.; Poulain P.; Pladys P.; Robert H.; Duvauferrier R.,2009,10.3233/978-1-60750-044-5-250
+Representing a chemotherapy guideline using openEHR and rules,Chen R.; Georg-Hemming P.; Åhlfeldt H.,2009,10.3233/978-1-60750-044-5-653
+Engaging clinicians in clinical content: Herding cats or piece of cake?,Leslie H.; Heard S.; Garde S.; Mcnicoll I.,2009,10.3233/978-1-60750-044-5-125
+Incremental semantic enrichment of narrative content in electronic health records,Schulz S.; Daumke P.; Stenzhorn H.; Markó K.; Poprat M.,2009,10.1007/978-3-642-03893-8_126
+Relevance and management of methylation data in Electronic Health Records,Goebel G.; Pfeiffer K.P.; Schabetsberger T.; Kalozy C.; Fiegl H.; Leitner K.,2009,10.3233/978-1-60750-044-5-135
+An approach for the semantic interoperability of ISO EN 13606 and OpenEHR archetypes,Martínez-Costa C.; Menárguez-Tortosa M.; Fernández-Breis J.T.,2010,10.1016/j.jbi.2010.05.013
+Romanian health informatics legislation compatibility with ISO/EN 13606 and openEHR,Sauciuc D.G.; Dehelean S.; Iosif O.; Dehelean C.; Miclea L.; Paun I.,2010,10.1109/AQTR.2010.5520707
+Sustainable clinical knowledge management: An archetype development life cycle,Madsen M.; Leslie H.; Hovenga E.J.S.; Heard S.,2010,10.3233/978-1-60750-476-4-115
+Applying a user centered design methodology in a clinical context,Kashfi H.,2010,10.3233/978-1-60750-588-4-927
+"The portable personal health records: Storage on SD card and network, only for one's childhood",Ma G.; Liu J.; Wei Z.,2010,10.1109/iCECE.2010.1168
+Facilitating secondary use of medical data by using openEHR archetypes,Kohl C.D.; Garde S.; Knaup P.,2010,10.3233/978-1-60750-588-4-1117
+Knowledge and information modeling,Madsen M.,2010,10.3233/978-1-60750-476-4-84
+Semantic description of health record data for procedural interoperability,Vejvalka J.; Lesný P.; Holeček T.; Slabý K.; Krásničanová H.; Jarolímková A.; Bouzková H.,2010,10.1007/978-3-642-11745-9_20
+Semantic interoperability in Czech healthcare environment supported by Hl7 version 3,Nagy M.; Hanzlícek P.; Precková P.; Ríha A.; Dioszegi M.; Seidl L.; Zvárová J.,2010,10.3414/ME09-02-0018
+Electronic health record: Comparative analysis of HL7 and open EHR approaches; [Historia clínica automatizada: Análisis comparativo de las propuestas HL7 y open EHR],Macedo N.A.M.; Hilares N.A.G.; Quispe J.P.P.; Matutti R.A.,2010,10.1109/PAHCE.2010.5474589
+Semantic interoperability in healthcare information for EHR databases,Sachdeva S.; Bhalla S.,2010,10.1007/978-3-642-12038-1_11
+Bridging the HL7 template - 13606 archetype gap with detailed clinical models,Goossen W.T.F.; Goossen-Baremans A.,2010,10.3233/978-1-60750-588-4-932
+The design of an EHR for clinical decision support,Xiao L.; Cousins G.; Hederman L.; Fahey T.; Dimitrov B.,2010,10.1109/BMEI.2010.5639694
+Detailed clinical models: A review,Goossen W.; Goossen-Baremans A.; Van Der Zel M.,2010,10.4258/hir.2010.16.4.201
+Review of semantically interoperable electronic health records for ubiquitous healthcare,Hwang K.H.; Chung K.-I.; Chung M.-A.; Choi D.,2010,10.4258/hir.2010.16.1.1
+Quality and certification of electronic health records: An overview of current approaches from the US and Europe,Hoerbst A.; Ammenwerth E.,2010,10.4338/ACI-2010-02-R-0009
+Medical information system based on electronic healthcare records,Pǎun D.; Sauciuc D.; Stan O.; Iosif O.; Dehelean C.; Miclea L.,2010,10.1109/AQTR.2010.5520713
+Developing an EHR for methadone treatment recording and decision support,Xiao L.; Wang C.; Chen Y.; Cousins G.; Hederman L.; Fahey T.; Dimitrov B.,2010,10.1109/ICCASM.2010.5622352
+Applying the archetype approach to the database of a biobank information management system,Späth M.B.; Grimson J.,2011,10.1016/j.ijmedinf.2010.11.002
+Automated mapping of observation archetypes to SNOMED CT concepts,Meizoso M.; Allones J.L.; Taboada M.; Martinez D.; Tellado S.,2011,10.1007/978-3-642-21344-1_57
+Clinical data interoperability based on archetype transformation,Martínez Costa C.; Menárguez-Tortosa M.; Fernández-Breis J.T.,2011,10.1016/j.jbi.2011.05.006
+Developing an electronic health record (EHR) for methadone treatment recording and decision support,Xiao L.; Cousins G.; Courtney B.; Hederman L.; Fahey T.; Dimitrov B.D.,2011,10.1186/1472-6947-11-5
+Integration of DICOM and openEHR standards,Wang Y.; Yao Z.; Liu L.,2011,10.1117/12.878360
+Validation of the openEHR archetype library by using OWL reasoning,Menárguez-Tortosa M.; Fernández-Breis J.T.,2011,10.3233/978-1-60750-806-9-789
+Model Driven Development of Clinical Information Sytems using openEHR,Atalag K.; Yang H.Y.; Tempero E.; Warren J.,2011,10.3233/978-1-60750-806-9-849
+Supporting openEHR java desktop application developers,Kashfi H.; Torgersson O.,2011,10.3233/978-1-60750-806-9-724
+A realism-based analysis of the OpenEHR entry model,Andrade A.Q.; Almeida M.B.,2011,10.1145/2064747.2064758
+An ontology of diabetes self management,Sutton D.; Aldea A.; Martin C.,2011,10.1145/2064747.2064767
+Modeling healthcare authorization and claim submissions using the openEHR dual-model approach,Dias R.D.M.; Cook T.W.; Freire S.M.,2011,10.1186/1472-6947-11-60
+Developing an electronic health record for intractable diseases in Japan,Kimura E.; Kobayashi S.; Kanatani Y.; Ishihara K.; Mimori T.; Takahashi R.; Chiba T.; Yoshihara H.,2011,10.3233/978-1-60750-806-9-255
+Generating context-awarness interface for medical applications,Kallel F.; Ellouze A.S.; Bouaziz R.,2011,10.1109/DeSE.2011.58
+Modeling shared care plans using CONTsys and openEHR to support shared homecare of the elderly,Hägglund M.; Chen R.; Koch S.,2011,10.1136/jamia.2009.000216
+Towards the interoperability of computerised guidelines and electronic health records: An experiment with openEHR archetypes and a chronic heart failure guideline,Marcos M.; Martínez-Salvador B.,2011,10.1007/978-3-642-18050-7_8
+Local EHR management based on openEHR and EN13606,Pǎun I.D.; Sauciuc D.G.; Iosif N.O.; Stan O.; Perşe A.; Dehelean C.; Miclea L.,2011,10.1007/s10916-009-9395-1
+Integrating reasoning and clinical archetypes using OWL ontologies and SWRL rules,Lezcano L.; Sicilia M.-A.; Rodríguez-Solano C.,2011,10.1016/j.jbi.2010.11.005
+Towards the adoption of open source and open access electronic health record systems,Maglogiannis I.,2012,10.1260/2040-2295.3.1.141
+"Electronic nursing documentation in a paediatrics hospital: Impact on quality of care by using OpenEHR, IHE and HL7",Oštir M.; Purkart M.; Štih A.; Prinčič B.; Orel A.,2012,10.3233/978-1-61499-101-4-1070
+Architectural approach for semantic EHR systems development based on detailed clinical models,Bernal J.G.; Lopez D.M.; Blobel B.,2012,10.3233/978-1-61499-069-7-164
+Information interchange services for electronic health record databases,Sachdeva S.; Madaan A.; Chu W.,2012,10.1504/IJCSE.2012.046179
+Ruby implementation of the OpenEHR specifications,Kobayashi S.; Tatsukawa A.,2012,10.20965/jaciii.2012.p0042
+SPLiCE: A Software Product Line for healthCarE,Gomes A.T.A.; Ziviani A.; Correa B.S.P.M.; Teixeira I.M.; Moreira V.M.,2012,10.1145/2110363.2110447
+Electronic healthcare record according to general clinical observation file,Stan O.; Sauciuc D.; Miclea L.,2012,10.1109/AQTR.2012.6237763
+Associating clinical archetypes through UMLS metathesaurus term clusters,Lezcano L.; Sánchez-Alonso S.; Sicilia M.-A.,2012,10.1007/s10916-010-9586-9
+Semantic interoperability in standardized electronic health record databases,Sachdeva S.; Bhalla S.,2012,10.1145/2166788.2166789
+Achieving interoperability among healthcare standards: Building semantic mappings at models level,Khan W.A.; Hussain M.; Khattak A.M.; Amin B.; Lee S.; Latif K.,2012,10.1145/2184751.2184868
+Developing a hospital information system ecosystem for creating new clinical collaboration methodologies,Schramm W.; Kostinger H.; Bayrhammer K.; Fiedler M.; Grechenig T.,2012,10.1109/BHI.2012.6211517
+Healthcare standards based sensory data exchange for Home Healthcare Monitoring System,Khan W.A.; Hussain M.; Afzal M.; Amin M.B.; Lee S.,2012,10.1109/EMBC.2012.6346170
+A timed model for healthcare workflows based on CSP,Faber J.,2012,10.1109/SEHC.2012.6227002
+Using archetypes for defining CDA templates,Moner D.; Moreno A.; Maldonado J.A.; Robles M.; Parra C.,2012,10.3233/978-1-61499-101-4-53
+Dealing with the archetypes development process for a regional EHR system,Santos M.R.; Bax M.P.; Kalra D.,2012,10.4338/ACI-2011-12-RA-0074
+OpenEHR-based representation of guideline compliance data through the example of stroke clinical practice guidelines,Anani N.; Chen R.; Prazeres Moreira T.; Koch S.,2012,10.3233/978-1-61499-101-4-487
+Semantic similarity-based alignment between clinical archetypes and SNOMED CT: An application to observations,Meizoso García M.; Iglesias Allones J.L.; Martínez Hernández D.; Taboada Iglesias M.J.,2012,10.1016/j.ijmedinf.2012.02.007
+A semantic-web oriented representation of clinical element model for secondary use of electronic healthcare data,Tao C.; Jiang G.; Oniki T.A.; Freimuth R.R.; Pathak J.; Zhu Q.; Sharma D.; Huff S.M.; Chute C.G.,2012,10.1109/HISB.2012.58
+,H. V. César,2013,10.1109/ASONAM.2013.6785914
+A novel approach to developing applications in the pervasive healthcare environment through the use of archetypes,De Moraes J.L.C.; De Souza W.L.; Ferreira Pires L.; Cavalini L.T.; Do Prado A.F.,2013,10.1007/978-3-642-39640-3_35
+Towards interoperability of ehealth system networked components,Soceanu A.; Egner A.; Moldoveanu F.,2013,10.1109/CSCS.2013.69
+Archetype model-driven development framework for EHR web system,Kobayashi S.; Kimura E.; Ishihara K.,2013,10.4258/hir.2013.19.4.271
+Semantic integration of patient data for clinical decision support in breast cancer care,Lezcano L.; Sicilia M.-A.; Rivero E.,2013,10.4018/978-1-4666-3000-0.ch010
+Automatic synthesis of graphical user interfaces for health information systems,Teixeira I.M.; Braga R.M.; Gomes A.T.A.,2013,10.3233/978-1-61499-289-9-1184
+Isosemantic rendering of clinical information using formal ontologies and RDF,Martínez-Costa C.; Bosca D.; Legaz-García M.C.; Tao C.; Fernández Breis J.T.; Schulz S.; Chute C.G.,2013,10.3233/978-1-61499-289-9-1085
+Applying representational state transfer (REST) architecture to archetype-based electronic health record systems,Sundvall E.; Nyström M.; Karlsson D.; Eneling M.; Chen R.; Örman H.,2013,10.1186/1472-6947-13-57
+Using a single content model for eHealth interoperability and secondary use,Atalag K.,2013,10.3233/978-1-61499-291-2-282
+An approach for message exchange using archetypes,Moraes J.L.C.; Souza W.L.; Cavalini L.T.; Pires L.F.; Prado A.F.,2013,10.3233/978-1-61499-289-9-1136
+OWL-based reasoning methods for validating archetypes,Menárguez-Tortosa M.; Fernández-Breis J.T.,2013,10.1016/j.jbi.2012.11.009
+OpenEHR-based pervasive health information system for primary care: First Brazilian experience for public care,Bacelar-Silva G.M.; César H.; Braga P.; Guimarães R.,2013,10.1109/CBMS.2013.6627881
+Towards automatic patient eligibility assessment: From free-text criteria to queries,Milian K.; Ten Teije A.,2013,10.1007/978-3-642-38326-7_12
+A novel architecture for message exchange in Pervasive Healthcare based on the use of Intelligent Agents,De Moraes J.L.C.; De Souza W.L.; Pires L.F.; Cavalini L.T.; Francisco Do Prado A.,2013,10.1109/AICCSA.2013.6616507
+Interoperability in Ambient Assisted Living using OpenEHR,Osorio E.; Ferreira L.; Abreu R.; Sousa F.,2013,10.1109/HealthCom.2013.6720707
+Data integration for clinical decision support based on openEHR archetypes and HL7 virtual medical record,González-Ferrer A.; Peleg M.; Verhees B.; Verlinden J.-M.; Marcos C.,2013,10.1007/978-3-642-36438-9_5
+Survey of openEHR storage implementations,Frade S.; Freire S.M.; Sundvall E.; Patriarca-Almeida J.H.; Cruz-Correia R.,2013,10.1109/CBMS.2013.6627806
+Clinical knowledge governance: The international perspective,Garde S.,2013,10.3233/978-1-61499-291-2-269
+"Contribution of clinical archetypes, and the challenges, towards achieving semantic interoperability for EHRs",Tapuria A.; Kalra D.; Kobayashi S.,2013,10.4258/hir.2013.19.4.286
+On the integration of clinical archetypes with ontologies and rules,Lezcano L.,2013,10.4018/978-1-4666-3000-0.ch005
+Semantic integration of patient data and quality indicators based on openEHR archetypes,Dentler K.; Ten Teije A.; Cornet R.; De Keizer N.,2013,10.1007/978-3-642-36438-9_6
+A semantic-web oriented representation of the clinical element model for secondary use of electronic health records data,Tao C.; Jiang G.; Oniki T.A.; Freimuth R.R.; Zhu Q.; Sharma D.; Pathak J.; Huff S.M.; Chute C.G.,2013,10.1136/amiajnl-2012-001326
+Towards plug-and-play integration of archetypes into legacy electronic health record systems: The ArchiMed experience,Duftschmid G.; Chaloupka J.; Rinner C.,2013,10.1186/1472-6947-13-11
+Enhancing access to standardized clinical application for mobile interfaces,Parashar H.J.; Sachdeva S.; Batra S.,2013,10.1007/978-3-642-37134-9_17
+Quasi-relational query language interface for persistent standardized EHRs: Using NoSQL databases,Madaan A.; Chu W.; Daigo Y.; Bhalla S.,2013,10.1007/978-3-642-37134-9_15
+An automated routine childhood immunization approach using openEHR,Liu Z.; Qamar N.; Qian J.,2013,10.3233/978-1-61499-289-9-1075
+Creating openEHR content to different moments of care: Obstetrics emergency scenario,Bacelar-Silva G.M.; Sousa-Santos R.F.; Cruz-Correia R.J.,2013,10.1109/CBMS.2013.6627816
+Early experiences from a guideline-based computerized clinical decision support for stroke prevention in atrial fibrillation,Chen R.; Valladares C.; Corbal I.; Anani N.; Koch S.,2013,10.3233/978-1-61499-289-9-244
+Personalized-detailed clinical model for data interoperability among clinical standards,Khan W.A.; Hussain M.; Afzal M.; Amin M.B.; Saleem M.A.; Lee S.,2013,10.1089/tmj.2012.0189
+Developing a NFC based patient identification and ward round system for mobile devices using the android platform,Köstinger H.; Gobber M.; Grechenig T.; Tappeiner B.; Schramm W.,2013,10.1109/PHT.2013.6461313
+A study of semantic proximity between archetype terms based on SNOMED CT relationships,Allones J.L.; Penas D.; Taboada M.; Martinez D.; Tellado S.,2013,10.1007/978-3-642-36438-9_7
+SNOMED CT module-driven clinical archetype management,Allones J.L.; Taboada M.; Martinez D.; Lozano R.; Sobrido M.J.,2013,10.1016/j.jbi.2013.01.003
+An analysis of the openehr archetype semantics based on a typed lambda theory,Tatsukawa A.; Shinohara E.Y.; Kawazoe Y.; Imai T.; Ohe K.,2013,10.3233/978-1-61499-289-9-990
+Archetype relational mapping based on openEHR,Wang L.; Min L.-T.; Lu X.-D.; Duan H.-L.,2014,10.3969/j.issn.0258-8021.2014.04.07
+Archetype-based solution to tele-monitor patients with chronic diseases,Rodríguez J.M.; Barca C.C.; Puddu P.E.; Gialelis J.; Chondros P.; Karadimas D.; Keene K.; Verlinden J.-M.,2014,10.1007/978-3-319-00846-2_316
+Usability measures for large scale adoption of the standardized electronic health record databases,Madaan A.; Bhalla S.,2014,10.2197/ipsjjip.22.508
+PyEHR: A scalable clinical data management toolkit for biomedical research projects,Lianas L.; Frexia F.; Delussu G.; Anedda P.; Zanetti G.,2014,10.1109/HealthCom.2014.7001871
+Plug-and-play Integration of dual-model based Knowledge Artefacts into an Open Source Ehr System,Krexner R.; Duftschmid G.,2014,10.3233/978-1-61499-432-9-101
+Evaluation of software maintainability with openEHR - a comparison of architectures,Atalag K.; Yang H.Y.; Tempero E.; Warren J.R.,2014,10.1016/j.ijmedinf.2014.07.006
+An architecture for health information exchange in pervasive healthcare environment,De Moraes J.L.C.; De Souza W.L.; Pires L.F.; Do Prado A.F.,2014,10.1007/978-3-319-09492-2_23
+Meta-architecture for the interoperability and knowledge management of archetype-based clinical decision support systems,Marco-Ruiz L.; Maldonado J.A.; Traver V.; Karlsen R.; Bellika J.G.,2014,10.1109/BHI.2014.6864416
+Performance comparison for data storage - Db4o and MySQL databases,Kulshrestha S.; Sachdeva S.,2014,10.1109/IC3.2014.6897167
+Development of an open metadata schema for prospective clinical research (openPCR) in China,Xu W.; Guan Z.; Sun J.; Wang Z.; Geng Y.,2014,10.3414/ME13-01-0008
+Validating EHR documents: Automatic schematron generation using archetypes,Pfeiffer K.; Duftschmid G.; Rinner C.,2014,10.3233/978-1-61499-397-1-101
+Development of a visual editor for the definition of HL7 CDA archetypes,Moner D.; Maldonado J.A.; Boscá D.; Mañas L.; Robles M.,2014,10.1007/978-3-319-00846-2_311
+OpenEHR aware multi agent system for inter-institutional health data integration,Vieira-Marques P.; Patriarca-Almeida J.; Frade S.; Bacelar-Silva G.; Robles S.; Cruz-Correia R.,2014,10.1109/CISTI.2014.6876864
+"On the seamless, Harmonized use of iso/ieee11073 and openehr",Trigo J.D.; Kohl C.D.; Eguzkiza A.; Martínez-Espronceda M.; Álesanco A.; Serrano L.; García J.; Knaup P.,2014,10.1109/JBHI.2013.2285441
+YourEHRM: Standard-based management of your personal healthcare information,Barca C.C.; Lagunar C.M.; Rodriguez J.M.; Quintero A.M.; Martins I.R.M.; Martinez I.; Sanguino M.A.; Lobo T.P.,2014,10.1109/BHI.2014.6864311
+Integrating data and network standards into an interoperable e-Health solution,Pereira C.; Frade S.; Brandao P.; Correia R.; Aguiar A.,2014,10.1109/HealthCom.2014.7001821
+Contributions to promote the adequacy of an approach based on services to EHR; [Contributos para promover a adequação de uma abordagem baseada em serviços para o RSE],Gomes L.M.; Guerra H.; Bem N.; Andrade C.,2014,10.1109/CISTI.2014.6876956
+Framework for applications of support to the activities of integrated care; [Framework para aplicações de suporte às atividades de prestação de cuidados],Pavão J.; Carvalho S.; Queirós A.; Rocha N.P.,2014,10.1109/CISTI.2014.6876881
+Retrospective checking of compliance with practice guidelines for acute stroke care: A novel experiment using openEHR's Guideline Definition Language,Anani N.; Chen R.; Prazeres Moreira T.; Koch S.,2014,10.1186/1472-6947-14-39
+Ontology content patterns as bridge for the semantic representation of clinical information,Martínez-Costa C.; Schulz S.,2014,10.4338/ACI-2014-04-RA-0031
+Transformations between CDISC ODM and openEHR Archetypes,Bruland P.; Dugas M.,2014,10.3233/978-1-61499-432-9-1225
+Towards a semantic interoperability environment,Macia I.,2014,10.1109/HealthCom.2014.7001900
+Validating archetypes for the Multiple Sclerosis Functional Composite,Braun M.; Brandt A.U.; Schulz S.; Boeker M.,2014,10.1186/1472-6947-14-64
+"Building a common ground on the clinical case: Design, implementation and evaluation of an information model for a handover EHR",Flemming D.; Paul M.; Hübner U.,2014,10.3233/978-1-61499-415-2-167
+Combining Archetypes with Fast Health Interoperability Resources in Future-proof Health Information Systems,Bosca D.; Moner D.; Maldonado J.A.; Robles M.,2015,10.3233/978-1-61499-512-8-180
+Case Study: Applying OpenEHR Archetypes to a Clinical Data Repository in a Chinese Hospital,Min L.; Wang L.; Lu X.; Duan H.,2015,10.3233/978-1-61499-564-7-207
+How to organize for a large-scale openEHR-based Electronic Patient Record,Ulriksen G.-H.; Pedersen R.; Wynn R.; Ellingsen G.,2015,10.3233/978-1-61499-512-8-808
+"An Intelligent Ecosystem for Providing Support in Prehospital Trauma Care in Cuenca, Ecuador",Timbi-Sisalima C.; Rodas E.B.; Salamea J.C.; Sacoto H.; Monje-Ortega D.; Robles-Bykbaev V.,2015,10.3233/978-1-61499-564-7-329
+Archetype relational mapping - A practical openEHR persistence solution,Wang L.; Min L.; Wang R.; Lu X.; Duan H.,2015,10.1186/s12911-015-0212-0
+Multidisciplinary Modelling of Symptoms and Signs with Archetypes and SNOMED-CT for Clinical Decision Support,Marco-Ruiz L.; Maldonado J.A.; Karlsen R.; Bellika J.G.,2015,10.3233/978-1-61499-512-8-125
+Modulation of existent obstetrics EHRs to the openEHR specification,De Magalhaães J.C.M.; Cruz Correia R.J.,2015,10.5220/0005220804390445
+Interoperable Archetypes with a Three Folded Terminology Governance,Pederson R.; Ellingsen G.,2015,10.3233/978-1-61499-564-7-934
+Towards the Implementation of an openEHR-based Open Source EHR Platform (a vision paper),Pazos Gutiérrez P.,2015,10.3233/978-1-61499-564-7-45
+Transformation of standardized clinical models based on OWL technologies: From CEM to OpenEHR archetypes,Legaz-García M.D.C.; Menárguez-Tortosa M.; Fernández-Breis J.T.; Chute C.G.; Tao C.,2015,10.1093/jamia/ocu027
+Privacy-preserving Statistical Query and Processing on Distributed OpenEHR Data,Hailemichael M.A.; Marco-Ruiz L.; Bellika J.G.,2015,10.3233/978-1-61499-512-8-766
+Semantic Interoperable Electronic Patient Records: The Unfolding of Consensus based Archetypes,Pedersen R.; Wynn R.; Ellingsen G.,2015,10.3233/978-1-61499-512-8-170
+The contextualization of archetypes: Clinical template governance,Pedersen R.; Ulriksen G.-H.; Ellingsen G.,2015,10.3233/978-1-61499-574-6-166
+Business archetypes and archetype patterns from the HL7 RIM and openEHR RM perspectives: Towards interoperability and evolution of healthcare models and software systems,Piho G.; Tepandi J.; Thompson D.; Woerner A.; Parman M.,2015,10.1016/j.procs.2015.08.384
+Archetype based patient data modeling to support treatment of pituitary adenomas,Chalopin C.; Lindner D.; Kropf S.; Denecke K.,2015,10.3233/978-1-61499-564-7-178
+Role of OpenEHR as an open source solution for the regional modelling of patient data in obstetrics,Pahl C.; Zare M.; Nilashi M.; de Faria Borges M.A.; Weingaertner D.; Detschew V.; Supriyanto E.; Ibrahim O.,2015,10.1016/j.jbi.2015.04.004
+Restructuring an EHR system and the Medical Markup Language (MML) standard to improve interoperability by archetype technology,Kobayashi S.; Kume N.; Yoshihara H.,2015,10.3233/978-1-61499-564-7-881
+Archetypes development in electrophysiology domain: Electroencephalography as a personal EHR system module,Papez V.; Moucek R.,2015,10.5220/0005282806110616
+Modelling domain knowledge of speech and language therapy with an OWL ontology and OpenEHR archetypes,Robles-Bykbaev V.; López-Nores M.; Pazos-Arias J.; García-Duque J.; Ochoa-Zambrano J.,2015,10.5220/0005279405850591
+National governance of archetypes in Norway,Ljosland Bakke S.,2015,10.3233/978-1-61499-564-7-1091
+Understanding requirements of clinical data standards for developing interoperable knowledge-based DSS: A case study,González-Ferrer A.; Peleg M.,2015,10.1016/j.csi.2015.06.002
+Formalize clinical processes into electronic health information systems: Modelling a screening service for diabetic retinopathy,Eguzkiza A.; Trigo J.D.; Martínez-Espronceda M.; Serrano L.; Andonegui J.,2015,10.1016/j.jbi.2015.05.017
+Mapping a nursing terminology subset to openEHR archetypes*: A case study of the international classification for nursing practice,Nogueira J.R.M.; Cook T.W.; Cavalini L.T.,2015,10.3414/ME14-01-0053
+Archetype-based data warehouse environment to enable the reuse of electronic health record data,Marco-Ruiz L.; Moner D.; Maldonado J.A.; Kolstrup N.; Bellika J.G.,2015,10.1016/j.ijmedinf.2015.05.016
+A Process for the Representation of openEHR ADL Archetypes in OWL Ontologies,Porn A.M.; Peres L.M.; Didonet Del Fabro M.,2015,10.3233/978-1-61499-564-7-827
+Automatic generation of computable implementation guides from clinical information models,Boscá D.; Maldonado J.A.; Moner D.; Robles M.,2015,10.1016/j.jbi.2015.04.002
+A proposal to incorporate digital auscultation and its processing into an existing electronic health record,Gomes P.; Frade S.; Castro A.; Cruz-Correia R.; Coimbra M.,2015,10.5220/0005222901430150
+"Cognitive maps to visualise clinical cases in handovers: Design, implementation, usability, and attractiveness testing",Flemming D.; Przysucha M.; Hübner U.,2015,10.3414/ME15-02-0001
+Implementing healthcare interoperability utilizing SOA and data interchange agent,Batra U.; Sachdeva S.; Mukherjee S.,2015,10.1016/j.hlpt.2015.04.005
+Lightweight application for generating clinical research information systems: MAGIC,Leskošek B.; Pajntar M.,2015,10.1007/s00508-015-0794-7
+"Design and deployment of eHealth interventions using behavior change techniques, BPMN2 and OpenEHR",Bestek M.; Curtis K.; Brodnik A.,2015,10.1109/WiMOB.2015.7347983
+Evaluating Model-Driven Development for large-scale EHRs through the openEHR approach,Christensen B.; Ellingsen G.,2016,10.1016/j.ijmedinf.2016.02.004
+Promoting health for chronic conditions: A novel approach that integrates clinical and personal decision support,Lasorsa I.; Ajcevic M.; D'Antrassi P.; Carlini G.; Accardo A.; Marceglia S.,2016,10.1109/MIPRO.2016.7522220
+An implementation of clinical data repository with openEHR Approach: From data modeling to architecture,Min L.; Liu J.; Lu X.; Duan H.; Qiao Q.,2016,10.3233/978-1-61499-666-8-100
+A methodology based on openEHR archetypes and software agents for developing e-health applications reusing legacy systems,Cardoso de Moraes J.L.; de Souza W.L.; Pires L.F.; do Prado A.F.,2016,10.1016/j.cmpb.2016.07.013
+Evaluation of a Framework to Implement Electronic Health Record Systems Based on the openEHR Standard,Orellana D.A.; Salas A.A.; Solarz P.F.; Ruiz L.M.; Rotger V.I.,2016,10.1088/1742-6596/705/1/012046
+Building chronic kidney disease clinical practice guidelines using the openEHR guideline definition language,Lin C.-H.; Lo Y.-C.; Hung P.-Y.; Liou D.-M.,2016,10.3414/ME16-01-0005
+Open data models for smart health interconnected applications: the example of openEHR,"Demski H, Garde S, Hildebrand C.",2016,10.1186/s12911-016-0376-2
+B-Health analytics; [Uma abordagem arquitetural],Gomes J.; Quintela H.,2016,10.18803/capsi.v16.300-307
+Automated population of an i2b2 clinical data warehouse from an openEHR-based data repository,Haarbrandt B.; Tute E.; Marschollek M.,2016,10.1016/j.jbi.2016.08.007
+Hygehos ontology for electronic health records,Muro N.; Sanchez E.; Graña M.; Carrasco E.; Manzano F.; Susperregi J.M.; Agirre A.; Gómez J.,2016,10.1007/978-3-319-39687-3_30
+Automated transformation of openEHR Data Instances to OWL,Haarbrandt B.; Jack T.; Marschollek M.,2016,10.3233/978-1-61499-645-3-63
+A scalable data access layer to manage structured heterogeneous biomedical data,Giovanni D.; Luca L.; Francesca F.; Gianluigi Z.,2016,10.1371/journal.pone.0168004
+Querying Medical Datasets while Preserving Privacy,Qamar N.; Yang Y.; Nadas A.; Liu Z.,2016,10.1016/j.procs.2016.09.049
+Analysis of the process of representing clinical statements for decision-support applications: a comparison of openEHR archetypes and HL7 virtual medical record,González-Ferrer A.; Peleg M.; Marcos M.; Maldonado J.A.,2016,10.1007/s10916-016-0524-3
+Erratum: Archetype relational mapping - A practical openEHR persistence solution (BMC Medical Informatics and Decision Making (2015) 15 (88)),,2016,10.1186/s12911-016-0259-6
+Comparing the performance of NoSQL approaches for managing archetype-based electronic health record data,Freire S.M.; Teodoro D.; Wei-Kleiner F.; Sundvall E.; Karlsson D.; Lambrix P.,2016,10.1371/journal.pone.0150069
+Proposed model for a Romanian register of chronic diseases in children,Gabor-Harosa F.M.; Stan O.P.; Daina L.; Mocean F.,2016,10.1016/j.cmpb.2016.01.022
+Integrating semantic dimension into openEHR archetypes for the management of cerebral palsy electronic medical records,Ellouze A.S.; Bouaziz R.; Ghorbel H.,2016,10.1016/j.jbi.2016.08.018
+Integrated innovative solutions to improve healthcare scheduling,Stan O.; Avram C.; Stefan I.; Astilean A.,2016,10.1109/AQTR.2016.7501301
+An exploratory study using an openEHR 2-level modeling approach to represent common data elements,Lin C.-H.; Fann Y.-C.; Liou D.-M.,2016,10.1093/jamia/ocv137
+"An update on OpenEHR archetypes in Norway. Response to article Christensen B & Ellingsen G: ""Evaluating Model-Driven Development for large-scale EHRs through the openEHR approach"" IJMI May 2016, Volume 89, pages 43-54.",Lærum H.; Bakke S.L.; Pedersen R.; Valand J.T.,2016,10.1016/j.ijmedinf.2016.05.002
+Standard information models for representing adverse sensitivity information in clinical documents,Topaz M.; Seger D.L.; Goss F.; Lai K.; Slight S.P.; Lau J.J.; Nandigam H.; Zhou L.,2016,10.3414/ME15-01-0081
+Introducing a Method for Transformation of Paper-Based Research Data into Concept-Based Representation with openEHR,Saalfeld B.; Tute E.; Wolf K.-H.; Marschollek M.,2017,10.3233/978-1-61499-753-5-151
+Integration of hospital information and clinical decision support systems to enable the reuse of electronic health record data,Kopanitsa G.,2017,10.3414/ME16-01-0057
+"Special topic interoperability and EHR: Combining openEHR, SNOMED, IHE, and continua as approaches to interoperability on national ehealth",Beštek M.; Stanimirović D.,2017,10.4338/ACI-2017-01-RA-0011
+AsthmaCheck: Multi-level modeling based health information system,Bharaj T.S.; Sachdeva S.; Bhalla S.,2017,10.1007/978-3-319-57741-8_9
+Peer review of clinical information models: A web 2.0 crowdsourced approach,Leslie H.; Bakke S.L.,2017,10.3233/978-1-61499-830-3-905
+"Organizational, legal and technological aspects of health information exchange",Karasev N.A.; Vasiljev V.A.; Maksimov A.I.; Molodov V.A.,2017,10.23934/2223-9022-2017-6-1-52-57
+Domain modeling and application development of an archetype- and XML-based EHRS: Practical Experiences and Lessons Learnt,Kropf S.; Chalopin C.; Lindner D.; Denecke K.,2017,10.4338/ACI-2017-01-RA-0009
+Experimental Characterization of Mobile IoT Application Latency,Pereira C.; Pinto A.; Ferreira D.; Aguiar A.,2017,10.1109/JIOT.2017.2689682
+The ‘holy grail’ of interoperability of health information systems: Challenges and implications,Silsand L.,2017,10.1007/978-3-319-64695-4_11
+Querying Archetype-Based Electronic Health Records Using Hadoop and Dewey Encoding of openEHR Models,Sundvall E.; Wei-Kleiner F.; Freire S.M.; Lambrix P.,2017,10.3233/978-1-61499-753-5-406
+Structuring legacy pathology reports by openEHR archetypes to enable semantic querying,Kropf S.; Krücken P.; Mueller W.; Denecke K.,2017,10.3414/ME16-01-0073
+Modelling of operative report documents for data integration into an open EHR-Based enterprise data warehouse,Haarbrandt B.; Wilschko A.; Marschollek M.,2017,10.3233/978-1-61499-678-1-407
+How to involve the users in the large scale work with openEHR archetypes in Norway?,Ulriksen G.-H.,2017,10.1007/978-3-319-56535-4_74
+Evaluating OpenEHR for Storing Computable Representations of Electronic Health Record Phenotyping Algorithms,Papez V.; Denaxas S.; Hemingway H.,2017,10.1109/CBMS.2017.73
+Standards for Global Health Information Systems,Ed Hammond W.,2017,10.1016/B978-0-12-804591-6.00005-7
+An architecture for semantically interoperable electronic health records,Toffanello A.; Gonçalves R.; Kitajima A.; Puttini R.; Aguiar A.,2017,10.3233/978-1-61499-830-3-235
+"An ontology-aware integration of clinical models, terminologies and guidelines: An exploratory study of the Scale for the Assessment and Rating of Ataxia (SARA)",Maarouf H.; Taboada M.; Rodriguez H.; Arias M.; Sesar Á.; Sobrido M.J.,2017,10.1186/s12911-017-0568-4
+Mapping HL7 CDA R2 formatted mass screening data to OpenEHR archetypes,Kobayashi S.; Kume N.; Yoshihara H.,2017,10.3233/978-1-61499-830-3-1328
+"Semantic interoperability in electronic health record databases: Standards, architecture and e-health systems",Bhalla S.; Sachdeva S.; Batra S.,2017,10.1007/978-3-319-72413-3_16
+Semantic Framework for Electronic Health Records,Puttini R.S.; Toffanello A.A.; Chaim R.M.; Alves G.; Rotzsch J.M.P.; Carvalho E.O.; Ishikawa E.; Araujo A.P.; Oliveira E.C.,2017,10.1109/ICSC.2017.98
+Bridging the Gap Between the Social and the Technical: The Enrolment of Socio-Technical Information Architects to Cope with the Two-Level Model of EPR Systems,Pedersen R.,2017,10.3233/978-1-61499-794-8-76
+iT2DM project: A framework for secondary use of EHR data for high-throughput phenotyping in diabetes,Wei Y.; Shang Y.; Wang J.; He D.; Zhou S.; Zhang W.; Shi L.; Chen Y.; Jiang K.; Wu H.; Dong J.,2017,10.3233/978-1-61499-830-3-263
+Applying an archetype-based approach to electroencephalography/event-related potential experiments in the EEGBase resource,Papež V.; Mouček R.,2017,10.3389/fninf.2017.00024
+Developing the first generally-available openEHR archetypes and templates for physiotherapy: An example of building clinical models and modelling capacity via student-led academic-industrial collaboration,Chihab J.; Franke H.; McNicoll I.; Darlison M.W.,2017,10.3233/978-1-61499-830-3-1321
+The emergence of openness in open-source projects: The case of openEHR,Curto-Millet D.; Shaikh M.,2017,10.1057/s41265-017-0042-x
+Applying openEHR's Guideline Definition Language to the SITS international stroke treatment registry: A European retrospective observational study,Anani N.; Mazya M.V.; Chen R.; Prazeres Moreira T.; Bill O.; Ahmed N.; Wahlgren N.; Koch S.,2017,10.1186/s12911-016-0401-5
+Research on Multidimensional Modelling for Personal Health Record,Fan H.; He J.; Liu G.,2017,10.1007/978-3-319-69182-4_15
+Relevant Lifelong Nutrition Information for the Prevention and Treatment of Childhood Obesity - Design and Creation of New openEHR Archetype Set,Maranhao P.A.; Bacelar-Silva G.M.; Goncalves-Ferreira D.N.; Vieira-Marques P.; Cruz-Correia R.J.,2017,10.1109/CBMS.2017.96
+A survey of standard information models for clinical decision support systems,Rizi S.A.M.; Roudsari A.,2017,10.3233/978-1-61499-742-9-249
+Generation of openEHR test datasets for benchmarking,El Helou S.; Karvonen T.; Yamamoto G.; Kume N.; Kobayashi S.; Kondo E.; Hiragi S.; Okamoto K.; Tamura H.; Kuroda T.,2017,10.3233/978-1-61499-830-3-1266
+Health information exchange for continuity of maternal and neonatal care supporting: A proof-of-concept based on ISO standard,Santos M.R.; de Sá T.Q.V.; da Silva F.E.; dos Santos Junior M.R.; Maia T.A.; Reis Z.S.N.,2017,10.4338/ACI-2017-06-RA-0106
+Infrastructuring in Healthcare through the OpenEHR Architecture,Ulriksen G.-H.; Pedersen R.; Ellingsen G.,2017,10.1007/s10606-017-9269-x
+Web services of transformation data based on OpenEHR into Health Level Seven (HL7) standards,Muslim A.; Puspitodjati S.; Benny Mutiara A.; Oswari T.,2017,10.1109/IAC.2017.8280571
+Exploiting temporal constraints of clinical guidelines by applying OpenEHR archetypes,Cintho L.M.M.; Garcia D.; Da Silva Santos B.H.; Sacchi L.; Quaglini S.; Moro C.M.C.,2017,10.3233/978-1-61499-830-3-1322
+Crypt-EHRServer: Protecting confidentiality with attribute-based encryption and encrypted query processing,Zhang R.; Chow C.; Hui L.C.K.,2017,10.1109/ISPAN-FCST-ISCC.2017.56
+Privacy-ensuring electronic health records in the cloud,Souza S.M.P.C.; Gonçalves R.F.; Leonova E.; Puttini R.S.; Nascimento A.C.A.,2017,10.1002/cpe.4045
+A tool for analyzing clinical datasets as blackbox,Qamar N.; Yang Y.; Nadas A.; Liu Z.; Sztipanovits J.,2017,10.1007/978-3-319-63194-3_15
+Challenges in design and creation of genetic open EHR-archetype,Maranhão P.A.; Bacelar-Silva G.; Gonçalves-Ferreira D.; Vieira-Marques P.; Cruz-Correia R.,2018,10.3233/978-1-61499-852-5-835
+Improving the use of big data analytics within electronic health records: A case study baseD OpenEHR,Khennou F.; Khamlichi Y.I.; Chaoui N.E.H.,2018,10.1016/j.procs.2018.01.098
+Microshare: Privacy-preserved medical resource sharing through microService architecture,Yang Y.; Zu Q.; Liu P.; Ouyang D.; Li X.,2018,10.7150/ijbs.24617
+Modeling EHR with the openEHR approach: An exploratory study in China Philip Payne,Min L.; Tian Q.; Lu X.; Duan H.,2018,10.1186/s12911-018-0650-6
+MARCIA: Applied clinical record management : c health record applied with EHRServer,Gomes F.; Paiva J.; Bezerra A.; Moura C.; Oliveira M.; Andrade O.,2018,10.1109/HealthCom.2018.8531096
+An openEHR based approach to improve the semantic interoperability of clinical data registry,Min L.; Tian Q.; Lu X.; An J.; Duan H.,2018,10.1186/s12911-018-0596-8
+Compatibility between metadata standards: Import pipeline of CDISC ODM to the samply.MDR,Kock-Schoppenhauer A.-K.; Ulrich H.; Wagen-Zink S.; Duhm-Harbeck P.; Ingenerf J.; Neuhaus P.; Dugas M.; Bruland P.,2018,10.3233/978-1-61499-852-5-221
+Expert mapping development system with disease searching sympthom based on ICD 10,Muslim A.; Mutiara A.B.; Suhendra A.; Oswari T.,2018,10.1109/IAC.2018.8780494
+Experiences of building a medical data acquisition system based on two-level modeling,Li B.; Li J.; Lan X.; An Y.; Gao W.; Jiang Y.,2018,10.1016/j.ijmedinf.2018.01.016
+Clinical knowledge governance framework for nationwide data infrastructure projects,Wulff A.; Haarbrandt B.; Marschollek M.,2018,10.3233/978-1-61499-858-7-196
+OpenEHR Modeling Applied to Eating Disorders in Clinical Practice: OpenEHR-Archetypes in Eating Disorders,Maranhão P.A.; Bacelar-Silva G.M.; Gonçalves-Ferreira D.N.; Calhau C.; Vieira-Marques P.; Alvarenga M.; Cruz-Correia R.J.,2018,10.1109/CBMS.2018.00014
+ORBDA: An openEHR benchmark dataset for performance assessment of electronic health record servers,Teodoro D.; Sundvall E.; Junior M.J.; Ruch P.; Freire S.M.,2018,10.1371/journal.pone.0190028
+Achieving interoperability between Arden-Syntax-Based clinical decision support and Openehr-Based data systems,Spineth M.; Rappelsberger A.; Adlassnig K.-P.,2018,10.3233/978-1-61499-858-7-338
+New approach to an openEHR introduction in a portuguese healthcare facility,Oliveira D.; Coimbra A.; Miranda F.; Abreu N.; Leuschner P.; Machado J.; Abelha A.,2018,10.1007/978-3-319-77700-9_21
+An interoperable clinical decision-support system for early detection of SIRS in pediatric intensive care using openEHR,Wulff A.; Haarbrandt B.; Tute E.; Marschollek M.; Beerbaum P.; Jack T.,2018,10.1016/j.artmed.2018.04.012
+Integration through mapping - An OpenEHR based approach for research oriented integration of health information systems,Reis L.F.; Ferreira D.G.; Maranhao P.A.; Cruz-Correia R.; Vieira-Marques P.,2018,10.23919/CISTI.2018.8399258
+Archetype modeling methodology,Moner D.; Maldonado J.A.; Robles M.,2018,10.1016/j.jbi.2018.02.003
+Nutrigenomic Information in the openEHR Data Set,Maranhão P.A.; Bacelar-Silva G.M.; Ferreira D.N.G.; Calhau C.; Vieira-Marques P.; Cruz-Correia R.J.,2018,10.1055/s-0038-1635115
+OpenEHR based systems and the general data protection regulation (GDPR),Sousa M.; Ferreira D.; Santos-Pereira C.; Bacelar G.; Frade S.; Pestana O.; Cruz-Correia R.,2018,10.3233/978-1-61499-852-5-91
+HiGHmed - An Open Platform Approach to Enhance Care and Research across Institutional Boundaries,Haarbrandt B.; Schreiweis B.; Rey S.; Sax U.; Scheithauer S.; Rienhoff O.; Knaup-Gregori P.; Bavendiek U.; Dieterich C.; Brors B.; Kraus I.; Thoms C.M.; Jäger D.; Ellenrieder V.; Bergh B.; Yahyapour R.; Eils R.; Consortium H.; Marschollek M.,2018,10.3414/ME18-02-0002
+OpenEHR modeling for genomics in clinical practice,Mascia C.; Uva P.; Leo S.; Zanetti G.,2018,10.1016/j.ijmedinf.2018.10.007
+Modeling of ETL-processes and processed information in clinical data warehousing,Tute E.; Steiner J.,2018,10.3233/978-1-61499-858-7-204
+Process Analysis and Decision Support Tools in Parenteral Nutrition in Children,Žitko Z.; Končar M.; Cifrek M.,2018,10.3233/978-1-61499-921-8-87
+An openEHR Approach to Detailed Clinical Model Development: Tobacco Smoking Summary Archetype as a Case Study,"Wei PC, Atalag K, Day K.",2019,10.1055/s-0039-1681074
+Openehr and general data protection regulation: Evaluation of principles and requirements,Gonçalves-Ferreira D.; Sousa M.; Bacelar-Silva G.M.; Frade S.; Antunes L.F.; Beale T.; Cruz-Correia R.,2019,10.2196/medinform.9845
+Comparison of open-source electronic health record systems based on functional and user performance criteria,Purkayastha S.; Allam R.; Maity P.; Gichoya J.W.,2019,10.4258/hir.2019.25.2.89
+"Configuration of input forms in EHR systems using spreadsheets, openEHR archetypes and templates",Sundvall E.; Terner A.; Broberg H.; Gillespie C.,2019,10.3233/SHTI190645
+Clinical workflows based on OpenEHR using BPM,Ribeiro T.; Oliveira S.; Portela C.; Santos M.,2019,10.5220/0007878203520358
+Using openEHR archetypes for automated extraction of numerical information from clinical narratives,Zubke M.; Bott O.J.; Marschollek M.,2019,10.3233/SHTI190820
+Representing rules for clinical data quality assessment based on openEHR guideline definition language,Tian Q.; Han Z.; An J.; Lu X.; Duan H.,2019,10.3233/SHTI190557
+Graph databases for openEHR clinical repositories,El Helou S.; Kobayashi S.; Yamamoto G.; Kume N.; Kondoh E.; Hiragi S.; Okamoto K.; Tamura H.; Kuroda T.,2019,10.1504/IJCSE.2019.103955
+Extending CQL with openEHR to express clinical quality indicators,Li M.; Zhi Y.; Lu X.; Cai H.,2019,10.3233/SHTI190681
+Clinical information model based data quality checks: Theory and example,Tute E.; Wulff A.; Marschollek M.; Gietzelt M.,2019,10.3233/978-1-61499-959-1-80
+Toward a Model for Personal Health Record Interoperability,Roehrs A.; Da Costa C.A.; Righi R.D.R.; Rigo S.J.; Wichman M.H.,2019,10.1109/JBHI.2018.2836138
+A Practical Exercise on Re-engineering Clinical Guideline Models Using Different Representation Languages,Marcos M.; Campos C.; Martínez-Salvador B.,2019,10.1007/978-3-030-37446-4_1
+A microservice-based approach for increasing software reusability in health applications,Da Silva M.A.P.; Times V.C.; De Araujo A.M.C.; Da Silva P.C.,2019,10.1109/AICCSA47632.2019.9035229
+Open or Closed: A Project Proposal for Investigating Two Different EHR Platform Approaches,Malm-Nicolaisen K.; Pedersen R.; Fagerlund A.J.,2019,10.3233/SHTI190165
+Open IoT architecture for continuous patient monitoring in emergency wards,Pereira C.; Mesquita J.; Guimarães D.; Santos F.; Almeida L.; Aguiar A.,2019,10.3390/electronics8101074
+Analyzing the performance of a blockchain-based personal health record implementation,Roehrs A.; da Costa C.A.; da Rosa Righi R.; da Silva V.F.; Goldim J.R.; Schmidt D.C.,2019,10.1016/j.jbi.2019.103140
+A graphical representation model for electronic health records: A preliminary study,Yang L.; Huang X.; Hou L.; Qian Q.; Li J.,2019,10.3233/SHTI190565
+Query translation between AQL and CQL,Fette G.; Kaspar M.; Liman L.; Ertl M.; Krebs J.; Dietrich G.; Störk S.; Puppe F.,2019,10.3233/SHTI190197
+Integrating an openEHR-based personalized virtual model for the ageing population within HBase 08 Information and Computing Sciences 0806 Information Systems,Kalogiannis S.; Deltouzos K.; Zacharaki E.I.; Vasilakis A.; Moustakas K.; Ellul J.; Megalooikonomou V.,2019,10.1186/s12911-019-0745-8
+"GIRLS, a Gateway for Interoperability of electronic health Record in Low-cost System : ∗ Interoperability beetween FHIR and OpenEHR Standards",Gomes F.; Freitas R.; Ribeiro M.; Moura C.; Andrade O.; Oliveira M.,2019,10.1109/HealthCom46333.2019.9009602
+Using openEHR's guideline definition language for representing percutaneous coronary intervention patient safety rules in a dynamic checklist system,Lu L.; Nan S.; Zhang S.; Lu X.; Duan H.,2019,10.3233/SHTI190611
+Mapping medication metadata from the ABDA data model to an openEHR medication archetype: A qualitative analysis,Bronsch T.; Böhm R.; Bulin C.; Bergh B.; Schreiweis B.,2019,10.3233/SHTI190471
+"IoMT platform for pervasive healthcare data aggregation, processing, and sharing based on oneM2M and openEHR",Rubí J.N.S.; Gondim P.R.L.,2019,10.3390/s19194283
+Discovering Clinical Information Models Online to Promote Interoperability of Electronic Health Records: A Feasibility Study of OpenEHR,Yang L.; Huang X.; Li J.,2019,10.2196/13504
+Automatic conversion of electronic medical record text for openEHR based on semantic analysis,Zhu Y.; Jin X.; Li L.,2019,10.1109/ITME.2019.00019
+Query translation between openEHR and i2b2,Fette G.; Kaspar M.; Liman L.; Dietrich G.; Ertl M.; Krebs J.; Störk S.; Puppe F.,2019,10.3233/978-1-61499-959-1-16
+A report on archetype modelling in a nationwide data infrastructure project,Wulff A.; Sommer K.K.; Ballout S.; Consortium H.; Haarbrandt B.; Gietzelt M.,2019,10.3233/978-1-61499-959-1-146
+Designing archetype models for each step of workflow in medication,Kobayashi S.; Kume N.; Yoshihara H.,2019,10.3233/SHTI190605
+Relational-like query language for archetypes in standardized electronic health records databases,Sachdeva S.; Chu W.; Bhalla S.,2019,10.1145/3297001.3297039
+A migration methodology from legacy to new electronic health record based OpenEHR,Khennou F.; El Houda Chaoui N.; Khamlichi Y.I.,2019,10.4018/IJEHMC.2019010104
+Extracting data from general practitioners' XML reports in Bulgarian healthcare to comply with ISO/EN 13606,Kaloyanova K.; Krastev E.; Mitreva E.,2019,10.1145/3351556.3351578
+A modeling approach based on multi-perspective declarative process mining for clinical activity,Xu H.; Pang J.; Yang X.; Yu J.; Zhao D.,2019,10.1109/BIBM47256.2019.8983089
+From ObsCare software to an OpenEHR platform: Modelling obstetric archetypes,Maranhão P.A.; Pereira A.M.; Bacelar-Silva G.; Gonçalves-Ferreira D.; Vieira-Marques P.; Silva-Costa T.; Cruz-Correia R.J.,2019,10.3233/978-1-61499-959-1-153
+Can openEHR represent the clinical concepts of an obstetric-specific EHR - Obscare software?,Alves D.S.; Maranhão P.A.; Pereira A.M.; Bacelar-Silva G.M.; Silva-Costa T.; Beale T.W.; Cruz-Correia R.J.,2019,10.3233/SHTI190328
+The Contribution of Conceptual Independence to IT Infrastructure Flexibility: The Case of openEHR,Tarenskeen D.; van de Wetering R.; Bakker R.; Brinkkemper S.,2020,10.1016/j.hlpt.2020.04.001
+A Novel Deep Similarity Learning Approach to Electronic Health Records Data,Gupta V.; Sachdeva S.; Bhalla S.,2020,10.1109/ACCESS.2020.3037710
+A computer-interpretable guideline for COVID-19: Rapid development and dissemination,Nan S.; Tang T.; Feng H.; Wang Y.; Li M.; Lu X.; Duan H.,2020,10.2196/21628
+Feasibility of using EN 13606 clinical archetypes for defining computable phenotypes,Tapuria A.; Kalra D.; Curcin V.,2020,10.3233/SHTI200156
+Translating openEHR models to FHIR,Fette G.; Ertl M.; Störk S.,2020,10.3233/SHTI200469
+Storage Efficient Implementation of Standardized Electronic Health Records Data,Sachdeva S.; Batra D.; Batra S.,2020,10.1109/BIBM49941.2020.9313343
+A comparative study of the arden syntax and GDL clinical knowledge representation languages,De Bruin J.S.; Chen R.; Rappelsberger A.; Adlassnig K.-P.,2020,10.3233/SHTI200525
+The openEHR Genomics Project to the memory of Gianluigi Zanetti,Mascia C.; Frexia F.; Uva P.; Zanetti G.; Pireddu L.; Giacomelli G.; Jaeger-Schmidt C.; Tomczak A.; Schumacher S.; Kraecher F.; Eils R.; Ljosland Bakke S.; Leslie H.,2020,10.3233/SHTI200199
+How to Improve the Reuse of Clinical Data - OpenEHR and OMOP CDM,Li B.; Tsui R.,2020,10.1088/1742-6596/1624/3/032041
+Clinical Decision Support Using Open Data,Hak F.; Guimarães T.; Abelha A.; Santos M.,2020,10.1007/978-3-030-45697-9_47
+Evaluation of openEHR repositories regarding standard compliance,Fechner M.; Brix T.J.; Hardt T.; Oehm J.; Dugas M.; Storck M.,2020,10.3233/SHTI200229
+Semi-automated method to generate simulated clinical data from OpenEHR platform-think!EHR,Rajput A.M.,2020,10.3233/SHTI200732
+System of criteria for treatment evaluation of acromegaly in Bulgaria,Krastev E.; Tcharaktchiev D.; Markov E.,2020,10.3233/SHTI200583
+Using openEHR in XDS.b Environments-opportunities and challenges,Wettstein R.; Merzweiler A.; Klass M.; Heinze O.,2020,10.3233/SHTI200554
+Stroke screening data modeling based on openEHR and NINDS Stroke CDE,Yang Y.; Xu H.; Qi B.; Niu X.; Li M.; Zhao D.,2020,10.1109/BIBM49941.2020.9313127
+Evaluation of Nephrology Dataset Through Deep Learning Technique,Dohare N.; Sachdeva S.,2020,10.1007/978-981-15-5827-6_11
+Development of an openEHR Template for COVID-19 Based on Clinical Guidelines,Li M.; Leslie H.; Qi B.; Nan S.; Feng H.; Cai H.; Lu X.; Duan H.,2020,10.2196/20239
+An OpenEHR Adoption in a Portuguese Healthcare Facility,Hak F.; Oliveira D.; Abreu N.; Leuschner P.; Abelha A.; Santos M.,2020,10.1016/j.procs.2020.03.075
+OpenEHR meets interoperability and knowledge engineering,Oliveira D.; Miranda F.M.M.; Coimbra A.; Abreu N.; Leuschner P.; Abelha A.C.,2020,10.4018/IJRQEH.2020010101
+Interoperable Internet of Medical Things platform for e-Health applications,Rubí J.N.S.; Gondim P.R.L.,2020,10.1177/1550147719889591
+Modeling clinical activities based on multi-perspective declarative process mining with openEHR’s characteristic,Xu H.; Pang J.; Yang X.; Yu J.; Li X.; Zhao D.,2020,10.1186/s12911-020-01323-7
+Nutrition Information in Oncology — Extending the Electronic Patient-Record Data Set,Maranhão P.A.; Pereira A.M.; Calhau C.; Ravasco P.; Bozzetti F.; Laviano A.; Isenring L.; Bandera E.V.; B. Huhmann M.; Vieira-Marques P.; Cruz-Correia R.J.,2020,10.1007/s10916-020-01649-9
+Designing an openEHR-Based Pipeline for Extracting and Standardizing Unstructured Clinical Data Using Natural Language Processing,Wulff A.; Mast M.; Hassler M.; Montag S.; Marschollek M.; Jack T.,2020,10.1055/s-0040-1716403
+openEHR archetype use and reuse within multilingual clinical data sets: case study,Leslie H.; Fiahsi F.,2020,10.2196/23361
+Management of a pandemic based on an openEHR approach,Oliveira D.; Miranda R.; Abreu N.; Leuschner P.; Abelha A.; Santos M.; Machado J.,2020,10.1016/j.procs.2020.10.072
+General patients' expectations on online accessibility to their electronic health records in Japan,"Elkhaili El Alami LS, Nemoto A, Nakata Y.",2020,10.35772/ghm.2020.01014
+An extended semantic interoperability model for distributed electronic health record based on fuzzy ontology semantics,Adel E.; El-Sappagh S.; Barakat S.; Hu J.-W.; Elmogy M.,2021,10.3390/electronics10141733
+Using NLP in openEHR archetypes retrieval to promote interoperability: a feasibility study in China,Sun B.; Zhang F.; Li J.; Yang Y.; Diao X.; Zhao W.; Shu T.,2021,10.1186/s12911-021-01554-2
+A patient-screening tool for clinical research based on electronic health records using openEHR: Development study,Li M.; Cai H.; Nan S.; Li J.; Lu X.; Duan H.,2021,10.2196/33192
+Investigation of users' experiences for online access to their electronic health records in Japan,"Alami LSEE, Nemoto A, Nakata Y.",2021,10.35772/ghm.2020.01073
+An OpenEHR template with the integrated german LOINC terms,Rajput A.-M.; Alkarkoukly S.,2021,10.3233/SHTI210371
+From OpenEHR to FHIR and OMOP data model for microbiology findings,Rinaldi E.; Thun S.,2021,10.3233/SHTI210189
+openEHR mapper - A tool to fuse clinical and genomic data using the openEHR standard,Reimer N.; Ulrich H.; Busch H.; Kock-Schoppenhauer A.-K.; Ingenerf J.,2021,10.3233/SHTI210055
+Cloud based interoperability in healthcare,Joshi R.; Negi S.; Sachdeva S.,2021,10.1007/978-981-15-6876-3_49
+openEHR based contextual problem list,Meredith J.; Mcnicoll I.; Whitehead N.; Dacey M.,2021,10.3233/SHTI210209
+Erratum: An environmental scan of sex and gender in electronic health records: Analysis of public information sources (Journal of Medical Internet Research (2020) 22:11 (e20050) DOI: 10.2196/20050),Lau F.; Antonio M.; Davison K.; Queen R.; Bryski K.,2021,10.2196/30764
+Representation of Diagnosis and Nursing Interventions in OpenEHR Archetypes,Gomes D.C.; Abreu N.; Sousa P.; Moro C.; Carvalho D.R.; Cubas M.R.,2021,10.1055/s-0041-1728706
+Steps towards an healthcare information model based on openEHR,Oliveira D.; Miranda R.; Hak F.; Abreu N.; Leuschner P.; Abelha A.; Machado J.,2021,10.1016/j.procs.2021.04.015
+An HL7 FHIR and GraphQL approach for interoperability between heterogeneous Electronic Health Record systems,Mukhiya S.K.; Lamo Y.,2021,10.1177/14604582211043920
+A meta-model for the guideline definition language,Grangel R.; Sancho C.C.; Martínez-Salvador B.; Marcos M.,2021,10.5220/0010543400590068
+openEHR s FAIR-enabling by design,Frexia F.; Mascia C.; Lianas L.; Delussu G.; Sulis A.; Meloni V.; Rio M.D.; Zanetti G.,2021,10.3233/SHTI210131
+Utilising the FOXS Stack for FAIR Architected Data Access,Meredith J.; Whitehead N.; Dacey M.,2021,10.3233/SHTI210832
+Mapping of OpenEHR archetypes to FHIR resources in use case oncology,Rajput A.M.; Brakollari I.,2021,10.3233/SHTI210616
+Application of openEHR archetypes to automate data quality rules for electronic health records: a case study,Tian Q.; Han Z.; Yu P.; An J.; Lu X.; Duan H.,2021,10.1186/s12911-021-01481-2
+A method for interoperable knowledge-based data quality assessment,Tute E.; Scheffner I.; Marschollek M.,2021,10.1186/s12911-021-01458-1
+Preliminary analysis of structured reporting in the HiGHmed use case cardiology: Challenges and measures,Kindermann A.; Tute E.; Benda S.; Löpprich M.; Richter-Pechanski P.; Dieterich C.,2021,10.3233/SHTI210068
+Verifying the feasibility of implementing semantic interoperability in different countries based on the OpenEHR approach: Comparative study of acute coronary syndrome registries,Min L.; Atalag K.; Tian Q.; Chen Y.; Lu X.,2021,10.2196/31288
+An openEHR virtual patient template for pancreatic cancer,Alkarkoukly S.; Rajput A.-M.,2021,10.3233/SHTI210618
+OpenEHR modeling: improving clinical records during the COVID-19 pandemic,Oliveira D.; Miranda R.; Leuschner P.; Abreu N.; Santos M.F.; Abelha A.; Machado J.,2021,10.1007/s12553-021-00556-4
+Transformation of microbiology data into a standardised data representation using OpenEHR,Wulff A.; Baier C.; Ballout S.; Tute E.; Sommer K.K.; Kaase M.; Sargeant A.; Drenkhahn C.; Fehling P.; Rey S.; Suhr M.; Eichel V.M.; Mutters N.T.; Heeg K.; Gastmeier P.; Behnke M.; Diaz L.A.P.; Thun S.; Eils R.; Mellmann A.; Tönnies H.; Zacher B.; Eckmanns T.; Sztyler T.; Malone B.; Merzweiler A.; Dugas M.; Storck M.; Wunderlich M.; von Landesberger T.; Gebel B.; Klingen T.; Glöckner S.; Schlüter D.; Marschollek M.; Scheithauer S.,2021,10.1038/s41598-021-89796-y
+OpenEHR Implementation Guide: Towards Standard Low-Code Healthcare Systems,Frade S.; Beale T.; Cruz-Correia R.J.,2022,10.3233/SHTI220030
+"Norway, Sweden, and Finland as forerunners in open ecosystems and openEHR",Pohjonen H.,2022,10.1016/B978-0-12-823413-6.00011-2
+OpenEHR based bariatric surgery follow-up,Afonso A.; Alvarez C.; Ferreira D.; Oliveira D.; Peixoto H.; Abelha A.; Machado J.,2022,10.1016/j.procs.2022.10.149
+Remote Patient Monitoring for Healthcare: A Big Challenge for Big Data,Stranieri A.; Balasubramanian V.,2022,10.4018/978-1-6684-3662-2.ch050
+Modelling clinical knowledge,Leslie H.,2022,10.1016/B978-0-12-823413-6.00016-1
+Permissioned Blockchain Approach using Open Data in Healthcare,Cunha J.; Duarte R.; Guimarães T.; Santos M.F.,2022,10.1016/j.procs.2022.10.144
+"Open Source Digital Health Software for Resilient, Accessible and Equitable Healthcare Systems",Paton C.; Braa J.; Muhire A.; Marco-Ruiz L.; Kobayashi S.; Fraser H.; Falcón L.; Marcelo A.,2022,10.1055/s-0042-1742508
+Cloud architecture for electronic health record systems interoperability,Gómez D.; Romero J.; López P.; Vázquez J.; Cappo C.; Pinto D.; Villalba C.,2022,10.3233/THC-212806
+Evidence-based biomedical information systems: The road ahead,Pedersen R.; Marco-Ruiz L.,2022,10.1016/B978-0-12-823413-6.00010-0
+A Systematic Integrated Literature Review of Clinical Data Management Platforms of HL7 FHIR,Walter Viktor Walter-Tscharf F.F.,2022,10.1109/HPCC-DSS-SmartCity-DependSys57074.2022.00340
+Aligning Semantic Interoperability Frameworks with the FOXS Stack for FAIR Health Data,Meredith J.; Whitehead N.; Dacey M.,2022,10.1055/a-1993-8036
+"Harvesting metadata in clinical care: a crosswalk between FHIR, OMOP, CDISC and openEHR metadata",Bönisch C.; Kesztyüs D.; Kesztyüs T.,2022,10.1038/s41597-022-01792-7
+Prediction of COVID-19 diagnosis based on openEHR artefacts,Oliveira D.; Ferreira D.; Abreu N.; Leuschner P.; Abelha A.; Machado J.,2022,10.1038/s41598-022-15968-z
+Toward an Adaptive Software Architecture for Archetype-Based Health-Care Applications,Da Silva M.A.P.; Times V.C.; De Araujo A.M.C.; Da Silva P.C.,2022,10.1109/MS.2021.3070418
+OpenEHR-to-FHIR: Converting openEHR Compositions to Fast Healthcare Interoperability Resources (FHIR) for the German Corona Consensus Dataset (GECCO),Ladas N.; Franz S.; Haarbrandt B.; Sommer K.K.; Kohler S.; Ballout S.; Fiebeck J.; Marschollek M.; Gietzelt M.,2022,10.3233/SHTI210963
+Business Process Model and Notation and openEHR Task Planning for Clinical Pathway Standards in Infections: Critical Analysis,Iglesias N.; Juarez J.M.; Campos M.,2022,10.2196/29927
+Using Knowledge Graph Structures for Semantic Interoperability in Electronic Health Records Data Exchanges,Sachdeva S.; Bhalla S.,2022,10.3390/info13020052
+Tracing the Progression of Sepsis in Critically Ill Children: Clinical Decision Support for Detection of Hematologic Dysfunction,Bode L.; Schamer S.; Böhnke J.; Bott O.J.; Marschollek M.; Jack T.; Wulff A.,2022,10.1055/a-1950-9637
+OpenEHR modelling applied to Complementary Diagnostics Requests,Oliveira D.; Santos A.; Braga D.; Silva I.; Sousa R.; Abelha A.; Machado J.,2022,10.1016/j.procs.2022.10.148
+Nursing Informatics Integration into Mainstream Health Informatics,Hovenga E.J.S.,2022,10.3233/SHTI220947
+Tracing COVID-19 Infection Chains Within Healthcare Institutions-Another Brick in the Wall Against SARS-CoV-2,Wulff A.; Biermann P.; Von Landesberger T.; Baumgartl T.; Schmidt C.; Alhaji A.Y.; Schick K.; Waldstein P.; Zhu Y.; Krefting D.; Scheithauer S.; Marschollek M.,2022,10.3233/SHTI220168
+"Structured, Harmonized, and Interoperable Integration of Clinical Routine Data to Compute Heart Failure Risk Scores",Sommer K.K.; Amr A.; Bavendiek U.; Beierle F.; Brunecker P.; Dathe H.; Eils J.; Ertl M.; Fette G.; Gietzelt M.; Heidecker B.; Hellenkamp K.; Heuschmann P.; Hoos J.D.E.; Kesztyüs T.; Kerwagen F.; Kindermann A.; Krefting D.; Landmesser U.; Marschollek M.; Meder B.; Merzweiler A.; Prasser F.; Pryss R.; Richter J.; Schneider P.; Störk S.; Dieterich C.,2022,10.3390/life12050749
+Semantic Architecture for Interoperability in Distributed Healthcare Systems,Adel E.; El-Sappagh S.; Barakat S.; Kwak K.S.; Elmogy M.,2022,10.1109/ACCESS.2022.3223676
+The road to interoperability: OpenEHR modelling and implementation,Xudong L.; Shan N.; Hailing C.; Yexuan C.; Mengyang L.; Li W.; Lingtong M.,2022,10.1016/B978-0-12-823413-6.00027-6
+A Study on the Software Architecture Documentation Practices and Maturity in Open-Source Software Development,Muszynski M.; Lugtigheid S.; Castor F.; Brinkkemper S.,2022,10.1109/ICSA53651.2022.00013
+Semantic interoperability in health records standards: a systematic literature review,de Mello B.H.; Rigo S.J.; da Costa C.A.; da Rosa Righi R.; Donida B.; Bez M.R.; Schunke L.C.,2022,10.1007/s12553-022-00639-w
+Performance of an openEHR based hospital information system,Kryszyn J.; Cywoniuk K.; Smolik W.T.; Wanta D.; Wróblewski P.; Midura M.,2022,10.1016/j.ijmedinf.2022.104757
+Caribbean/PAHO-Jamaican case study,Jones M.,2022,10.1016/B978-0-12-823413-6.00026-4
+A configurable method for clinical quality measurement through electronic health records based on openEHR and CQL,Li M.; Cai H.; Zhi Y.; Fu Z.; Duan H.; Lu X.,2022,10.1186/s12911-022-01763-3
+ETL Processes for Integrating Healthcare Data - Tools and Architecture Patterns,Cheng K.Y.; Pazmino S.; Schreiweis B.,2022,10.3233/SHTI220974
+Rule-based Clinical Decision Support System using the OpenEHR Standard,Silva S.T.; Hak F.; Machado J.,2022,10.1016/j.procs.2022.03.098
+Blockchain-Enabled System for Interoperable Healthcare,Pawar V.; Patel A.K.; Sachdeva S.,2022,10.1007/978-3-030-96600-3_9
+Strategies and Recommendation for Data Loading of FHIR-Based Data Marts with Focus on GDPR Compliance,Anywar M.; Schreiweis B.; Ulrich H.,2022,10.3233/SHTI220921
+Handling Time Constraints in Infection Clinical Pathways Using openEHR TP,Iglesias N.; Juarez J.M.; Campos M.,2022,10.3233/SHTI220021
+Application of openEHR Platform for Data Exchange in Ophthalmology,Velikov S.; Merdzhanov K.; Leventi N.; Kundurdzhiev T.,2022,
+Comparison of OpenEHR and HL7 FHIR Standards,Kryszyn J.; Smolik W.T.; Wanta D.; Midura M.; Wróblewski P.,2023,10.24425/ijet.2023.144330
+"Can OpenEHR, ISO 13606, and HL7 FHIR Work Together? An Agnostic Approach for the Selection and Application of Electronic Health Record Standards to the Next-Generation Health Data Spaces",Pedrera-Jiménez M.; García-Barrio N.; Frid S.; Moner D.; Boscá-Tomás D.; Lozano-Rubí R.; Kalra D.; Beale T.; Muñoz-Carrero A.; Serrano-Balazote P.,2023,10.2196/48702
+Security and Immutability of Open Data in Healthcare,Guimaraes T.; Duarte R.; Cunha J.; Gomes P.; Santos M.F.,2023,10.1016/j.procs.2023.03.111
+A Machine Learning Approach to Digitize Medical History and Archive in a Standard Format,Bouh M.M.; Hossain F.; Ahmed A.,2023,10.5220/0011986400003476
+Ontology-Based Data Modeling for NoSQL Databases: A Case Study in e-Healthcare Application,Sen P.S.; Mukherjee N.,2023,10.1007/s42979-022-01405-5
+A Data Acquisition and Consolidation System based on openEHR applied to Physical Medicine and Rehabilitation,Silva I.; Ferreira D.; Peixoto H.; Machado J.,2023,10.1016/j.procs.2023.03.113
+Health care in the information society,Ingram D.,2023,10.11647/OBP.0384
+Automated Monitoring of Adherence to Evidenced-Based Clinical Guideline Recommendations: Design and Implementation Study,Lichtner G.; Spies C.; Jurth C.; Bienert T.; Mueller A.; Kumpf O.; Piechotta V.; Skoetz N.; Nothacker M.; Boeker M.; Meerpohl J.J.; von Dincklage F.,2023,10.2196/41177
+Accelerate Clinical Decision Support System Development by Converting Ontology to OpenEHR Archetypes,Ding Y.; Hu Z.; Wang Y.; Xu X.; Nan S.; Duan H.,2023,10.1109/BigDIA60676.2023.10429558
+Handling security issues by using homomorphic encryption in multi-cloud environment,Ameur Y.; Bouzefrane S.; Thinh L.V.,2023,10.1016/j.procs.2023.03.050
+Standard-based personalized healthcare delivery for kidney illness using deep learning,Sachdeva S.,2023,10.1088/1361-6579/ace09f
+Digital Analysis of Clinical Screening Criteria for a Rare Disease - Behcet's Disease,Tapuria A.; Kalra D.; Curcin V.,2023,10.3233/SHTI230527
+Achieving Interoperable Datasets in Pediatrics: A Data Integration Approach,Bode L.; Mast M.; Rathert H.; Jack T.; Wulff A.,2023,10.3233/SHTI230496
+Migration from HL7 Clinical Document Architecture (CDA) to Fast Health Interoperability Resources (FHIR) in Infectious Disease Information System of Estonia,Bossenko I.; Linna K.; Piho G.; Ross P.,2023,10.1145/3555776.3577836
+OpenEHR and Business Intelligence in healthcare: An overview,Cunha J.; Duarte R.; Guimaraes T.; Santos M.F.,2023,10.1016/j.procs.2023.03.118
+Health care in the information society,Ingram D.,2023,10.11647/OBP.0335
+Eos and OMOCL: Towards a seamless integration of openEHR records into the OMOP Common Data Model,Kohler S.; Boscá D.; Kärcher F.; Haarbrandt B.; Prinz M.; Marschollek M.; Eils R.,2023,10.1016/j.jbi.2023.104437
+Interoperable Universal Resource Identifier for Selective Disclosure of Data,Latorre F.; Hawks C.E.; Colmenares B.; Verma D.; Gil M.; Sala N.,2023,10.3233/SHTI230465
+Enhancing Data Science Interoperability: An Innovative System for Managing OpenEHR Structures,Dias M.; Sousa R.; Duarte J.; Peixoto H.; Abelha A.; Machado J.,2023,10.1007/978-981-99-7969-1_21
+Telemonitoring in patients with asthma: a systematic review,Fadaizadeh L.; Velayati F.; Sanaat M.,2024,10.1080/02770903.2023.2255267
+Cross-Standard Health Data Harmonization using Semantics of Data Elements,Zhang S.; Cornet R.; Benis N.,2024,10.1038/s41597-024-04168-1
+Standardizing Care for Huntington's Disease: The Development of an openEHR Template for Motor Symptoms,Duque-Fernandes A.; Vieira-Marques P.,2024,10.1016/j.procs.2024.06.323
+"Unlocking Healthcare Data Potential: A Comprehensive Integration Approach with GraphQL, openEHR, Redis, and Pervasive Business Intelligence",Sousa R.; Abelha V.; Peixoto H.; Machado J.,2024,10.3390/technologies12120265
+The Use of OpenEHR Archetypes in Requirements Elicitation: Best Practices for Engaging Domain Experts in Healthcare Software Development,Silva J.V.D.A.; Araujo A.,2024,10.1109/ACCESS.2024.3496293
+An Open Information Model-Based Repository for Sustainable Re-Use of Heterogeneous Pandemics Research Data,Scheuermann K.; Hufeland P.; Haarbrandt B.; Hanss S.; Joseph M.; Kohler S.; Krefting D.; Richter J.; Tute E.; Wolf K.-H.; Marschollek M.,2024,10.3233/SHTI240808
+Adaption BERT for Medical Information Processing with ChatGPT and Contrastive Learning,Min L.; Fan Z.; Dou F.; Sun J.; Luo C.; Lv Q.,2024,10.3390/electronics13132431
+An In-Depth Exploration of Mapping openEHR and PGHD: A Case Study on Fitbit-Generated Data,Abedian S.; Taucher C.; Perscha S.; Djuris M.; Hussein R.; Hanke S.,2024,10.3233/SHTI240442
+A survey of openEHR Clinical Data Repositories,Delussu G.; Frexia F.; Mascia C.; Sulis A.; Meloni V.; Del Rio M.; Lianas L.,2024,10.1016/j.ijmedinf.2024.105591
+The reuse of electronic health records information models in the oncology domain: Studies with the bioframe framework,Bonacin R.; de Figueiredo E.B.; de Franco Rosa F.; dos Reis J.C.; Dametto M.,2024,10.1016/j.jbi.2024.104704
+An Open Data-Based Omnichannel Approach for Personalized Healthcare,Moreira A.; Santos M.F.,2024,10.3390/info15070415
+Challenges and Lessons Learned in Mapping HL7 v2 Data to openEHR: Insights from UKSH Medical Data Integration Center,Anywar M.; Macedo M.; Pazmino S.; Bronsch T.; Kinast B.; Kock-Schoppenhauer A.-K.; Schreiweis B.,2024,10.3233/SHTI240658
+Querying Healthcare Data in Knowledge-Based Systems,Soni K.; Sachdeva S.; Minj A.,2024,10.1007/978-3-031-58502-9_4
+Standardizing Corneal Transplantation Records Using openEHR: Case Study,Ferreira D.; Neto C.; Hak F.; Abelha A.; Santos M.; Machado J.,2024,10.2196/48407
+Integrating a Categorial Structure for Clinical Practice into EHRs,Hovenga E.J.S.,2024,10.3233/SHTI230930
+Large-Scale Standardized Image Integration for Secondary Use Research Projects,Ulrich H.; Anywar M.; Kinast B.; Schreiweis B.,2024,10.3233/SHTI230950
+Integration of Oncological Data into openEHR: A Path Towards Improved Cancer Care and Research,Schladetzky J.; Reimer N.; Nicolaus H.; Busch H.; Schreiweis B.; Kock-Schoppenhauer A.-K.,2024,10.3233/SHTI240655
+Federated Electronic Health Records Using a Blockchain,Chelsom J.; Marco-Ruiz L.; Skeidsvoll Solvang Ø.; Cassidy S.; Lintvedt O.; Granja C.; Solvoll T.,2024,10.3233/SHTI240630
+Transforming Healthcare Data: How OpenEHR is Revolutionizing AI-Driven Business Analytics,Cunha J.; Duarte R.; Lopes J.; Guimarães T.; Santos M.,2024,10.1016/j.procs.2024.11.170
+Improving Healthcare Quality with a LHS: From Patient-Generated Health Data to Evidence-Based Recommendations,Santos R.L.; Cruz-Correia R.,2024,10.3233/SHTI240387
+Structured Queries to AQL: Querying OpenEHR Data Leveraging a FHIR-Based Infrastructure for Federated Feasibility Queries,Rosenau L.; Ingenerf J.,2024,10.3233/SHTI230922
+Implementation of an Atrioventricular Valve Intervention Registry: Comparative Study of REDCap vs. CDR-Based openEHR Registry,Kinast B.; Rohde H.; Anywar M.; Bronsch T.; Voran J.; Kreidl F.; Frank D.; Schreiweis B.,2024,10.3233/SHTI240595
+Development and Implementation of an Integrated Standard e-Prescription Model in Alignment with Iranian National EHR,Abedian S.; Biglarkhani A.; Azami Ghadikolaei A.; Barahmand M.,2024,10.3233/SHTI240077
+OpenEHR logic module: a tool for creating decision rules,Silva B.; Hak F.; Santos M.; Abelha A.,2024,10.1016/j.procs.2023.12.229
+Semantic Mapping of Named-Entities in openEHR Templates and Ad-hoc Generation of Compositions,Ladas N.; Franz S.; Wolff D.; Rehberg A.; Marschollek M.; Gietzelt M.,2024,10.3233/SHTI240371
+Comparison of openEHR open-source servers,Kryszyn J.; Smolik W.T.; Wanta D.; Wróblewski P.; Midura M.,2024,10.24425/ijet.2024.149526
+Investigating E-Supply Chain Challenges in The Internet of Medical Things (IoMT),Alzoubi A.A.; Shammas S.; Alzoubi H.M.,2024,10.1007/978-3-031-55221-2_24
+The interaction of structured data using openEHR and large Language models for clinical decision support in prostate cancer,Kaiser P.; Yang S.; Bach M.; Breit C.; Mertz K.; Stieltjes B.; Ebbing J.; Wetterauer C.; Henkel M.,2025,10.1007/s00345-024-05423-1
+Application of the openEHR reference model for PGHD: A case study on the DH-Convener initiative,Abedian S.; Hanke S.; Hussein R.,2025,10.1016/j.ijmedinf.2024.105686
+An Ontology Alignment based on Machine learning for Integration of Patient Health Data,Gupta N.; Verma P.K.; Raj S.; Anushree; Rakesh N.; Gulhane M.,2025,10.12785/ijcds/1571028689
+"Corrigendum to “Application of the openEHR reference model for PGHD: A case study on the DH-Convener initiative” [Int. J. Med. Inf. 193 (2025) 105686] (International Journal of Medical Informatics (2025) 193, (S1386505624003496), (10.1016/j.ijmedinf.2024.105686))",Abedian S.; Hanke S.; Hussein R.,2025,10.1016/j.ijmedinf.2024.105750
+Technologies for Interoperable Internet of Medical Things Platforms to Manage Medical Emergencies in Home and Prehospital Care: Scoping Review,Seth M.; Jalo H.; Högstedt Å.; Medin O.; Sjöqvist B.A.; Candefjord S.,2025,10.2196/54470

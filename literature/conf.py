@@ -1,0 +1,2 @@
+BASE_DIR = "./data/CDISC_odm/"
+STANDARD = "CDISC_ODM"

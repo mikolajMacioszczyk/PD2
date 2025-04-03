@@ -1,0 +1,66 @@
+Title,Authors,Publication Year,DOI
+Current applications and future directions for the CDISC Operational Data Model standard: A methodological review,"Hume S, Aerts J, Sarnikar S, Huser V.",2016,10.1016/j.jbi.2016.02.016
+ODM-DQA-Reporter: A Generic Approach to Assess and Monitor Basic Data Quality of Medical Research Data in Operational Data Model (ODM) Format,"Süer A, Riepenhausen S, Storck M, Greulich L, Zeidler C, Ständer S, Dugas M.",2022,10.3233/SHTI220229
+Standardizing data exchange for clinical research protocols and case report forms: An assessment of the suitability of the Clinical Data Interchange Standards Consortium (CDISC) Operational Data Model (ODM),"Huser V, Sastry C, Breymaier M, Idriss A, Cimino JJ.",2015,10.1016/j.jbi.2015.06.023
+ODM Clinical Data Generator: Syntactically Correct Clinical Data Based on Metadata Definition,"Brix TJ, Becker L, Harbich T, Oehm J, Fechner M, Dugas M, Storck M.",2021,10.3233/SHTI210048
+Automated Transformation of CDISC ODM to OpenClinica,"Gessner S, Storck M, Hegselmann S, Dugas M, Soto-Rey I.",2017,
+A Pragmatic Method to Integrate Data From Preexisting Cohort Studies Using the Clinical Data Interchange Standards Consortium (CDISC) Study Data Tabulation Model: Case Study,"Matsuzaki K, Kitayama M, Yamamoto K, Aida R, Imai T, Ishida M, Katafuchi R, Kawamura T, Yokoo T, Narita I, Suzuki Y.",2023,10.2196/46725
+Converting ODM Metadata to FHIR Questionnaire Resources,"Doods J, Neuhaus P, Dugas M.",2016,
+Standardising the Development of ODM Converters: The ODMToolBox,"Soto-Rey I, Neuhaus P, Bruland P, Geßner S, Varghese J, Hegselmann S, Brix T, Dugas M, Storck M.",2018,
+Comparison and transformation between CDISC ODM and EN13606 EHR standards in connecting EHR data with clinical trial research data,"Tapuria A, Bruland P, Delaney B, Kalra D, Curcin V.",2018,10.1177/2055207618777676
+Interconnection of electronic medical record with clinical data management system by CDISC ODM,"Matsumura Y, Hattori A, Manabe S, Takeda T, Takahashi D, Yamamoto Y, Murata T, Mihara N.",2014,
+Federated electronic data capture (fEDC): Architecture and prototype,"Ganzinger M, Blumenstock M, Fürstberger A, Greulich L, Kestler HA, Marschollek M, Niklas C, Schneider T, Spreckelsen C, Tute E, Varghese J, Dugas M.",2023,10.1016/j.jbi.2023.104280
+Variant information systems for precision oncology,"Starlinger J, Pallarz S, Ševa J, Rieke D, Sers C, Keilholz U, Leser U.",2018,10.1186/s12911-018-0665-z
+Operational Data Model Conversion to ResearchKit,"Soto-Rey I, Geßner S, Dugas M.",2017,
+"ODM Data Analysis-A tool for the automatic validation, monitoring and generation of generic descriptive statistics of patient data","Brix TJ, Bruland P, Sarfraz S, Ernsting J, Neuhaus P, Storck M, Doods J, Ständer S, Dugas M.",2018,10.1371/journal.pone.0199242
+Hypergraph Based Data Model for Complex Health Data Exploration and Its Implementation in PREDIMED Clinical Data Warehouse,"Cancé C, Lenne C, Artemova S, Mossuz P, Moreau-Gaudry A; PREDIMED Group.",2022,10.3233/SHTI220091
+Interoperability in clinical research: from metadata registries to semantically annotated CDISC ODM,"Bruland P, Breil B, Fritz F, Dugas M.",2012,
+Legal Medicine Information System using CDISC ODM,"Kiuchi T, Yoshida K, Kotani H, Tamaki K, Nagai H, Harada K, Ishikawa H.",2013,10.1016/j.legalmed.2013.08.003
+A comprehensive clinical research database based on CDISC ODM and i2b2,"Meineke FA, Stäubert S, Löbe M, Winter A.",2014,
+Electronic Healthcare Record and clinical research in cardiovascular radiology. HL7 CDA and CDISC ODM interoperability,"El Fadly A, Daniel C, Bousquet C, Dart T, Lastic PY, Degoulet P.",2007,
+Towards achieving semantic interoperability of clinical study data with FHIR,"Leroux H, Metke-Jimenez A, Lawley MJ.",2017,10.1186/s13326-017-0148-7
+Analysis of Annotated Data Models for Improving Data Quality,"Ulrich H, Kock-Schoppenhauer AK, Andersen B, Ingenerf J.",2017,
+eSource for clinical trials: Implementation and evaluation of a standards-based approach in a real world trial,"Ethier JF, Curcin V, McGilchrist MM, Choi Keung SNL, Zhao L, Andreasson A, Bródka P, Michalski R, Arvanitis TN, Mastellos N, Burgun A, Delaney BC.",2017,10.1016/j.ijmedinf.2017.06.006
+Key Data Elements in Myeloid Leukemia,"Varghese J, Holz C, Neuhaus P, Bernardi M, Boehm A, Ganser A, Gore S, Heaney M, Hochhaus A, Hofmann WK, Krug U, Müller-Tidow C, Smith A, Weltermann A, de Witte T, Hehlmann R, Dugas M.",2016,
+Introductory evidence on data management and practice systems of forensic autopsies in sudden and unnatural deaths: a scoping review,"Prahladh S, van Wyk J.",2022,10.1186/s41935-022-00293-3
+Compatibility Between Metadata Standards: Import Pipeline of CDISC ODM to the Samply.MDR,"Kock-Schoppenhauer AK, Ulrich H, Wagen-Zink S, Duhm-Harbeck P, Ingenerf J, Neuhaus P, Dugas M, Bruland P.",2018,
+Standardized data sharing in a paediatric oncology research network--a proof-of-concept study,"Hochedlinger N, Nitzlnader M, Falgenhauer M, Welte S, Hayn D, Koumakis L, Potamias G, Tsiknakis M, Saraceno D, Rinaldi E, Ladenstein R, Schreier G.",2015,
+S2O - A software tool for integrating research data from general purpose statistic software into electronic data capture systems,"Bruland P, Dugas M.",2017,10.1186/s12911-016-0402-4
+Clinical Research Informatics Contributions from 2015,"Daniel C, Choquet R.",2016,10.15265/IY-2016-044
+Assessment of the Consistency of Categorical Features Within the DZHK Biobanking Basic Set,"Yusuf K, Tahar K, Sax U, Hoffmann W, Krefting D.",2022,10.3233/SHTI220809
+CDEGenerator: an online platform to learn from existing data models to build model registries,"Varghese J, Fujarski M, Hegselmann S, Neuhaus P, Dugas M.",2018,10.2147/CLEP.S170075
+Automated Import of Clinical Data from HL7 Messages into OpenClinica and tranSMART Using Mirth Connect,"Camacho Rodriguez JC, Stäubert S, Löbe M.",2016,
+Ontological Modelling and Execution of Phenotypic Queries in the Leipzig Health Atlas,"Uciteli A, Beger C, Wagner J, Kiel A, Meineke FA, Stäubert S, Löbe M, Hänsel R, Schuster J, Kirsten T, Herre H.",2021,10.3233/SHTI210052
+Convert-Pheno: A software toolkit for the interconversion of standard data models for phenotypic data,"Rueda M, Leist IC, Gut IG.",2024,10.1016/j.jbi.2023.104558
+Clinical Source Data Production and Quality Control in Real-world Studies: Proposal for Development of the eSource Record System,"Wang B, Lai J, Jin F, Liao X, Zhu H, Yao C.",2022,10.2196/42754
+"An Open-Source, Standard-Compliant, and Mobile Electronic Data Capture System for Medical Research (OpenEDC): Design and Evaluation Study","Greulich L, Hegselmann S, Dugas M.",2021,10.2196/29176
+Multilingual Medical Data Models in ODM Format: A Novel Form-based Approach to Semantic Interoperability between Routine Healthcare and Clinical Research,"Breil B, Kenneweg J, Fritz F, Bruland P, Doods D, Trinczek B, Dugas M.",2012,10.4338/ACI-2012-03-RA-0011
+One Step Away from Technology but One Step Towards Domain Experts-MDRBridge: A Template-Based ISO 11179-Compliant Metadata Processing Pipeline,"Kock-Schoppenhauer AK, Kroll B, Lambarki M, Ulrich H, Stahl-Toyota S, Habermann JK, Duhm-Harbeck P, Ingenerf J, Lablans M.",2019,10.1055/s-0039-3399579
+International Corneal and Ocular Surface Disease Dataset for Electronic Health Records,"Ting DSJ, Kaye SB, Rauz S; International Corneal and Ocular Surface Disease (C&OSD) Dataset Development Working Group.",2025,10.1101/2025.01.18.25320772
+Foundations of a metadata repository for databases of registers and trials,"Stausberg J, Löbe M, Verplancke P, Drepper J, Herre H, Löffler M.",2009,
+Towards a Single Data Exchange Standard for Use in Healthcare and in Clinical Research,Aerts J.,2018,
+The REUSE project: EHR as single datasource for biomedical research,"El Fadly A, Lucas N, Rance B, Verplancke P, Lastic PY, Daniel C.",2010,
+CohortExplorer: A Generic Application Programming Interface for Entity Attribute Value Database Schemas,"Dixit A, Dobson RJ.",2014,10.2196/medinform.3339
+Implementation of an ODM and HL7 Compliant Electronic Patient-Reported Outcome System,"Soto-Rey I, Dugas M, Storck M.",2016,
+Facilitating Study and Item Level Browsing for Clinical and Epidemiological COVID-19 Studies,"Schmidt CO, Darms J, Shutsko A, Löbe M, Nagrani R, Seifert B, Lindstädt B, Golebiewski M, Koleva S, Bender T, Bauer CR, Sax U, Hu X, Lieser M, Junker V, Klopfenstein S, Zeleke A, Waltemath D, Pigeot I, Fluck J; NFDI4Health Task Force COVID-19.",2021,10.3233/SHTI210284
+Unlocking Data for Clinical Research - The German i2b2 Experience,"Ganslandt T, Mate S, Helbing K, Sax U, Prokosch HU.",2011,10.4338/ACI-2010-09-CR-0051
+Translational Medicine and Patient Safety in Europe: TRANSFoRm--Architecture for the Learning Health System in Europe,"Delaney BC, Curcin V, Andreasson A, Arvanitis TN, Bastiaens H, Corrigan D, Ethier JF, Kostopoulou O, Kuchinke W, McGilchrist M, van Royen P, Wagner P.",2015,10.1155/2015/961526
+Integrating x4T-EDC into an Image-Portal to Establish an Ophthalmic Reading Center,"Bruland P, Kathöfer U, Treder M, Eter N, Dugas M.",2017,
+Common Data Elements for Meaningful Stroke Documentation in Routine Care and Clinical Research: Retrospective Data Analysis,"Berenspöhler S, Minnerup J, Dugas M, Varghese J.",2021,10.2196/27396
+Open-source mobile digital platform for clinical trial data collection in low-resource settings,"van Dam J, Omondi Onyango K, Midamba B, Groosman N, Hooper N, Spector J, Pillai GC, Ogutu B.",2017,10.1136/bmjinnov-2016-000164
+Automatic Conversion of Metadata from the Study of Health in Pomerania to ODM,"Hegselmann S, Gessner S, Neuhaus P, Henke J, Schmidt CO, Dugas M.",2017,
+ODMSummary: A Tool for Automatic Structured Comparison of Multiple Medical Forms Based on Semantic Annotation with the Unified Medical Language System,"Storck M, Krumm R, Dugas M.",2016,10.1371/journal.pone.0164569
+Core Data Elements in Acute Myeloid Leukemia: A Unified Medical Language System-Based Semantic Analysis and Experts' Review,"Holz C, Kessler T, Dugas M, Varghese J.",2019,10.2196/13554
+Design of case report forms based on a public metadata registry: re-use of data elements to improve compatibility of data,Dugas M.,2016,10.1186/s13063-016-1691-8
+"Conceptual Design, Implementation, and Evaluation of Generic and Standard-Compliant Data Transfer into Electronic Health Records","Blitz R, Dugas M.",2020,10.1055/s-0040-1710023
+ODM2CDA and CDA2ODM: tools to convert documentation forms between EDC and EHR systems,Dugas M.,2015,10.1186/s12911-015-0163-5
+"Design and Implementation of an Informatics Infrastructure for Standardized Data Acquisition, Transfer, Storage, and Export in Psychiatric Clinical Routine: Feasibility Study","Blitz R, Storck M, Baune BT, Dugas M, Opel N.",2021,10.2196/26681
+The need for harmonized structured documentation and chances of secondary use - results of a systematic analysis with automated form comparison for prostate and breast cancer,"Krumm R, Semjonow A, Tio J, Duhme H, Bürkle T, Haier J, Dugas M, Breil B.",2014,10.1016/j.jbi.2014.04.008
+Integrated Data Repository Toolkit (IDRT). A Suite of Programs to Facilitate Health Analytics on Heterogeneous Medical Data,"Bauer CR, Ganslandt T, Baum B, Christoph J, Engel I, Löbe M, Mate S, Stäubert S, Drepper J, Prokosch HU, Winter A, Sax U.",2016,10.3414/ME15-01-0082
+EMR-integrated minimal core dataset for routine health care and multiple research settings: A case study for neuroinflammatory demyelinating diseases,"von Martial S, Brix TJ, Klotz L, Neuhaus P, Berger K, Warnke C, Meuth SG, Wiendl H, Dugas M.",2019,10.1371/journal.pone.0223886
+The ISO/IEC 11179 norm for metadata registries: does it cover healthcare standards in empirical research?,"Ngouongo SM, Löbe M, Stausberg J.",2013,10.1016/j.jbi.2012.11.008
+"Standardized Cardiovascular Quality Assurance Forms with Multilingual Support, UMLS Coding and Medical Concept Analyses","Varghese J, Schulze Sünninghausen S, Dugas M.",2015,
+Analyses of medical data models - identifying common concepts and items in a repository of medical forms,"Breil B, Dugas M.",2013,
+Case Report Form Reporter: A Key Component for the Integration of Electronic Medical Records and the Electronic Data Capture System,"Matsumura Y, Hattori A, Manabe S, Takahashi D, Yamamoto Y, Murata T, Nakagawa A, Mihara N, Takeda T.",2017,
+The single source architecture x4T to connect medical documentation and clinical research,"Dziuballe P, Forster C, Breil B, Thiemann V, Fritz F, Lechtenbörger J, Vossen G, Dugas M.",2011,
+"Standardized quality assurance forms for organ transplantations with multilingual support, open access and UMLS coding","Varghese J, Sünninghausen SS, Dugas M.",2015,

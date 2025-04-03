@@ -1,0 +1,5 @@
+PubMed: https://pubmed.ncbi.nlm.nih.gov/?term=%28HL7+v3%5BTitle%2FAbstract%5D%29+OR+%28HL7+version+3%5BTitle%2FAbstract%5D%29+OR+%28HL7v3%5BTitle%2FAbstract%5D%29
+IEEE: https://ieeexplore.ieee.org/search/searchresult.jsp?action=search&newsearch=true&matchBoolean=true&queryText=(%22Abstract%22:HL7%20v3)%20OR%20(%22Abstract%22:HL7%20version%203)%20OR%20(%22Abstract%22:HL7v3)
+Scopus: https://www.scopus.com/results/results.uri?sort=plf-f&src=s&sid=59f5dd5a7421eaaf2af740ecc2c739fb&sot=a&sdt=a&sl=53&s=TITLE-ABS-KEY%28%22HL7+v3%22+OR+%22HL7+version+3%22+OR+%22HL7v3%22%29&origin=searchadvanced&editSaveSearch=&txGid=01b8bbd749108e3612d27af221c7b647&sessionSearchId=59f5dd5a7421eaaf2af740ecc2c739fb&limit=10
+
+Date: 23.03.2025

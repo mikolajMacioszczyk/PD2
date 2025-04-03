@@ -1,0 +1,5 @@
+PubMed: https://pubmed.ncbi.nlm.nih.gov/?term=openEHR%5BTitle%2FAbstract%5D
+IEE: https://ieeexplore.ieee.org/search/searchresult.jsp?action=search&newsearch=true&matchBoolean=true&queryText=(%22Abstract%22:openEHR)
+Scopus: https://www.scopus.com/results/results.uri?sort=plf-f&src=s&sid=e251c59995d4864b1b617d54f037bfe7&sot=a&sdt=a&sl=22&s=TITLE-ABS-KEY%28openEHR%29&origin=searchadvanced&editSaveSearch=&txGid=f180a1fed5da65ec8f22587c072fcfaf&sessionSearchId=e251c59995d4864b1b617d54f037bfe7&limit=10
+
+Date: 23.03.2025

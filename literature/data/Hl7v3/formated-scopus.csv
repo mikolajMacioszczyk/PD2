@@ -1,0 +1,144 @@
+Title,Authors,Publication Year,DOI
+Interoperability of medical device information and the clinical applications: An HL7 RMIM based on the ISO/IEEE 11073 DIM,Yuksel M.; Dogac A.,2011,10.1109/TITB.2011.2151868
+Towards standards based health data extraction facilitating process mining,Helm E.; Franz B.; Schuler A.; Krauss O.; Küng J.,2017,
+Using FHIR to develop a healthcare mobile application,Lamprinakos G.C.; Mousas A.S.; Kapsalis A.P.; Kaklamani D.I.; Venieris I.S.; Boufis A.D.; Karmiris P.D.; Mantzouratos S.G.,2015,10.1109/MOBIHEALTH.2014.7015927
+Comparing the apgar score representation in HL7 and OpenEHR formalisms,Cuggia M.; Bayat S.; Rossille D.; Poulain P.; Pladys P.; Robert H.; Duvauferrier R.,2009,10.3233/978-1-60750-044-5-250
+Graciously handling a level of change in a complex specification: Configuration management for community-scale implementation of an HL7v3 messaging specification,McCay C.; Odling-Smee M.; Waller J.; Wrightson A.,2009,10.4242/BalisageVol3.Wrightson01
+Personalized message routing policy in pervasive eHealth applications based on HL7 RIM,Guizani N.; Fayn J.,2015,10.3233/978-1-61499-516-6-265
+Autonomous mapping of HL7 RIM and relational database schema,Umer S.; Afzal M.; Hussain M.; Latif K.; Ahmad H.F.,2012,10.1007/s10796-011-9309-x
+New approach to an openEHR introduction in a portuguese healthcare facility,Oliveira D.; Coimbra A.; Miranda F.; Abreu N.; Leuschner P.; Machado J.; Abelha A.,2018,10.1007/978-3-319-77700-9_21
+Tool-assisted healthcare knowledge to HL7 message translation,Jayaratna P.; Sartipi K.,2009,10.1109/ICCME.2009.4906662
+R2RML-based access and querying to relational clinical data with morph-RDB,Priyatna F.; Calvo R.A.; Paraiso-Medina S.; Padron-Sanchez G.; Corcho O.,2015,
+Design and implementation of synoptic operative report template using interoperable standards,Bonney W.; Christie S.; Paterson G.; Thibault-Halman G.; Alsulaiman A.,2013,10.3233/978-1-61499-203-5-195
+Finnish national archive of health information (KanTa): General concepts and information model,Suna T.,2011,
+Research and implementation of medical information format conversion based on HL7 Version 2.x,Lu X.; Gu Y.; Zhao J.; Yu N.; Jia W.,2011,10.1109/CSSS.2011.5974909
+Low level communication management for e-health systems,Riva G.; Zerbini C.; Voos J.; Centeno C.; González E.,2011,10.1088/1742-6596/332/1/012052
+Proposed model for a Romanian register of chronic diseases in children,Gabor-Harosa F.M.; Stan O.P.; Daina L.; Mocean F.,2016,10.1016/j.cmpb.2016.01.022
+Representing the glasgow coma scale in IT: Proper specification is required for assessment scales,Goossen W.; Oemig F.,2014,10.3233/978-1-61499-393-3-42
+A model-driven approach for biomedical data integration,Carlson D.; Farkash A.; Timm J.T.E.,2010,10.3233/978-1-60750-588-4-1164
+An ontology architecture for HL7 V3: Pitfalls and outcomes,Oemig F.; Blobel B.,2009,10.1007/978-3-642-03893-8_118
+A Proposed the Internet of Things (IoT) Framework for Health Sector in Indonesia,Ariyanti S.; Kautsarina,2018,10.1109/TENCONSpring.2018.8691998
+A SOA-Based solution to monitor vaccination coverage among HIV-Infected patients in liguria,Giannini B.; Gazzarata R.; Sticchi L.; Giacomini M.,2017,10.3233/978-1-61499-678-1-327
+Improving the data compatibility of PHR and telecare solutions,Reilent E.; Lõõbas I.; Kuusik A.; Ross P.,2011,10.1007/978-3-642-23508-5_240
+Standard Health Level Seven for Odontological Digital Imaging,Abril-Gonzalez M.; Portilla F.A.; Jaramillo-Mejia M.C.,2017,10.1089/tmj.2015.0251
+Using archetypes and Domain Specific Languages on development of ubiquitous applications to pervasive healthcare,Menezes A.L.; Cirilo C.E.; De Moraes J.L.C.; De Souza W.L.; Do Prado A.F.,2010,10.1109/CBMS.2010.6042677
+Hands-on approach for teaching HL 7 version 3,Noumeir R.; Pambrun J.-F.,2010,10.1109/ITAB.2010.5687707
+Telemedical events: Intelligent delivery of telemedical values using CEP and HL7,Meister S.,2012,10.1007/978-3-642-29231-6_1
+An interoperability test framework for HL7-based systems,Namli T.; Aluc G.; Dogac A.,2009,10.1109/TITB.2009.2016086
+International Interoperability through unified universal HL7 v3 Green Messaging,Sabar M.I.; Jayaweera P.M.; Edirisuriya E.A.T.A.,2016,10.1109/ICTER.2015.7377675
+OpenEHR meets interoperability and knowledge engineering,Oliveira D.; Miranda F.M.M.; Coimbra A.; Abreu N.; Leuschner P.; Abelha A.C.,2020,10.4018/IJRQEH.2020010101
+Challenges of interoperability using HL7 v3 in Czech healthcare,Nagy M.; Preckova P.; Seidl L.; Zvarova J.,2010,10.3233/978-1-60750-563-1-122
+"Bridging the semantics gap between terminologies, ontologies, and information models",Schulz S.; Schober D.; Daniel C.; Jaulent M.-C.,2010,10.3233/978-1-60750-588-4-1000
+Architectural approaches for HL7-based health information systems implementation,López D.M.; Blobel B.,2010,10.3414/ME09-02-0012
+HL7 FHIR: An agile and RESTful approach to healthcare information exchange,Bender D.; Sartipi K.,2013,10.1109/CBMS.2013.6627810
+Information persistence services designed to support home care,Rocha N.P.; Queirós A.; Augusto F.; Rodríguez Y.L.; Cardoso C.; Grade J.M.; Quintas J.,2015,10.2196/medinform.3699
+HL7v3 CDA Rel.2 prescription: Localization experience and GP integration project,Calamai R.; Giarré L.,2010,10.1109/WHCM.2010.5441273
+Efficient metadata loading algorithm for generation and parsing of health level 7 version 3 messages,Mehmood Y.; Javed M.Y.; Afzal M.; Ahmad H.F.,2009,10.1109/ICET.2009.5353154
+Information overload in telemedicine: Using complex event processing and context for intelligent information filtering and supply,Meister S.; Koch O.,2012,10.3182/20120403-3-DE-3010.00089
+Clinical data integration of distributed data sources using Health Level Seven (HL7) v3-RIM mapping,Viangteeravat T.; Anyanwu M.N.; Nagisetty V.R.; Kuscu E.; Sakauye M.E.; Wu D.,2011,10.1186/2043-9113-1-32
+Implementing an HL7 version 3 modeling tool from an Ecore model,Bánfai B.; Ulrich B.; Török Z.; Natarajan R.; Ireland T.,2009,10.3233/978-1-60750-044-5-157
+Advances to semantic interoperability through CPR ontology enrichment extracting from SOAP framework reports,Mendes D.; Rodrigues I.P.,2012,
+Conceptual model of digital pH meter in telemedicine,Rehman R.; Halai M.,2011,10.1109/INMIC.2011.6151517
+A methodological approach for ontologising and aligning health level seven (HL7) applications,Sahay R.; Fox R.; Zimmermann A.; Polleres A.; Hauswrith M.,2011,10.1007/978-3-642-23300-5_9
+Customized test data generator for HL7v3 based healthcare information systems,Egner A.; Moldoveanu F.; Goga N.; Moldoveanu A.; Asavei V.; Morar A.,2013,
+SU‐FF‐T‐481: Computerized Implementation of Radiation Treatment Planning Directives,Mcshan D.; Kessler M.; Keranen W.; Fraass B.,2009,10.1118/1.3181979
+Providing Full Semantic Interoperability for the Fast Healthcare Interoperability Resources Schemas with Resource Description Framework,Luz M.P.; Nogueira J.R.D.M.; Cavalini L.T.; Cook T.W.,2015,10.1109/ICHI.2015.74
+Validating EHR documents: Automatic schematron generation using archetypes,Pfeiffer K.; Duftschmid G.; Rinner C.,2014,10.3233/978-1-61499-397-1-101
+Standardizing intensive care device data to enable secondary usages,Ingenerf J.; Kock A.-K.; Poelker M.; Seidl K.; Zeplin G.; Mersmann S.; Handels H.,2012,10.3233/978-1-61499-101-4-619
+Semantic validation of the use of SNOMED CT in HL7 clinical documents,Heymans S.; McKennirey M.; Phillips J.,2011,10.1186/2041-1480-2-2
+An agent-oriented and service-oriented architecture in medicine,Moldoveanu F.; Cristescu S.A.,2013,
+Android framework for automatic diagnosis of heart diseases,Santos H.S.; Dutra O.O.; Moreira E.M.; Ferreira L.H.C.,2017,10.1109/MeMeA.2017.7985878
+Exemplary use cases based on the generic data model for the integrated intelligent computer-assisted language learning (iiCALL) environment,Wahl H.; Winiwarter W.,2014,10.1145/2684200.2684334
+Exchanging care records using HL7 V3 care provision messages.,Goossen W.; Langford L.H.,2014,10.1136/amiajnl-2013-002264
+Analysis and development of a technological solution based on the HL7 V3 standard for ubiquitous access to immunization control; [Análisis y desarrollo de una solución tecnológica basada en el estándar HL7 V3 para el acceso ubicuo al control de la vacunación],Saldana-Barrios J.J.; Concepcion-Patino D.,2022,
+Expressing patient selection criteria based on HL7 V3 templates within the open-source tool ART-DECOR,Simon O.T.T.; Rinner C.; Duftschmid G.,2019,10.3233/978-1-61499-971-3-226
+Querying clinical data in HL7 RIM based relational model with morph-RDB,Priyatna F.; Alonso-Calvo R.; Paraiso-Medina S.; Corcho O.,2017,10.1186/s13326-017-0155-8
+Modeling problem-oriented clinical notes,Cillessen F.H.J.M.; de Vries Robbé P.F.,2012,10.3414/ME11-01-0064
+Custom HL7 V3 message provider using web services security features,Voos J.; Riva G.; Zerbini C.; Centeno C.; Gonzalez E.,2010,10.1109/IEMBS.2010.5627666
+Ontology-based interoperability service for HL7 interfaces implementation,González C.; Blobel B.; López D.M.,2010,10.3233/978-1-60750-563-1-108
+Analyzing SNOMED CT and HL7 terminology binding for semantic interoperability on post-genomic clinical trials,Aso S.; Perez-Rey D.; Alonso-Calvo R.; Rico-Diez A.; Bucur A.; Claerhout B.; Maojo V.,2013,10.3233/978-1-61499-289-9-980
+Development of clinical reporting system through HL7 FHIR web services,Sharma M.; Aggarwal H.,2017,10.2174/2210327908666180118101231
+Medical data transmission using cell phone networks,Voos J.; Centeno C.; Riva G.; Zerbini C.; Gonzalez E.,2011,10.1088/1742-6596/332/1/012051
+Simplifying HL7 version 3 messages,Worden R.; Scott P.,2011,10.3233/978-1-60750-806-9-709
+A data model based on semantically enhanced HL7 RIM for sharing patient data of breast cancer clinical trials,Moratilla J.M.; Alonso-Calvo R.; Molina-Vaquero G.; Paraiso-Medina S.; Perez-Rey D.; Maojo V.,2013,10.3233/978-1-61499-289-9-971
+A software tool for large-scale sharing and querying of clinical documents modeled using HL7 version 3 standard,Rao P.R.; Swami T.K.; Rao D.S.; Barnes M.J.; Thorve S.G.; Natoo P.,2012,10.1145/2110363.2110417
+A communication standards ontology using basic formal ontologies,Oemig F.; Blobel B.,2010,10.3233/978-1-60750-565-5-105
+Semantic warehousing of diverse biomedical information,Bianchi S.; Burla A.; Conti C.; Farkash A.; Kent C.; Maman Y.; Shabo A.,2009,10.1007/978-3-642-04941-5_9
+Information Architecture for Perinatal Registration in the Netherlands,Goossen W.T.F.; Arns-Schiere A.M.,2017,10.1016/j.jogn.2016.11.011
+Biomedical data integration - Capturing similarities while preserving disparities,Bianchi S.; Burla A.; Conti C.; Farkash A.; Kent C.; Maman Y.; Shabo A.,2009,10.1109/IEMBS.2009.5332650
+Enabling semantic interoperability in multi-centric clinical trials on breast cancer,Alonso-Calvo R.; Perez-Rey D.; Paraiso-Medina S.; Claerhout B.; Hennebert P.; Bucur A.,2015,10.1016/j.cmpb.2015.01.003
+An automatic method for deriving OWL ontologies from XML documents,Minutolo A.; Esposito A.; Ciampi M.; Esposito M.; Cassetti G.,2014,10.1109/3PGCIC.2014.88
+Checking the quality of detailed clinical models: Instrument application,Van Munster D.; Krediet I.; Goossen W.,2016,10.3233/978-1-61499-658-3-367
+HL-7 Based Middleware Standard for Healthcare Information System: FHIR,Sharma M.; Aggarwal H.,2019,10.1007/978-981-13-1217-5_87
+The use of standards in embedded devices to achieve end to end semantic interoperability on health systems,Cosío-León M.A.; Ojeda-Carreño D.; Nieto-Hipólito J.I.; Ibarra-Hernández J.A.,2018,10.1016/j.csi.2017.11.006
+BioMIMS - SOA platform for research of rare hereditary diseases,Melament A.; Peres Y.; Vitkin E.; Kostirev I.; Shmueli N.; Sangiorgi L.; Mordenti M.; D'Ascia S.,2011,10.1109/SRII.2011.19
+Multi-domain healthcare services in Thailand via future internet,Tantatsanawong P.; U.-Aroon P.,2011,10.1109/SRII.2011.21
+Development of conversion tools from V2 to V3 based on caAdapter,Um K.S.; Kim H.S.; Hong H.S.; Cho H.,2010,
+Research on basic information collection of electronic health records,Dong G.; Liu C.,2012,10.2991/citcs.2012.187
+A Service Oriented Architecture Approach to Achieve Interoperability between Immunization Information Systems in Iran,Hosseini M.; Ahmadi M.; Dixon B.E.,2014,
+Design and implementation of HL7 V3 standard-based service aware system,Alam M.; Hussain M.; Afzal M.; Maqbool M.; Ahmad H.F.; Razzaq S.,2011,10.1109/ISADS.2011.62
+Automated testing of healthcare document transformations in the PICASSO interoperability platform,Pascale M.; Roselli M.; Rugani U.; Bartolini C.; Bertolino A.; Lonetti F.; Marchetti E.; Polini A.,2009,10.1109/ICSE-COMPANION.2009.5070974
+Design of a domain model for clinical engineering within the HL7 reference information model,Gaion S.; Mininel S.; Vatta F.; Ukovich W.,2010,10.1109/WHCM.2010.5441265
+A method based on Bayesian network to retrieve clinical information models: A case study of HL7 V3,Xiaoshuo H.; Jiao Y.L.L.,2020,10.3969/j.issn.0258-8021.2020.04.007
+Digital health care ecosystem: SOA compliant HL7 based health care information interchange,Janjua N.K.; Hussain M.; Afzal M.; Ahmad H.F.,2009,10.1109/DEST.2009.5276681
+A new tool for sharing and querying of clinical documents modeled using HL7 Version 3 standard,Slavov V.; Rao P.; Paturi S.; Swami T.K.; Barnes M.; Rao D.; Palvai R.,2013,10.1016/j.cmpb.2013.07.002
+Semantic mapping to simplify deployment of HL7 v3 Clinical Document Architecture,Scott P.; Worden R.,2012,10.1016/j.jbi.2012.02.006
+HL7v3 CDA Rel.2 patient summary and chronic care model: Localization experience and GPIHS integration project,Calamai R.; Giarré L.,2010,10.1109/ICSMC.2010.5642223
+Testing conformance and inter - Operability of eHealth applications,Namli T.; Dogac A.,2010,10.3414/ME09-02-0022
+Testing the interoperability of HL7-based applications using TTCN-3,Egner A.; Moldoveanu F.; Moldoveanu A.; Asavei V.; Morar A.A.; Boiangiu C.A.,2010,
+Towards a generic data model for the Integrated Intelligent Computer-Assisted Language Learning (iiCALL) environment,Wahl H.; Winiwarter W.,2013,10.1145/2539150.2539262
+Modelling a Patient Identifier System in the Estonian National Health Information System,Bossenko I.; Piho G.; Ross P.,2025,10.1007/978-3-031-76368-7_10
+Developing interoperable electronic health record service in China,Liang J.; Xu M.; Zhang L.; Li L.; Zheng X.; Chen D.; Yang S.; Li B.; Jin O.; Ji Z.; Sun J.,2011,10.4156/jdcta.vol5.issue4.26
+A Framework for Data and Mined Knowledge Interoperability in Clinical Decision Support Systems,Kazemzadeh R.S.; Sartipi K.; Jayaratna P.,2010,10.4018/jhisi.2010110303
+Business archetypes and archetype patterns from the HL7 RIM and openEHR RM perspectives: Towards interoperability and evolution of healthcare models and software systems,Piho G.; Tepandi J.; Thompson D.; Woerner A.; Parman M.,2015,10.1016/j.procs.2015.08.384
+Continuity of care with HL7 v3 care record for oncology nursing,Duim M.; Boterenbrood F.; Goossen W.T.F.,2014,10.3233/978-1-61499-415-2-476
+A standardized middleware as the core of a telemonitoring European Project,Vergari F.; Gazzarata R.; Morandi F.; Parodi V.; Naso S.; Arezza A.; Salmon Cinotti T.; Giacomini M.,2012,10.3233/978-1-61499-101-4-497
+HL7 FHIR: An Agile and RESTful approach to healthcare information exchange,Bender D.; Sartipi K.,2013,10.1109/cbms.2013.6627810
+Impact of information technology on the quality of health services,Dobrescu R.; Purcarea V.,2012,10.1007/978-3-642-27449-7_23
+Semantic interoperability in Czech healthcare environment supported by Hl7 version 3,Nagy M.; Hanzlícek P.; Precková P.; Ríha A.; Dioszegi M.; Seidl L.; Zvárová J.,2010,10.3414/ME09-02-0018
+Migration from HL7 Clinical Document Architecture (CDA) to Fast Health Interoperability Resources (FHIR) in Infectious Disease Information System of Estonia,Bossenko I.; Linna K.; Piho G.; Ross P.,2023,10.1145/3555776.3577836
+SNOMED CT normal form and HL7 RIM binding to normalize clinical data from cancer trials,Rico-Diez A.; Aso S.; Perez-Rey D.; Alonso-Calvo R.; Bucur A.; Claerhout B.; Maojo V.,2013,10.1109/BIBE.2013.6701688
+PPEPR for enterprise healthcare integration,Fox R.; Sahay R.; Hauswirth M.,2009,10.1007/978-3-642-00413-1_16
+Design and development of standards (HL7 V3) based enterprise architecture for public health programs integration at the county of Los Angeles,Shakir A.-M.; Cardenas D.; Datta G.; Mittra D.; Basu A.; Verma R.,2008,10.4018/978-1-60566-050-9.ch039
+Communicating data from wireless sensor networks using the HL7v3 standard,Baird S.; Dawson-Haggerty S.; Myung D.; Gaynor M.; Welsh M.; Moulton S.,2006,10.1109/BSN.2006.18
+Toward the interoperability of HL7 v3 and SNOMED CT: A case study modeling mobile clinical treatment,Ryan A.; Eklund P.; Esler B.,2007,
+Internet in continuous shared health care,Zvárová J.; Hanzlicek P.,2005,
+Interface analysis between GSVML and HL7 version 3,Hiroi K.; Ido K.; Yang W.; Nakaya J.,2007,10.1016/j.jbi.2006.12.006
+Artemis message exchange framework: Semantic interoperability of exchanged messages in the healthcare domain,Bicer V.; Laleci G.B.; Dogac A.; Kabak Y.,2005,10.1145/1084805.1084819
+Standards for detailed clinical models as the basis for medical data exchange and decision support,Coyle J.F.; Mori A.R.; Huff S.M.,2003,10.1016/S1386-5056(02)00103-X
+A framework for semantic interoperability in healthcare: A service oriented architecture based on health informatics standards,Ryan A.; Eklund P.,2008,
+Implementing a new ADT based on the HL7 version 3 RIM,Spahni S.; Lovis C.; Mercille R.; Verdel H.; Cotten M.; Geissbühler A.,2007,10.1016/j.ijmedinf.2006.05.006
+Sending electronic nursing discharge messages using the HL7 v3 care provision standard,Goossen W.,2009,10.3233/978-1-60750-024-7-269
+Standard-based data and service interoperability in eHealth systems,Sartipi K.; Yarmand M.H.,2008,10.1109/ICSM.2008.4658067
+Design and Development of Standards (HL7 V3) Based Enterprise Architecture for Public Health Programs Integration at the County of Los Angeles,Shakir A.-M.; Cardenas D.; Datta G.; Mittra D.; Basu A.; Verma R.,2007,10.4018/jhisi.2007040104
+How HL7 version 3 is used at the Sahlgrenska University Hospital to exchange information with a central archive,Carlsson G.; Hagberg T.; Bogavac L.; Wintell M.,2008,10.1117/12.770003
+Medical Imaging 2008: PACS and Imaging Informatics,,2008,
+"Patient record 2.0: using structured clinical documents to provide ranked, relevant display of patient records.",Klann J.; McCoy J.M.,2008,
+Is semantic web technology ready for healthcare?,Wroe C.,2006,
+Is it possible to be simple without being stupid?: Exploring the semantics of model-driven XML,Wrightson A.,2007,
+HL7 Version 3 - An object-oriented methodology for collaborative standards development,Beeler G.W.,1998,10.1016/S1386-5056(97)00121-4
+Advanced and secure architectural EHR approaches,Blobel B.,2006,10.1016/j.ijmedinf.2005.07.017
+The black box: Biomedical signals and event recorder in the cath lab,Djukic G.; Marraccini P.; Mazzarisi A.; Marcheschi P.; Benassi A.,2004,
+Relationships between healthcare and research records,Duwe H.,2004,
+System for electrophysiology integration with other departments using clinical document architecture technologies and HL7 V3,Mazzarisi A.; Marcheschi P.; Dalmiani S.; Marraccini P.; Startari U.; Piacenti M.,2004,
+A grid-based implementation of XDS-I as a part of a metropolitan EHR in Shanghai,Zhang J.; Zhang C.; Sun J.; Yang Y.; Jin J.; Yu F.; He Z.; Zheng X.; Qin H.; Feng J.; Zhang G.,2007,10.1117/12.709117
+HL7 with CORBA and OLE: software components for healthcare.,Rishel W.,1996,
+OpenECG: Medical device interoperability as a quality label for eHealth services,Chronaki C.E.; Chiarugi F.; Fischer R.,2006,
+A structured guideline content model for clinical decision support systems,Chu S.; Esler B.,2006,
+Towards a generic connection of ehr and dss,Van Der Linden H.; Diepen S.; Boers G.; Tange H.; Talmon J.,2005,
+Processing HL7-CDA entry for semantic interoperability,Yun J.H.; Kim I.K.,2007,10.1109/ICCIT.2007.4420535
+The HL7 clinical document architecture,Dolin R.H.; Alschuler L.; Beebe C.; Biron P.V.; Boyer S.L.; Essin D.; Kimber E.; Lincoln T.; Mattison J.E.,2001,10.1136/jamia.2001.0080552
+Using SNOMED CT codes for coding information in electronic health records for stroke patients,Van Der Kooij J.; Goossen W.T.F.; Goossen-Baremans A.T.M.; De Jong-Fintelman M.; Van Beek L.,2006,
+Semantic interoperability: HL7 version 3 compared to advanced architecture standards,Blobel B.G.M.E.; Engel K.; Pharow P.,2006,10.1055/s-0038-1634087
+Does HL7 go towards an architecture standard?,Oemig F.; Blobel B.,2005,
+Minimized domain knowledge for SOA-based interoperability,Dehmoobad A.; Sartipi K.,2008,10.1109/APSCC.2008.132
+Developing an integrated electronic nursing record based on standards,Van Grunsven A.; Bindels R.; Coenen C.; De Bel E.,2006,
+Portable CDA for the exchange of clinical documents,Chang Y.J.; Lai J.S.; Cheng P.H.; Lai F.,2007,10.1109/HEALTH.2007.381593
+"HL7 standard - Features, principles, and methodology; [HL7 norma - Značajke, principi i metodologija]",Končar M.,2005,
+Multimedia content management with HL7v3 messages,Končar M.; Mrkonjić G.; Tonković S.,2006,10.1109/ELMAR.2006.329569
+Integration of a SARS surveillance application into an HL7 standards-based public health information network,Verma R.; Shakir A.-M.; Cardenas D.; Mittra D.; Marwaha A.; Sen G.; Datta G.,2005,
+The architecture of sharing. An HL7 Version 3 framework offers semantically interoperable healthcare information.,Jones T.M.; Mead C.N.,2005,
+"Data interchange standards in healthcare IT--computable semantic interoperability: now possible but still difficult, do we really need a better mousetrap?",Mead C.N.,2006,
+Towards the construction of the information infrastructure for genome medicine,Sakamoto N.; Nakaya J.,2005,10.1007/11527725_18
+Implementing the HL7v3 standard in croatian primary healthcare domain,Končar M.,2004,
+Integrating existing drug formulation terminologies into an HL7 standard classification using OpenGALEN.,Wroe C.J.; Cimino J.J.; Rector A.L.,2001,

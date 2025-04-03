@@ -1,0 +1,5 @@
+Pubmed: https://pubmed.ncbi.nlm.nih.gov/?term=FHIR%5BTitle%2FAbstract%5D&sort=
+IEE: https://ieeexplore.ieee.org/search/searchresult.jsp?action=search&newsearch=true&matchBoolean=true&queryText=(%22Abstract%22:FHIR)
+scopus: https://www.scopus.com/results/results.uri?sort=plf-f&src=s&sid=6588d0b6a57da6038321b911595c8441&sot=a&sdt=a&sl=20&s=TITLE-ABS-KEY%28*FHIR%29&origin=searchadvanced&editSaveSearch=&txGid=6c79e5e27e4af9424ee6740157b1889e&sessionSearchId=6588d0b6a57da6038321b911595c8441&limit=10
+
+Date: 23.03.2025
