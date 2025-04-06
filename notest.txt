@@ -1,9 +1,13 @@
+Wersje:
+- FHIR version 5 (current [06.04.2025]): https://hl7.org/fhir/directory.html
+
 Narzędzia:
 - kody SNOMED-CT: https://browser.ihtsdotools.org/?perspective=full&conceptId1=404684003&edition=MAIN/2025-03-01&release=&languages=en
 - PESEL i NPWZ: file:///C:/Users/macio_/Downloads/Specyfikacje%20interoperacyjno%C5%9Bci%20-%20za%C5%82%C4%85cznik%20nr%208%20do%20SWZ.pdf
 - http://terminology.hl7.org/CodeSystem/condition-clinical: https://terminology.hl7.org/CodeSystem-condition-clinical.html
 - http://terminology.hl7.org/CodeSystem/condition-category: https://terminology.hl7.org/CodeSystem-condition-clinical.html
 - http://terminology.hl7.org/CodeSystem/condition-ver-status: https://terminology.hl7.org/CodeSystem-condition-ver-status.html
+- extension locationPerformed: http://hl7.org/fhir/StructureDefinition/diagnosticReport-locationPerformed
 
 
 Wdrożenia:

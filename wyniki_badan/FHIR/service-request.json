@@ -1,7 +1,7 @@
 {
     "resourceType": "ServiceRequest",
     "id": "blood-test-request",
-    "status": "active",
+    "status": "completed",
     "intent": "order",
     "category": [
         {

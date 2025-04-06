@@ -88,5 +88,14 @@
         {
             "reference": "Observation/neutrophil-segmented"
         }
+    ],
+    "extensions": [
+        {
+            "url": "http://hl7.org/fhir/StructureDefinition/diagnosticReport-locationPerformed",
+            "valueReference": {
+                "reference": "Location/wroclaw-baltycka",
+                "display": "Punkt Pobrań Wrocław-Bałtycka"
+            }
+        }
     ]
 }
