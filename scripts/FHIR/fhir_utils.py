@@ -1,13 +1,23 @@
 import json
+import os
 import urllib
 
 import requests
-from fhir_conf import FHIR_SERVER, VERBOSE
+from fhir_conf import FHIR_SERVER, VERBOSE, DATA_DIRECTORY_PATH
 
-def load_fhir_resource(file_path, resource_class):
-    with open(file_path, 'r', encoding='utf-8') as f:
+def get_full_path(medical_document_type, relative_path):
+    return os.path.join(DATA_DIRECTORY_PATH, medical_document_type, "FHIR", relative_path)
+
+def load_fhir_resource(medical_document_type, file_path, resource_class, is_full_path = False):
+    full_path = file_path if is_full_path else get_full_path(medical_document_type, file_path)
+    with open(full_path, 'r', encoding='utf-8') as f:
         data = json.load(f)
     return resource_class.model_validate(data)
+
+def load_resources_from_dictionary(medical_document_type, dictionary_path, resource_class):
+    full_dictionary_path = get_full_path(medical_document_type, dictionary_path)
+    resources_files = [os.path.join(full_dictionary_path, f) for f in os.listdir(full_dictionary_path) if os.path.isfile(os.path.join(full_dictionary_path, f)) and f.endswith(".json")]
+    return [load_fhir_resource(medical_document_type, resource_file, resource_class, is_full_path=True) for resource_file in resources_files]
 
 def post_resource(resource, verbose = VERBOSE):
     resource_type = resource.__class__.__name__

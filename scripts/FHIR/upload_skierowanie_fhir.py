@@ -7,6 +7,7 @@ from fhir.resources.servicerequest import ServiceRequest
 
 from fhir_utils import post_resource, create_or_get_by_identifier, load_fhir_resource
 
+MEDICAL_DOCUMENT_TYPE = "skierowanie"
 default_patient_file = "patient.json"
 default_practitioner_file = "practitioner.json"
 default_condition_parasthesia_file = "condition-parasthesia.json"
@@ -23,13 +24,13 @@ def upload_skierowanie_full(patient_file = default_patient_file,
                             activity_definition_electromyography_file = default_activity_definition_electromyography_file,
                             service_request_file = default_service_request_file):
     # Load resources
-    patient = load_fhir_resource(patient_file, Patient)
-    practitioner = load_fhir_resource(practitioner_file, Practitioner)
-    condition_parasthesia = load_fhir_resource(condition_parasthesia_file, Condition)
-    condition_tentany = load_fhir_resource(condition_tentany_file, Condition)
-    medication_statement_magnesium = load_fhir_resource(medication_statement_magnesium_file, MedicationStatement)
-    activity_definition_electromyography = load_fhir_resource(activity_definition_electromyography_file, ActivityDefinition)
-    service_request = load_fhir_resource(service_request_file, ServiceRequest)
+    patient = load_fhir_resource(MEDICAL_DOCUMENT_TYPE, patient_file, Patient)
+    practitioner = load_fhir_resource(MEDICAL_DOCUMENT_TYPE, practitioner_file, Practitioner)
+    condition_parasthesia = load_fhir_resource(MEDICAL_DOCUMENT_TYPE, condition_parasthesia_file, Condition)
+    condition_tentany = load_fhir_resource(MEDICAL_DOCUMENT_TYPE, condition_tentany_file, Condition)
+    medication_statement_magnesium = load_fhir_resource(MEDICAL_DOCUMENT_TYPE, medication_statement_magnesium_file, MedicationStatement)
+    activity_definition_electromyography = load_fhir_resource(MEDICAL_DOCUMENT_TYPE, activity_definition_electromyography_file, ActivityDefinition)
+    service_request = load_fhir_resource(MEDICAL_DOCUMENT_TYPE, service_request_file, ServiceRequest)
 
     # Add resources to the server
     patient_id = create_or_get_by_identifier(patient, patient.identifier[0].system)

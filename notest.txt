@@ -16,3 +16,6 @@ Narzędzia:
 
 Wdrożenia:
 - Centrum e-Zdrowia: FHIR
+
+
+Archetypty bazowane na: https://ckm.openehr.org/ckm/

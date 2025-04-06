@@ -9,6 +9,7 @@ from fhir.resources.servicerequest import ServiceRequest
 
 from fhir_utils import load_resources_from_dictionary, post_resource, create_or_get_by_identifier, load_fhir_resource
 
+MEDICAL_DOCUMENT_TYPE = "wyniki_badan"
 default_patient_file = "patient.json"
 default_practitioner_file = "practitioner.json"
 default_location_file = "location.json"
@@ -31,16 +32,16 @@ def upload_wyniki_badan_full(patient_file = default_patient_file,
                             service_request_file = default_service_request_file,
                             diagnostic_report_file = default_diagnostic_report_file):
     # Load resources
-    patient = load_fhir_resource(patient_file, Patient)
-    practitioner = load_fhir_resource(practitioner_file, Practitioner)
-    location = load_fhir_resource(location_file, Location)
-    specimen_morphology = load_fhir_resource(specimen_morphology_file, Specimen)
-    specimen_smear = load_fhir_resource(specimen_smear_file, Specimen)
-    morfology_observations = load_resources_from_dictionary(morfology_observations_dictionary, Observation)
-    smear_observations = load_resources_from_dictionary(smear_observations_dictionary, Observation)
-    activity_definion = load_fhir_resource(activity_definion_file, ActivityDefinition)
-    service_request = load_fhir_resource(service_request_file, ServiceRequest)
-    diagnostic_report = load_fhir_resource(diagnostic_report_file, DiagnosticReport)
+    patient = load_fhir_resource(MEDICAL_DOCUMENT_TYPE, patient_file, Patient)
+    practitioner = load_fhir_resource(MEDICAL_DOCUMENT_TYPE, practitioner_file, Practitioner)
+    location = load_fhir_resource(MEDICAL_DOCUMENT_TYPE, location_file, Location)
+    specimen_morphology = load_fhir_resource(MEDICAL_DOCUMENT_TYPE, specimen_morphology_file, Specimen)
+    specimen_smear = load_fhir_resource(MEDICAL_DOCUMENT_TYPE, specimen_smear_file, Specimen)
+    morfology_observations = load_resources_from_dictionary(MEDICAL_DOCUMENT_TYPE, morfology_observations_dictionary, Observation)
+    smear_observations = load_resources_from_dictionary(MEDICAL_DOCUMENT_TYPE, smear_observations_dictionary, Observation)
+    activity_definion = load_fhir_resource(MEDICAL_DOCUMENT_TYPE, activity_definion_file, ActivityDefinition)
+    service_request = load_fhir_resource(MEDICAL_DOCUMENT_TYPE, service_request_file, ServiceRequest)
+    diagnostic_report = load_fhir_resource(MEDICAL_DOCUMENT_TYPE, diagnostic_report_file, DiagnosticReport)
 
     # Add resources to the server
     patient_id = create_or_get_by_identifier(patient, patient.identifier[0].system)
