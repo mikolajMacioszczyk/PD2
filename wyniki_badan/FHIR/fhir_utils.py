@@ -1,4 +1,5 @@
 import json
+import os
 import urllib
 
 import requests
@@ -8,6 +9,10 @@ def load_fhir_resource(file_path, resource_class):
     with open(file_path, 'r', encoding='utf-8') as f:
         data = json.load(f)
     return resource_class.model_validate(data)
+
+def load_resources_from_dictionary(dictionary_path, resource_class):
+    resources_files = [os.path.join(dictionary_path, f) for f in os.listdir(dictionary_path) if os.path.isfile(os.path.join(dictionary_path, f)) and f.endswith(".json")]
+    return [load_fhir_resource(resource_file, resource_class) for resource_file in resources_files]
 
 def post_resource(resource, verbose = VERBOSE):
     resource_type = resource.__class__.__name__
