@@ -22,7 +22,7 @@ def upload_skierowanie_full(patient_file = default_patient_file,
                             medication_statement_magnesium_file = default_medication_statement_magnesium_file, 
                             activity_definition_electromyography_file = default_activity_definition_electromyography_file,
                             service_request_file = default_service_request_file):
-    
+    # Load resources
     patient = load_fhir_resource(patient_file, Patient)
     practitioner = load_fhir_resource(practitioner_file, Practitioner)
     condition_parasthesia = load_fhir_resource(condition_parasthesia_file, Condition)
@@ -31,6 +31,7 @@ def upload_skierowanie_full(patient_file = default_patient_file,
     activity_definition_electromyography = load_fhir_resource(activity_definition_electromyography_file, ActivityDefinition)
     service_request = load_fhir_resource(service_request_file, ServiceRequest)
 
+    # Add resources to the server
     patient_id = create_or_get_by_identifier(patient, patient.identifier[0].system)
     print("Patient ID:", patient_id)
 

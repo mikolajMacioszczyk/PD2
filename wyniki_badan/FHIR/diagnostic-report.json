@@ -89,7 +89,7 @@
             "reference": "Observation/neutrophil-segmented"
         }
     ],
-    "extensions": [
+    "extension": [
         {
             "url": "http://hl7.org/fhir/StructureDefinition/diagnosticReport-locationPerformed",
             "valueReference": {

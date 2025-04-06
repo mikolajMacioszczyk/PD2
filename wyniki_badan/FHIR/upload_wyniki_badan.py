@@ -18,6 +18,7 @@ default_morfology_observations_dictionary = "observations/morfology"
 default_smear_observations_dictionary = "observations/smear"
 default_activity_definion_file = "activity-definition.json"
 default_service_request_file = "service-request.json"
+default_diagnostic_report_file = "diagnostic-report.json"
 
 def upload_wyniki_badan_full(patient_file = default_patient_file, 
                             practitioner_file = default_practitioner_file,
@@ -27,20 +28,21 @@ def upload_wyniki_badan_full(patient_file = default_patient_file,
                             morfology_observations_dictionary = default_morfology_observations_dictionary,
                             smear_observations_dictionary = default_smear_observations_dictionary,
                             activity_definion_file = default_activity_definion_file,
-                            service_request_file = default_service_request_file):
-    
+                            service_request_file = default_service_request_file,
+                            diagnostic_report_file = default_diagnostic_report_file):
+    # Load resources
     patient = load_fhir_resource(patient_file, Patient)
     practitioner = load_fhir_resource(practitioner_file, Practitioner)
     location = load_fhir_resource(location_file, Location)
     specimen_morphology = load_fhir_resource(specimen_morphology_file, Specimen)
     specimen_smear = load_fhir_resource(specimen_smear_file, Specimen)
-
     morfology_observations = load_resources_from_dictionary(morfology_observations_dictionary, Observation)
     smear_observations = load_resources_from_dictionary(smear_observations_dictionary, Observation)
-
     activity_definion = load_fhir_resource(activity_definion_file, ActivityDefinition)
     service_request = load_fhir_resource(service_request_file, ServiceRequest)
+    diagnostic_report = load_fhir_resource(diagnostic_report_file, DiagnosticReport)
 
+    # Add resources to the server
     patient_id = create_or_get_by_identifier(patient, patient.identifier[0].system)
     print("Patient ID:", patient_id)
 
@@ -82,7 +84,15 @@ def upload_wyniki_badan_full(patient_file = default_patient_file,
     service_request_id = post_resource(service_request)
     print("Service Request ID:", service_request_id)
 
+    diagnostic_report.basedOn[0].reference = f"ServiceRequest/{service_request_id}"
+    diagnostic_report.specimen[0].reference = f"Specimen/{specimen_morphology_id}"
+    diagnostic_report.specimen[1].reference = f"Specimen/{specimen_smear_id}"
+    diagnostic_report.subject.reference = f"Patient/{patient_id}"
+    for i, observation_id in enumerate(observations_ids):
+        diagnostic_report.result[i].reference = f"Observation/{observation_id}"
+    diagnostic_report.extension[0].valueReference.reference = f"Location/{location_id}"
+    diagnostic_report_id = post_resource(diagnostic_report)
+    print("Diagnostic Report ID:", diagnostic_report_id)
+
 if __name__ == "__main__":
     upload_wyniki_badan_full()
-
-# TODO: Diagnostic Report (check if extension exists)
