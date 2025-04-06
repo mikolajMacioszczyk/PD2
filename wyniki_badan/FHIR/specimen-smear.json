@@ -15,9 +15,6 @@
   },
   "receivedTime": "2025-03-20T07:55:00+01:00",
   "collection": {
-    "collectedDateTime": "2025-03-20T07:55:00+01:00",
-    "collector": {
-      "reference": "Practitioner/krzysztof-wisniewski"
-    }
+    "collectedDateTime": "2025-03-20T07:55:00+01:00"
   }
 }

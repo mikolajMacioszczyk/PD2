@@ -39,12 +39,10 @@ def upload_wyniki_badan_full(patient_file = default_patient_file,
     print("Location ID:", location_id)
 
     specimen_morphology.subject.reference = f"Patient/{patient_id}"
-    specimen_morphology.collection.collector.reference = f"Practitioner/{practitioner_id}"
     specimen_morphology_id = post_resource(specimen_morphology)
     print("Specimen Morphology ID:", specimen_morphology_id)
 
     specimen_smear.subject.reference = f"Patient/{patient_id}"
-    specimen_smear.collection.collector.reference = f"Practitioner/{practitioner_id}"
     specimen_smear_id = post_resource(specimen_smear)
     print("Specimen Smear ID:", specimen_smear_id)
 
@@ -54,8 +52,7 @@ def upload_wyniki_badan_full(patient_file = default_patient_file,
 if __name__ == "__main__":
     upload_wyniki_badan_full()
 
-# TODO: service request code
-# TODO: lekarz wykonujący
 # TODO: Observations
 # TODO: Service Request
+# TODO: service request code
 # TODO: Diagnostic Report (check if extension exists)
