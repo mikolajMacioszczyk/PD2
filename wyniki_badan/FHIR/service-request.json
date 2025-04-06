@@ -3,17 +3,12 @@
     "id": "blood-test-request",
     "status": "completed",
     "intent": "order",
-    "category": [
-        {
-            "coding": [
-                {
-                    "system": "http://snomed.info/sct",
-                    "code": "3413006",
-                    "display": "Blood cell morphology (procedure)"
-                }
-            ]
+    "code": {
+        "reference": {
+            "reference": "ActivityDefinition/blood_cell_morphology",
+            "display": "Blood cell morphology (procedure)"
         }
-    ],
+    },
     "subject": {
         "reference": "Patient/jan-kowalski"
     },

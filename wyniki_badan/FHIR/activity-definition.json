@@ -1,14 +1,14 @@
 {
     "resourceType": "ActivityDefinition",
-    "id": "EMG",
+    "id": "blood-cell-morphology",
     "status": "active",
     "kind": "ServiceRequest",
     "code": {
         "coding": [
             {
                 "system": "http://snomed.info/sct",
-                "code": "42803009",
-                "display": "Electromyography"
+                "code": "3413006",
+                "display": "Blood cell morphology (procedure)"
             }
         ]
     }

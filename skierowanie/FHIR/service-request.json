@@ -2,17 +2,6 @@
   "resourceType": "ServiceRequest",
   "status": "active",
   "intent": "order",
-  "category": [
-    {
-      "coding": [
-        {
-          "system": "http://snomed.info/sct",
-          "code": "108252007",
-          "display": "Laboratory procedure (procedure)"
-        }
-      ]
-    }
-  ],
   "code": {
     "reference": {
       "reference": "ActivityDefinition/EMG",

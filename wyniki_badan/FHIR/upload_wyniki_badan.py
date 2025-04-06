@@ -3,6 +3,7 @@ from fhir.resources.practitioner import Practitioner
 from fhir.resources.location import Location
 from fhir.resources.specimen import Specimen
 from fhir.resources.observation import Observation
+from fhir.resources.activitydefinition import ActivityDefinition
 from fhir.resources.diagnosticreport import DiagnosticReport
 from fhir.resources.servicerequest import ServiceRequest
 
@@ -15,6 +16,7 @@ default_specimen_morphology_file = "specimen-morphology.json"
 default_specimen_smear_file = "specimen-smear.json"
 default_morfology_observations_dictionary = "observations/morfology"
 default_smear_observations_dictionary = "observations/smear"
+default_activity_definion_file = "activity-definition.json"
 default_service_request_file = "service-request.json"
 
 def upload_wyniki_badan_full(patient_file = default_patient_file, 
@@ -24,6 +26,7 @@ def upload_wyniki_badan_full(patient_file = default_patient_file,
                             specimen_smear_file = default_specimen_smear_file,
                             morfology_observations_dictionary = default_morfology_observations_dictionary,
                             smear_observations_dictionary = default_smear_observations_dictionary,
+                            activity_definion_file = default_activity_definion_file,
                             service_request_file = default_service_request_file):
     
     patient = load_fhir_resource(patient_file, Patient)
@@ -35,6 +38,7 @@ def upload_wyniki_badan_full(patient_file = default_patient_file,
     morfology_observations = load_resources_from_dictionary(morfology_observations_dictionary, Observation)
     smear_observations = load_resources_from_dictionary(smear_observations_dictionary, Observation)
 
+    activity_definion = load_fhir_resource(activity_definion_file, ActivityDefinition)
     service_request = load_fhir_resource(service_request_file, ServiceRequest)
 
     patient_id = create_or_get_by_identifier(patient, patient.identifier[0].system)
@@ -69,13 +73,16 @@ def upload_wyniki_badan_full(patient_file = default_patient_file,
         observations_ids.append(smear_observation_id)
         print(f"Smear observation {smear_observation.code.coding[0].display} ID:", smear_observation_id)
 
+    activity_definion_id = post_resource(activity_definion)
+    print("Activity Definion ID:", activity_definion_id)
 
-    # service_request_id = post_resource(service_request)
-    # print("Service Request ID:", service_request_id)
+    service_request.subject.reference = f"Patient/{patient_id}"
+    service_request.requester.reference = f"Practitioner/{practitioner_id}"
+    service_request.code.reference.reference = f"ActivityDefinition/{activity_definion_id}"
+    service_request_id = post_resource(service_request)
+    print("Service Request ID:", service_request_id)
 
 if __name__ == "__main__":
     upload_wyniki_badan_full()
 
-# TODO: Service Request
-# TODO: service request code
 # TODO: Diagnostic Report (check if extension exists)
