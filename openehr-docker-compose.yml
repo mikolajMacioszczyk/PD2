@@ -1,0 +1,36 @@
+#  docker compose -f openehr-docker-compose.yml up
+
+services:
+  ehrbase-postgres:
+    image: ehrbase/ehrbase-v2-postgres:16.2
+    container_name: ehrbase-postgres
+    environment:
+      POSTGRES_USER: ${EHRBASE_DB_ADMIN_USER} # DB ADMIN
+      POSTGRES_PASSWORD: ${EHRBASE_DB_ADMIN_PASSWORD}
+      EHRBASE_USER_ADMIN: ${EHRBASE_USER_ADMIN} # APP ADMIN
+      EHRBASE_PASSWORD_ADMIN: ${EHRBASE_PASSWORD_ADMIN}
+      EHRBASE_USER: ${EHRBASE_USER} # APP RESTRICTED USER
+      EHRBASE_PASSWORD: ${EHRBASE_PASSWORD}
+    volumes:
+      - ehrbasepgdata:/var/lib/postgresql/data
+    ports:
+      - "5432:5432"
+
+  ehrbase:
+    image: ehrbase/ehrbase:2.16.0
+    container_name: ehrbase
+    environment:
+      DB_URL: jdbc:postgresql://ehrbase-postgres:5432/ehrbase
+      DB_USER: ${EHRBASE_USER}
+      DB_PASS: ${EHRBASE_PASSWORD}
+      DB_USER_ADMIN: ${EHRBASE_USER_ADMIN}
+      DB_PASS_ADMIN: ${EHRBASE_PASSWORD_ADMIN}
+      SERVER_NODENAME: local.ehrbase.org
+      SPRING_PROFILES_ACTIVE: local
+    ports:
+      - "8080:8080"
+    depends_on:
+      - ehrbase-postgres
+
+volumes:
+  ehrbasepgdata:
