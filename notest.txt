@@ -1,4 +1,7 @@
 Wersje:
+- Docker: 28.0.1
+- Python: 3.13.0
+- pip: 25.0
 - FHIR version 5 (current [06.04.2025]): https://hl7.org/fhir/directory.html
 - HAPI: hapiproject/hapi:v8.0.0-1
 - Postgres: postgres:17.4
@@ -13,6 +16,7 @@ Narzędzia:
 - http://terminology.hl7.org/CodeSystem/condition-ver-status: https://terminology.hl7.org/CodeSystem-condition-ver-status.html
 - extension locationPerformed: http://hl7.org/fhir/StructureDefinition/diagnosticReport-locationPerformed
 
+- terminologia OpenEHR: https://specifications.openehr.org/releases/TERM/latest/SupportTerminology.html
 
 Wdrożenia:
 - Centrum e-Zdrowia: FHIR
