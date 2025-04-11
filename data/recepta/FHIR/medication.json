@@ -1,0 +1,29 @@
+{
+  "resourceType": "Medication",
+  "id": "paracetamol-500mg",
+  "code": {
+    "text": "Paracetamol 500 mg tabletki powlekane"
+  },
+  "doseForm": {
+    "text": "Tabletki powlekane"
+  },
+  "ingredient": [
+    {
+      "item": {
+        "concept": {
+          "text": "Paracetamolum"
+        }
+      },
+      "strengthRatio": {
+        "numerator": {
+          "value": 500,
+          "unit": "mg"
+        },
+        "denominator": {
+          "value": 1,
+          "unit": "tabletka"
+        }
+      }
+    }
+  ]
+}

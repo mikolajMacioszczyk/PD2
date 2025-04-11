@@ -1,0 +1,78 @@
+{
+    "resourceType": "MedicationRequest",
+    "id": "prescription-PL-2025-000123",
+    "status": "active",
+    "intent": "order",
+    "authoredOn": "2025-04-07T19:56:00+01:00",
+    "medicationReference": {
+        "reference": "Medication/paracetamol-500mg"
+    },
+    "subject": {
+        "reference": "Patient/patient-80010112345"
+    },
+    "requester": {
+        "reference": "Practitioner/dr-anna-kowalska"
+    },
+    "recorder": {
+        "reference": "Practitioner/dr-anna-kowalska"
+    },
+    "performer": {
+        "reference": "Organization/przychodnia-wroclaw"
+    },
+    "dosageInstruction": [
+        {
+            "text": "Paracetamol 500 mg, doustnie, 3x dziennie po posiłku przez 3 dni.",
+            "timing": {
+                "repeat": {
+                    "frequency": 3,
+                    "period": 1,
+                    "periodUnit": "d",
+                    "duration": 3,
+                    "durationUnit": "d"
+                },
+                "code": {
+                    "text": "3 razy dziennie po posiłku"
+                }
+            },
+            "asNeededBoolean": true,
+            "route": {
+                "text": "Doustnie"
+            },
+            "doseAndRate": [
+                {
+                    "doseQuantity": {
+                        "value": 1,
+                        "unit": "tabletka"
+                    }
+                }
+            ],
+            "maxDosePerPeriod": {
+                "numerator": {
+                    "value": 6,
+                    "unit": "tabletka"
+                },
+                "denominator": {
+                    "value": 1,
+                    "unit": "d"
+                }
+            },
+            "patientInstruction": "Nie stosować na czczo"
+        }
+    ],
+    "dispenseRequest": {
+        "validityPeriod": {
+            "start": "2025-04-07",
+            "end": "2025-05-07"
+        }
+    },
+    "reasonCode": [
+        {
+            "text": "Ból głowy"
+        }
+    ],
+    "note": [
+        {
+            "text": "W razie pogorszenia skonsultować się z lekarzem"
+        }
+    ]
+}
