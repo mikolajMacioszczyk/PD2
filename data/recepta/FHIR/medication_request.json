@@ -4,20 +4,16 @@
     "status": "active",
     "intent": "order",
     "authoredOn": "2025-04-07T19:56:00+01:00",
-    "medicationReference": {
-        "reference": "Medication/paracetamol-500mg"
+    "medication": {
+        "reference": {
+            "reference": "Medication/paracetamol-500mg"
+        }
     },
     "subject": {
         "reference": "Patient/patient-80010112345"
     },
     "requester": {
         "reference": "Practitioner/dr-anna-kowalska"
-    },
-    "recorder": {
-        "reference": "Practitioner/dr-anna-kowalska"
-    },
-    "performer": {
-        "reference": "Organization/przychodnia-wroclaw"
     },
     "dosageInstruction": [
         {
@@ -34,7 +30,7 @@
                     "text": "3 razy dziennie po posiłku"
                 }
             },
-            "asNeededBoolean": true,
+            "asNeeded": true,
             "route": {
                 "text": "Doustnie"
             },
@@ -46,16 +42,18 @@
                     }
                 }
             ],
-            "maxDosePerPeriod": {
-                "numerator": {
-                    "value": 6,
-                    "unit": "tabletka"
-                },
-                "denominator": {
-                    "value": 1,
-                    "unit": "d"
+            "maxDosePerPeriod": [
+                {
+                    "numerator": {
+                        "value": 6,
+                        "unit": "tabletka"
+                    },
+                    "denominator": {
+                        "value": 1,
+                        "unit": "d"
+                    }
                 }
-            },
+            ],
             "patientInstruction": "Nie stosować na czczo"
         }
     ],
@@ -65,9 +63,11 @@
             "end": "2025-05-07"
         }
     },
-    "reasonCode": [
+    "reason": [
         {
-            "text": "Ból głowy"
+            "concept": {
+                "text": "Ból głowy"
+            }
         }
     ],
     "note": [
