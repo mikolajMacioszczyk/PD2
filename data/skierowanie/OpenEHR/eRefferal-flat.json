@@ -17,8 +17,6 @@
   "referral_document/referral_details:0/referral_request/request:0/urgency|value": "Routine",
   "referral_document/referral_details:0/referral_request/request:0/urgency|code": "at0138",
   "referral_document/referral_details:0/referral_request/request:0/urgency|terminology": "local",
-  "referral_document/referral_details:0/referral_request/request:0/timing": "as soon as possible",
-  "referral_document/referral_details:0/referral_request/request:0/timing|formalism": "text/html",
   "referral_document/referral_details:0/referral_request/request:0/action_archetype_id": "openEHR-EHR-ACTION.service_request.v1",
   "referral_document/referral_details:0/referral_request/request_status": "planned",
   "referral_document/referral_details:0/referral_request/duration/duration": "PT0S",

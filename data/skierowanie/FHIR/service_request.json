@@ -1,6 +1,12 @@
 {
     "resourceType": "ServiceRequest",
     "id": "PL-2025-000234",
+    "identifier": [
+        {
+            "system": "http://ezdrowie.gov.pl/e-skierowanie/identyfikator",
+            "value": "PL-2025-000234"
+        }
+    ],
     "status": "active",
     "intent": "order",
     "priority": "routine",
@@ -34,10 +40,5 @@
         {
             "text": "Skierowanie na podstawowe badanie morfologiczne krwi w celu kontroli po infekcji"
         }
-    ],
-    "occurrenceTiming": {
-        "code": {
-            "text": "as soon as possible"
-        }
-    }
+    ]
 }

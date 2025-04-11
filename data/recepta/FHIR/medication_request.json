@@ -1,6 +1,12 @@
 {
     "resourceType": "MedicationRequest",
     "id": "prescription-PL-2025-000123",
+    "identifier": [
+        {
+            "system": "http://ezdrowie.gov.pl/e-recepta/identyfikator",
+            "value": "PL-2025-000123"
+        }
+    ],
     "status": "active",
     "intent": "order",
     "authoredOn": "2025-04-07T19:56:00+01:00",

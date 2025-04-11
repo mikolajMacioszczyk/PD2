@@ -11,9 +11,6 @@ Data wystawienia recepty: 07.04.2025, godz. 19:56
 Miejsce wystawienia: Przychodnia Rodzinna We Wrocławiu
 Osoba wystawiająca receptę: lek. Anna Kowalska, NPWZ: 2844964
 Identyfikator recepty: PL-2025-000123
-Kraj wystawienia: Polska
-Kod terytorium: PL
-Język dokumentu: polski
 
 **Przepisany lek**
 

@@ -11,10 +11,6 @@ Identyfikator skierowania: PL-2025-000234
 Data wystawienia: 11.04.2025, godz. 13:05
 Miejsce wystawienia: Przychodnia Rodzinna We Wrocławiu
 Osoba wystawiająca skierowanie: lek. Anna Kowalska, NPWZ: 1234567
-Identyfikator recepty: PL-2025-000123
-Kraj wystawienia: Polska
-Kod terytorium: PL
-Język dokumentu: polski
 Czas trwania skierowania: bezterminowe
 
 **Zlecone badanie**
@@ -23,7 +19,6 @@ Nazwa badania: Morfologia krwi
 Typ badania: Hematologia
 Opis usługi: Zlecenie wykonania morfologii krwi
 Tryb pilności: Rutynowy
-Termin wykonania: możliwie jak najszybciej
 Opis: Skierowanie na podstawowe badanie morfologiczne krwi w celu kontroli po infekcji, podejrzenie anemii
 
 **Wywiad chorobowy pacjenta**
