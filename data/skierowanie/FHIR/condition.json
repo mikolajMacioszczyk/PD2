@@ -1,0 +1,32 @@
+{
+    "resourceType": "Condition",
+    "id": "condition-influenza",
+    "clinicalStatus": {
+        "coding": [
+            {
+                "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+                "code": "resolved",
+                "display": "Resolved"
+            }
+        ]
+    },
+    "category": [
+        {
+            "coding": [
+                {
+                    "system": "http://terminology.hl7.org/CodeSystem/condition-category",
+                    "code": "encounter-diagnosis",
+                    "display": "Encounter Diagnosis"
+                }
+            ]
+        }
+    ],
+    "code": {
+        "text": "Grypa"
+    },
+    "subject": {
+        "reference": "Patient/patient-80010112346"
+    },
+    "onsetDateTime": "2025-04-01",
+    "abatementDateTime": "2025-04-10"
+}

@@ -16,7 +16,6 @@ Czas trwania skierowania: bezterminowe
 **Zlecone badanie**
 
 Nazwa badania: Morfologia krwi
-Typ badania: Hematologia
 Opis usługi: Zlecenie wykonania morfologii krwi
 Tryb pilności: Rutynowy
 Opis: Skierowanie na podstawowe badanie morfologiczne krwi w celu kontroli po infekcji, podejrzenie anemii

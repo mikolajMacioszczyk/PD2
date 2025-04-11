@@ -56,7 +56,6 @@
   "referral_document/allergies_adverse_reactions/allergies_adverse_reactions_overview/encoding|code": "UTF-8",
   "referral_document/allergies_adverse_reactions/allergies_adverse_reactions_overview/encoding|terminology": "IANA_character-sets",
   "referral_document/diagnostic_investigations/laboratory_test:0/test_name": "Morfologia krwi",
-  "referral_document/diagnostic_investigations/laboratory_test:0/laboratory_test_type": "Hematologia",
   "referral_document/diagnostic_investigations/laboratory_test:0/test_status|terminology": "local",
   "referral_document/diagnostic_investigations/laboratory_test:0/test_status|value": "Interim",
   "referral_document/diagnostic_investigations/laboratory_test:0/test_status|code": "at0037",
