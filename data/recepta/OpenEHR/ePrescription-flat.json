@@ -55,5 +55,8 @@
     "prescription/language|terminology": "ISO_639-1",
     "prescription/territory|terminology": "ISO_3166-1",
     "prescription/territory|code": "PL",
-    "prescription/composer|name": "lek. Anna Kowalska"
+    "prescription/composer|name": "lek. Anna Kowalska",
+    "prescription/composer|id": "1234567",
+    "prescription/composer|id_scheme": "NPWZ",
+    "prescription/composer|id_namespace": "pl.gov.npwz"
   }
