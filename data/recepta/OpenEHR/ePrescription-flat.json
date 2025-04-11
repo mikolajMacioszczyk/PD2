@@ -26,10 +26,10 @@
   "prescription/medication_order:0/order:0/dose_direction:0/dose_pattern:0/dose_timing/exact_timing_critical": false,
   "prescription/medication_order:0/order:0/dose_direction:0/dose_pattern:0/dose_timing/as_required": true,
   "prescription/medication_order:0/order:0/dose_direction:0/dose_pattern:0/dose_timing/as_required_criterion": "",
-  "prescription/medication_order:0/order:0/dose_direction:0/dose_pattern:0/dose_administration_duration": "PT0M",
+  "prescription/medication_order:0/order:0/dose_direction:0/dose_pattern:0/dose_administration_duration": "PT0S",
   "prescription/medication_order:0/order:0/dose_direction:0/direction_duration/coded_text_value|terminology": "local",
   "prescription/medication_order:0/order:0/dose_direction:0/direction_duration/coded_text_value|code": "at0067",
-  "prescription/medication_order:0/order:0/dose_direction:0/direction_duration/coded_text_value|value": "P3D",
+  "prescription/medication_order:0/order:0/dose_direction:0/direction_duration/coded_text_value|value": "Indefinite",
   "prescription/medication_order:0/order:0/dose_direction:0/direction_repetition/repetition_interval": "P1D",
   "prescription/medication_order:0/order:0/dose_direction:0/direction_repetition/specific_date:0": "2025-04-07T19:56:00",
   "prescription/medication_order:0/order:0/medication_safety/maxdoseperperiod/maximum_amount|unit": "1",
@@ -55,8 +55,8 @@
   "prescription/language|terminology": "ISO_639-1",
   "prescription/territory|terminology": "ISO_3166-1",
   "prescription/territory|code": "PL",
-  "prescription/composer|name": "lek. Anna Kowalska",
   "prescription/composer|id": "1234567",
   "prescription/composer|id_scheme": "NPWZ",
-  "prescription/composer|id_namespace": "pl.gov.npwz"
+  "prescription/composer|id_namespace": "pl.gov.npwz",
+  "prescription/composer|name": "lek. Anna Kowalska"
 }
