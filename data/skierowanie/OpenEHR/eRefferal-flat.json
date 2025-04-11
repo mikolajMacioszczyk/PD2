@@ -36,7 +36,7 @@
   "referral_document/current_past_medical_history/exclusion_statement_-_problems_and_diagnoses:0/encoding|code": "UTF-8",
   "referral_document/current_past_medical_history/problem:0/problem": "Przebyta infekcja wirusowa (grypa)",
   "referral_document/current_past_medical_history/problem:0/date_clinically_recognised": "2025-04-01",
-  "referral_document/current_past_medical_history/problem:0/date_of_resolution": "2022-04-10",
+  "referral_document/current_past_medical_history/problem:0/date_of_resolution": "2025-04-10",
   "referral_document/current_past_medical_history/problem:0/language|code": "pl",
   "referral_document/current_past_medical_history/problem:0/language|terminology": "ISO_639-1",
   "referral_document/current_past_medical_history/problem:0/encoding|code": "UTF-8",

@@ -1,0 +1,57 @@
+{
+    "resourceType": "ServiceRequest",
+    "id": "PL-2025-000234",
+    "status": "active",
+    "intent": "order",
+    "priority": "routine",
+    "code": {
+        "coding": [
+            {
+                "system": "http://loinc.org",
+                "code": "57021-8",
+                "display": "Complete blood count panel"
+            }
+        ],
+        "text": "Morfologia krwi"
+    },
+    "subject": {
+        "reference": "Patient/80010112345",
+        "display": "Pacjent (PESEL: 80010112345)"
+    },
+    "authoredOn": "2025-04-11T13:05:00+01:00",
+    "requester": {
+        "reference": "Practitioner/1234567",
+        "display": "lek. Anna Kowalska"
+    },
+    "locationReference": [
+        {
+            "reference": "Organization/przychodnia-wroclaw",
+            "display": "Przychodnia Rodzinna We Wrocławiu"
+        }
+    ],
+    "reasonCode": [
+        {
+            "text": "Kontrola parametrów krwi po przebytej infekcji (podejrzenie anemii)"
+        }
+    ],
+    "note": [
+        {
+            "text": "Skierowanie na podstawowe badanie morfologiczne krwi w celu kontroli po infekcji"
+        }
+    ],
+    "occurrenceTiming": {
+        "code": {
+            "text": "as soon as possible"
+        }
+    },
+    "extension": [
+        {
+            "url": "http://hl7.org/fhir/StructureDefinition/servicerequest-language",
+            "valueCode": "pl"
+        },
+        {
+            "url": "http://hl7.org/fhir/StructureDefinition/servicerequest-location",
+            "valueString": "PL"
+        }
+    ]
+}

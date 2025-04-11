@@ -1,0 +1,21 @@
+{
+  "resourceType": "Practitioner",
+  "id": "dr-anna-kowalska",
+  "name": [
+    {
+      "prefix": [
+        "lek."
+      ],
+      "given": [
+        "Anna"
+      ],
+      "family": "Kowalska"
+    }
+  ],
+  "identifier": [
+    {
+      "system": "urn:oid:2.16.840.1.113883.3.4424.1.6.2",
+      "value": "2844964"
+    }
+  ]
+}
