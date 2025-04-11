@@ -3,15 +3,20 @@
 import json
 import requests
 from create_ehr import create_ehr
+from openehr_conf import OPENEHR_SERVER, DATA_DIRECTORY_PATH
 
-with open("ePrescription-example-flat.json", "r", encoding="utf-8") as file:
+composition_file_name = 'ePrescription-flat.json'
+composition_file_path = f"{DATA_DIRECTORY_PATH}recepta/OpenEHR/{composition_file_name}"
+
+with open(composition_file_path, "r", encoding="utf-8") as file:
     composition_data = json.load(file)
 
 ehr_id = create_ehr()
+print(f"EHR ID: {ehr_id}")
 template_id = "ePrescription"
 format_type = "FLAT"
 
-url = f"http://localhost:8080/ehrbase/rest/openehr/v1/ehr/{ehr_id}/composition"
+url = f"{OPENEHR_SERVER}ehrbase/rest/openehr/v1/ehr/{ehr_id}/composition"
 params = {
     "templateId": template_id,
     "format": format_type
