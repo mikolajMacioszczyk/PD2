@@ -1,0 +1,28 @@
+{
+    "resourceType": "AllergyIntolerance",
+    "id": "penicylina-alergia",
+    "type": {
+        "text": "allergy"
+    },
+    "category": [
+        "medication"
+    ],
+    "criticality": "high",
+    "code": {
+        "text": "Penicylina"
+    },
+    "reaction": [
+        {
+            "manifestation": [
+                {
+                    "concept": {
+                        "text": "Wysypka, obrzęk twarzy po przyjęciu penicyliny"
+                    }
+                }
+            ]
+        }
+    ],
+    "patient": {
+        "reference": "Patient/80010112346"
+    }
+}
