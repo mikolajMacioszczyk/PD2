@@ -11,7 +11,7 @@ default_patient_file = "patient.json"
 default_practitioner_file = "practitioner.json"
 default_organization_file = "organization.json"
 default_allergy_intolerance_file = "allergy_intolerance.json"
-default_service_request_file = "service-request.json"
+default_service_request_file = "service_request.json"
 
 def upload_skierowanie_full(patient_file = default_patient_file, 
                             practitioner_file = default_practitioner_file,
@@ -23,7 +23,7 @@ def upload_skierowanie_full(patient_file = default_patient_file,
     practitioner = load_fhir_resource(MEDICAL_DOCUMENT_TYPE, practitioner_file, Practitioner)
     organization = load_fhir_resource(MEDICAL_DOCUMENT_TYPE, organization_file, Organization)
     allergy_intolerance = load_fhir_resource(MEDICAL_DOCUMENT_TYPE, allergy_intolerance_file, AllergyIntolerance)
-    # service_request = load_fhir_resource(MEDICAL_DOCUMENT_TYPE, service_request_file, ServiceRequest)
+    service_request = load_fhir_resource(MEDICAL_DOCUMENT_TYPE, service_request_file, ServiceRequest)
 
     # Add resources to the server
     patient_id = create_or_get_by_identifier(patient, patient.identifier[0].system)
@@ -39,8 +39,11 @@ def upload_skierowanie_full(patient_file = default_patient_file,
     allergy_intolerance_id = post_resource(allergy_intolerance)
     print("Allergy Intolerance ID:", allergy_intolerance_id)
 
-    # service_request_id = post_resource(service_request)
-    # print("Service Request ID:", service_request_id)
+    service_request.subject.reference = f"Patient/{patient_id}"
+    service_request.requester.reference = f"Practitioner/{practitioner_id}"
+    service_request.location[0].reference.reference = f"Organization/{organization_id}"
+    service_request_id = post_resource(service_request)
+    print("Service Request ID:", service_request_id)
 
 if __name__ == "__main__":
     upload_skierowanie_full()
