@@ -6,6 +6,7 @@ Na podstawie: https://ckm.openehr.org/ckm/templates/1013.26.80 [11.04.2025]
 
 ## Dane
 
+PESEL pacjenta: 80010112345
 Data wystawienia recepty: 07.04.2025, godz. 19:56
 Miejsce wystawienia: Przychodnia Rodzinna We Wrocławiu
 Osoba wystawiająca receptę: lek. Anna Kowalska

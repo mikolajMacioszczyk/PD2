@@ -5,8 +5,8 @@ import requests
 from ehr import get_or_create_ehr
 from openehr_conf import OPENEHR_SERVER, DATA_DIRECTORY_PATH
 
-composition_file_name = 'ePrescription-flat.json'
 pesel = "80010112345"
+composition_file_name = 'ePrescription-flat.json'
 composition_file_path = f"{DATA_DIRECTORY_PATH}recepta/OpenEHR/{composition_file_name}"
 
 with open(composition_file_path, "r", encoding="utf-8") as file:
