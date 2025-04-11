@@ -1,8 +1,8 @@
 import requests
 from openehr_conf import OPENEHR_SERVER, DATA_DIRECTORY_PATH
 
-template_file_name = 'ePrescription.opt'
-template_file_path = f"{DATA_DIRECTORY_PATH}recepta/OpenEHR/{template_file_name}"
+default_template_file_name = 'ePrescription.opt'
+default_template_file_path = f"{DATA_DIRECTORY_PATH}recepta/OpenEHR/{default_template_file_name}"
 
 url = f'{OPENEHR_SERVER}ehrbase/rest/openehr/v1/definition/template/adl1.4'
 
@@ -10,10 +10,16 @@ headers = {
     'Content-Type': 'application/xml'
 }
 
-with open(template_file_path, 'rb') as file:
-    template_data = file.read()
+def upload_e_prescription_template(template_file_path = default_template_file_path):
+    with open(template_file_path, 'rb') as file:
+        template_data = file.read()
 
-response = requests.post(url, headers=headers, data=template_data)
+    response = requests.post(url, headers=headers, data=template_data)
 
-print(f'Status: {response.status_code}')
-print(f'Odpowiedź: {response.text}')
+    if response.status_code == 201:
+        print("Template created")
+    else:
+        print(f'Template creation failed: {response.text}')
+
+if __name__ == "__main__":
+    upload_e_prescription_template()
