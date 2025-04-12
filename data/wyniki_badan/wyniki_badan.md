@@ -29,14 +29,14 @@ Liczba pojemników: 3
 
 Kod SNOMED-CT: 113076002
 Wynik: 91 mg/dl
-Czas walidacji: 2025-04-12T12:09:00
+Czas uzyskania wyników: 2025-04-12T12:09:00
 Identyfikator próbki: SPC-20250411-001
 
 ## Wynik badania – HbA1c
 
 Kod SNOMED-CT: 43396009
 Wynik: 5.2 mmol/mol
-Czas walidacji: 2025-04-13T10:00:00
+Czas uzyskania wyników: 2025-04-13T10:00:00
 Identyfikator próbki: SPC-20250411-001
 
 ## Wnioski kliniczne

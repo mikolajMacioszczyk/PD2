@@ -1,0 +1,35 @@
+{
+    "resourceType": "Observation",
+    "id": "glucose-obs",
+    "status": "final",
+    "category": [
+        {
+            "coding": [
+                {
+                    "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+                    "code": "laboratory"
+                }
+            ]
+        }
+    ],
+    "code": {
+        "coding": [
+            {
+                "system": "http://snomed.info/sct",
+                "code": "33747003",
+                "display": "Glucose measurement, blood"
+            }
+        ]
+    },
+    "subject": {
+        "reference": "Patient/patient-1"
+    },
+    "specimen": {
+        "reference": "Specimen/specimen-1"
+    },
+    "effectiveDateTime": "2025-04-12T12:09:00+02:00",
+    "valueQuantity": {
+        "value": 91,
+        "unit": "mg/dl"
+    }
+}

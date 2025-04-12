@@ -1,0 +1,30 @@
+{
+    "resourceType": "Specimen",
+    "id": "specimen-1",
+    "identifier": [
+        {
+            "system": "http://ezdrowie.gov.pl/e-probka/identyfikator",
+            "value": "SPC-20250411-001"
+        }
+    ],
+    "type": {
+        "coding": [
+            {
+                "system": "http://snomed.info/sct",
+                "code": "119297000",
+                "display": "Blood specimen"
+            }
+        ]
+    },
+    "collection": {
+        "collectedDateTime": "2025-04-12T12:08:00+02:00",
+        "method": {
+            "text": "Pobranie krwi żylnej"
+        },
+        "bodySite": {
+            "concept": {
+                "text": "Żyła odłokciowa"
+            }
+        }
+    }
+}

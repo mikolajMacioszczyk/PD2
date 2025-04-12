@@ -1,0 +1,21 @@
+{
+  "resourceType": "Practitioner",
+  "id": "dr-adnrzej-nowak",
+  "name": [
+    {
+      "prefix": [
+        "mgr"
+      ],
+      "given": [
+        "Andrzej"
+      ],
+      "family": "Nowak"
+    }
+  ],
+  "identifier": [
+    {
+      "system": "pl.gov.krdl",
+      "value": "2345678"
+    }
+  ]
+}

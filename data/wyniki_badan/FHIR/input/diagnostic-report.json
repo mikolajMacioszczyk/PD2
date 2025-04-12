@@ -1,0 +1,42 @@
+{
+    "resourceType": "DiagnosticReport",
+    "id": "report-1",
+    "status": "final",
+    "code": {
+        "coding": [
+            {
+                "system": "http://snomed.info/sct",
+                "code": "113076002",
+                "display": "Glucose tolerance test (procedure)"
+            }
+        ]
+    },
+    "subject": {
+        "reference": "Patient/patient-1"
+    },
+    "performer": [
+        {
+            "reference": "Organization/org-1"
+        }
+    ],
+    "resultsInterpreter": [
+        {
+            "reference": "Practitioner/practitioner-1"
+        }
+    ],
+    "specimen": [
+        {
+            "reference": "Specimen/specimen-1"
+        }
+    ],
+    "result": [
+        {
+            "reference": "Observation/glucose-obs"
+        },
+        {
+            "reference": "Observation/hba1c-obs"
+        }
+    ],
+    "conclusion": "Wyniki mieszczą się w zakresie wartości referencyjnych.",
+    "issued": "2025-04-13T10:00:00"
+}
