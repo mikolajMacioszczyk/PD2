@@ -67,14 +67,14 @@
         },
         "setting": {
             "_type": "DV_CODED_TEXT",
-            "value": "home",
+            "value": "primary medical care",
             "defining_code": {
                 "_type": "CODE_PHRASE",
                 "terminology_id": {
                     "_type": "TERMINOLOGY_ID",
                     "value": "openehr"
                 },
-                "code_string": "225"
+                "code_string": "228"
             }
         },
         "other_context": {
@@ -155,7 +155,7 @@
                 },
                 "origin": {
                     "_type": "DV_DATE_TIME",
-                    "value": "2025-04-12T09:22:13.883509268Z"
+                    "value": "2025-04-12T09:25:45.417345647Z"
                 },
                 "events": [
                     {
@@ -166,7 +166,7 @@
                         },
                         "time": {
                             "_type": "DV_DATE_TIME",
-                            "value": "2025-04-12T09:22:13.883509268Z"
+                            "value": "2025-04-12T09:25:45.417345647Z"
                         },
                         "data": {
                             "_type": "ITEM_TREE",
@@ -487,6 +487,6 @@
     "archetype_node_id": "openEHR-EHR-COMPOSITION.report.v1",
     "uid": {
         "_type": "OBJECT_VERSION_ID",
-        "value": "669bd96d-e02e-4d26-a106-a7bc05d22100::local.ehrbase.org::1"
+        "value": "235c3c21-badc-495e-a835-08b2dc61b80a::local.ehrbase.org::1"
     }
 }

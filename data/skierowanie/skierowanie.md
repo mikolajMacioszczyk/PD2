@@ -4,7 +4,7 @@
 
 Na podstawie: https://ckm.openehr.org/ckm/templates/1013.26.2 [11.04.2025]
 
-## Dane
+## Informacje ogólne
 
 PESEL pacjenta: 80010112346
 Identyfikator skierowania: PL-2025-000234

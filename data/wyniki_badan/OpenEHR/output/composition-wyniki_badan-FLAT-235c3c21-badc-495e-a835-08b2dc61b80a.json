@@ -5,9 +5,9 @@
     "elaboratorytestresult/context/report_id": "LAB-20250411-001",
     "elaboratorytestresult/context/status": "final",
     "elaboratorytestresult/context/start_time": "2025-04-12T12:05:00",
-    "elaboratorytestresult/context/setting|code": "225",
+    "elaboratorytestresult/context/setting|code": "228",
     "elaboratorytestresult/context/setting|terminology": "openehr",
-    "elaboratorytestresult/context/setting|value": "home",
+    "elaboratorytestresult/context/setting|value": "primary medical care",
     "elaboratorytestresult/context/_end_time": "2025-04-12T12:45:00",
     "elaboratorytestresult/context/_health_care_facility|name": "Laboratorium Diagnostyczne we Wroc\u0142awiu",
     "elaboratorytestresult/laboratory_test_result_example/baseline_blood_glucose_ogtt:0/test_name|code": "113076002",
@@ -38,7 +38,7 @@
     "elaboratorytestresult/laboratory_test_result_example/baseline_blood_glucose_ogtt:0/hba1c/specimen/identifier_value|id": "SPC-20250411-001",
     "elaboratorytestresult/laboratory_test_result_example/baseline_blood_glucose_ogtt:0/conclusion": "Wyniki mieszcz\u0105 si\u0119 w zakresie warto\u015bci referencyjnych.",
     "elaboratorytestresult/laboratory_test_result_example/baseline_blood_glucose_ogtt:0/test_diagnosis:0": "Brak cukrzycy",
-    "elaboratorytestresult/laboratory_test_result_example/baseline_blood_glucose_ogtt:0/time": "2025-04-12T09:22:13.883509268Z",
+    "elaboratorytestresult/laboratory_test_result_example/baseline_blood_glucose_ogtt:0/time": "2025-04-12T09:25:45.417345647Z",
     "elaboratorytestresult/laboratory_test_result_example/language|terminology": "ISO_639-1",
     "elaboratorytestresult/laboratory_test_result_example/language|code": "en",
     "elaboratorytestresult/laboratory_test_result_example/encoding|terminology": "IANA_character-sets",
@@ -51,5 +51,5 @@
     "elaboratorytestresult/composer|id": "2345678",
     "elaboratorytestresult/composer|name": "mgr Andrzej Nowak",
     "elaboratorytestresult/composer|id_namespace": "pl.gov.krdl",
-    "elaboratorytestresult/_uid": "669bd96d-e02e-4d26-a106-a7bc05d22100::local.ehrbase.org::1"
+    "elaboratorytestresult/_uid": "235c3c21-badc-495e-a835-08b2dc61b80a::local.ehrbase.org::1"
 }
