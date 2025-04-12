@@ -1,0 +1,492 @@
+{
+    "_type": "COMPOSITION",
+    "name": {
+        "_type": "DV_TEXT",
+        "value": "eLaboratoryTestResult"
+    },
+    "archetype_details": {
+        "archetype_id": {
+            "value": "openEHR-EHR-COMPOSITION.report.v1"
+        },
+        "template_id": {
+            "value": "eLaboratoryTestResult"
+        },
+        "rm_version": "1.0.4"
+    },
+    "language": {
+        "_type": "CODE_PHRASE",
+        "terminology_id": {
+            "_type": "TERMINOLOGY_ID",
+            "value": "ISO_639-1"
+        },
+        "code_string": "pl"
+    },
+    "territory": {
+        "_type": "CODE_PHRASE",
+        "terminology_id": {
+            "_type": "TERMINOLOGY_ID",
+            "value": "ISO_3166-1"
+        },
+        "code_string": "PL"
+    },
+    "category": {
+        "_type": "DV_CODED_TEXT",
+        "value": "event",
+        "defining_code": {
+            "_type": "CODE_PHRASE",
+            "terminology_id": {
+                "_type": "TERMINOLOGY_ID",
+                "value": "openehr"
+            },
+            "code_string": "433"
+        }
+    },
+    "composer": {
+        "_type": "PARTY_IDENTIFIED",
+        "external_ref": {
+            "_type": "PARTY_REF",
+            "namespace": "pl.gov.krdl",
+            "type": "PARTY",
+            "id": {
+                "_type": "GENERIC_ID",
+                "value": "2345678",
+                "scheme": "krdl"
+            }
+        },
+        "name": "mgr Andrzej Nowak"
+    },
+    "context": {
+        "_type": "EVENT_CONTEXT",
+        "start_time": {
+            "_type": "DV_DATE_TIME",
+            "value": "2025-04-12T12:05:00"
+        },
+        "end_time": {
+            "_type": "DV_DATE_TIME",
+            "value": "2025-04-12T12:45:00"
+        },
+        "setting": {
+            "_type": "DV_CODED_TEXT",
+            "value": "home",
+            "defining_code": {
+                "_type": "CODE_PHRASE",
+                "terminology_id": {
+                    "_type": "TERMINOLOGY_ID",
+                    "value": "openehr"
+                },
+                "code_string": "225"
+            }
+        },
+        "other_context": {
+            "_type": "ITEM_TREE",
+            "name": {
+                "_type": "DV_TEXT",
+                "value": "Tree"
+            },
+            "items": [
+                {
+                    "_type": "ELEMENT",
+                    "name": {
+                        "_type": "DV_TEXT",
+                        "value": "Report ID"
+                    },
+                    "value": {
+                        "_type": "DV_TEXT",
+                        "value": "LAB-20250411-001"
+                    },
+                    "archetype_node_id": "at0002"
+                },
+                {
+                    "_type": "ELEMENT",
+                    "name": {
+                        "_type": "DV_TEXT",
+                        "value": "Status"
+                    },
+                    "value": {
+                        "_type": "DV_TEXT",
+                        "value": "final"
+                    },
+                    "archetype_node_id": "at0005"
+                }
+            ],
+            "archetype_node_id": "at0001"
+        },
+        "health_care_facility": {
+            "_type": "PARTY_IDENTIFIED",
+            "name": "Laboratorium Diagnostyczne we Wroc\u0142awiu"
+        }
+    },
+    "content": [
+        {
+            "_type": "OBSERVATION",
+            "name": {
+                "_type": "DV_TEXT",
+                "value": "Laboratory test result example"
+            },
+            "archetype_details": {
+                "archetype_id": {
+                    "value": "openEHR-EHR-OBSERVATION.laboratory_test_result.v1"
+                },
+                "rm_version": "1.0.4"
+            },
+            "language": {
+                "_type": "CODE_PHRASE",
+                "terminology_id": {
+                    "_type": "TERMINOLOGY_ID",
+                    "value": "ISO_639-1"
+                },
+                "code_string": "en"
+            },
+            "encoding": {
+                "_type": "CODE_PHRASE",
+                "terminology_id": {
+                    "_type": "TERMINOLOGY_ID",
+                    "value": "IANA_character-sets"
+                },
+                "code_string": "UTF-8"
+            },
+            "subject": {
+                "_type": "PARTY_SELF"
+            },
+            "data": {
+                "name": {
+                    "_type": "DV_TEXT",
+                    "value": "Event Series"
+                },
+                "origin": {
+                    "_type": "DV_DATE_TIME",
+                    "value": "2025-04-12T09:22:13.883509268Z"
+                },
+                "events": [
+                    {
+                        "_type": "POINT_EVENT",
+                        "name": {
+                            "_type": "DV_TEXT",
+                            "value": "Baseline blood glucose, OGTT"
+                        },
+                        "time": {
+                            "_type": "DV_DATE_TIME",
+                            "value": "2025-04-12T09:22:13.883509268Z"
+                        },
+                        "data": {
+                            "_type": "ITEM_TREE",
+                            "name": {
+                                "_type": "DV_TEXT",
+                                "value": "Tree"
+                            },
+                            "items": [
+                                {
+                                    "_type": "ELEMENT",
+                                    "name": {
+                                        "_type": "DV_TEXT",
+                                        "value": "Test name"
+                                    },
+                                    "value": {
+                                        "_type": "DV_CODED_TEXT",
+                                        "value": "Glucose tolerance test (procedure)",
+                                        "defining_code": {
+                                            "_type": "CODE_PHRASE",
+                                            "terminology_id": {
+                                                "_type": "TERMINOLOGY_ID",
+                                                "value": "SNOMED-CT"
+                                            },
+                                            "code_string": "113076002"
+                                        }
+                                    },
+                                    "archetype_node_id": "at0005"
+                                },
+                                {
+                                    "_type": "CLUSTER",
+                                    "name": {
+                                        "_type": "DV_TEXT",
+                                        "value": "Specimen"
+                                    },
+                                    "archetype_details": {
+                                        "archetype_id": {
+                                            "value": "openEHR-EHR-CLUSTER.specimen.v1"
+                                        },
+                                        "rm_version": "1.0.4"
+                                    },
+                                    "items": [
+                                        {
+                                            "_type": "ELEMENT",
+                                            "name": {
+                                                "_type": "DV_TEXT",
+                                                "value": "Specimen type"
+                                            },
+                                            "value": {
+                                                "_type": "DV_CODED_TEXT",
+                                                "value": "Blood specimen (specimen)",
+                                                "defining_code": {
+                                                    "_type": "CODE_PHRASE",
+                                                    "terminology_id": {
+                                                        "_type": "TERMINOLOGY_ID",
+                                                        "value": "SNOMED-CT"
+                                                    },
+                                                    "code_string": "119297000"
+                                                }
+                                            },
+                                            "archetype_node_id": "at0029"
+                                        },
+                                        {
+                                            "_type": "ELEMENT",
+                                            "name": {
+                                                "_type": "DV_TEXT",
+                                                "value": "Laboratory specimen identifier"
+                                            },
+                                            "value": {
+                                                "_type": "DV_IDENTIFIER",
+                                                "id": "SPC-20250411-001"
+                                            },
+                                            "archetype_node_id": "at0001"
+                                        },
+                                        {
+                                            "_type": "ELEMENT",
+                                            "name": {
+                                                "_type": "DV_TEXT",
+                                                "value": "Collection method"
+                                            },
+                                            "value": {
+                                                "_type": "DV_TEXT",
+                                                "value": "Pobranie krwi \u017cylnej"
+                                            },
+                                            "archetype_node_id": "at0007"
+                                        },
+                                        {
+                                            "_type": "ELEMENT",
+                                            "name": {
+                                                "_type": "DV_TEXT",
+                                                "value": "Collection description"
+                                            },
+                                            "value": {
+                                                "_type": "DV_TEXT",
+                                                "value": "Krew pobrana na czczo"
+                                            },
+                                            "archetype_node_id": "at0079"
+                                        },
+                                        {
+                                            "_type": "ELEMENT",
+                                            "name": {
+                                                "_type": "DV_TEXT",
+                                                "value": "Source site"
+                                            },
+                                            "value": {
+                                                "_type": "DV_TEXT",
+                                                "value": "\u017by\u0142a od\u0142okciowa"
+                                            },
+                                            "archetype_node_id": "at0087"
+                                        },
+                                        {
+                                            "_type": "ELEMENT",
+                                            "name": {
+                                                "_type": "DV_TEXT",
+                                                "value": "Collection date/time"
+                                            },
+                                            "value": {
+                                                "_type": "DV_DATE_TIME",
+                                                "value": "2025-04-12T12:08:00"
+                                            },
+                                            "archetype_node_id": "at0015"
+                                        },
+                                        {
+                                            "_type": "ELEMENT",
+                                            "name": {
+                                                "_type": "DV_TEXT",
+                                                "value": "Number of containers"
+                                            },
+                                            "value": {
+                                                "_type": "DV_COUNT",
+                                                "magnitude": 3
+                                            },
+                                            "archetype_node_id": "at0080"
+                                        }
+                                    ],
+                                    "archetype_node_id": "openEHR-EHR-CLUSTER.specimen.v1"
+                                },
+                                {
+                                    "_type": "CLUSTER",
+                                    "name": {
+                                        "_type": "DV_TEXT",
+                                        "value": "Glucose results"
+                                    },
+                                    "archetype_details": {
+                                        "archetype_id": {
+                                            "value": "openEHR-EHR-CLUSTER.laboratory_test_analyte.v1"
+                                        },
+                                        "rm_version": "1.0.4"
+                                    },
+                                    "items": [
+                                        {
+                                            "_type": "ELEMENT",
+                                            "name": {
+                                                "_type": "DV_TEXT",
+                                                "value": "Analyte name"
+                                            },
+                                            "value": {
+                                                "_type": "DV_CODED_TEXT",
+                                                "value": "Glucose measurement, blood (procedure)",
+                                                "defining_code": {
+                                                    "_type": "CODE_PHRASE",
+                                                    "terminology_id": {
+                                                        "_type": "TERMINOLOGY_ID",
+                                                        "value": "SNOMED-CT"
+                                                    },
+                                                    "code_string": "33747003"
+                                                }
+                                            },
+                                            "archetype_node_id": "at0024"
+                                        },
+                                        {
+                                            "_type": "ELEMENT",
+                                            "name": {
+                                                "_type": "DV_TEXT",
+                                                "value": "Analyte result"
+                                            },
+                                            "value": {
+                                                "_type": "DV_QUANTITY",
+                                                "units": "mg/dl",
+                                                "magnitude": 91.0
+                                            },
+                                            "archetype_node_id": "at0001"
+                                        },
+                                        {
+                                            "_type": "ELEMENT",
+                                            "name": {
+                                                "_type": "DV_TEXT",
+                                                "value": "Validation time"
+                                            },
+                                            "value": {
+                                                "_type": "DV_DATE_TIME",
+                                                "value": "2025-04-12T12:09:00"
+                                            },
+                                            "archetype_node_id": "at0025"
+                                        },
+                                        {
+                                            "_type": "ELEMENT",
+                                            "name": {
+                                                "_type": "DV_TEXT",
+                                                "value": "Specimen"
+                                            },
+                                            "value": {
+                                                "_type": "DV_IDENTIFIER",
+                                                "id": "SPC-20250411-001"
+                                            },
+                                            "archetype_node_id": "at0026"
+                                        }
+                                    ],
+                                    "archetype_node_id": "openEHR-EHR-CLUSTER.laboratory_test_analyte.v1"
+                                },
+                                {
+                                    "_type": "CLUSTER",
+                                    "name": {
+                                        "_type": "DV_TEXT",
+                                        "value": "HbA1c"
+                                    },
+                                    "archetype_details": {
+                                        "archetype_id": {
+                                            "value": "openEHR-EHR-CLUSTER.laboratory_test_analyte.v1"
+                                        },
+                                        "rm_version": "1.0.4"
+                                    },
+                                    "items": [
+                                        {
+                                            "_type": "ELEMENT",
+                                            "name": {
+                                                "_type": "DV_TEXT",
+                                                "value": "Analyte name"
+                                            },
+                                            "value": {
+                                                "_type": "DV_CODED_TEXT",
+                                                "value": "Hemoglobin A1c measurement (procedure)",
+                                                "defining_code": {
+                                                    "_type": "CODE_PHRASE",
+                                                    "terminology_id": {
+                                                        "_type": "TERMINOLOGY_ID",
+                                                        "value": "SNOMED-CT"
+                                                    },
+                                                    "code_string": "43396009"
+                                                }
+                                            },
+                                            "archetype_node_id": "at0024"
+                                        },
+                                        {
+                                            "_type": "ELEMENT",
+                                            "name": {
+                                                "_type": "DV_TEXT",
+                                                "value": "Analyte result"
+                                            },
+                                            "value": {
+                                                "_type": "DV_QUANTITY",
+                                                "units": "mmol/mol",
+                                                "magnitude": 5.2
+                                            },
+                                            "archetype_node_id": "at0001"
+                                        },
+                                        {
+                                            "_type": "ELEMENT",
+                                            "name": {
+                                                "_type": "DV_TEXT",
+                                                "value": "Validation time"
+                                            },
+                                            "value": {
+                                                "_type": "DV_DATE_TIME",
+                                                "value": "2025-04-13T10:00:00"
+                                            },
+                                            "archetype_node_id": "at0025"
+                                        },
+                                        {
+                                            "_type": "ELEMENT",
+                                            "name": {
+                                                "_type": "DV_TEXT",
+                                                "value": "Specimen"
+                                            },
+                                            "value": {
+                                                "_type": "DV_IDENTIFIER",
+                                                "id": "SPC-20250411-001"
+                                            },
+                                            "archetype_node_id": "at0026"
+                                        }
+                                    ],
+                                    "archetype_node_id": "openEHR-EHR-CLUSTER.laboratory_test_analyte.v1"
+                                },
+                                {
+                                    "_type": "ELEMENT",
+                                    "name": {
+                                        "_type": "DV_TEXT",
+                                        "value": "Conclusion"
+                                    },
+                                    "value": {
+                                        "_type": "DV_TEXT",
+                                        "value": "Wyniki mieszcz\u0105 si\u0119 w zakresie warto\u015bci referencyjnych."
+                                    },
+                                    "archetype_node_id": "at0057"
+                                },
+                                {
+                                    "_type": "ELEMENT",
+                                    "name": {
+                                        "_type": "DV_TEXT",
+                                        "value": "Test diagnosis"
+                                    },
+                                    "value": {
+                                        "_type": "DV_TEXT",
+                                        "value": "Brak cukrzycy"
+                                    },
+                                    "archetype_node_id": "at0098"
+                                }
+                            ],
+                            "archetype_node_id": "at0003"
+                        },
+                        "archetype_node_id": "at0002"
+                    }
+                ],
+                "archetype_node_id": "at0001"
+            },
+            "archetype_node_id": "openEHR-EHR-OBSERVATION.laboratory_test_result.v1"
+        }
+    ],
+    "archetype_node_id": "openEHR-EHR-COMPOSITION.report.v1",
+    "uid": {
+        "_type": "OBJECT_VERSION_ID",
+        "value": "669bd96d-e02e-4d26-a106-a7bc05d22100::local.ehrbase.org::1"
+    }
+}
