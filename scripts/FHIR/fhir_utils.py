@@ -6,7 +6,7 @@ import requests
 from fhir_conf import FHIR_SERVER, VERBOSE, DATA_DIRECTORY_PATH
 
 def get_full_path(medical_document_type, relative_path):
-    return os.path.join(DATA_DIRECTORY_PATH, medical_document_type, "FHIR", relative_path)
+    return os.path.join(DATA_DIRECTORY_PATH, medical_document_type, "FHIR", "input", relative_path)
 
 def load_fhir_resource(medical_document_type, file_path, resource_class, is_full_path = False):
     full_path = file_path if is_full_path else get_full_path(medical_document_type, file_path)

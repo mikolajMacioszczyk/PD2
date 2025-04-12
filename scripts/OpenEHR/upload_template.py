@@ -8,7 +8,7 @@ headers = {
 }
 
 def upload_template(template_file_name, medical_document_type):
-    template_file_path = f"{DATA_DIRECTORY_PATH}{medical_document_type}/OpenEHR/{template_file_name}"
+    template_file_path = f"{DATA_DIRECTORY_PATH}{medical_document_type}/OpenEHR/input/{template_file_name}"
 
     with open(template_file_path, 'rb') as file:
         template_data = file.read()
