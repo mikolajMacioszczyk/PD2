@@ -3,7 +3,8 @@ from fhir.resources.practitioner import Practitioner
 from fhir.resources.organization import Organization
 from fhir.resources.medication import Medication
 from fhir.resources.medicationrequest import MedicationRequest
-from fhir_utils import post_resource, create_or_get_by_identifier, load_fhir_resource
+from fhir_utils import get_resource, post_resource, create_or_get_by_identifier, load_fhir_resource
+from file_output_fhir import save_to_output_file
 
 MEDICAL_DOCUMENT_TYPE = "recepta"
 default_patient_file = "patient.json"
@@ -42,6 +43,20 @@ def upload_recepta_full(patient_file = default_patient_file,
     medication_request.requester.reference = f"Practitioner/{practitioner_id}"
     medication_request_id = post_resource(medication_request)
     print("Medication Request ID:", medication_request_id)
+
+    # TODO: medication
+    # TODO: connect organization
+
+    includes = [
+            f"{MedicationRequest.__name__}:subject",
+            f"{MedicationRequest.__name__}:requester",
+            f"{MedicationRequest.__name__}:medication",
+        ]
+    resource_bundle = get_resource(MedicationRequest.__name__, medication_request_id, includes)
+    if resource_bundle:
+        file_name = f"bundle-{MEDICAL_DOCUMENT_TYPE}-JSON-{medication_request_id}.json"
+        save_to_output_file(resource_bundle, MEDICAL_DOCUMENT_TYPE, file_name)
+        print(f"Saved bundle to {file_name}")
 
 if __name__ == "__main__":
     upload_recepta_full()

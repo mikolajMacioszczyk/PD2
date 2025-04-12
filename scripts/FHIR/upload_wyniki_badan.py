@@ -66,10 +66,10 @@ def upload_wyniki_badan_full(patient_file = default_patient_file,
     print("Diagnostic Report ID:", diagnostic_report_id)
 
     includes = [
-        "DiagnosticReport:subject", 
-        "DiagnosticReport:results-interpreter",
-        "DiagnosticReport:specimen",
-        "DiagnosticReport:result"
+        f"{DiagnosticReport.__name__}:subject", 
+        f"{DiagnosticReport.__name__}:results-interpreter",
+        f"{DiagnosticReport.__name__}:specimen",
+        f"{DiagnosticReport.__name__}:result"
         ]
     resource_bundle = get_resource(DiagnosticReport.__name__, diagnostic_report_id, includes)
     if resource_bundle:

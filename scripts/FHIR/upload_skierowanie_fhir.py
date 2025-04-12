@@ -5,7 +5,8 @@ from fhir.resources.condition import Condition
 from fhir.resources.allergyintolerance import AllergyIntolerance
 from fhir.resources.servicerequest import ServiceRequest
 
-from fhir_utils import post_resource, create_or_get_by_identifier, load_fhir_resource
+from fhir_utils import get_resource, post_resource, create_or_get_by_identifier, load_fhir_resource
+from file_output_fhir import save_to_output_file
 
 MEDICAL_DOCUMENT_TYPE = "skierowanie"
 default_patient_file = "patient.json"
@@ -52,6 +53,19 @@ def upload_skierowanie_full(patient_file = default_patient_file,
     service_request.location[0].reference.reference = f"Organization/{organization_id}"
     service_request_id = post_resource(service_request)
     print("Service Request ID:", service_request_id)
+
+    # TODO: Allergy intollerance
+    # TODO: Location
+
+    includes = [
+            f"{ServiceRequest.__name__}:subject",
+            f"{ServiceRequest.__name__}:requester"
+        ]
+    resource_bundle = get_resource(ServiceRequest.__name__, service_request_id, includes)
+    if resource_bundle:
+        file_name = f"bundle-{MEDICAL_DOCUMENT_TYPE}-JSON-{service_request_id}.json"
+        save_to_output_file(resource_bundle, MEDICAL_DOCUMENT_TYPE, file_name)
+        print(f"Saved bundle to {file_name}")
 
 if __name__ == "__main__":
     upload_skierowanie_full()
