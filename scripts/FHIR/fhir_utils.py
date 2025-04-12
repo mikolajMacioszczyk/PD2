@@ -5,17 +5,33 @@ import urllib
 import requests
 from fhir_conf import FHIR_SERVER, VERBOSE, DATA_DIRECTORY_PATH
 
-def get_full_path(medical_document_type, relative_path):
+def _get_full_path(medical_document_type, relative_path):
     return os.path.join(DATA_DIRECTORY_PATH, medical_document_type, "FHIR", "input", relative_path)
 
+def get_resource(resource_type, resource_id, includes):
+    url = f"{FHIR_SERVER}/{resource_type}"
+
+    params = {
+        "_id": resource_id,
+        "_include": includes
+    }
+
+    response = requests.get(url, params=params)
+
+    if response.status_code == 200:
+        return response.json()
+    else:
+        print(f"Request failed with status code {response.status_code}")
+        return None
+
 def load_fhir_resource(medical_document_type, file_path, resource_class, is_full_path = False):
-    full_path = file_path if is_full_path else get_full_path(medical_document_type, file_path)
+    full_path = file_path if is_full_path else _get_full_path(medical_document_type, file_path)
     with open(full_path, 'r', encoding='utf-8') as f:
         data = json.load(f)
     return resource_class.model_validate(data)
 
 def load_resources_from_dictionary(medical_document_type, dictionary_path, resource_class):
-    full_dictionary_path = get_full_path(medical_document_type, dictionary_path)
+    full_dictionary_path = _get_full_path(medical_document_type, dictionary_path)
     resources_files = [os.path.join(full_dictionary_path, f) for f in os.listdir(full_dictionary_path) if os.path.isfile(os.path.join(full_dictionary_path, f)) and f.endswith(".json")]
     return [load_fhir_resource(medical_document_type, resource_file, resource_class, is_full_path=True) for resource_file in resources_files]
 

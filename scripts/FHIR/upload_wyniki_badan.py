@@ -5,7 +5,8 @@ from fhir.resources.specimen import Specimen
 from fhir.resources.observation import Observation
 from fhir.resources.diagnosticreport import DiagnosticReport
 
-from fhir_utils import post_resource, create_or_get_by_identifier, load_fhir_resource
+from fhir_utils import get_resource, post_resource, create_or_get_by_identifier, load_fhir_resource
+from file_output_fhir import save_to_output_file
 
 MEDICAL_DOCUMENT_TYPE = "wyniki_badan"
 default_patient_file = "patient.json"
@@ -63,6 +64,18 @@ def upload_wyniki_badan_full(patient_file = default_patient_file,
     diagnostic_report.result[1].reference = f"Observation/{observation_hba1c_id}"
     diagnostic_report_id = post_resource(diagnostic_report)
     print("Diagnostic Report ID:", diagnostic_report_id)
+
+    includes = [
+        "DiagnosticReport:subject", 
+        "DiagnosticReport:results-interpreter",
+        "DiagnosticReport:specimen",
+        "DiagnosticReport:result"
+        ]
+    resource_bundle = get_resource(DiagnosticReport.__name__, diagnostic_report_id, includes)
+    if resource_bundle:
+        file_name = f"bundle-{MEDICAL_DOCUMENT_TYPE}-JSON-{diagnostic_report_id}.json"
+        save_to_output_file(resource_bundle, MEDICAL_DOCUMENT_TYPE, file_name)
+        print(f"Saved bundle to {file_name}")
 
 if __name__ == "__main__":
     upload_wyniki_badan_full()
