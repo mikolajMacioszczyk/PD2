@@ -8,7 +8,7 @@
     "referral_document/context/setting|value": "primary medical care",
     "referral_document/context/setting|terminology": "openehr",
     "referral_document/context/_end_time": "2025-04-11T13:05:00",
-    "referral_document/context/_health_care_facility|name": "Przychodnia Rodzinna We Wroc\u0142awiu",
+    "referral_document/context/_health_care_facility|name": "Poradnia Neurologiczna We Wroc\u0142awiu",
     "referral_document/referral_details:0/referral_request/request:0/service_requested": "Morfologia krwi",
     "referral_document/referral_details:0/referral_request/request:0/description_of_service": "Zlecenie wykonania morfologii krwi ",
     "referral_document/referral_details:0/referral_request/request:0/reason_for_request": "Kontrola parametr\u00f3w krwi po przebytej infekcji",
@@ -62,7 +62,7 @@
     "referral_document/diagnostic_investigations/laboratory_test:0/test_status|terminology": "local",
     "referral_document/diagnostic_investigations/laboratory_test:0/test_status|value": "Interim",
     "referral_document/diagnostic_investigations/laboratory_test:0/test_status|code": "at0037",
-    "referral_document/diagnostic_investigations/laboratory_test:0/time": "2025-04-12T07:02:29.913190063Z",
+    "referral_document/diagnostic_investigations/laboratory_test:0/time": "2025-04-12T09:42:32.835740085Z",
     "referral_document/diagnostic_investigations/laboratory_test:0/language|code": "en",
     "referral_document/diagnostic_investigations/laboratory_test:0/language|terminology": "ISO_639-1",
     "referral_document/diagnostic_investigations/laboratory_test:0/encoding|code": "UTF-8",
@@ -77,8 +77,8 @@
     "referral_document/territory|terminology": "ISO_3166-1",
     "referral_document/territory|code": "PL",
     "referral_document/composer|id_namespace": "pl.gov.npwz",
-    "referral_document/composer|name": "lek. Anna Kowalska",
-    "referral_document/composer|id": "1234567",
+    "referral_document/composer|name": "lek. Krystyna Wo\u017aniak",
+    "referral_document/composer|id": "3456789",
     "referral_document/composer|id_scheme": "NPWZ",
-    "referral_document/_uid": "8094a318-1e24-47af-9efc-7365127f124c::local.ehrbase.org::1"
+    "referral_document/_uid": "2fdbe8e3-01b5-4cdb-a2a3-b2327ed06a18::local.ehrbase.org::1"
 }

@@ -1,21 +1,21 @@
 {
   "resourceType": "Practitioner",
-  "id": "dr-anna-kowalska",
+  "id": "dr-krystyna-wozniak",
   "name": [
     {
       "prefix": [
         "lek."
       ],
       "given": [
-        "Anna"
+        "Krystyna"
       ],
-      "family": "Kowalska"
+      "family": "Woźniak"
     }
   ],
   "identifier": [
     {
-      "system": "urn:oid:2.16.840.1.113883.3.4424.1.6.2",
-      "value": "2844964"
+      "system": "pl.gov.npwz",
+      "value": "3456789"
     }
   ]
 }

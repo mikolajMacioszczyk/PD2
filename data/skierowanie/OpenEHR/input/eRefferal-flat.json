@@ -8,7 +8,7 @@
   "referral_document/context/setting|value": "primary medical care",
   "referral_document/context/setting|terminology": "openehr",
   "referral_document/context/_end_time": "2025-04-11T13:05:00",
-  "referral_document/context/_health_care_facility|name": "Przychodnia Rodzinna We Wrocławiu",
+  "referral_document/context/_health_care_facility|name": "Poradnia Neurologiczna We Wrocławiu",
   "referral_document/referral_details:0/referral_request/request:0/service_requested": "Morfologia krwi",
   "referral_document/referral_details:0/referral_request/request:0/description_of_service": "Zlecenie wykonania morfologii krwi ",
   "referral_document/referral_details:0/referral_request/request:0/reason_for_request": "Kontrola parametrów krwi po przebytej infekcji",
@@ -41,7 +41,7 @@
   "referral_document/territory|terminology": "ISO_3166-1",
   "referral_document/territory|code": "PL",
   "referral_document/composer|id_namespace": "pl.gov.npwz",
-  "referral_document/composer|name": "lek. Anna Kowalska",
-  "referral_document/composer|id": "1234567",
+  "referral_document/composer|name": "lek. Krystyna Woźniak",
+  "referral_document/composer|id": "3456789",
   "referral_document/composer|id_scheme": "NPWZ"
 }
