@@ -13,18 +13,24 @@ default_practitioner_file = "practitioner.json"
 default_organization_file = "organization.json"
 default_specimen_file = "specimen.json"
 default_observation_glucose_file = "observation-glucose.json"
+default_observation_hba1c_file = "observation-hba1c.json"
+default_diagnostic_report_file = "diagnostic-report.json"
 
 def upload_wyniki_badan_full(patient_file = default_patient_file, 
                             practitioner_file = default_practitioner_file,
                             organization_file = default_organization_file,
                             specimen_file = default_specimen_file,
-                            observation_glucose_file = default_observation_glucose_file):
+                            observation_glucose_file = default_observation_glucose_file,
+                            observation_hba1c_file = default_observation_hba1c_file,
+                            diagnostic_report_file = default_diagnostic_report_file):
     # Load resources
     patient = load_fhir_resource(MEDICAL_DOCUMENT_TYPE, patient_file, Patient)
     practitioner = load_fhir_resource(MEDICAL_DOCUMENT_TYPE, practitioner_file, Practitioner)
     organization = load_fhir_resource(MEDICAL_DOCUMENT_TYPE, organization_file, Organization)
     specimen = load_fhir_resource(MEDICAL_DOCUMENT_TYPE, specimen_file, Specimen)
     observation_glucose = load_fhir_resource(MEDICAL_DOCUMENT_TYPE, observation_glucose_file, Observation)
+    observation_hba1c = load_fhir_resource(MEDICAL_DOCUMENT_TYPE, observation_hba1c_file, Observation)
+    diagnostic_report = load_fhir_resource(MEDICAL_DOCUMENT_TYPE, diagnostic_report_file, DiagnosticReport)
 
     # Add resources to the server
     patient_id = create_or_get_by_identifier(patient, patient.identifier[0].system)
@@ -44,8 +50,19 @@ def upload_wyniki_badan_full(patient_file = default_patient_file,
     observation_glucose_id = post_resource(observation_glucose)
     print("Observation Glucose ID:", observation_glucose_id)
 
-    # TODO: observation hba1c
-    # TODO: diagnostic report
+    observation_hba1c.subject.reference = f"Patient/{patient_id}"
+    observation_hba1c.specimen.reference = f"Specimen/{specimen_id}"
+    observation_hba1c_id = post_resource(observation_hba1c)
+    print("Observation HbA1c ID:", observation_hba1c_id)
+
+    diagnostic_report.subject.reference = f"Patient/{patient_id}"
+    diagnostic_report.performer[0].reference = f"Organization/{organization_id}"
+    diagnostic_report.resultsInterpreter[0].reference = f"Practitioner/{practitioner_id}"
+    diagnostic_report.specimen[0].reference = f"Specimen/{specimen_id}"
+    diagnostic_report.result[0].reference = f"Observation/{observation_glucose_id}"
+    diagnostic_report.result[1].reference = f"Observation/{observation_hba1c_id}"
+    diagnostic_report_id = post_resource(diagnostic_report)
+    print("Diagnostic Report ID:", diagnostic_report_id)
 
 if __name__ == "__main__":
     upload_wyniki_badan_full()

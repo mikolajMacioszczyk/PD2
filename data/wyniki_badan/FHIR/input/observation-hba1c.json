@@ -27,7 +27,7 @@
     "specimen": {
         "reference": "Specimen/specimen-1"
     },
-    "effectiveDateTime": "2025-04-12T12:08:00",
+    "effectiveDateTime": "2025-04-13T10:00:00+02:00",
     "valueQuantity": {
         "value": 5.2,
         "unit": "mmol/mol"

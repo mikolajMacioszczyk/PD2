@@ -8,6 +8,11 @@
                 "system": "http://snomed.info/sct",
                 "code": "113076002",
                 "display": "Glucose tolerance test (procedure)"
+            },
+            {
+                "system": "http://snomed.info/sct",
+                "code": "43396009",
+                "display": "Hemoglobin A1c measurement"
             }
         ]
     },
@@ -38,5 +43,5 @@
         }
     ],
     "conclusion": "Wyniki mieszczą się w zakresie wartości referencyjnych.",
-    "issued": "2025-04-13T10:00:00"
+    "issued": "2025-04-12T12:45:00"
 }
