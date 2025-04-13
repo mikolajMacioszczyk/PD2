@@ -3,7 +3,7 @@ from fhir.resources.practitioner import Practitioner
 from fhir.resources.organization import Organization
 from fhir.resources.medication import Medication
 from fhir.resources.medicationrequest import MedicationRequest
-from fhir_utils import get_resource, post_resource, create_or_get_by_identifier, load_fhir_resource
+from fhir_utils import get_bundle, post_resource, create_or_get_by_identifier, load_fhir_resource
 from file_output_fhir import save_to_output_file
 
 MEDICAL_DOCUMENT_TYPE = "recepta"
@@ -40,19 +40,14 @@ def upload_recepta_full(patient_file = default_patient_file,
 
     medication_request.medication.reference.reference = f"Medication/{medication_id}"
     medication_request.subject.reference = f"Patient/{patient_id}"
+    medication_request.informationSource[0].reference = f"Organization/{organization_id}"
     medication_request.requester.reference = f"Practitioner/{practitioner_id}"
     medication_request_id = post_resource(medication_request)
     print("Medication Request ID:", medication_request_id)
 
-    # TODO: medication
-    # TODO: connect organization
-
-    includes = [
-            f"{MedicationRequest.__name__}:subject",
-            f"{MedicationRequest.__name__}:requester",
-            f"{MedicationRequest.__name__}:medication",
-        ]
-    resource_bundle = get_resource(MedicationRequest.__name__, medication_request_id, includes)
+    resource_bundle = get_bundle(MedicationRequest.__name__, medication_request_id, [
+        { 'name': Organization.__name__, 'id': organization_id }
+    ])
     if resource_bundle:
         file_name = f"bundle-{MEDICAL_DOCUMENT_TYPE}-JSON-{medication_request_id}.json"
         save_to_output_file(resource_bundle, MEDICAL_DOCUMENT_TYPE, file_name)

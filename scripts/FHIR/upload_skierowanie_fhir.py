@@ -54,11 +54,10 @@ def upload_skierowanie_full(patient_file = default_patient_file,
     service_request_id = post_resource(service_request)
     print("Service Request ID:", service_request_id)
 
-    resource_bundle = get_bundle({ "name": ServiceRequest.__name__, "id": service_request_id }, [
+    resource_bundle = get_bundle(ServiceRequest.__name__, service_request_id, [
         { "name": AllergyIntolerance.__name__, "id": allergy_intolerance_id },
-        { "name": Organization.__name__, "id": organization_id },
-        ])
-
+        { "name": Organization.__name__, "id": organization_id }
+    ])
     if resource_bundle:
         file_name = f"bundle-{MEDICAL_DOCUMENT_TYPE}-JSON-{service_request_id}.json"
         save_to_output_file(resource_bundle, MEDICAL_DOCUMENT_TYPE, file_name)

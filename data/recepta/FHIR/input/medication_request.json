@@ -18,6 +18,11 @@
     "subject": {
         "reference": "Patient/patient-80010112345"
     },
+    "informationSource": [
+        {
+            "reference": "Organization/przychodnia-wroclaw"
+        }
+    ],
     "requester": {
         "reference": "Practitioner/dr-anna-kowalska"
     },
