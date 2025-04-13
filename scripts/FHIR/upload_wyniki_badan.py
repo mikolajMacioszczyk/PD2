@@ -65,13 +65,7 @@ def upload_wyniki_badan_full(patient_file = default_patient_file,
     diagnostic_report_id = post_resource(diagnostic_report)
     print("Diagnostic Report ID:", diagnostic_report_id)
 
-    includes = [
-        f"{DiagnosticReport.__name__}:subject", 
-        f"{DiagnosticReport.__name__}:results-interpreter",
-        f"{DiagnosticReport.__name__}:specimen",
-        f"{DiagnosticReport.__name__}:result"
-        ]
-    resource_bundle = get_resource(DiagnosticReport.__name__, diagnostic_report_id, includes)
+    resource_bundle = get_resource(DiagnosticReport.__name__, diagnostic_report_id)
     if resource_bundle:
         file_name = f"bundle-{MEDICAL_DOCUMENT_TYPE}-JSON-{diagnostic_report_id}.json"
         save_to_output_file(resource_bundle, MEDICAL_DOCUMENT_TYPE, file_name)
