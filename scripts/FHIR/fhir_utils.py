@@ -8,12 +8,23 @@ from fhir_conf import FHIR_SERVER, VERBOSE, DATA_DIRECTORY_PATH
 def _get_full_path(medical_document_type, relative_path):
     return os.path.join(DATA_DIRECTORY_PATH, medical_document_type, "FHIR", "input", relative_path)
 
-def get_resource(resource_type, resource_id, includes):
+def get_bundle(resources):
+    full_bundle = None
+    for resource in resources:
+        resource_bundle = get_resource(resource['name'], resource['id'])
+
+        if full_bundle:
+            full_bundle['entry'].append(resource_bundle['entry'][0])
+        else:
+            full_bundle = resource_bundle
+    return full_bundle
+
+def get_resource(resource_type, resource_id):
     url = f"{FHIR_SERVER}/{resource_type}"
 
     params = {
         "_id": resource_id,
-        "_include": includes
+        "_include": "*"
     }
 
     response = requests.get(url, params=params)
