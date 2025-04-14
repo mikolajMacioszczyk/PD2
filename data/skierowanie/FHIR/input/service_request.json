@@ -31,8 +31,8 @@
     ],
     "reason": [
         {
-            "concept": {
-                "text": "Kontrola parametrów krwi po przebytej grypie"
+            "reference": {
+                "reference": "Condition/condition-influenza"
             }
         },
         {
