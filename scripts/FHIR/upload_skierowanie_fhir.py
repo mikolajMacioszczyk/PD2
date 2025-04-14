@@ -13,6 +13,7 @@ default_patient_file = "patient.json"
 default_practitioner_file = "practitioner.json"
 default_organization_file = "organization.json"
 default_condition_influenza_file = "condition_influenza.json"
+default_condition_anemia_file = "condition_anemia.json"
 default_allergy_intolerance_file = "allergy_intolerance.json"
 default_service_request_file = "service_request.json"
 
@@ -20,6 +21,7 @@ def upload_skierowanie_full(patient_file = default_patient_file,
                             practitioner_file = default_practitioner_file,
                             organization_file = default_organization_file,
                             condition_influenza_file = default_condition_influenza_file,
+                            condition_anemia_file = default_condition_anemia_file,
                             allergy_intolerance_file = default_allergy_intolerance_file,
                             service_request_file = default_service_request_file):
     # Load resources
@@ -27,6 +29,7 @@ def upload_skierowanie_full(patient_file = default_patient_file,
     practitioner = load_fhir_resource(MEDICAL_DOCUMENT_TYPE, practitioner_file, Practitioner)
     organization = load_fhir_resource(MEDICAL_DOCUMENT_TYPE, organization_file, Organization)
     condition_influenza = load_fhir_resource(MEDICAL_DOCUMENT_TYPE, condition_influenza_file, Condition)
+    condition_anemia = load_fhir_resource(MEDICAL_DOCUMENT_TYPE, condition_anemia_file, Condition)
     allergy_intolerance = load_fhir_resource(MEDICAL_DOCUMENT_TYPE, allergy_intolerance_file, AllergyIntolerance)
     service_request = load_fhir_resource(MEDICAL_DOCUMENT_TYPE, service_request_file, ServiceRequest)
 
@@ -44,6 +47,10 @@ def upload_skierowanie_full(patient_file = default_patient_file,
     condition_influenza_id = post_resource(condition_influenza)
     print("Condition Influenza ID:", condition_influenza_id)
 
+    condition_anemia.subject.reference = f"Patient/{patient_id}"
+    condition_anemia_id = post_resource(condition_anemia)
+    print("Condition anemia ID:", condition_anemia_id)
+
     allergy_intolerance.patient.reference = f"Patient/{patient_id}"
     allergy_intolerance_id = post_resource(allergy_intolerance)
     print("Allergy Intolerance ID:", allergy_intolerance_id)
@@ -51,15 +58,15 @@ def upload_skierowanie_full(patient_file = default_patient_file,
     service_request.subject.reference = f"Patient/{patient_id}"
     service_request.requester.reference = f"Practitioner/{practitioner_id}"
     service_request.reason[0].reference.reference = f"Condition/{condition_influenza_id}"
+    service_request.reason[1].reference.reference = f"Condition/{condition_anemia_id}"
     service_request.location[0].reference.reference = f"Organization/{organization_id}"
     service_request.supportingInfo[0].reference.reference = f"AllergyIntolerance/{allergy_intolerance_id}"
     service_request_id = post_resource(service_request)
     print("Service Request ID:", service_request_id)
 
-    # TODO: Add Condition anemia 
-    # TODO: GET Condition anemia 
     resource_bundle = get_bundle(ServiceRequest.__name__, service_request_id, [
         { "name": Condition.__name__, "id": condition_influenza_id },
+        { "name": Condition.__name__, "id": condition_anemia_id },
         { "name": AllergyIntolerance.__name__, "id": allergy_intolerance_id },
         { "name": Organization.__name__, "id": organization_id }
     ])

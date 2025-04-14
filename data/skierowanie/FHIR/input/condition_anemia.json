@@ -1,12 +1,12 @@
 {
     "resourceType": "Condition",
-    "id": "condition-influenza",
+    "id": "condition-anemia",
     "clinicalStatus": {
         "coding": [
             {
                 "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
-                "code": "resolved",
-                "display": "Resolved"
+                "code": "active",
+                "display": "Active"
             }
         ]
     },
@@ -14,8 +14,8 @@
         "coding": [
             {
                 "system": "http://terminology.hl7.org/CodeSystem/condition-ver-status",
-                "code": "confirmed",
-                "display": "Confirmed"
+                "code": "provisional",
+                "display": "Provisional"
             }
         ]
     },
@@ -31,11 +31,9 @@
         }
     ],
     "code": {
-        "text": "Grypa"
+        "text": "Anemia"
     },
     "subject": {
         "reference": "Patient/patient-80010112346"
-    },
-    "onsetDateTime": "2025-04-01",
-    "abatementDateTime": "2025-04-10"
+    }
 }

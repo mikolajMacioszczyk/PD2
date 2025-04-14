@@ -36,8 +36,8 @@
             }
         },
         {
-            "concept": {
-                "text": "Podejrzenie anemii"
+            "reference": {
+                "reference": "Condition/condition-anemia"
             }
         }
     ],
