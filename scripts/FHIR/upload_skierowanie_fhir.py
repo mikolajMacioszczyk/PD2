@@ -51,9 +51,13 @@ def upload_skierowanie_full(patient_file = default_patient_file,
     service_request.subject.reference = f"Patient/{patient_id}"
     service_request.requester.reference = f"Practitioner/{practitioner_id}"
     service_request.location[0].reference.reference = f"Organization/{organization_id}"
+    service_request.supportingInfo[0].reference.reference = f"AllergyIntolerance/{allergy_intolerance_id}"
     service_request_id = post_resource(service_request)
     print("Service Request ID:", service_request_id)
 
+    # TODO: GET Condition grypa 
+    # TODO: Add Condition anemia 
+    # TODO: GET Condition anemia 
     resource_bundle = get_bundle(ServiceRequest.__name__, service_request_id, [
         { "name": AllergyIntolerance.__name__, "id": allergy_intolerance_id },
         { "name": Organization.__name__, "id": organization_id }

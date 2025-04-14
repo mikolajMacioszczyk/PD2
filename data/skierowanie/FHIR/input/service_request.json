@@ -32,13 +32,25 @@
     "reason": [
         {
             "concept": {
-                "text": "Kontrola parametrów krwi po przebytej infekcji (podejrzenie anemii)"
+                "text": "Kontrola parametrów krwi po przebytej grypie"
+            }
+        },
+        {
+            "concept": {
+                "text": "Podejrzenie anemii"
             }
         }
     ],
     "note": [
         {
             "text": "Skierowanie na podstawowe badanie morfologiczne krwi w celu kontroli po infekcji"
+        }
+    ],
+    "supportingInfo": [
+        {
+            "reference": {
+                "reference": "AllergyIntolerance/penicylina-alergia"
+            }
         }
     ]
 }
