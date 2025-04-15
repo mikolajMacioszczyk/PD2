@@ -4,22 +4,25 @@ import statistics
 import pandas as pd
 from datetime import datetime
 
+VERBOSE = True
 DATA_DIRECTORY_PATH = "../../data/"
 OUTPUT_FILE_PREFIX = "graphs_statistics.csv"
 
 def collect_graph_stats(file_name):
-    G = nx.Graph() # DiGraph (diameter and avg_path_length not works)
+    G = nx.DiGraph()
     with open(file_name, 'r') as graph_file:
         edge_list = json.load(graph_file)
         edge_list = [tuple(edge) for edge in edge_list]
         G.add_edges_from(edge_list)
 
-    if nx.is_connected(G):
-        diameter = nx.diameter(G)
-        avg_path_length = nx.average_shortest_path_length(G)
-    else:
-        diameter = None
-        avg_path_length = None
+    try:
+        uG = G.to_undirected()
+        if nx.is_connected(uG):
+            diameter = nx.diameter(uG)
+            avg_path_length = nx.average_shortest_path_length(uG)
+            assortativity = nx.degree_assortativity_coefficient(uG)
+    except nx.NetworkXError as x:
+        print(f"Exception: {x}")
 
     degrees = [deg for _, deg in G.degree()]
 
@@ -32,7 +35,7 @@ def collect_graph_stats(file_name):
         "median_degree": statistics.median(degrees),
         "diameter": diameter,
         "avg_path_length": avg_path_length,
-        "assortativity": nx.degree_assortativity_coefficient(G)
+        "assortativity": assortativity
     }
 
 def display_graph_stats(graph_name, data):
@@ -71,9 +74,13 @@ if __name__ == "__main__":
     for item in input_data:
         file_path = get_graph_file_path(DATA_DIRECTORY_PATH, item[0], item[1])
         stats = collect_graph_stats(file_path)
+        graph_name = get_graph_name(item[0], item[1])
+        
+        if VERBOSE:
+            display_graph_stats(graph_name, stats)
 
         final_stats = {}
-        final_stats["graph_name"] = get_graph_name(item[0], item[1])
+        final_stats["graph_name"] = graph_name
         final_stats["medical_document"] = item[0]
         final_stats["standard"] = item[1]
 
