@@ -1,10 +1,13 @@
 import networkx as nx
 import json
 import statistics
+import pandas as pd
+from datetime import datetime
 
 DATA_DIRECTORY_PATH = "../../data/"
+OUTPUT_FILE_PREFIX = "graphs_statistics.csv"
 
-def get_graph_stats(file_name):
+def collect_graph_stats(file_name):
     G = nx.Graph() # DiGraph (diameter and avg_path_length not works)
     with open(file_name, 'r') as graph_file:
         edge_list = json.load(graph_file)
@@ -48,14 +51,39 @@ def display_graph_stats(graph_name, data):
     print(f"Współczynnik asortatywności: {data['assortativity']}")
     print()
 
-def get_and_display_graph_stats(data_path, medical_document, standard):
-    graph_stats = get_graph_stats(f"{data_path}{medical_document}/{standard}/results/graph.json")
-    display_graph_stats(f"{medical_document} {standard}", graph_stats)
+def get_graph_file_path(data_path, medical_document, standard):
+    return f"{data_path}{medical_document}/{standard}/results/graph.json"
+
+def get_graph_name(medical_document, standard):
+    return f"{medical_document}_{standard}"
 
 if __name__ == "__main__":
-    get_and_display_graph_stats(DATA_DIRECTORY_PATH, "recepta", "FHIR")
-    get_and_display_graph_stats(DATA_DIRECTORY_PATH, "recepta", "OpenEHR")
-    get_and_display_graph_stats(DATA_DIRECTORY_PATH, "skierowanie", "FHIR")
-    get_and_display_graph_stats(DATA_DIRECTORY_PATH, "skierowanie", "OpenEHR")
-    get_and_display_graph_stats(DATA_DIRECTORY_PATH, "wyniki_badan", "FHIR")
-    get_and_display_graph_stats(DATA_DIRECTORY_PATH, "wyniki_badan", "OpenEHR")
+    input_data = [
+        ["recepta", "FHIR"],
+        ["recepta", "OpenEHR"],
+        ["skierowanie", "FHIR"],
+        ["skierowanie", "OpenEHR"],
+        ["wyniki_badan", "FHIR"],
+        ["wyniki_badan", "OpenEHR"],
+    ]
+
+    stats_list = []
+    for item in input_data:
+        file_path = get_graph_file_path(DATA_DIRECTORY_PATH, item[0], item[1])
+        stats = collect_graph_stats(file_path)
+
+        final_stats = {}
+        final_stats["graph_name"] = get_graph_name(item[0], item[1])
+        final_stats["medical_document"] = item[0]
+        final_stats["standard"] = item[1]
+
+        for k, v in stats.items():
+            final_stats[k] = round(v, 3) if isinstance(v, float) else v
+
+        stats_list.append(final_stats)
+
+    df = pd.DataFrame(stats_list)
+    timestamp = datetime.now().strftime("%Y_%m_%d_%H_%M_%S")
+    filename = f"{OUTPUT_FILE_PREFIX}_{timestamp}.csv"
+    df.to_csv(filename, index=False)
+    print(f"Zapisano statystyki do pliku {filename}")
