@@ -1,0 +1,7 @@
+output_name,medical_document,standard,size_bytes,unique_keys
+recepta_FHIR,recepta,FHIR,3068,61
+recepta_OpenEHR,recepta,OpenEHR,4900,61
+skierowanie_FHIR,skierowanie,FHIR,4168,48
+skierowanie_OpenEHR,skierowanie,OpenEHR,7785,82
+wyniki_badan_FHIR,wyniki_badan,FHIR,3996,45
+wyniki_badan_OpenEHR,wyniki_badan,OpenEHR,5439,53
