@@ -1,0 +1,20 @@
+{
+    "resourceType": "Encounter",
+    "id": "encounter",
+    "status": "completed",
+    "class": [
+        {
+            "text": "ambulatory"
+        }
+    ],
+    "subject": {
+        "reference": "Patient/patient-80010112349"
+    },
+    "serviceProvider": {
+        "reference": "Organization/poradnia-okulistyczna-wroclaw"
+    },
+    "actualPeriod": {
+        "start": "2025-04-14T09:30:00+01:00",
+        "end": "2025-04-14T09:37:00+01:00"
+    }
+}

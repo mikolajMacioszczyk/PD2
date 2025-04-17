@@ -31,6 +31,9 @@
             "reference": "Practitioner/dr-michal-szymanski"
         }
     ],
+    "encounter": {
+        "reference": "Encounter/encounter"
+    },
     "effectiveDateTime": "2025-04-14T09:30:00+01:00",
     "valueQuantity": {
         "value": 17,
