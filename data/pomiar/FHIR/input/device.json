@@ -1,0 +1,39 @@
+{
+    "resourceType": "Device",
+    "id": "device",
+    "name": [
+        {
+            "value": "Tonometr Goldmanna TG-100",
+            "type": "user-friendly-name"
+        }
+    ],
+    "type": [
+        {
+            "coding": [
+                {
+                    "system": "http://snomed.info/sct",
+                    "code": "707979001",
+                    "display": "Applanation tonometer"
+                }
+            ]
+        }
+    ],
+    "owner": {
+        "reference": "Organization/poradnia-okulistyczna-wroclaw"
+    },
+    "manufacturer": "Sprzęt optyczny S.A.",
+    "modelNumber": "TG-100",
+    "version": [
+        {
+            "type": {
+                "text": "hardware"
+            },
+            "value": "Rev. A"
+        }
+    ],
+    "note": [
+        {
+            "text": "Sprzęt sprawny, skalibrowany. Zakres: 0–80 mmHg, dokładność: 1 mmHg, rozdzielczość: 0.5 mmHg."
+        }
+    ]
+}

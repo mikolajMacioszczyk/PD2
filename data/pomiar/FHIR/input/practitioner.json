@@ -1,0 +1,21 @@
+{
+  "resourceType": "Practitioner",
+  "id": "dr-michal-szymanski",
+  "name": [
+    {
+      "prefix": [
+        "lek."
+      ],
+      "given": [
+        "Michał"
+      ],
+      "family": "Szymański"
+    }
+  ],
+  "identifier": [
+    {
+      "system": "pl.gov.npwz",
+      "value": "4567890"
+    }
+  ]
+}

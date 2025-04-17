@@ -1,0 +1,58 @@
+{
+    "resourceType": "Observation",
+    "id": "observation-intraocular-pressure",
+    "status": "final",
+    "category": [
+        {
+            "coding": [
+                {
+                    "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+                    "code": "vital-signs",
+                    "display": "Vital Signs"
+                }
+            ]
+        }
+    ],
+    "code": {
+        "coding": [
+            {
+                "system": "http://loinc.org",
+                "code": "30164-6",
+                "display": "Intraocular pressure by Tonometry"
+            }
+        ],
+        "text": "Intraocular pressure"
+    },
+    "subject": {
+        "reference": "Patient/patient"
+    },
+    "performer": [
+        {
+            "reference": "Practitioner/dr-michal-szymanski"
+        }
+    ],
+    "effectiveDateTime": "2025-04-14T09:30:00+01:00",
+    "valueQuantity": {
+        "value": 17,
+        "unit": "mmHg",
+        "system": "http://unitsofmeasure.org",
+        "code": "mm[Hg]"
+    },
+    "bodySite": {
+        "coding": [
+            {
+                "system": "http://snomed.info/sct",
+                "code": "8966001",
+                "display": "Left eye structure"
+            }
+        ]
+    },
+    "device": {
+        "reference": "Device/device"
+    },
+    "note": [
+        {
+            "text": "Pomiar przeprowadzono zgodnie z procedurą. Wynik w granicach normy."
+        }
+    ]
+}
