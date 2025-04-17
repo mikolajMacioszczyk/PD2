@@ -1,4 +1,3 @@
-from openehr_conf import DATA_DIRECTORY_PATH
 from upload_template import upload_template
 
 MEDICAL_DOCUMENT_TYPE = "recepta"
