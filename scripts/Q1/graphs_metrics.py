@@ -8,8 +8,16 @@ VERBOSE = True
 DATA_DIRECTORY_PATH = "../../data/"
 OUTPUT_FILE_PREFIX = "graphs_statistics"
 
+def dfs_depth(G, node, visited=None):
+    if visited is None:
+        visited = set()
+    visited.add(node)
+    depths = [dfs_depth(G, neighbor, visited.copy()) for neighbor in G.neighbors(node) if neighbor not in visited]
+    return 1 + max(depths, default=0)
+
 def collect_graph_stats(file_name):
     G = nx.DiGraph()
+
     with open(file_name, 'r') as graph_file:
         edge_list = json.load(graph_file)
         edge_list = [tuple(edge) for edge in edge_list]
@@ -21,10 +29,16 @@ def collect_graph_stats(file_name):
             diameter = nx.diameter(uG)
             avg_path_length = nx.average_shortest_path_length(uG)
             assortativity = nx.degree_assortativity_coefficient(uG)
+            cycles = len(list(nx.cycle_basis(uG))) # simple_cycles for undirected
     except nx.NetworkXError as x:
         print(f"Exception: {x}")
 
     degrees = [deg for _, deg in G.degree()]
+
+    if nx.is_directed_acyclic_graph(G):
+        depth = dfs_depth(G, 1)
+    else:
+        depth = None
 
     return {
         "num_nodes": G.number_of_nodes(),
@@ -35,7 +49,9 @@ def collect_graph_stats(file_name):
         "median_degree": statistics.median(degrees),
         "diameter": diameter,
         "avg_path_length": avg_path_length,
-        "assortativity": assortativity
+        "assortativity": assortativity,
+        "cycles": cycles,
+        "depth": depth
     }
 
 def display_graph_stats(graph_name, data):
@@ -52,6 +68,8 @@ def display_graph_stats(graph_name, data):
     else:
         print('Graf nie jest spójny – średnica i średnia długość ścieżki nie może być policzona.')
     print(f"Współczynnik asortatywności: {data['assortativity']}")
+    print(f"Liczba cykli: {data['cycles']}")
+    print(f"Głębokość: {data['depth']}")
     print()
 
 def get_graph_file_path(data_path, medical_document, standard):
@@ -99,7 +117,7 @@ if __name__ == "__main__":
     cols_to_average = [
         "num_nodes", "num_edges", "density", "max_degree", 
         "average_degree", "median_degree", "diameter", 
-        "avg_path_length", "assortativity"
+        "avg_path_length", "assortativity", "cycles", "depth"
     ]
     grouped = df.groupby("standard")[cols_to_average].mean().reset_index()
     grouped = grouped.round(3)
