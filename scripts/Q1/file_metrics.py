@@ -5,7 +5,7 @@ import pandas as pd
 import json
 
 DATA_DIRECTORY_PATH = "../../data/"
-OUTPUT_FILE_PREFIX = "file_statistics"
+OUTPUT_FILE_PREFIX = "results/file_statistics"
 
 def get_json_files(directory):
     json_files = [f for f in os.listdir(directory) if f.endswith('.json') and os.path.isfile(os.path.join(directory, f))]

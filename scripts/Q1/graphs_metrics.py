@@ -6,7 +6,7 @@ from datetime import datetime
 
 VERBOSE = True
 DATA_DIRECTORY_PATH = "../../data/"
-OUTPUT_FILE_PREFIX = "graphs_statistics"
+OUTPUT_FILE_PREFIX = "results/graphs_statistics"
 
 def avg_shortest_paths_from_root(G, root_node):
     lengths = nx.single_source_shortest_path_length(G, root_node)
