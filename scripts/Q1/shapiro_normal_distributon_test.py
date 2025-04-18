@@ -2,7 +2,7 @@ from datetime import datetime
 from scipy.stats import shapiro
 import pandas as pd
 
-DEFAULT_FILE_NAME = "results/graphs_statistics_2025_04_18_13_16_02.csv"
+DEFAULT_FILE_NAME = "results/graphs_statistics_2025_04_18_13_42_03.csv"
 
 P_VALUE_TRESHOLD = 0.05
 OUTPUT_FILE_PREFIX = "results/normal_distribution_test"
@@ -22,6 +22,7 @@ def normal_distribution_test(standard, metric, file_name = DEFAULT_FILE_NAME):
         "metric": metric,
         "w_statistic": stat,
         "p_value": p,
+        # Tries to prove that is not normal
         "is_normal": p > P_VALUE_TRESHOLD
     }
 
@@ -30,9 +31,9 @@ def display_result(result):
     print("W-statystyka:", result["w_statistic"])
     print("p-wartość:", result["p_value"])
     if result["is_normal"]:
-        print("Nie ma podstawy by odrzucić hipotezę, że dane mają postać rozkładu normalnego")
+        print(f"Nie ma podstawy by odrzucić hipotezę, że dane mają postać rozkładu normalnego (p > {P_VALUE_TRESHOLD})")
     if not result["is_normal"]:
-        print("Dane nie mają rozkładu normalnego")
+        print(f"Dane nie mają rozkładu normalnego (p <= {P_VALUE_TRESHOLD})")
     print()
 
 if __name__ == "__main__":
