@@ -1,18 +1,15 @@
-from datetime import datetime
 import pandas as pd
 from scipy.stats import ttest_ind
 
-DEFAULT_FILE_NAME = "results/graphs_statistics_2025_04_18_13_42_03.csv"
 P_VALUE_TRESHOLD = 0.05
-OUTPUT_FILE_PREFIX = "results/welch_test"
 
-def welch_test(metric, is_one_side, file_name = DEFAULT_FILE_NAME):
+def welch_test(key_column, key_value1, key_value2, metric, is_one_side, file_name):
     df = pd.read_csv(file_name)
-    metric_fhir = df[df["standard"] == "FHIR"][metric]
-    metric_openEHR = df[df["standard"] == "OpenEHR"][metric]
+    metric_1 = df[df[key_column] == key_value1][metric]
+    metric_2 = df[df[key_column] == key_value2][metric]
 
     # Test t-Studenta z korektą Welcha (nierówne wariancje)
-    stat, p = ttest_ind(metric_fhir.tolist(), metric_openEHR.tolist(), equal_var=False)
+    stat, p = ttest_ind(metric_1.tolist(), metric_2.tolist(), equal_var=False)
 
     if is_one_side:
         if stat < 0: 
@@ -21,6 +18,7 @@ def welch_test(metric, is_one_side, file_name = DEFAULT_FILE_NAME):
             p_one_side = 1 - p / 2
 
         return {
+            "key": f"{key_value1}-{key_value2}",
             "metric": metric,
             "statistic": stat,
             "is_one_side": is_one_side,
@@ -30,6 +28,7 @@ def welch_test(metric, is_one_side, file_name = DEFAULT_FILE_NAME):
         } 
     else:
         return {
+            "key": f"{key_value1}-{key_value2}",
             "metric": metric,
             "statistic": stat,
             "is_one_side": is_one_side,
@@ -39,7 +38,7 @@ def welch_test(metric, is_one_side, file_name = DEFAULT_FILE_NAME):
         }
 
 def display_result(result):
-    print(f"===== {result['metric']} ====")
+    print(f"===== {result['key']} {result['metric']} ====")
     print("statystyka:", result["statistic"])
     print("p-wartość:", result["p_value"])
     if result["is_significantly_different"]:
@@ -53,28 +52,4 @@ def display_result(result):
         else:
             print(f"Różnica nie jest statystycznie istotna (p ≥ {P_VALUE_TRESHOLD})")
     print()
-
-if __name__ == "__main__":
-    standards = ["FHIR", "OpenEHR"]
-    # TODO: Select metrics
-    graph_normal_distribution_metrics = [
-            ["diameter", True], 
-            ["diameter", False], 
-            ["avg_path_length", True], 
-            ["avg_path_length", False], 
-            ["avg_path_from_root", True],
-            ["avg_path_from_root", False]
-        ]
-    
-    test_results = []
-    for metric, is_one_side in graph_normal_distribution_metrics:
-        result = welch_test(metric, is_one_side)
-        test_results.append(result)
-        display_result(result)
-            
-    df = pd.DataFrame(test_results)
-    timestamp = datetime.now().strftime("%Y_%m_%d_%H_%M_%S")
-    filename = f"{OUTPUT_FILE_PREFIX}_{timestamp}.csv"
-    df.to_csv(filename, index=False)
-    print(f"Zapisano wyniki testu istotności do pliku {filename}")
             
