@@ -8,6 +8,14 @@ VERBOSE = True
 DATA_DIRECTORY_PATH = "../../data/"
 OUTPUT_FILE_PREFIX = "graphs_statistics"
 
+def avg_shortest_paths_from_root(G, root_node):
+    lengths = nx.single_source_shortest_path_length(G, root_node)
+    lengths_without_root = [l for node, l in lengths.items() if node != root_node]
+    if lengths_without_root:
+        return sum(lengths_without_root) / len(lengths_without_root)
+    else:
+        return 0
+
 def dfs_depth(G, node, visited=None):
     if visited is None:
         visited = set()
@@ -17,6 +25,7 @@ def dfs_depth(G, node, visited=None):
 
 def collect_graph_stats(file_name):
     G = nx.DiGraph()
+    root_node = 1
 
     with open(file_name, 'r') as graph_file:
         edge_list = json.load(graph_file)
@@ -36,9 +45,11 @@ def collect_graph_stats(file_name):
     degrees = [deg for _, deg in G.degree()]
 
     if nx.is_directed_acyclic_graph(G):
-        depth = dfs_depth(G, 1)
+        max_depth = dfs_depth(G, root_node)
     else:
-        depth = None
+        max_depth = None
+
+    avg_path_from_root = avg_shortest_paths_from_root(G, root_node)
 
     return {
         "num_nodes": G.number_of_nodes(),
@@ -51,7 +62,8 @@ def collect_graph_stats(file_name):
         "avg_path_length": avg_path_length,
         "assortativity": assortativity,
         "cycles": cycles,
-        "depth": depth
+        "max_depth": max_depth,
+        "avg_path_from_root": avg_path_from_root
     }
 
 def display_graph_stats(graph_name, data):
@@ -69,7 +81,8 @@ def display_graph_stats(graph_name, data):
         print('Graf nie jest spójny – średnica i średnia długość ścieżki nie może być policzona.')
     print(f"Współczynnik asortatywności: {data['assortativity']}")
     print(f"Liczba cykli: {data['cycles']}")
-    print(f"Głębokość: {data['depth']}")
+    print(f"Maksymalna głębokość: {data['max_depth']}")
+    print(f"Średnia długość ścieżki od korzenia: {data['avg_path_from_root']}")
     print()
 
 def get_graph_file_path(data_path, medical_document, standard):
@@ -87,6 +100,7 @@ if __name__ == "__main__":
         ["wyniki_badan", "FHIR"],
         ["wyniki_badan", "OpenEHR"],
         ["pomiar", "FHIR"],
+        ["pomiar", "OpenEHR"],
     ]
 
     stats_list = []
@@ -117,7 +131,8 @@ if __name__ == "__main__":
     cols_to_average = [
         "num_nodes", "num_edges", "density", "max_degree", 
         "average_degree", "median_degree", "diameter", 
-        "avg_path_length", "assortativity", "cycles", "depth"
+        "avg_path_length", "assortativity", "cycles", "max_depth",
+        "avg_path_from_root"
     ]
     grouped = df.groupby("standard")[cols_to_average].mean().reset_index()
     grouped = grouped.round(3)

@@ -23,3 +23,7 @@ Wdrożenia:
 
 
 Archetypty bazowane na: https://ckm.openehr.org/ckm/
+
+
+# TODO:
+- jakiś jeszcze typ
