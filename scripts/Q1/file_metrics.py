@@ -7,6 +7,27 @@ import json
 DATA_DIRECTORY_PATH = "../../data/"
 OUTPUT_FILE_PREFIX = "results/file_statistics"
 
+def extract_paths(data, current_path=""):
+    paths = []
+    if isinstance(data, dict):
+        for key, value in data.items():
+            new_path = f"{current_path}.{key}" if current_path else key
+            paths.extend(extract_paths(value, new_path))
+    elif isinstance(data, list):
+        for index, item in enumerate(data):
+            new_path = f"{current_path}[{index}]"
+            paths.extend(extract_paths(item, new_path))
+    else:
+        paths.append(current_path)
+    return paths
+
+def average_path_length(filepath):
+    with open(filepath, 'r', encoding='utf-8') as f:
+        json_data = json.load(f)
+    paths = extract_paths(json_data)
+    total_length = sum(len(path.split(".")) for path in paths)
+    return total_length / len(paths) if paths else 0
+
 def get_json_files(directory):
     json_files = [f for f in os.listdir(directory) if f.endswith('.json') and os.path.isfile(os.path.join(directory, f))]
     return json_files
@@ -64,17 +85,27 @@ if __name__ == "__main__":
     for item in input_data:
         for file_name in get_json_files(get_output_dir_path(DATA_DIRECTORY_PATH, item[0], item[1])):
             file_path = get_output_file_path(DATA_DIRECTORY_PATH, item[0], item[1], file_name)
+            if "FLAT" in file_path:
+                format = "FLAT"
+            elif "JSON" in file_path:
+                format = "JSON"
+            else:
+                raise Exception(f"Invalid format for path: {file_path}")
             size = get_json_file_size_no_whitespace(file_path)
             unique_keys = count_unique_keys(file_path)
+            avg_path_len = average_path_length(file_path)
             output_name = get_output_name(item[0], item[1])
 
             final_stats = {}
             final_stats["output_name"] = output_name
             final_stats["medical_document"] = item[0]
             final_stats["standard"] = item[1]
+            final_stats["format"] = format
+            final_stats["standard_format"] = f"{item[1]}_{format}"
             final_stats["file_name"] = file_name
             final_stats["size_bytes"] = size
             final_stats["unique_keys"] = unique_keys
+            final_stats["avg_path_len"] = avg_path_len
 
             stats_list.append(final_stats)
 
