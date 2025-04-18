@@ -6,7 +6,7 @@ from datetime import datetime
 
 VERBOSE = True
 DATA_DIRECTORY_PATH = "../../data/"
-OUTPUT_FILE_PREFIX = "graphs_statistics.csv"
+OUTPUT_FILE_PREFIX = "graphs_statistics"
 
 def collect_graph_stats(file_name):
     G = nx.DiGraph()
@@ -68,6 +68,7 @@ if __name__ == "__main__":
         ["skierowanie", "OpenEHR"],
         ["wyniki_badan", "FHIR"],
         ["wyniki_badan", "OpenEHR"],
+        ["pomiar", "FHIR"],
     ]
 
     stats_list = []
@@ -94,3 +95,14 @@ if __name__ == "__main__":
     filename = f"{OUTPUT_FILE_PREFIX}_{timestamp}.csv"
     df.to_csv(filename, index=False)
     print(f"Zapisano statystyki do pliku {filename}")
+
+    cols_to_average = [
+        "num_nodes", "num_edges", "density", "max_degree", 
+        "average_degree", "median_degree", "diameter", 
+        "avg_path_length", "assortativity"
+    ]
+    grouped = df.groupby("standard")[cols_to_average].mean().reset_index()
+    grouped = grouped.round(3)
+    grouped_filename = f"{OUTPUT_FILE_PREFIX}_grouped_{timestamp}.csv"
+    grouped.to_csv(grouped_filename, index=False)
+    print(f"Zapisano statystyki zgrupowane do pliku {grouped_filename}")
