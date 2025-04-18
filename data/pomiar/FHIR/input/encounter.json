@@ -1,10 +1,29 @@
 {
     "resourceType": "Encounter",
     "id": "encounter",
+    "identifier": [
+        {
+            "system": "local",
+            "value": "ZLEC-PL-2025-000423"
+        },
+        {
+            "system": "local",
+            "value": "STUDY-PL-2025-000424"
+        }
+    ],
     "status": "completed",
     "class": [
         {
             "text": "ambulatory"
+        }
+    ],
+    "reason": [
+        {
+            "use": [
+                {
+                    "text": "Przesiew w kierunku retinopatii cukrzycowej (DR screening)"
+                }
+            ]
         }
     ],
     "subject": {
@@ -16,5 +35,8 @@
     "actualPeriod": {
         "start": "2025-04-14T09:30:00+01:00",
         "end": "2025-04-14T09:37:00+01:00"
+    },
+    "priority": {
+        "text": "Planowe"
     }
 }

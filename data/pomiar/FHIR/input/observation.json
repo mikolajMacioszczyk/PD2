@@ -7,21 +7,16 @@
             "coding": [
                 {
                     "system": "http://terminology.hl7.org/CodeSystem/observation-category",
-                    "code": "vital-signs",
-                    "display": "Vital Signs"
+                    "code": "vital-signs"
                 }
             ]
         }
     ],
     "code": {
-        "coding": [
-            {
-                "system": "http://loinc.org",
-                "code": "30164-6",
-                "display": "Intraocular pressure by Tonometry"
-            }
-        ],
-        "text": "Intraocular pressure"
+        "text": "Pomiar ciśnienia wewnątrzgałkowego."
+    },
+    "method": {
+        "text": "Tonometria aplanacyjna"
     },
     "subject": {
         "reference": "Patient/patient"
@@ -34,28 +29,29 @@
     "encounter": {
         "reference": "Encounter/encounter"
     },
-    "effectiveDateTime": "2025-04-14T09:30:00+01:00",
+    "bodySite": {
+        "text": "Left eye"
+    },
     "valueQuantity": {
         "value": 17,
         "unit": "mmHg",
         "system": "http://unitsofmeasure.org",
         "code": "mm[Hg]"
     },
-    "bodySite": {
-        "coding": [
-            {
-                "system": "http://snomed.info/sct",
-                "code": "8966001",
-                "display": "Left eye structure"
-            }
-        ]
-    },
+    "interpretation": [
+        {
+            "text": "Wynik w granicach normy."
+        }
+    ],
     "device": {
         "reference": "Device/device"
     },
     "note": [
         {
-            "text": "Pomiar przeprowadzono zgodnie z procedurą. Wynik w granicach normy."
+            "text": "Pomiar przeprowadzono zgodnie z procedurą."
+        },
+        {
+            "text": "Brak czynników zakłócających pomiar."
         }
     ]
 }

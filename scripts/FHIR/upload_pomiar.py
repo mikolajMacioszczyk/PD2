@@ -50,7 +50,6 @@ def upload_wyniki_badan_full(patient_file = default_patient_file,
     encounter_id = post_resource(encounter)
     print("Encounter ID:", encounter_id)
 
-    # TODO: Observation properties
     observation.subject.reference = f"Patient/{patient_id}"
     observation.device.reference = f"Device/{device_id}"
     observation.performer[0].reference = f"Practitioner/{practitioner_id}"
