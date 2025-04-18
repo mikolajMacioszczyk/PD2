@@ -1,0 +1,70 @@
+{
+    "resourceType": "DeviceDefinition",
+    "id": "device-definition",
+    "deviceName": [
+        {
+            "name": "Tonometr Goldmanna TG-100",
+            "type": "registered-name"
+        }
+    ],
+    "distributor": {
+        "name": "Sprzęt optyczny S.A."
+    },
+    "modelNumber": "TG-100",
+    "description": "Urządzenie do pomiaru ciśnienia wewnątrzgałkowego metodą aplanacyjną.",
+    "version": [
+        {
+            "type": {
+                "text": "hardware"
+            },
+            "value": "Rev. A"
+        },
+        {
+            "type": {
+                "text": "protocol"
+            },
+            "value": "1.0"
+        }
+    ],
+    "property": [
+        {
+            "type": {
+                "text": "Częstotliwość próbkowania"
+            },
+            "valueString": "Manualne odczyty"
+        },
+        {
+            "type": {
+                "text": "Zakres pomiarowy"
+            },
+            "valueRange": {
+                "low": {
+                    "value": 0,
+                    "unit": "mmHg"
+                },
+                "high": {
+                    "value": 80,
+                    "unit": "mmHg"
+                }
+            }
+        },
+        {
+            "type": {
+                "text": "Dokładność"
+            },
+            "valueQuantity": {
+                "value": 1,
+                "unit": "mmHg"
+            }
+        },
+        {
+            "type": {
+                "text": "Rozdzielczość"
+            },
+            "valueQuantity": {
+                "value": 0.5,
+                "unit": "mmHg"
+            }
+        }
+    ]
+}

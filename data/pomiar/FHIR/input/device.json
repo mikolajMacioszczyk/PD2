@@ -1,39 +1,37 @@
 {
     "resourceType": "Device",
     "id": "device",
+    "definition": {
+        "reference": {
+            "reference": "DeviceDefinition/device-definition"
+        }
+    },
     "name": [
         {
             "value": "Tonometr Goldmanna TG-100",
-            "type": "user-friendly-name"
+            "type": "registered-name"
         }
     ],
-    "type": [
-        {
-            "coding": [
-                {
-                    "system": "http://snomed.info/sct",
-                    "code": "707979001",
-                    "display": "Applanation tonometer"
-                }
-            ]
-        }
-    ],
+    "availabilityStatus": {
+        "text": "available"
+    },
     "owner": {
         "reference": "Organization/poradnia-okulistyczna-wroclaw"
     },
-    "manufacturer": "Sprzęt optyczny S.A.",
-    "modelNumber": "TG-100",
-    "version": [
-        {
-            "type": {
-                "text": "hardware"
-            },
-            "value": "Rev. A"
-        }
-    ],
+    "serialNumber": "DEVICE-PL-2020",
+    "manufactureDate": "2021-03-15",
     "note": [
         {
-            "text": "Sprzęt sprawny, skalibrowany. Zakres: 0–80 mmHg, dokładność: 1 mmHg, rozdzielczość: 0.5 mmHg."
+            "text": "Ostatnia kalibracja: 2025-04-10"
+        },
+        {
+            "text": "Ostatnie czyszczenie: 2025-04-10"
+        },
+        {
+            "text": "Ostatni serwis: 2024-12-20"
+        },
+        {
+            "text": "Lokalizacja: Gabinet 12, ul. Gajowa 5, Wrocław"
         }
     ]
 }

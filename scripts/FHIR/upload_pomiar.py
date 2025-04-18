@@ -1,6 +1,7 @@
 from fhir.resources.patient import Patient
 from fhir.resources.practitioner import Practitioner
 from fhir.resources.organization import Organization
+from fhir.resources.devicedefinition import DeviceDefinition
 from fhir.resources.device import Device
 from fhir.resources.observation import Observation
 from fhir.resources.encounter import Encounter
@@ -12,6 +13,7 @@ MEDICAL_DOCUMENT_TYPE = "pomiar"
 default_patient_file = "patient.json"
 default_practitioner_file = "practitioner.json"
 default_organization_file = "organization.json"
+default_device_definition_file = "device_definition.json"
 default_device_file = "device.json"
 default_observation_file = "observation.json"
 default_encounter_file = "encounter.json"
@@ -19,6 +21,7 @@ default_encounter_file = "encounter.json"
 def upload_wyniki_badan_full(patient_file = default_patient_file, 
                             practitioner_file = default_practitioner_file,
                             organization_file = default_organization_file,
+                            device_definition_file = default_device_definition_file,
                             device_file = default_device_file,
                             observation_file = default_observation_file,
                             encounter_file = default_encounter_file):
@@ -26,6 +29,7 @@ def upload_wyniki_badan_full(patient_file = default_patient_file,
     patient = load_fhir_resource(MEDICAL_DOCUMENT_TYPE, patient_file, Patient)
     practitioner = load_fhir_resource(MEDICAL_DOCUMENT_TYPE, practitioner_file, Practitioner)
     organization = load_fhir_resource(MEDICAL_DOCUMENT_TYPE, organization_file, Organization)
+    device_definition = load_fhir_resource(MEDICAL_DOCUMENT_TYPE, device_definition_file, DeviceDefinition)
     device = load_fhir_resource(MEDICAL_DOCUMENT_TYPE, device_file, Device)
     observation = load_fhir_resource(MEDICAL_DOCUMENT_TYPE, observation_file, Observation)
     encounter = load_fhir_resource(MEDICAL_DOCUMENT_TYPE, encounter_file, Encounter)
@@ -40,7 +44,10 @@ def upload_wyniki_badan_full(patient_file = default_patient_file,
     organization_id = post_resource(organization)
     print("Organization ID:", organization_id)
 
-    # TODO: Device properties
+    device_definition_id = post_resource(device_definition)
+    print("Device Definition ID:", device_definition_id)
+
+    device.definition.reference.reference = f"DeviceDefinition/{device_definition_id}"
     device.owner.reference = f"Organization/{organization_id}"
     device_id = post_resource(device)
     print("Device ID:", device_id)
@@ -58,7 +65,8 @@ def upload_wyniki_badan_full(patient_file = default_patient_file,
     print("Observation ID:", observation_id)
 
     resource_bundle = get_bundle(Observation.__name__, observation_id, [
-        { 'name': Organization.__name__, 'id': organization_id }
+        { 'name': Organization.__name__, 'id': organization_id },
+        { 'name': DeviceDefinition.__name__, 'id': device_definition_id },
     ])
     if resource_bundle:
         file_name = f"bundle-{MEDICAL_DOCUMENT_TYPE}-JSON-{observation_id}.json"
