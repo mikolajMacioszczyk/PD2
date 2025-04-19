@@ -1,0 +1,18 @@
+{
+    "resourceType": "BodyStructure",
+    "id": "example-id",
+    "description": "Ciało szkliste lewego oka",
+    "includedStructure": [
+        {
+            "structure": {
+                "text": "Ciało szkliste"
+            },
+            "laterality": {
+                "text": "Lewe oko"
+            }
+        }
+    ],
+    "patient": {
+        "reference": "Patient/patient-80010112350"
+    }
+}
