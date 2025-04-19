@@ -1,0 +1,22 @@
+{
+  "resourceType": "Practitioner",
+  "id": "dr-michal-szymanski",
+  "name": [
+    {
+      "prefix": [
+        "lek.",
+        "med."
+      ],
+      "given": [
+        "Adam"
+      ],
+      "family": "Woźniak"
+    }
+  ],
+  "identifier": [
+    {
+      "system": "pl.gov.npwz",
+      "value": "5634789"
+    }
+  ]
+}

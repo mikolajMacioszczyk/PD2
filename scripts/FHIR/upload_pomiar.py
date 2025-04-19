@@ -18,7 +18,7 @@ default_device_file = "device.json"
 default_observation_file = "observation.json"
 default_encounter_file = "encounter.json"
 
-def upload_wyniki_badan_full(patient_file = default_patient_file, 
+def upload_pomiar_full(patient_file = default_patient_file, 
                             practitioner_file = default_practitioner_file,
                             organization_file = default_organization_file,
                             device_definition_file = default_device_definition_file,
@@ -74,4 +74,4 @@ def upload_wyniki_badan_full(patient_file = default_patient_file,
         print(f"Saved bundle to {file_name}")
 
 if __name__ == "__main__":
-    upload_wyniki_badan_full()
+    upload_pomiar_full()
