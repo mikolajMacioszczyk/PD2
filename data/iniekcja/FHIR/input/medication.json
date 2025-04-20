@@ -1,6 +1,6 @@
 {
     "resourceType": "Medication",
-    "id": "medication-Aflibercept",
+    "id": "medication-aflibercept",
     "code": {
         "coding": [
             {
