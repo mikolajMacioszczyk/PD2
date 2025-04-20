@@ -1,0 +1,29 @@
+{
+    "resourceType": "AllergyIntolerance",
+    "id": "allergy-intolerance",
+    "patient": {
+        "reference": "Patient/6f0334d8-4f93-4dcb-98fe-68ba769e33f3"
+    },
+    "criticality": "low",
+    "reaction": [
+        {
+            "substance": {
+                "coding": [
+                    {
+                        "system": "http://snomed.info/sct",
+                        "code": "703840003",
+                        "display": "Aflibercept"
+                    }
+                ]
+            },
+            "manifestation": [
+                {
+                    "concept": {
+                        "text": "Przemijający wzrost ciśnienia śródgałkowego"
+                    }
+                }
+            ]
+        }
+    ],
+    "recordedDate": "2024-06-05T09:00:00+02:00"
+}
