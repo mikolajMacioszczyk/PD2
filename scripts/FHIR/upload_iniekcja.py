@@ -57,8 +57,17 @@ def upload_iniekcja_full(patient_file = default_patient_file,
     print("Medication Administration ID:", medication_administration_id)
 
     # TODO: Organization - bayer connected to medication
+    # TODO: Add allergy intollerance as supported info
     # TODO: Check if nothing missing
-    # TODO: Get and save
+
+    resource_bundle = get_bundle(MedicationAdministration.__name__, medication_administration_id, [
+        { "name": AllergyIntolerance.__name__, "id": allergy_intolerance_id },
+        { "name": CarePlan.__name__, "id": care_plan_id },
+    ])
+    if resource_bundle:
+        file_name = f"bundle-{MEDICAL_DOCUMENT_TYPE}-JSON-{medication_administration_id}.json"
+        save_to_output_file(resource_bundle, MEDICAL_DOCUMENT_TYPE, file_name)
+        print(f"Saved bundle to {file_name}")
 
 if __name__ == "__main__":
     upload_iniekcja_full()
