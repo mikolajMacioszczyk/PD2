@@ -1,6 +1,6 @@
 {
     "resourceType": "BodyStructure",
-    "id": "example-id",
+    "id": "body-structure-id",
     "description": "Ciało szkliste lewego oka",
     "includedStructure": [
         {

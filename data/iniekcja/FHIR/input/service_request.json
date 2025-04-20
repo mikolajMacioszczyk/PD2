@@ -1,0 +1,28 @@
+{
+    "resourceType": "ServiceRequest",
+    "id": "service-request",
+    "status": "active",
+    "intent": "order",
+    "code": {
+        "concept": {
+            "text": "Iniekcja doszklistkowa"
+        }
+    },
+    "subject": {
+        "reference": "Patient/patient-80010112350"
+    },
+    "requester": {
+        "reference": "Practitioner/dr-michal-szymanski"
+    },
+    "reason": [
+        {
+            "concept": {
+                "text": "Neowaskularna postać zwyrodnienia plamki związanego z wiekiem (AMD)"
+            }
+        }
+    ],
+    "authoredOn": "2025-04-19T10:30:00+02:00",
+    "bodyStructure": {
+        "reference": "BodyStructure/body-structure-id"
+    }
+}
