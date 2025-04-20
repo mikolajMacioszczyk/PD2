@@ -2,6 +2,11 @@
     "resourceType": "MedicationAdministration",
     "id": "medication-administration",
     "status": "completed",
+    "basedOn": [
+        {
+            "reference": "CarePlan/care-plan"
+        }
+    ],
     "medication": {
         "reference": {
             "reference": "Medication/medication-aflibercept"
@@ -24,11 +29,21 @@
         "text": "2 mg (0,05 ml) roztworu doszklistkowo",
         "route": {
             "text": "Iniekcja doszklistkowa"
+        },
+        "site": {
+            "text": "Ciało szkliste lewego oka"
         }
     },
     "note": [
         {
             "text": "Podano lek w ramach programu lekowego NFZ – wysiękowe AMD"
+        }
+    ],
+    "reason": [
+        {
+            "concept": {
+                "text": "Neowaskularna postać zwyrodnienia plamki związanego z wiekiem (AMD)"
+            }
         }
     ]
 }
