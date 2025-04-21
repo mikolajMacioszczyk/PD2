@@ -46,6 +46,7 @@ def upload_iniekcja_full(patient_file = default_patient_file,
 
     care_plan.subject.reference = f"Patient/{patient_id}"
     care_plan.contributor[0].reference = f"Practitioner/{practitioner_id}"
+    care_plan.supportingInfo[0].reference = f"AllergyIntolerance/{allergy_intolerance_id}"
     care_plan_id = post_resource(care_plan)
     print("Care Plan ID:", care_plan_id)
 
@@ -57,7 +58,6 @@ def upload_iniekcja_full(patient_file = default_patient_file,
     print("Medication Administration ID:", medication_administration_id)
 
     # TODO: Organization - Producent bayer connected to medication
-    # TODO: Add allergy intollerance as supported info
     # TODO: Kryterium rozpoczęcia: Rozpocząć po kwalifikacji do programu lekowego
     # Kryterium zakończenia: Zakończyć po 8 cyklach leczenia lub pogorszeniu stanu klinicznego
     # Komentarz: Można zastosować substytut w przypadku braku dostępności oryginalnego preparatu

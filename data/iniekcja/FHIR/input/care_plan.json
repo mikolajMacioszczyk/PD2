@@ -17,5 +17,10 @@
             "reference": "Practitioner/dr-michal-szymanski"
         }
     ],
-    "created": "2025-04-19T10:30:00+02:00"
+    "created": "2025-04-19T10:30:00+02:00",
+    "supportingInfo": [
+        {
+            "reference": "AllergyIntolerance/allergy-intolerance"
+        }
+    ]
 }
