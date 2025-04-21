@@ -2,7 +2,7 @@ from datetime import datetime
 import pandas as pd
 from shapiro_test import display_result, normal_distribution_test
 
-DEFAULT_FILE_NAME = "results/file_statistics_2025_04_18_15_24_51.csv"
+DEFAULT_FILE_NAME = "results/file_statistics.csv"
 OUTPUT_FILE_PREFIX = "results/file_normal_distribution_test"
 
 if __name__ == "__main__":

@@ -5,7 +5,7 @@ import pandas as pd
 import json
 
 DATA_DIRECTORY_PATH = "../../data/"
-OUTPUT_FILE_PREFIX = "results/file_statistics"
+OUTPUT_FILE_PATH = "results/file_statistics.csv"
 
 def extract_paths(data, current_path=""):
     paths = []
@@ -110,7 +110,5 @@ if __name__ == "__main__":
             stats_list.append(final_stats)
 
     df = pd.DataFrame(stats_list)
-    timestamp = datetime.now().strftime("%Y_%m_%d_%H_%M_%S")
-    filename = f"{OUTPUT_FILE_PREFIX}_{timestamp}.csv"
-    df.to_csv(filename, index=False)
-    print(f"Zapisano statystyki do pliku {filename}")
+    df.to_csv(OUTPUT_FILE_PATH, index=False)
+    print(f"Zapisano statystyki do pliku {OUTPUT_FILE_PATH}")

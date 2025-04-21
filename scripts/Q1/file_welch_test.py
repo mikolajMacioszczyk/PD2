@@ -2,11 +2,12 @@ from datetime import datetime
 import pandas as pd
 from welch_test import welch_test, display_result
 
-DEFAULT_FILE_NAME = "results/file_statistics_2025_04_18_15_24_51.csv"
+DEFAULT_FILE_NAME = "results/file_statistics.csv"
 OUTPUT_FILE_PREFIX = "results/file_welch_test"
 
 if __name__ == "__main__":
-    # TODO: Select metrics
+    # TODO: Not avg_path_len - OpenEHR_JSON
+    # TODO: Verify is one side
     file_normal_distribution_metrics = [
             ["size_bytes", True, "FHIR_JSON", "OpenEHR_FLAT"], 
             ["size_bytes", True, "FHIR_JSON", "OpenEHR_JSON"], 
@@ -17,9 +18,7 @@ if __name__ == "__main__":
             ["unique_keys", False, "FHIR_JSON", "OpenEHR_FLAT"], 
             ["unique_keys", False, "FHIR_JSON", "OpenEHR_JSON"],
             ["avg_path_len", True, "FHIR_JSON", "OpenEHR_FLAT"], 
-            ["avg_path_len", True, "FHIR_JSON", "OpenEHR_JSON"], 
             ["avg_path_len", False, "FHIR_JSON", "OpenEHR_FLAT"], 
-            ["avg_path_len", False, "FHIR_JSON", "OpenEHR_JSON"],
         ]
     
     test_results = []
