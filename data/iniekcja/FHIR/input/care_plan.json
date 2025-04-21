@@ -22,5 +22,10 @@
         {
             "reference": "AllergyIntolerance/allergy-intolerance"
         }
+    ],
+    "goal": [
+        {
+            "reference": "Goal/goal"
+        }
     ]
 }

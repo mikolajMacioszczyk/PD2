@@ -1,0 +1,22 @@
+{
+    "resourceType": "Goal",
+    "id": "goal",
+    "lifecycleStatus": "active",
+    "achievementStatus": {
+        "text": "W trakcie realizacji"
+    },
+    "description": {
+        "text": "Leczenie mokrego AMD"
+    },
+    "startCodeableConcept": {
+        "text": "Rozpocząć po kwalifikacji do programu lekowego"
+    },
+    "addresses": [
+        {
+            "display": "Zakończyć po 8 cyklach leczenia lub pogorszeniu stanu klinicznego"
+        }
+    ],
+    "subject": {
+        "reference": "Patient/patient-80010112350"
+    }
+}

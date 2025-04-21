@@ -3,6 +3,7 @@ from fhir.resources.practitioner import Practitioner
 from fhir.resources.medication import Medication
 from fhir.resources.allergyintolerance import AllergyIntolerance
 from fhir.resources.medicationadministration import MedicationAdministration
+from fhir.resources.goal import Goal
 from fhir.resources.careplan import CarePlan
 
 from fhir_utils import get_bundle, post_resource, create_or_get_by_identifier, load_fhir_resource
@@ -13,6 +14,7 @@ default_patient_file = "patient.json"
 default_practitioner_file = "practitioner.json"
 default_medication_file = "medication.json"
 default_allergy_intolerance_file = "allergy_intolerance.json"
+default_goal_file = "goal.json"
 default_care_plan_file = "care_plan.json"
 default_medication_administration_file = "medication_administration.json"
 
@@ -20,6 +22,7 @@ def upload_iniekcja_full(patient_file = default_patient_file,
                             practitioner_file = default_practitioner_file,
                             medication_file = default_medication_file,
                             allergy_intolerance_file = default_allergy_intolerance_file,
+                            goal_file = default_goal_file,
                             care_plan_file = default_care_plan_file,
                             medication_administration_file = default_medication_administration_file):
     # Load resources
@@ -27,8 +30,9 @@ def upload_iniekcja_full(patient_file = default_patient_file,
     practitioner = load_fhir_resource(MEDICAL_DOCUMENT_TYPE, practitioner_file, Practitioner)
     medication = load_fhir_resource(MEDICAL_DOCUMENT_TYPE, medication_file, Medication)
     allergy_intolerance = load_fhir_resource(MEDICAL_DOCUMENT_TYPE, allergy_intolerance_file, AllergyIntolerance)
-    medication_administration = load_fhir_resource(MEDICAL_DOCUMENT_TYPE, medication_administration_file, MedicationAdministration)
+    goal = load_fhir_resource(MEDICAL_DOCUMENT_TYPE, goal_file, Goal)
     care_plan = load_fhir_resource(MEDICAL_DOCUMENT_TYPE, care_plan_file, CarePlan)
+    medication_administration = load_fhir_resource(MEDICAL_DOCUMENT_TYPE, medication_administration_file, MedicationAdministration)
 
     # Add resources to the server
     patient_id = create_or_get_by_identifier(patient, patient.identifier[0].system)
@@ -44,9 +48,14 @@ def upload_iniekcja_full(patient_file = default_patient_file,
     medication_id = post_resource(medication)
     print("Medication ID:", medication_id)
 
+    goal.subject.reference = f"Patient/{patient_id}"
+    goal_id = post_resource(goal)
+    print("Goal ID:", goal_id)
+
     care_plan.subject.reference = f"Patient/{patient_id}"
     care_plan.contributor[0].reference = f"Practitioner/{practitioner_id}"
     care_plan.supportingInfo[0].reference = f"AllergyIntolerance/{allergy_intolerance_id}"
+    care_plan.goal[0].reference = f"Goal/{goal_id}"
     care_plan_id = post_resource(care_plan)
     print("Care Plan ID:", care_plan_id)
 
@@ -58,15 +67,13 @@ def upload_iniekcja_full(patient_file = default_patient_file,
     print("Medication Administration ID:", medication_administration_id)
 
     # TODO: Organization - Producent bayer connected to medication
-    # TODO: Kryterium rozpoczęcia: Rozpocząć po kwalifikacji do programu lekowego
-    # Kryterium zakończenia: Zakończyć po 8 cyklach leczenia lub pogorszeniu stanu klinicznego
     # Komentarz: Można zastosować substytut w przypadku braku dostępności oryginalnego preparatu
     # Planowana data podania: 2025-04-19, godz. 10:00
-    # TODO: CarePlan Goal: Cel terapeutyczny: Leczenie mokrego AMD
 
     resource_bundle = get_bundle(MedicationAdministration.__name__, medication_administration_id, [
         { "name": AllergyIntolerance.__name__, "id": allergy_intolerance_id },
         { "name": CarePlan.__name__, "id": care_plan_id },
+        { "name": Goal.__name__, "id": goal_id },
     ])
     if resource_bundle:
         file_name = f"bundle-{MEDICAL_DOCUMENT_TYPE}-JSON-{medication_administration_id}.json"
