@@ -11,6 +11,9 @@
         ],
         "text": "Aflibercept"
     },
+    "marketingAuthorizationHolder": {
+        "display": "Bayer Sp. z o.o."
+    },
     "batch": {
         "lotNumber": "MED20250419PL",
         "expirationDate": "2026-03-31"

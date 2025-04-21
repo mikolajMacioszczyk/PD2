@@ -66,8 +66,6 @@ def upload_iniekcja_full(patient_file = default_patient_file,
     medication_administration_id = post_resource(medication_administration)
     print("Medication Administration ID:", medication_administration_id)
 
-    # TODO: Organization - Producent bayer connected to medication
-
     resource_bundle = get_bundle(MedicationAdministration.__name__, medication_administration_id, [
         { "name": AllergyIntolerance.__name__, "id": allergy_intolerance_id },
         { "name": CarePlan.__name__, "id": care_plan_id },
