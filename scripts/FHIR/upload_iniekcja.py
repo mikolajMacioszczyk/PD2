@@ -56,9 +56,13 @@ def upload_iniekcja_full(patient_file = default_patient_file,
     medication_administration_id = post_resource(medication_administration)
     print("Medication Administration ID:", medication_administration_id)
 
-    # TODO: Organization - bayer connected to medication
+    # TODO: Organization - Producent bayer connected to medication
     # TODO: Add allergy intollerance as supported info
-    # TODO: Check if nothing missing
+    # TODO: Kryterium rozpoczęcia: Rozpocząć po kwalifikacji do programu lekowego
+    # Kryterium zakończenia: Zakończyć po 8 cyklach leczenia lub pogorszeniu stanu klinicznego
+    # Komentarz: Można zastosować substytut w przypadku braku dostępności oryginalnego preparatu
+    # Planowana data podania: 2025-04-19, godz. 10:00
+    # TODO: CarePlan Goal: Cel terapeutyczny: Leczenie mokrego AMD
 
     resource_bundle = get_bundle(MedicationAdministration.__name__, medication_administration_id, [
         { "name": AllergyIntolerance.__name__, "id": allergy_intolerance_id },

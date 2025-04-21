@@ -24,7 +24,7 @@ Cel terapeutyczny: Leczenie mokrego AMD
 Nazwa leku: Aflibercept
 Kod SNOMED-CT: 703840003
 Producent: Bayer Sp. z o.o.
-Numer serii: AFB20250419PL
+Numer serii: MED20250419PL
 Termin ważności: 2026-03-31
 Komentarz: Można zastosować substytut w przypadku braku dostępności oryginalnego preparatu
 

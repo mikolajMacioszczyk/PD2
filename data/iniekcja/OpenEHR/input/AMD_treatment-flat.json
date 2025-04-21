@@ -18,7 +18,7 @@
   "progress_note/intraocular_injection:0/medication:0/medication|code": "703840003",
   "progress_note/intraocular_injection:0/medication:0/medication|value": "Aflibercept",
   "progress_note/intraocular_injection:0/medication:0/product:0/manufacturer": "Bayer Sp. z o.o.",
-  "progress_note/intraocular_injection:0/medication:0/product:0/batch_id": "AFB20250419PL",
+  "progress_note/intraocular_injection:0/medication:0/product:0/batch_id": "MED20250419PL",
   "progress_note/intraocular_injection:0/medication:0/product:0/expiry_date": "2026-03-31",
   "progress_note/intraocular_injection:0/medication:0/product:0/dispensing_substitution|terminology": "local",
   "progress_note/intraocular_injection:0/medication:0/product:0/dispensing_substitution|code": "at0138",
