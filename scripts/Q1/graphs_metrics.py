@@ -101,6 +101,7 @@ if __name__ == "__main__":
         ["wyniki_badan", "OpenEHR"],
         ["pomiar", "FHIR"],
         ["pomiar", "OpenEHR"],
+        ["iniekcja", "FHIR"],
     ]
 
     stats_list = []
