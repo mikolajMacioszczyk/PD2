@@ -67,8 +67,6 @@ def upload_iniekcja_full(patient_file = default_patient_file,
     print("Medication Administration ID:", medication_administration_id)
 
     # TODO: Organization - Producent bayer connected to medication
-    # Komentarz: Można zastosować substytut w przypadku braku dostępności oryginalnego preparatu
-    # Planowana data podania: 2025-04-19, godz. 10:00
 
     resource_bundle = get_bundle(MedicationAdministration.__name__, medication_administration_id, [
         { "name": AllergyIntolerance.__name__, "id": allergy_intolerance_id },

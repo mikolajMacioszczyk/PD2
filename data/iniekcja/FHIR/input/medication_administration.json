@@ -15,6 +15,7 @@
     "subject": {
         "reference": "Patient/patient-80010112350"
     },
+    "recorded": "2025-04-19T10:30:00+02:00",
     "occurenceDateTime": "2025-04-19T10:35:00+02:00",
     "performer": [
         {
@@ -26,12 +27,16 @@
         }
     ],
     "dosage": {
-        "text": "2 mg (0,05 ml) roztworu doszklistkowo",
+        "text": "Można zastosować substytut w przypadku braku dostępności oryginalnego preparatu",
         "route": {
             "text": "Iniekcja doszklistkowa"
         },
         "site": {
             "text": "Ciało szkliste lewego oka"
+        },
+        "dose": {
+            "value": 2,
+            "unit": "mg"
         }
     },
     "note": [
