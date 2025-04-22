@@ -6,7 +6,8 @@ from datetime import datetime
 
 VERBOSE = True
 DATA_DIRECTORY_PATH = "../../data/"
-OUTPUT_FILE_PREFIX = "results/graphs_statistics"
+OUTPUT_FILE_PATH = "results/graphs_statistics.csv"
+GROUPED_OUTPUT_FILE_PATH = "results/graphs_statistics_grouped.csv"
 
 def avg_shortest_paths_from_root(G, root_node):
     lengths = nx.single_source_shortest_path_length(G, root_node)
@@ -102,6 +103,7 @@ if __name__ == "__main__":
         ["pomiar", "FHIR"],
         ["pomiar", "OpenEHR"],
         ["iniekcja", "FHIR"],
+        ["iniekcja", "OpenEHR"],
     ]
 
     stats_list = []
@@ -125,9 +127,8 @@ if __name__ == "__main__":
 
     df = pd.DataFrame(stats_list)
     timestamp = datetime.now().strftime("%Y_%m_%d_%H_%M_%S")
-    filename = f"{OUTPUT_FILE_PREFIX}_{timestamp}.csv"
-    df.to_csv(filename, index=False)
-    print(f"Zapisano statystyki do pliku {filename}")
+    df.to_csv(OUTPUT_FILE_PATH, index=False)
+    print(f"Zapisano statystyki do pliku {OUTPUT_FILE_PATH}")
 
     cols_to_average = [
         "num_nodes", "num_edges", "density", "max_degree", 
@@ -137,6 +138,5 @@ if __name__ == "__main__":
     ]
     grouped = df.groupby("standard")[cols_to_average].mean().reset_index()
     grouped = grouped.round(3)
-    grouped_filename = f"{OUTPUT_FILE_PREFIX}_grouped_{timestamp}.csv"
-    grouped.to_csv(grouped_filename, index=False)
-    print(f"Zapisano statystyki zgrupowane do pliku {grouped_filename}")
+    grouped.to_csv(GROUPED_OUTPUT_FILE_PATH, index=False)
+    print(f"Zapisano statystyki zgrupowane do pliku {GROUPED_OUTPUT_FILE_PATH}")
