@@ -8,18 +8,23 @@ OUTPUT_FILE_PREFIX = "results/file_welch_test"
 if __name__ == "__main__":
     file_normal_distribution_metrics = [
         ["size_bytes", "FHIR_JSON", "less", "OpenEHR_FLAT"],
+        ["size_bytes", "FHIR_JSON", "two-sided", "OpenEHR_FLAT"],
 
         ["size_bytes", "FHIR_JSON", "less", "OpenEHR_JSON"], 
+        ["size_bytes", "FHIR_JSON", "two-sided", "OpenEHR_JSON"], 
 
         ["unique_keys", "FHIR_JSON", "less", "OpenEHR_FLAT"], 
         ["unique_keys", "FHIR_JSON", "greater", "OpenEHR_FLAT"], 
         ["unique_keys", "FHIR_JSON", "two-sided", "OpenEHR_FLAT"], 
 
         ["unique_keys", "FHIR_JSON", "greater", "OpenEHR_JSON"], 
+        ["unique_keys", "FHIR_JSON", "two-sided", "OpenEHR_JSON"], 
 
         ["avg_path_len", "FHIR_JSON", "greater", "OpenEHR_FLAT"], 
+        ["avg_path_len", "FHIR_JSON", "two-sided", "OpenEHR_FLAT"], 
 
         ["avg_path_len", "FHIR_JSON", "less", "OpenEHR_JSON"], 
+        ["avg_path_len", "FHIR_JSON", "two-sided", "OpenEHR_JSON"], 
     ]
 
     
