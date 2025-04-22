@@ -6,7 +6,6 @@ DEFAULT_FILE_NAME = "results/graphs_statistics.csv"
 OUTPUT_FILE_PREFIX = "results/graphs_welch_test"
 
 if __name__ == "__main__":
-    # TODO: Max depth
     graph_normal_distribution_metrics = [
             # No difference
             ["num_nodes", "FHIR", "less", "OpenEHR"],

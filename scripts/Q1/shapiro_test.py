@@ -8,8 +8,6 @@ def normal_distribution_test(key_column, key_value, metric, file_name):
     df_standard = df[df[key_column] == key_value]
     df_standard_metric = df_standard[metric]
 
-    print(df_standard_metric.tolist())
-
     # Test Shapiro-Wilka
     stat, p = shapiro(df_standard_metric.tolist())
 
