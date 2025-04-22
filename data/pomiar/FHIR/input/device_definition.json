@@ -7,8 +7,8 @@
             "type": "registered-name"
         }
     ],
-    "distributor": {
-        "name": "Sprzęt optyczny S.A."
+    "manufacturer": {
+        "display": "Sprzęt optyczny S.A."
     },
     "modelNumber": "TG-100",
     "description": "Urządzenie do pomiaru ciśnienia wewnątrzgałkowego metodą aplanacyjną.",
