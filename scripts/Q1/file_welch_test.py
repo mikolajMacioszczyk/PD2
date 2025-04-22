@@ -5,7 +5,7 @@ from welch_test import welch_test, display_result
 DEFAULT_FILE_NAME = "results/file_statistics.csv"
 OUTPUT_FILE_PREFIX = "results/file_welch_test"
 
-if __name__ == "__main__":
+def file_welch_test():
     file_normal_distribution_metrics = [
         ["size_bytes", "FHIR_JSON", "less", "OpenEHR_FLAT"],
         ["size_bytes", "FHIR_JSON", "two-sided", "OpenEHR_FLAT"],
@@ -39,3 +39,6 @@ if __name__ == "__main__":
     filename = f"{OUTPUT_FILE_PREFIX}_{timestamp}.csv"
     df.to_csv(filename, index=False)
     print(f"Zapisano wyniki testu istotności do pliku {filename}")
+
+if __name__ == "__main__":
+    file_welch_test()

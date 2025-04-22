@@ -69,7 +69,7 @@ def count_unique_keys(filepath):
 
     return len(unique_keys)
 
-if __name__ == "__main__":
+def calculate_file_metrics():
     input_data = [
         ["recepta", "FHIR"],
         ["recepta", "OpenEHR"],
@@ -114,3 +114,6 @@ if __name__ == "__main__":
     df = pd.DataFrame(stats_list)
     df.to_csv(OUTPUT_FILE_PATH, index=False)
     print(f"Zapisano statystyki do pliku {OUTPUT_FILE_PATH}")
+
+if __name__ == "__main__":
+    calculate_file_metrics()

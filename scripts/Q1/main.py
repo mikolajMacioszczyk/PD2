@@ -1,0 +1,7 @@
+from file_metrics import calculate_file_metrics
+from file_normal_distribution_test import file_normal_distribution_test
+from file_welch_test import file_welch_test
+
+calculate_file_metrics()
+file_normal_distribution_test()
+file_welch_test()
