@@ -5,7 +5,7 @@ from shapiro_test import display_result, normal_distribution_test
 DEFAULT_FILE_NAME = "results/graphs_statistics.csv"
 OUTPUT_FILE_PREFIX = "results/graphs_normal_distribution_test"
 
-if __name__ == "__main__":
+def graphs_normal_distribution_test():
     standards = ["FHIR", "OpenEHR"]
     graph_metrics = [
         "num_nodes","num_edges","density","max_degree","average_degree","diameter",
@@ -25,3 +25,6 @@ if __name__ == "__main__":
     filename = f"{OUTPUT_FILE_PREFIX}_{timestamp}.csv"
     df.to_csv(filename, index=False)
     print(f"Zapisano wyniki testu normalności do pliku {filename}")
+
+if __name__ == "__main__":
+    graphs_normal_distribution_test()

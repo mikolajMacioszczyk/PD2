@@ -5,7 +5,7 @@ from mann_whitneyu_test import mannwhitneyu_test, display_result
 DEFAULT_FILE_NAME = "results/graphs_statistics.csv"
 OUTPUT_FILE_PREFIX = "results/graphs_mannwhitneyu_test"
 
-if __name__ == "__main__":
+def graphs_mann_whitneyu_test():
     graph_not_normal_distribution_metrics = [
             ["max_depth", "FHIR", "less", "OpenEHR"],
             ["max_depth", "FHIR", "two-sided", "OpenEHR"],
@@ -22,3 +22,6 @@ if __name__ == "__main__":
     filename = f"{OUTPUT_FILE_PREFIX}_{timestamp}.csv"
     df.to_csv(filename, index=False)
     print(f"Zapisano wyniki testu istotności do pliku {filename}")
+
+if __name__ == "__main__":
+    graphs_mann_whitneyu_test()

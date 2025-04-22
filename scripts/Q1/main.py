@@ -1,7 +1,16 @@
 from file_metrics import calculate_file_metrics
 from file_normal_distribution_test import file_normal_distribution_test
 from file_welch_test import file_welch_test
+from graphs_metrics import calculate_graphs_metrics
+from graphs_normal_distribution_test import graphs_normal_distribution_test
+from graphs_welch_test import graphs_welch_test
+from graphs_mann_whitneyu_test import graphs_mann_whitneyu_test
 
 calculate_file_metrics()
 file_normal_distribution_test()
 file_welch_test()
+
+calculate_graphs_metrics()
+graphs_normal_distribution_test()
+graphs_welch_test()
+graphs_mann_whitneyu_test()

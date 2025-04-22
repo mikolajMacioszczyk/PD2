@@ -90,7 +90,7 @@ def get_graph_file_path(data_path, medical_document, standard):
 def get_graph_name(medical_document, standard):
     return f"{medical_document}_{standard}"
 
-if __name__ == "__main__":
+def calculate_graphs_metrics():
     input_data = [
         ["recepta", "FHIR"],
         ["recepta", "OpenEHR"],
@@ -137,3 +137,6 @@ if __name__ == "__main__":
     grouped = grouped.round(3)
     grouped.to_csv(GROUPED_OUTPUT_FILE_PATH, index=False)
     print(f"Zapisano statystyki zgrupowane do pliku {GROUPED_OUTPUT_FILE_PATH}")
+
+if __name__ == "__main__":
+    calculate_graphs_metrics()

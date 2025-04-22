@@ -5,7 +5,7 @@ from welch_test import welch_test, display_result
 DEFAULT_FILE_NAME = "results/graphs_statistics.csv"
 OUTPUT_FILE_PREFIX = "results/graphs_welch_test"
 
-if __name__ == "__main__":
+def graphs_welch_test():
     graph_normal_distribution_metrics = [
             # No difference
             ["num_nodes", "FHIR", "less", "OpenEHR"],
@@ -56,3 +56,6 @@ if __name__ == "__main__":
     filename = f"{OUTPUT_FILE_PREFIX}_{timestamp}.csv"
     df.to_csv(filename, index=False)
     print(f"Zapisano wyniki testu istotności do pliku {filename}")
+
+if __name__ == "__main__":
+    graphs_welch_test()
