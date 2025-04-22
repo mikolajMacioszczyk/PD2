@@ -8,7 +8,7 @@ OUTPUT_FILE_PREFIX = "results/graphs_normal_distribution_test"
 if __name__ == "__main__":
     standards = ["FHIR", "OpenEHR"]
     graph_metrics = [
-        "num_nodes","num_edges","density","max_degree","average_degree","median_degree","diameter",
+        "num_nodes","num_edges","density","max_degree","average_degree","diameter",
         "avg_path_length","assortativity","cycles","max_depth","avg_path_from_root"
         ]
     

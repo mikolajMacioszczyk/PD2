@@ -58,7 +58,6 @@ def collect_graph_stats(file_name):
         "density": nx.density(G),
         "max_degree": max(degrees),
         "average_degree": statistics.mean(degrees),
-        "median_degree": statistics.median(degrees),
         "diameter": diameter,
         "avg_path_length": avg_path_length,
         "assortativity": assortativity,
@@ -74,7 +73,6 @@ def display_graph_stats(graph_name, data):
     print(f"Gęstość grafu: {data['density']}")
     print(f"Maksymalny stopień wierzchołka: {data['max_degree']}")
     print(f"Średni stopień wierzchołka: {data['average_degree']}")
-    print(f"Mediana stopnia wierzchołka: {data['median_degree']}")
     if data['diameter'] is not None:
         print(f"Średnica grafu: {data['diameter']}")
         print(f"Średnia długość ścieżki: {data['avg_path_length']}")
@@ -132,9 +130,8 @@ if __name__ == "__main__":
 
     cols_to_average = [
         "num_nodes", "num_edges", "density", "max_degree", 
-        "average_degree", "median_degree", "diameter", 
-        "avg_path_length", "assortativity", "cycles", "max_depth",
-        "avg_path_from_root"
+        "average_degree", "diameter", "avg_path_length", 
+        "assortativity", "cycles", "max_depth", "avg_path_from_root"
     ]
     grouped = df.groupby("standard")[cols_to_average].mean().reset_index()
     grouped = grouped.round(3)
