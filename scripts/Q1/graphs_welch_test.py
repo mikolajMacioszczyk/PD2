@@ -17,10 +17,7 @@ def graphs_welch_test():
             ["num_edges", "FHIR", "greater", "OpenEHR"],
             ["num_edges", "FHIR", "two-sided", "OpenEHR"],
 
-            # No difference
-            ["density", "FHIR", "less", "OpenEHR"],
             ["density", "FHIR", "greater", "OpenEHR"],
-            ["density", "FHIR", "two-sided", "OpenEHR"],
 
             # No difference
             ["max_degree", "FHIR", "less", "OpenEHR"],

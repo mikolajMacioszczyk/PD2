@@ -14,7 +14,6 @@ Narzędzia:
 - http://terminology.hl7.org/CodeSystem/condition-clinical: https://terminology.hl7.org/CodeSystem-condition-clinical.html
 - http://terminology.hl7.org/CodeSystem/condition-category: https://terminology.hl7.org/CodeSystem-condition-clinical.html
 - http://terminology.hl7.org/CodeSystem/condition-ver-status: https://terminology.hl7.org/CodeSystem-condition-ver-status.html
-- extension locationPerformed: http://hl7.org/fhir/StructureDefinition/diagnosticReport-locationPerformed
 
 - terminologia OpenEHR: https://specifications.openehr.org/releases/TERM/latest/SupportTerminology.html
 

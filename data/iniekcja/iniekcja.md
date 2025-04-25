@@ -1,4 +1,4 @@
-# Pomiar Ciśnienia Wewnątrzgałkowego
+# Plan leczenia - regularnej iniekcji doszklistowej, wraz z pojedynczym zabiegiem
 
 ## Metadane
 
