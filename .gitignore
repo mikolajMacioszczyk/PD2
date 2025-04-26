@@ -1,4 +1,3 @@
-**/output/*.json
 **/results/**/*.csv
 
 # Byte-compiled / optimized / DLL files

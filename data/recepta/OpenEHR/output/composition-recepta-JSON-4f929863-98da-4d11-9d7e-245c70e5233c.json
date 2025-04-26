@@ -1,0 +1,639 @@
+{
+    "_type": "COMPOSITION",
+    "name": {
+        "_type": "DV_TEXT",
+        "value": "Prescription"
+    },
+    "archetype_details": {
+        "archetype_id": {
+            "value": "openEHR-EHR-COMPOSITION.prescription.v0"
+        },
+        "template_id": {
+            "value": "ePrescription"
+        },
+        "rm_version": "1.0.4"
+    },
+    "language": {
+        "_type": "CODE_PHRASE",
+        "terminology_id": {
+            "_type": "TERMINOLOGY_ID",
+            "value": "ISO_639-1"
+        },
+        "code_string": "pl"
+    },
+    "territory": {
+        "_type": "CODE_PHRASE",
+        "terminology_id": {
+            "_type": "TERMINOLOGY_ID",
+            "value": "ISO_3166-1"
+        },
+        "code_string": "PL"
+    },
+    "category": {
+        "_type": "DV_CODED_TEXT",
+        "value": "event",
+        "defining_code": {
+            "_type": "CODE_PHRASE",
+            "terminology_id": {
+                "_type": "TERMINOLOGY_ID",
+                "value": "openehr"
+            },
+            "code_string": "433"
+        }
+    },
+    "composer": {
+        "_type": "PARTY_IDENTIFIED",
+        "external_ref": {
+            "_type": "PARTY_REF",
+            "namespace": "pl.gov.npwz",
+            "type": "PARTY",
+            "id": {
+                "_type": "GENERIC_ID",
+                "value": "1234567",
+                "scheme": "NPWZ"
+            }
+        },
+        "name": "lek. Anna Kowalska"
+    },
+    "context": {
+        "_type": "EVENT_CONTEXT",
+        "start_time": {
+            "_type": "DV_DATE_TIME",
+            "value": "2025-04-07T19:56:00"
+        },
+        "end_time": {
+            "_type": "DV_DATE_TIME",
+            "value": "2025-05-07T19:56:00"
+        },
+        "setting": {
+            "_type": "DV_CODED_TEXT",
+            "value": "primary medical care",
+            "defining_code": {
+                "_type": "CODE_PHRASE",
+                "terminology_id": {
+                    "_type": "TERMINOLOGY_ID",
+                    "value": "openehr"
+                },
+                "code_string": "228"
+            }
+        },
+        "other_context": {
+            "_type": "ITEM_TREE",
+            "name": {
+                "_type": "DV_TEXT",
+                "value": "Tree"
+            },
+            "items": [
+                {
+                    "_type": "ELEMENT",
+                    "name": {
+                        "_type": "DV_TEXT",
+                        "value": "Prescription identifier"
+                    },
+                    "value": {
+                        "_type": "DV_IDENTIFIER",
+                        "id": "PL-2025-000123"
+                    },
+                    "archetype_node_id": "at0008"
+                }
+            ],
+            "archetype_node_id": "at0001"
+        },
+        "health_care_facility": {
+            "_type": "PARTY_IDENTIFIED",
+            "name": "Przychodnia Rodzinna We Wroc\u0142awiu"
+        }
+    },
+    "content": [
+        {
+            "_type": "INSTRUCTION",
+            "name": {
+                "_type": "DV_TEXT",
+                "value": "Medication order"
+            },
+            "archetype_details": {
+                "archetype_id": {
+                    "value": "openEHR-EHR-INSTRUCTION.medication_order.v0"
+                },
+                "rm_version": "1.0.4"
+            },
+            "language": {
+                "_type": "CODE_PHRASE",
+                "terminology_id": {
+                    "_type": "TERMINOLOGY_ID",
+                    "value": "ISO_639-1"
+                },
+                "code_string": "en"
+            },
+            "encoding": {
+                "_type": "CODE_PHRASE",
+                "terminology_id": {
+                    "_type": "TERMINOLOGY_ID",
+                    "value": "IANA_character-sets"
+                },
+                "code_string": "UTF-8"
+            },
+            "subject": {
+                "_type": "PARTY_SELF"
+            },
+            "protocol": {
+                "_type": "ITEM_TREE",
+                "name": {
+                    "_type": "DV_TEXT",
+                    "value": "Dose amount description"
+                },
+                "items": [
+                    {
+                        "_type": "ELEMENT",
+                        "name": {
+                            "_type": "DV_TEXT",
+                            "value": "identifier"
+                        },
+                        "value": {
+                            "_type": "DV_IDENTIFIER",
+                            "id": "PL-2025-000124"
+                        },
+                        "archetype_node_id": "at0004"
+                    }
+                ],
+                "archetype_node_id": "at0005"
+            },
+            "narrative": {
+                "_type": "DV_TEXT",
+                "value": "Paracetamol 500 mg, doustnie, 3x dziennie po posi\u0142ku przez 3 dni."
+            },
+            "activities": [
+                {
+                    "_type": "ACTIVITY",
+                    "name": {
+                        "_type": "DV_TEXT",
+                        "value": "Order"
+                    },
+                    "description": {
+                        "_type": "ITEM_TREE",
+                        "name": {
+                            "_type": "DV_TEXT",
+                            "value": "Tree"
+                        },
+                        "items": [
+                            {
+                                "_type": "ELEMENT",
+                                "name": {
+                                    "_type": "DV_TEXT",
+                                    "value": "Medication item"
+                                },
+                                "value": {
+                                    "_type": "DV_TEXT",
+                                    "value": "Paracetamol"
+                                },
+                                "archetype_node_id": "at0070"
+                            },
+                            {
+                                "_type": "CLUSTER",
+                                "name": {
+                                    "_type": "DV_TEXT",
+                                    "value": "Preparation"
+                                },
+                                "archetype_details": {
+                                    "archetype_id": {
+                                        "value": "openEHR-EHR-CLUSTER.medication_substance.v0"
+                                    },
+                                    "rm_version": "1.0.4"
+                                },
+                                "items": [
+                                    {
+                                        "_type": "ELEMENT",
+                                        "name": {
+                                            "_type": "DV_TEXT",
+                                            "value": "Substance name"
+                                        },
+                                        "value": {
+                                            "_type": "DV_TEXT",
+                                            "value": "Paracetamolum"
+                                        },
+                                        "archetype_node_id": "at0132"
+                                    },
+                                    {
+                                        "_type": "ELEMENT",
+                                        "name": {
+                                            "_type": "DV_TEXT",
+                                            "value": "Form"
+                                        },
+                                        "value": {
+                                            "_type": "DV_TEXT",
+                                            "value": "Tabletka"
+                                        },
+                                        "archetype_node_id": "at0071"
+                                    },
+                                    {
+                                        "_type": "ELEMENT",
+                                        "name": {
+                                            "_type": "DV_TEXT",
+                                            "value": "Strength"
+                                        },
+                                        "value": {
+                                            "_type": "DV_QUANTITY",
+                                            "units": "1",
+                                            "magnitude": 500.0
+                                        },
+                                        "archetype_node_id": "at0115"
+                                    },
+                                    {
+                                        "_type": "ELEMENT",
+                                        "name": {
+                                            "_type": "DV_TEXT",
+                                            "value": "Strength unit"
+                                        },
+                                        "value": {
+                                            "_type": "DV_TEXT",
+                                            "value": "mg"
+                                        },
+                                        "archetype_node_id": "at0116"
+                                    },
+                                    {
+                                        "_type": "ELEMENT",
+                                        "name": {
+                                            "_type": "DV_TEXT",
+                                            "value": "Description"
+                                        },
+                                        "value": {
+                                            "_type": "DV_TEXT",
+                                            "value": "Tabletki powlekane 500 mg"
+                                        },
+                                        "archetype_node_id": "at0133"
+                                    }
+                                ],
+                                "archetype_node_id": "openEHR-EHR-CLUSTER.medication_substance.v0"
+                            },
+                            {
+                                "_type": "ELEMENT",
+                                "name": {
+                                    "_type": "DV_TEXT",
+                                    "value": "Route"
+                                },
+                                "value": {
+                                    "_type": "DV_TEXT",
+                                    "value": "Doustnie"
+                                },
+                                "archetype_node_id": "at0091"
+                            },
+                            {
+                                "_type": "ELEMENT",
+                                "name": {
+                                    "_type": "DV_TEXT",
+                                    "value": "dosageInstructions"
+                                },
+                                "value": {
+                                    "_type": "DV_TEXT",
+                                    "value": "Stosowa\u0107 doustnie wed\u0142ug zalece\u0144"
+                                },
+                                "archetype_node_id": "at0009"
+                            },
+                            {
+                                "_type": "CLUSTER",
+                                "name": {
+                                    "_type": "DV_TEXT",
+                                    "value": "Dose direction"
+                                },
+                                "items": [
+                                    {
+                                        "_type": "CLUSTER",
+                                        "name": {
+                                            "_type": "DV_TEXT",
+                                            "value": "Dose pattern"
+                                        },
+                                        "items": [
+                                            {
+                                                "_type": "ELEMENT",
+                                                "name": {
+                                                    "_type": "DV_TEXT",
+                                                    "value": "Dose"
+                                                },
+                                                "value": {
+                                                    "_type": "DV_QUANTITY",
+                                                    "units": "1",
+                                                    "magnitude": 3.0
+                                                },
+                                                "archetype_node_id": "at0144"
+                                            },
+                                            {
+                                                "_type": "CLUSTER",
+                                                "name": {
+                                                    "_type": "DV_TEXT",
+                                                    "value": "Dose timing"
+                                                },
+                                                "archetype_details": {
+                                                    "archetype_id": {
+                                                        "value": "openEHR-EHR-CLUSTER.timing_daily.v0"
+                                                    },
+                                                    "rm_version": "1.0.4"
+                                                },
+                                                "items": [
+                                                    {
+                                                        "_type": "ELEMENT",
+                                                        "name": {
+                                                            "_type": "DV_TEXT",
+                                                            "value": "Frequency"
+                                                        },
+                                                        "value": {
+                                                            "_type": "DV_QUANTITY",
+                                                            "units": "1/d",
+                                                            "magnitude": 1.0
+                                                        },
+                                                        "archetype_node_id": "at0003"
+                                                    },
+                                                    {
+                                                        "_type": "ELEMENT",
+                                                        "name": {
+                                                            "_type": "DV_TEXT",
+                                                            "value": "Named time event"
+                                                        },
+                                                        "value": {
+                                                            "_type": "DV_TEXT",
+                                                            "value": "Po posi\u0142ku"
+                                                        },
+                                                        "archetype_node_id": "at0026"
+                                                    },
+                                                    {
+                                                        "_type": "ELEMENT",
+                                                        "name": {
+                                                            "_type": "DV_TEXT",
+                                                            "value": "Exact timing critical"
+                                                        },
+                                                        "value": {
+                                                            "_type": "DV_BOOLEAN",
+                                                            "value": false
+                                                        },
+                                                        "archetype_node_id": "at0023"
+                                                    },
+                                                    {
+                                                        "_type": "ELEMENT",
+                                                        "name": {
+                                                            "_type": "DV_TEXT",
+                                                            "value": "As required"
+                                                        },
+                                                        "value": {
+                                                            "_type": "DV_BOOLEAN",
+                                                            "value": true
+                                                        },
+                                                        "archetype_node_id": "at0024"
+                                                    },
+                                                    {
+                                                        "_type": "ELEMENT",
+                                                        "name": {
+                                                            "_type": "DV_TEXT",
+                                                            "value": "As required criterion"
+                                                        },
+                                                        "value": {
+                                                            "_type": "DV_TEXT",
+                                                            "value": ""
+                                                        },
+                                                        "archetype_node_id": "at0025"
+                                                    }
+                                                ],
+                                                "archetype_node_id": "openEHR-EHR-CLUSTER.timing_daily.v0"
+                                            },
+                                            {
+                                                "_type": "ELEMENT",
+                                                "name": {
+                                                    "_type": "DV_TEXT",
+                                                    "value": "Dose administration duration"
+                                                },
+                                                "value": {
+                                                    "_type": "DV_DURATION",
+                                                    "value": "PT0S"
+                                                },
+                                                "archetype_node_id": "at0102"
+                                            }
+                                        ],
+                                        "archetype_node_id": "at0058"
+                                    },
+                                    {
+                                        "_type": "ELEMENT",
+                                        "name": {
+                                            "_type": "DV_TEXT",
+                                            "value": "Direction duration"
+                                        },
+                                        "value": {
+                                            "_type": "DV_CODED_TEXT",
+                                            "value": "Indefinite",
+                                            "defining_code": {
+                                                "_type": "CODE_PHRASE",
+                                                "terminology_id": {
+                                                    "_type": "TERMINOLOGY_ID",
+                                                    "value": "local"
+                                                },
+                                                "code_string": "at0067"
+                                            }
+                                        },
+                                        "archetype_node_id": "at0066"
+                                    },
+                                    {
+                                        "_type": "CLUSTER",
+                                        "name": {
+                                            "_type": "DV_TEXT",
+                                            "value": "Direction repetition"
+                                        },
+                                        "archetype_details": {
+                                            "archetype_id": {
+                                                "value": "openEHR-EHR-CLUSTER.timing_repetition.v0"
+                                            },
+                                            "rm_version": "1.0.4"
+                                        },
+                                        "items": [
+                                            {
+                                                "_type": "ELEMENT",
+                                                "name": {
+                                                    "_type": "DV_TEXT",
+                                                    "value": "Repetition interval"
+                                                },
+                                                "value": {
+                                                    "_type": "DV_DURATION",
+                                                    "value": "P1D"
+                                                },
+                                                "archetype_node_id": "at0002"
+                                            },
+                                            {
+                                                "_type": "ELEMENT",
+                                                "name": {
+                                                    "_type": "DV_TEXT",
+                                                    "value": "Specific date"
+                                                },
+                                                "value": {
+                                                    "_type": "DV_DATE_TIME",
+                                                    "value": "2025-04-07T19:56:00"
+                                                },
+                                                "archetype_node_id": "at0001"
+                                            }
+                                        ],
+                                        "archetype_node_id": "openEHR-EHR-CLUSTER.timing_repetition.v0"
+                                    }
+                                ],
+                                "archetype_node_id": "at0056"
+                            },
+                            {
+                                "_type": "CLUSTER",
+                                "name": {
+                                    "_type": "DV_TEXT",
+                                    "value": "Medication safety"
+                                },
+                                "items": [
+                                    {
+                                        "_type": "CLUSTER",
+                                        "name": {
+                                            "_type": "DV_TEXT",
+                                            "value": "maxDosePerPeriod"
+                                        },
+                                        "items": [
+                                            {
+                                                "_type": "ELEMENT",
+                                                "name": {
+                                                    "_type": "DV_TEXT",
+                                                    "value": "Maximum amount"
+                                                },
+                                                "value": {
+                                                    "_type": "DV_QUANTITY",
+                                                    "units": "1",
+                                                    "magnitude": 6.0
+                                                },
+                                                "archetype_node_id": "at0130"
+                                            },
+                                            {
+                                                "_type": "ELEMENT",
+                                                "name": {
+                                                    "_type": "DV_TEXT",
+                                                    "value": "Maximum amount dose unit"
+                                                },
+                                                "value": {
+                                                    "_type": "DV_TEXT",
+                                                    "value": "tabletka"
+                                                },
+                                                "archetype_node_id": "at0146"
+                                            },
+                                            {
+                                                "_type": "ELEMENT",
+                                                "name": {
+                                                    "_type": "DV_TEXT",
+                                                    "value": "Allowed period"
+                                                },
+                                                "value": {
+                                                    "_type": "DV_DURATION",
+                                                    "value": "P1D"
+                                                },
+                                                "archetype_node_id": "at0053"
+                                            }
+                                        ],
+                                        "archetype_node_id": "at0051"
+                                    },
+                                    {
+                                        "_type": "ELEMENT",
+                                        "name": {
+                                            "_type": "DV_TEXT",
+                                            "value": "Override reason"
+                                        },
+                                        "value": {
+                                            "_type": "DV_TEXT",
+                                            "value": ""
+                                        },
+                                        "archetype_node_id": "at0162"
+                                    }
+                                ],
+                                "archetype_node_id": "at0062"
+                            },
+                            {
+                                "_type": "ELEMENT",
+                                "name": {
+                                    "_type": "DV_TEXT",
+                                    "value": "additionalInstructions"
+                                },
+                                "value": {
+                                    "_type": "DV_TEXT",
+                                    "value": "Nie stosowa\u0107 na czczo"
+                                },
+                                "archetype_node_id": "at0044"
+                            },
+                            {
+                                "_type": "ELEMENT",
+                                "name": {
+                                    "_type": "DV_TEXT",
+                                    "value": "reason"
+                                },
+                                "value": {
+                                    "_type": "DV_TEXT",
+                                    "value": "B\u00f3l g\u0142owy"
+                                },
+                                "archetype_node_id": "at0018"
+                            },
+                            {
+                                "_type": "CLUSTER",
+                                "name": {
+                                    "_type": "DV_TEXT",
+                                    "value": "Authorisation details"
+                                },
+                                "archetype_details": {
+                                    "archetype_id": {
+                                        "value": "openEHR-EHR-CLUSTER.medication_authorisation.v0"
+                                    },
+                                    "rm_version": "1.0.4"
+                                },
+                                "items": [
+                                    {
+                                        "_type": "ELEMENT",
+                                        "name": {
+                                            "_type": "DV_TEXT",
+                                            "value": "numberOfRepeatsAllowed"
+                                        },
+                                        "value": {
+                                            "_type": "DV_COUNT",
+                                            "magnitude": 2
+                                        },
+                                        "archetype_node_id": "at0025"
+                                    },
+                                    {
+                                        "_type": "ELEMENT",
+                                        "name": {
+                                            "_type": "DV_TEXT",
+                                            "value": "validityPeriod"
+                                        },
+                                        "value": {
+                                            "_type": "DV_DATE_TIME",
+                                            "value": "2025-05-07T19:56:00"
+                                        },
+                                        "archetype_node_id": "at0072"
+                                    }
+                                ],
+                                "archetype_node_id": "openEHR-EHR-CLUSTER.medication_authorisation.v0"
+                            },
+                            {
+                                "_type": "ELEMENT",
+                                "name": {
+                                    "_type": "DV_TEXT",
+                                    "value": "Comment"
+                                },
+                                "value": {
+                                    "_type": "DV_TEXT",
+                                    "value": "W razie pogorszenia skonsultowa\u0107 si\u0119 z lekarzem"
+                                },
+                                "archetype_node_id": "at0167"
+                            }
+                        ],
+                        "archetype_node_id": "at0002"
+                    },
+                    "timing": {
+                        "_type": "DV_PARSABLE",
+                        "value": "3 razy dziennie po posi\u0142ku",
+                        "formalism": "text/plain"
+                    },
+                    "action_archetype_id": "/.*/",
+                    "archetype_node_id": "at0001"
+                }
+            ],
+            "archetype_node_id": "openEHR-EHR-INSTRUCTION.medication_order.v0"
+        }
+    ],
+    "archetype_node_id": "openEHR-EHR-COMPOSITION.prescription.v0",
+    "uid": {
+        "_type": "OBJECT_VERSION_ID",
+        "value": "4f929863-98da-4d11-9d7e-245c70e5233c::local.ehrbase.org::1"
+    }
+}

@@ -1,0 +1,626 @@
+{
+    "_type": "COMPOSITION",
+    "name": {
+        "_type": "DV_TEXT",
+        "value": "Progress Note"
+    },
+    "archetype_details": {
+        "archetype_id": {
+            "value": "openEHR-EHR-COMPOSITION.progress_note.v1"
+        },
+        "template_id": {
+            "value": "AMD_treatment"
+        },
+        "rm_version": "1.0.4"
+    },
+    "language": {
+        "_type": "CODE_PHRASE",
+        "terminology_id": {
+            "_type": "TERMINOLOGY_ID",
+            "value": "ISO_639-1"
+        },
+        "code_string": "pl"
+    },
+    "territory": {
+        "_type": "CODE_PHRASE",
+        "terminology_id": {
+            "_type": "TERMINOLOGY_ID",
+            "value": "ISO_3166-1"
+        },
+        "code_string": "PL"
+    },
+    "category": {
+        "_type": "DV_CODED_TEXT",
+        "value": "event",
+        "defining_code": {
+            "_type": "CODE_PHRASE",
+            "terminology_id": {
+                "_type": "TERMINOLOGY_ID",
+                "value": "openehr"
+            },
+            "code_string": "433"
+        }
+    },
+    "composer": {
+        "_type": "PARTY_IDENTIFIED",
+        "external_ref": {
+            "_type": "PARTY_REF",
+            "namespace": "pl.gov.npwz",
+            "type": "PARTY",
+            "id": {
+                "_type": "GENERIC_ID",
+                "value": "5634789",
+                "scheme": "NPWZ"
+            }
+        },
+        "name": "lek. med. Adam Wo\u017aniak"
+    },
+    "context": {
+        "_type": "EVENT_CONTEXT",
+        "start_time": {
+            "_type": "DV_DATE_TIME",
+            "value": "2025-04-22T10:44:30.824343786Z"
+        },
+        "setting": {
+            "_type": "DV_CODED_TEXT",
+            "value": "other care",
+            "defining_code": {
+                "_type": "CODE_PHRASE",
+                "terminology_id": {
+                    "_type": "TERMINOLOGY_ID",
+                    "value": "openehr"
+                },
+                "code_string": "238"
+            }
+        }
+    },
+    "content": [
+        {
+            "_type": "SECTION",
+            "name": {
+                "_type": "DV_TEXT",
+                "value": "Intraocular injection"
+            },
+            "archetype_details": {
+                "archetype_id": {
+                    "value": "openEHR-EHR-SECTION.intraocular_injection.v0"
+                },
+                "rm_version": "1.0.4"
+            },
+            "items": [
+                {
+                    "_type": "INSTRUCTION",
+                    "name": {
+                        "_type": "DV_TEXT",
+                        "value": "Medication order"
+                    },
+                    "archetype_details": {
+                        "archetype_id": {
+                            "value": "openEHR-EHR-INSTRUCTION.medication_order.v0"
+                        },
+                        "rm_version": "1.0.4"
+                    },
+                    "language": {
+                        "_type": "CODE_PHRASE",
+                        "terminology_id": {
+                            "_type": "TERMINOLOGY_ID",
+                            "value": "ISO_639-1"
+                        },
+                        "code_string": "en"
+                    },
+                    "encoding": {
+                        "_type": "CODE_PHRASE",
+                        "terminology_id": {
+                            "_type": "TERMINOLOGY_ID",
+                            "value": "IANA_character-sets"
+                        },
+                        "code_string": "UTF-8"
+                    },
+                    "subject": {
+                        "_type": "PARTY_SELF"
+                    },
+                    "narrative": {
+                        "_type": "DV_TEXT",
+                        "value": "<none>"
+                    },
+                    "activities": [
+                        {
+                            "_type": "ACTIVITY",
+                            "name": {
+                                "_type": "DV_TEXT",
+                                "value": "Order"
+                            },
+                            "description": {
+                                "_type": "ITEM_TREE",
+                                "name": {
+                                    "_type": "DV_TEXT",
+                                    "value": "Tree"
+                                },
+                                "items": [
+                                    {
+                                        "_type": "ELEMENT",
+                                        "name": {
+                                            "_type": "DV_TEXT",
+                                            "value": "Medication item"
+                                        },
+                                        "value": {
+                                            "_type": "DV_CODED_TEXT",
+                                            "value": "Aflibercept",
+                                            "defining_code": {
+                                                "_type": "CODE_PHRASE",
+                                                "terminology_id": {
+                                                    "_type": "TERMINOLOGY_ID",
+                                                    "value": "SNOMED-CT"
+                                                },
+                                                "code_string": "703840003"
+                                            }
+                                        },
+                                        "archetype_node_id": "at0070"
+                                    },
+                                    {
+                                        "_type": "ELEMENT",
+                                        "name": {
+                                            "_type": "DV_TEXT",
+                                            "value": "Route"
+                                        },
+                                        "value": {
+                                            "_type": "DV_TEXT",
+                                            "value": "Iniekcja doszklistkowa"
+                                        },
+                                        "archetype_node_id": "at0091"
+                                    },
+                                    {
+                                        "_type": "ELEMENT",
+                                        "name": {
+                                            "_type": "DV_TEXT",
+                                            "value": "Dose directions description"
+                                        },
+                                        "value": {
+                                            "_type": "DV_TEXT",
+                                            "value": "Podawa\u0107 jedn\u0105 iniekcj\u0119 doszklistkow\u0105 co 8 tygodni"
+                                        },
+                                        "archetype_node_id": "at0009"
+                                    },
+                                    {
+                                        "_type": "ELEMENT",
+                                        "name": {
+                                            "_type": "DV_TEXT",
+                                            "value": "Dose amount description"
+                                        },
+                                        "value": {
+                                            "_type": "DV_TEXT",
+                                            "value": "2 mg (0,05 ml) roztworu"
+                                        },
+                                        "archetype_node_id": "at0109"
+                                    },
+                                    {
+                                        "_type": "ELEMENT",
+                                        "name": {
+                                            "_type": "DV_TEXT",
+                                            "value": "Clinical indication"
+                                        },
+                                        "value": {
+                                            "_type": "DV_TEXT",
+                                            "value": "Neowaskularna posta\u0107 zwyrodnienia plamki zwi\u0105zanego z wiekiem (AMD)"
+                                        },
+                                        "archetype_node_id": "at0018"
+                                    },
+                                    {
+                                        "_type": "ELEMENT",
+                                        "name": {
+                                            "_type": "DV_TEXT",
+                                            "value": "Therapeutic intent"
+                                        },
+                                        "value": {
+                                            "_type": "DV_TEXT",
+                                            "value": "Treatment for wet AMD"
+                                        },
+                                        "archetype_node_id": "at0148"
+                                    },
+                                    {
+                                        "_type": "CLUSTER",
+                                        "name": {
+                                            "_type": "DV_TEXT",
+                                            "value": "Order details"
+                                        },
+                                        "items": [
+                                            {
+                                                "_type": "ELEMENT",
+                                                "name": {
+                                                    "_type": "DV_TEXT",
+                                                    "value": "Order start date/time"
+                                                },
+                                                "value": {
+                                                    "_type": "DV_DATE_TIME",
+                                                    "value": "2025-04-19T10:30:00"
+                                                },
+                                                "archetype_node_id": "at0012"
+                                            },
+                                            {
+                                                "_type": "ELEMENT",
+                                                "name": {
+                                                    "_type": "DV_TEXT",
+                                                    "value": "Order stop date/time"
+                                                },
+                                                "value": {
+                                                    "_type": "DV_DATE_TIME",
+                                                    "value": "2025-12-19T10:30:00"
+                                                },
+                                                "archetype_node_id": "at0013"
+                                            },
+                                            {
+                                                "_type": "ELEMENT",
+                                                "name": {
+                                                    "_type": "DV_TEXT",
+                                                    "value": "Order start criterion"
+                                                },
+                                                "value": {
+                                                    "_type": "DV_TEXT",
+                                                    "value": "Rozpocz\u0105\u0107 po kwalifikacji do programu lekowego"
+                                                },
+                                                "archetype_node_id": "at0011"
+                                            },
+                                            {
+                                                "_type": "ELEMENT",
+                                                "name": {
+                                                    "_type": "DV_TEXT",
+                                                    "value": "Order stop criterion"
+                                                },
+                                                "value": {
+                                                    "_type": "DV_TEXT",
+                                                    "value": "Zako\u0144czy\u0107 po 8 cyklach leczenia lub pogorszeniu stanu klinicznego"
+                                                },
+                                                "archetype_node_id": "at0016"
+                                            }
+                                        ],
+                                        "archetype_node_id": "at0113"
+                                    }
+                                ],
+                                "archetype_node_id": "at0002"
+                            },
+                            "timing": {
+                                "_type": "DV_PARSABLE",
+                                "value": "R1",
+                                "formalism": "timing"
+                            },
+                            "action_archetype_id": "/.*/",
+                            "archetype_node_id": "at0001"
+                        }
+                    ],
+                    "archetype_node_id": "openEHR-EHR-INSTRUCTION.medication_order.v0"
+                },
+                {
+                    "_type": "ACTION",
+                    "name": {
+                        "_type": "DV_TEXT",
+                        "value": "Medication"
+                    },
+                    "archetype_details": {
+                        "archetype_id": {
+                            "value": "openEHR-EHR-ACTION.medication.v0"
+                        },
+                        "rm_version": "1.0.4"
+                    },
+                    "language": {
+                        "_type": "CODE_PHRASE",
+                        "terminology_id": {
+                            "_type": "TERMINOLOGY_ID",
+                            "value": "ISO_639-1"
+                        },
+                        "code_string": "en"
+                    },
+                    "encoding": {
+                        "_type": "CODE_PHRASE",
+                        "terminology_id": {
+                            "_type": "TERMINOLOGY_ID",
+                            "value": "IANA_character-sets"
+                        },
+                        "code_string": "UTF-8"
+                    },
+                    "subject": {
+                        "_type": "PARTY_SELF"
+                    },
+                    "time": {
+                        "_type": "DV_DATE_TIME",
+                        "value": "2025-04-19T10:35:00"
+                    },
+                    "description": {
+                        "_type": "ITEM_TREE",
+                        "name": {
+                            "_type": "DV_TEXT",
+                            "value": "Tree"
+                        },
+                        "items": [
+                            {
+                                "_type": "ELEMENT",
+                                "name": {
+                                    "_type": "DV_TEXT",
+                                    "value": "Medication"
+                                },
+                                "value": {
+                                    "_type": "DV_CODED_TEXT",
+                                    "value": "Aflibercept",
+                                    "defining_code": {
+                                        "_type": "CODE_PHRASE",
+                                        "terminology_id": {
+                                            "_type": "TERMINOLOGY_ID",
+                                            "value": "SNOMED-CT"
+                                        },
+                                        "code_string": "703840003"
+                                    }
+                                },
+                                "archetype_node_id": "at0020"
+                            },
+                            {
+                                "_type": "CLUSTER",
+                                "name": {
+                                    "_type": "DV_TEXT",
+                                    "value": "Product"
+                                },
+                                "items": [
+                                    {
+                                        "_type": "ELEMENT",
+                                        "name": {
+                                            "_type": "DV_TEXT",
+                                            "value": "Manufacturer"
+                                        },
+                                        "value": {
+                                            "_type": "DV_TEXT",
+                                            "value": "Bayer Sp. z o.o."
+                                        },
+                                        "archetype_node_id": "at0130"
+                                    },
+                                    {
+                                        "_type": "ELEMENT",
+                                        "name": {
+                                            "_type": "DV_TEXT",
+                                            "value": "Batch ID"
+                                        },
+                                        "value": {
+                                            "_type": "DV_TEXT",
+                                            "value": "MED20250419PL"
+                                        },
+                                        "archetype_node_id": "at0083"
+                                    },
+                                    {
+                                        "_type": "ELEMENT",
+                                        "name": {
+                                            "_type": "DV_TEXT",
+                                            "value": "Expiry date"
+                                        },
+                                        "value": {
+                                            "_type": "DV_DATE",
+                                            "value": "2026-03-31"
+                                        },
+                                        "archetype_node_id": "at0084"
+                                    },
+                                    {
+                                        "_type": "ELEMENT",
+                                        "name": {
+                                            "_type": "DV_TEXT",
+                                            "value": "Dispensing substitution"
+                                        },
+                                        "value": {
+                                            "_type": "DV_CODED_TEXT",
+                                            "value": "Substitute product dispensed",
+                                            "defining_code": {
+                                                "_type": "CODE_PHRASE",
+                                                "terminology_id": {
+                                                    "_type": "TERMINOLOGY_ID",
+                                                    "value": "local"
+                                                },
+                                                "code_string": "at0138"
+                                            }
+                                        },
+                                        "archetype_node_id": "at0132"
+                                    },
+                                    {
+                                        "_type": "ELEMENT",
+                                        "name": {
+                                            "_type": "DV_TEXT",
+                                            "value": "Dispensing substitution reason"
+                                        },
+                                        "value": {
+                                            "_type": "DV_TEXT",
+                                            "value": "Brak dost\u0119pno\u015bci oryginalnego preparatu"
+                                        },
+                                        "archetype_node_id": "at0133"
+                                    }
+                                ],
+                                "archetype_node_id": "at0082"
+                            },
+                            {
+                                "_type": "ELEMENT",
+                                "name": {
+                                    "_type": "DV_TEXT",
+                                    "value": "Order scheduled datetime"
+                                },
+                                "value": {
+                                    "_type": "DV_DATE_TIME",
+                                    "value": "2025-04-19T10:00:00"
+                                },
+                                "archetype_node_id": "at0043"
+                            },
+                            {
+                                "_type": "ELEMENT",
+                                "name": {
+                                    "_type": "DV_TEXT",
+                                    "value": "Reason"
+                                },
+                                "value": {
+                                    "_type": "DV_TEXT",
+                                    "value": "Leczenie wysi\u0119kowego AMD zgodnie z programem lekowym NFZ"
+                                },
+                                "archetype_node_id": "at0021"
+                            },
+                            {
+                                "_type": "CLUSTER",
+                                "name": {
+                                    "_type": "DV_TEXT",
+                                    "value": "Delivery details"
+                                },
+                                "items": [
+                                    {
+                                        "_type": "ELEMENT",
+                                        "name": {
+                                            "_type": "DV_TEXT",
+                                            "value": "Body site"
+                                        },
+                                        "value": {
+                                            "_type": "DV_TEXT",
+                                            "value": "Cia\u0142o szkliste lewego oka"
+                                        },
+                                        "archetype_node_id": "at0141"
+                                    },
+                                    {
+                                        "_type": "ELEMENT",
+                                        "name": {
+                                            "_type": "DV_TEXT",
+                                            "value": "Delivery method"
+                                        },
+                                        "value": {
+                                            "_type": "DV_TEXT",
+                                            "value": "Iniekcja doszklistkowa"
+                                        },
+                                        "archetype_node_id": "at0143"
+                                    }
+                                ],
+                                "archetype_node_id": "at0140"
+                            }
+                        ],
+                        "archetype_node_id": "at0017"
+                    },
+                    "ism_transition": {
+                        "_type": "ISM_TRANSITION",
+                        "current_state": {
+                            "_type": "DV_CODED_TEXT",
+                            "value": "completed",
+                            "defining_code": {
+                                "_type": "CODE_PHRASE",
+                                "terminology_id": {
+                                    "_type": "TERMINOLOGY_ID",
+                                    "value": "openehr"
+                                },
+                                "code_string": "532"
+                            }
+                        }
+                    },
+                    "archetype_node_id": "openEHR-EHR-ACTION.medication.v0"
+                },
+                {
+                    "_type": "EVALUATION",
+                    "name": {
+                        "_type": "DV_TEXT",
+                        "value": "Adverse reaction risk"
+                    },
+                    "archetype_details": {
+                        "archetype_id": {
+                            "value": "openEHR-EHR-EVALUATION.adverse_reaction_risk.v1"
+                        },
+                        "rm_version": "1.0.4"
+                    },
+                    "language": {
+                        "_type": "CODE_PHRASE",
+                        "terminology_id": {
+                            "_type": "TERMINOLOGY_ID",
+                            "value": "ISO_639-1"
+                        },
+                        "code_string": "en"
+                    },
+                    "encoding": {
+                        "_type": "CODE_PHRASE",
+                        "terminology_id": {
+                            "_type": "TERMINOLOGY_ID",
+                            "value": "IANA_character-sets"
+                        },
+                        "code_string": "UTF-8"
+                    },
+                    "subject": {
+                        "_type": "PARTY_SELF"
+                    },
+                    "data": {
+                        "_type": "ITEM_TREE",
+                        "name": {
+                            "_type": "DV_TEXT",
+                            "value": "Tree"
+                        },
+                        "items": [
+                            {
+                                "_type": "ELEMENT",
+                                "name": {
+                                    "_type": "DV_TEXT",
+                                    "value": "Substance"
+                                },
+                                "value": {
+                                    "_type": "DV_CODED_TEXT",
+                                    "value": "Aflibercept",
+                                    "defining_code": {
+                                        "_type": "CODE_PHRASE",
+                                        "terminology_id": {
+                                            "_type": "TERMINOLOGY_ID",
+                                            "value": "SNOMED-CT"
+                                        },
+                                        "code_string": "703840003"
+                                    }
+                                },
+                                "archetype_node_id": "at0002"
+                            },
+                            {
+                                "_type": "ELEMENT",
+                                "name": {
+                                    "_type": "DV_TEXT",
+                                    "value": "Criticality"
+                                },
+                                "value": {
+                                    "_type": "DV_CODED_TEXT",
+                                    "value": "Low",
+                                    "defining_code": {
+                                        "_type": "CODE_PHRASE",
+                                        "terminology_id": {
+                                            "_type": "TERMINOLOGY_ID",
+                                            "value": "local"
+                                        },
+                                        "code_string": "at0102"
+                                    }
+                                },
+                                "archetype_node_id": "at0101"
+                            },
+                            {
+                                "_type": "ELEMENT",
+                                "name": {
+                                    "_type": "DV_TEXT",
+                                    "value": "Onset of last reaction"
+                                },
+                                "value": {
+                                    "_type": "DV_DATE_TIME",
+                                    "value": "2024-06-05T09:00:00"
+                                },
+                                "archetype_node_id": "at0117"
+                            },
+                            {
+                                "_type": "ELEMENT",
+                                "name": {
+                                    "_type": "DV_TEXT",
+                                    "value": "Comment"
+                                },
+                                "value": {
+                                    "_type": "DV_TEXT",
+                                    "value": "Wyst\u0105pi\u0142 przemijaj\u0105cy wzrost ci\u015bnienia \u015br\u00f3dga\u0142kowego po wcze\u015bniejszym podaniu"
+                                },
+                                "archetype_node_id": "at0006"
+                            }
+                        ],
+                        "archetype_node_id": "at0001"
+                    },
+                    "archetype_node_id": "openEHR-EHR-EVALUATION.adverse_reaction_risk.v1"
+                }
+            ],
+            "archetype_node_id": "openEHR-EHR-SECTION.intraocular_injection.v0"
+        }
+    ],
+    "archetype_node_id": "openEHR-EHR-COMPOSITION.progress_note.v1",
+    "uid": {
+        "_type": "OBJECT_VERSION_ID",
+        "value": "81436fcf-a548-4c29-b7ff-b66d58ced40b::local.ehrbase.org::1"
+    }
+}

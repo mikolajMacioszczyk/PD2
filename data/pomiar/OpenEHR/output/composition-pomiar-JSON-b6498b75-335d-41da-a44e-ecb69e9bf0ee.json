@@ -1,0 +1,804 @@
+{
+    "_type": "COMPOSITION",
+    "name": {
+        "_type": "DV_TEXT",
+        "value": "Intraocular_pressure_study"
+    },
+    "archetype_details": {
+        "archetype_id": {
+            "value": "openEHR-EHR-COMPOSITION.encounter.v1"
+        },
+        "template_id": {
+            "value": "Intraocular_pressure_study"
+        },
+        "rm_version": "1.0.4"
+    },
+    "language": {
+        "_type": "CODE_PHRASE",
+        "terminology_id": {
+            "_type": "TERMINOLOGY_ID",
+            "value": "ISO_639-1"
+        },
+        "code_string": "pl"
+    },
+    "territory": {
+        "_type": "CODE_PHRASE",
+        "terminology_id": {
+            "_type": "TERMINOLOGY_ID",
+            "value": "ISO_3166-1"
+        },
+        "code_string": "PL"
+    },
+    "category": {
+        "_type": "DV_CODED_TEXT",
+        "value": "event",
+        "defining_code": {
+            "_type": "CODE_PHRASE",
+            "terminology_id": {
+                "_type": "TERMINOLOGY_ID",
+                "value": "openehr"
+            },
+            "code_string": "433"
+        }
+    },
+    "composer": {
+        "_type": "PARTY_IDENTIFIED",
+        "external_ref": {
+            "_type": "PARTY_REF",
+            "namespace": "pl.gov.npwz",
+            "type": "PARTY",
+            "id": {
+                "_type": "GENERIC_ID",
+                "value": "4567890",
+                "scheme": "NPWZ"
+            }
+        },
+        "name": "lek. Micha\u0142 Szyma\u0144ski"
+    },
+    "context": {
+        "_type": "EVENT_CONTEXT",
+        "start_time": {
+            "_type": "DV_DATE_TIME",
+            "value": "2025-04-14T09:30:00"
+        },
+        "end_time": {
+            "_type": "DV_DATE_TIME",
+            "value": "2025-04-14T09:37:00"
+        },
+        "setting": {
+            "_type": "DV_CODED_TEXT",
+            "value": "secondary medical care",
+            "defining_code": {
+                "_type": "CODE_PHRASE",
+                "terminology_id": {
+                    "_type": "TERMINOLOGY_ID",
+                    "value": "openehr"
+                },
+                "code_string": "232"
+            }
+        },
+        "health_care_facility": {
+            "_type": "PARTY_IDENTIFIED",
+            "name": "Poradnia Okulistyczna We Wroc\u0142awiu"
+        }
+    },
+    "content": [
+        {
+            "_type": "SECTION",
+            "name": {
+                "_type": "DV_TEXT",
+                "value": "Intraocular pressure study"
+            },
+            "archetype_details": {
+                "archetype_id": {
+                    "value": "openEHR-EHR-SECTION.intraocular_pressure_study.v0"
+                },
+                "rm_version": "1.0.4"
+            },
+            "items": [
+                {
+                    "_type": "ACTION",
+                    "name": {
+                        "_type": "DV_TEXT",
+                        "value": "Procedure"
+                    },
+                    "archetype_details": {
+                        "archetype_id": {
+                            "value": "openEHR-EHR-ACTION.procedure.v1"
+                        },
+                        "rm_version": "1.0.4"
+                    },
+                    "language": {
+                        "_type": "CODE_PHRASE",
+                        "terminology_id": {
+                            "_type": "TERMINOLOGY_ID",
+                            "value": "ISO_639-1"
+                        },
+                        "code_string": "en"
+                    },
+                    "encoding": {
+                        "_type": "CODE_PHRASE",
+                        "terminology_id": {
+                            "_type": "TERMINOLOGY_ID",
+                            "value": "IANA_character-sets"
+                        },
+                        "code_string": "UTF-8"
+                    },
+                    "subject": {
+                        "_type": "PARTY_SELF"
+                    },
+                    "protocol": {
+                        "_type": "ITEM_TREE",
+                        "name": {
+                            "_type": "DV_TEXT",
+                            "value": "Tree"
+                        },
+                        "items": [
+                            {
+                                "_type": "ELEMENT",
+                                "name": {
+                                    "_type": "DV_TEXT",
+                                    "value": "Requestor order identifier"
+                                },
+                                "value": {
+                                    "_type": "DV_TEXT",
+                                    "value": "ZLEC-PL-2025-000423"
+                                },
+                                "archetype_node_id": "at0054"
+                            },
+                            {
+                                "_type": "ELEMENT",
+                                "name": {
+                                    "_type": "DV_TEXT",
+                                    "value": "Receiver order identifier"
+                                },
+                                "value": {
+                                    "_type": "DV_TEXT",
+                                    "value": "STUDY-PL-2025-000424"
+                                },
+                                "archetype_node_id": "at0056"
+                            }
+                        ],
+                        "archetype_node_id": "at0053"
+                    },
+                    "time": {
+                        "_type": "DV_DATE_TIME",
+                        "value": "2025-04-22T10:44:31.098256788Z"
+                    },
+                    "description": {
+                        "_type": "ITEM_TREE",
+                        "name": {
+                            "_type": "DV_TEXT",
+                            "value": "Tree"
+                        },
+                        "items": [
+                            {
+                                "_type": "ELEMENT",
+                                "name": {
+                                    "_type": "DV_TEXT",
+                                    "value": "Procedure name"
+                                },
+                                "value": {
+                                    "_type": "DV_TEXT",
+                                    "value": "Pomiar ci\u015bnienia wewn\u0105trzga\u0142kowego"
+                                },
+                                "archetype_node_id": "at0002"
+                            },
+                            {
+                                "_type": "ELEMENT",
+                                "name": {
+                                    "_type": "DV_TEXT",
+                                    "value": "Description"
+                                },
+                                "value": {
+                                    "_type": "DV_TEXT",
+                                    "value": "Badanie przeprowadzono w warunkach ambulatoryjnych przy u\u017cyciu tonometru Goldmanna."
+                                },
+                                "archetype_node_id": "at0049"
+                            },
+                            {
+                                "_type": "ELEMENT",
+                                "name": {
+                                    "_type": "DV_TEXT",
+                                    "value": "Method"
+                                },
+                                "value": {
+                                    "_type": "DV_TEXT",
+                                    "value": "Tonometria aplanacyjna"
+                                },
+                                "archetype_node_id": "at0065"
+                            },
+                            {
+                                "_type": "ELEMENT",
+                                "name": {
+                                    "_type": "DV_TEXT",
+                                    "value": "Urgency"
+                                },
+                                "value": {
+                                    "_type": "DV_TEXT",
+                                    "value": "Planowe"
+                                },
+                                "archetype_node_id": "at0058"
+                            },
+                            {
+                                "_type": "ELEMENT",
+                                "name": {
+                                    "_type": "DV_TEXT",
+                                    "value": "Reason"
+                                },
+                                "value": {
+                                    "_type": "DV_TEXT",
+                                    "value": "DR screening"
+                                },
+                                "archetype_node_id": "at0014"
+                            },
+                            {
+                                "_type": "ELEMENT",
+                                "name": {
+                                    "_type": "DV_TEXT",
+                                    "value": "Comment"
+                                },
+                                "value": {
+                                    "_type": "DV_TEXT",
+                                    "value": "Badanie wykonane bez komplikacji."
+                                },
+                                "archetype_node_id": "at0005"
+                            }
+                        ],
+                        "archetype_node_id": "at0001"
+                    },
+                    "ism_transition": {
+                        "_type": "ISM_TRANSITION",
+                        "current_state": {
+                            "_type": "DV_CODED_TEXT",
+                            "value": "completed",
+                            "defining_code": {
+                                "_type": "CODE_PHRASE",
+                                "terminology_id": {
+                                    "_type": "TERMINOLOGY_ID",
+                                    "value": "openehr"
+                                },
+                                "code_string": "532"
+                            }
+                        }
+                    },
+                    "archetype_node_id": "openEHR-EHR-ACTION.procedure.v1"
+                },
+                {
+                    "_type": "OBSERVATION",
+                    "name": {
+                        "_type": "DV_TEXT",
+                        "value": "Intraocular pressure"
+                    },
+                    "archetype_details": {
+                        "archetype_id": {
+                            "value": "openEHR-EHR-OBSERVATION.intraocular_pressure.v0"
+                        },
+                        "rm_version": "1.0.4"
+                    },
+                    "language": {
+                        "_type": "CODE_PHRASE",
+                        "terminology_id": {
+                            "_type": "TERMINOLOGY_ID",
+                            "value": "ISO_639-1"
+                        },
+                        "code_string": "en"
+                    },
+                    "encoding": {
+                        "_type": "CODE_PHRASE",
+                        "terminology_id": {
+                            "_type": "TERMINOLOGY_ID",
+                            "value": "IANA_character-sets"
+                        },
+                        "code_string": "UTF-8"
+                    },
+                    "subject": {
+                        "_type": "PARTY_SELF"
+                    },
+                    "protocol": {
+                        "_type": "ITEM_TREE",
+                        "name": {
+                            "_type": "DV_TEXT",
+                            "value": "Tree"
+                        },
+                        "items": [
+                            {
+                                "_type": "ELEMENT",
+                                "name": {
+                                    "_type": "DV_TEXT",
+                                    "value": "Tonometry Method"
+                                },
+                                "value": {
+                                    "_type": "DV_CODED_TEXT",
+                                    "value": "Goldmann",
+                                    "defining_code": {
+                                        "_type": "CODE_PHRASE",
+                                        "terminology_id": {
+                                            "_type": "TERMINOLOGY_ID",
+                                            "value": "local"
+                                        },
+                                        "code_string": "at0047"
+                                    }
+                                },
+                                "archetype_node_id": "at0046"
+                            },
+                            {
+                                "_type": "CLUSTER",
+                                "name": {
+                                    "_type": "DV_TEXT",
+                                    "value": "Medical Device"
+                                },
+                                "archetype_details": {
+                                    "archetype_id": {
+                                        "value": "openEHR-EHR-CLUSTER.device.v1"
+                                    },
+                                    "rm_version": "1.0.4"
+                                },
+                                "items": [
+                                    {
+                                        "_type": "ELEMENT",
+                                        "name": {
+                                            "_type": "DV_TEXT",
+                                            "value": "Device name"
+                                        },
+                                        "value": {
+                                            "_type": "DV_TEXT",
+                                            "value": "Tonometr Goldmanna TG-100"
+                                        },
+                                        "archetype_node_id": "at0001"
+                                    },
+                                    {
+                                        "_type": "ELEMENT",
+                                        "name": {
+                                            "_type": "DV_TEXT",
+                                            "value": "Type"
+                                        },
+                                        "value": {
+                                            "_type": "DV_TEXT",
+                                            "value": "Tonometr kontaktowy"
+                                        },
+                                        "archetype_node_id": "at0003"
+                                    },
+                                    {
+                                        "_type": "ELEMENT",
+                                        "name": {
+                                            "_type": "DV_TEXT",
+                                            "value": "Description"
+                                        },
+                                        "value": {
+                                            "_type": "DV_TEXT",
+                                            "value": "Urz\u0105dzenie do pomiaru ci\u015bnienia wewn\u0105trzga\u0142kowego metod\u0105 aplanacyjn\u0105."
+                                        },
+                                        "archetype_node_id": "at0002"
+                                    },
+                                    {
+                                        "_type": "ELEMENT",
+                                        "name": {
+                                            "_type": "DV_TEXT",
+                                            "value": "Unique device identifier (UDI)"
+                                        },
+                                        "value": {
+                                            "_type": "DV_IDENTIFIER",
+                                            "id": "dev/null"
+                                        },
+                                        "archetype_node_id": "at0021"
+                                    },
+                                    {
+                                        "_type": "ELEMENT",
+                                        "name": {
+                                            "_type": "DV_TEXT",
+                                            "value": "Manufacturer"
+                                        },
+                                        "value": {
+                                            "_type": "DV_TEXT",
+                                            "value": "Sprz\u0119t optyczny S.A."
+                                        },
+                                        "archetype_node_id": "at0004"
+                                    },
+                                    {
+                                        "_type": "ELEMENT",
+                                        "name": {
+                                            "_type": "DV_TEXT",
+                                            "value": "Date of manufacture"
+                                        },
+                                        "value": {
+                                            "_type": "DV_DATE_TIME",
+                                            "value": "2021-03-15T00:00:00"
+                                        },
+                                        "archetype_node_id": "at0005"
+                                    },
+                                    {
+                                        "_type": "CLUSTER",
+                                        "name": {
+                                            "_type": "DV_TEXT",
+                                            "value": "Medical device details"
+                                        },
+                                        "archetype_details": {
+                                            "archetype_id": {
+                                                "value": "openEHR-EHR-CLUSTER.device_details.v1"
+                                            },
+                                            "rm_version": "1.0.4"
+                                        },
+                                        "items": [
+                                            {
+                                                "_type": "ELEMENT",
+                                                "name": {
+                                                    "_type": "DV_TEXT",
+                                                    "value": "Location"
+                                                },
+                                                "value": {
+                                                    "_type": "DV_TEXT",
+                                                    "value": "Gabinet 12, ul. Gajowa 5, Wroc\u0142aw"
+                                                },
+                                                "archetype_node_id": "at0024"
+                                            },
+                                            {
+                                                "_type": "ELEMENT",
+                                                "name": {
+                                                    "_type": "DV_TEXT",
+                                                    "value": "Part number"
+                                                },
+                                                "value": {
+                                                    "_type": "DV_TEXT",
+                                                    "value": "DEVICE-PL-2020"
+                                                },
+                                                "archetype_node_id": "at0007"
+                                            },
+                                            {
+                                                "_type": "ELEMENT",
+                                                "name": {
+                                                    "_type": "DV_TEXT",
+                                                    "value": "Manufacturer model name"
+                                                },
+                                                "value": {
+                                                    "_type": "DV_TEXT",
+                                                    "value": "TG-100"
+                                                },
+                                                "archetype_node_id": "at0002"
+                                            },
+                                            {
+                                                "_type": "ELEMENT",
+                                                "name": {
+                                                    "_type": "DV_TEXT",
+                                                    "value": "Hardware revision"
+                                                },
+                                                "value": {
+                                                    "_type": "DV_TEXT",
+                                                    "value": "Rev. A"
+                                                },
+                                                "archetype_node_id": "at0008"
+                                            },
+                                            {
+                                                "_type": "ELEMENT",
+                                                "name": {
+                                                    "_type": "DV_TEXT",
+                                                    "value": "Protocol revision"
+                                                },
+                                                "value": {
+                                                    "_type": "DV_TEXT",
+                                                    "value": "1.0"
+                                                },
+                                                "archetype_node_id": "at0010"
+                                            },
+                                            {
+                                                "_type": "ELEMENT",
+                                                "name": {
+                                                    "_type": "DV_TEXT",
+                                                    "value": "Sampling frequency"
+                                                },
+                                                "value": {
+                                                    "_type": "DV_TEXT",
+                                                    "value": "Manualne odczyty"
+                                                },
+                                                "archetype_node_id": "at0011"
+                                            },
+                                            {
+                                                "_type": "ELEMENT",
+                                                "name": {
+                                                    "_type": "DV_TEXT",
+                                                    "value": "Range"
+                                                },
+                                                "value": {
+                                                    "_type": "DV_TEXT",
+                                                    "value": "0-80 mmHg"
+                                                },
+                                                "archetype_node_id": "at0012"
+                                            },
+                                            {
+                                                "_type": "ELEMENT",
+                                                "name": {
+                                                    "_type": "DV_TEXT",
+                                                    "value": "Accuracy"
+                                                },
+                                                "value": {
+                                                    "_type": "DV_TEXT",
+                                                    "value": "1 mmHg"
+                                                },
+                                                "archetype_node_id": "at0013"
+                                            },
+                                            {
+                                                "_type": "ELEMENT",
+                                                "name": {
+                                                    "_type": "DV_TEXT",
+                                                    "value": "Resolution"
+                                                },
+                                                "value": {
+                                                    "_type": "DV_TEXT",
+                                                    "value": "0.5 mmHg"
+                                                },
+                                                "archetype_node_id": "at0014"
+                                            },
+                                            {
+                                                "_type": "ELEMENT",
+                                                "name": {
+                                                    "_type": "DV_TEXT",
+                                                    "value": "Date last cleaned/sterilized"
+                                                },
+                                                "value": {
+                                                    "_type": "DV_DATE_TIME",
+                                                    "value": "2025-04-10T00:00:00"
+                                                },
+                                                "archetype_node_id": "at0022"
+                                            },
+                                            {
+                                                "_type": "ELEMENT",
+                                                "name": {
+                                                    "_type": "DV_TEXT",
+                                                    "value": "Date last calibrated"
+                                                },
+                                                "value": {
+                                                    "_type": "DV_DATE_TIME",
+                                                    "value": "2025-04-10T00:00:00"
+                                                },
+                                                "archetype_node_id": "at0017"
+                                            },
+                                            {
+                                                "_type": "ELEMENT",
+                                                "name": {
+                                                    "_type": "DV_TEXT",
+                                                    "value": "Date last serviced"
+                                                },
+                                                "value": {
+                                                    "_type": "DV_DATE_TIME",
+                                                    "value": "2024-12-20T00:00:00"
+                                                },
+                                                "archetype_node_id": "at0016"
+                                            }
+                                        ],
+                                        "archetype_node_id": "openEHR-EHR-CLUSTER.device_details.v1"
+                                    },
+                                    {
+                                        "_type": "ELEMENT",
+                                        "name": {
+                                            "_type": "DV_TEXT",
+                                            "value": "Comment"
+                                        },
+                                        "value": {
+                                            "_type": "DV_TEXT",
+                                            "value": "Sprz\u0119t sprawny, skalibrowany."
+                                        },
+                                        "archetype_node_id": "at0008"
+                                    }
+                                ],
+                                "archetype_node_id": "openEHR-EHR-CLUSTER.device.v1"
+                            },
+                            {
+                                "_type": "CLUSTER",
+                                "name": {
+                                    "_type": "DV_TEXT",
+                                    "value": "Central corneal thickness details"
+                                },
+                                "archetype_details": {
+                                    "archetype_id": {
+                                        "value": "openEHR-EHR-CLUSTER.corneal_thickness_details.v0"
+                                    },
+                                    "rm_version": "1.0.4"
+                                },
+                                "items": [
+                                    {
+                                        "_type": "ELEMENT",
+                                        "name": {
+                                            "_type": "DV_TEXT",
+                                            "value": "Central Corneal Thickness (CCT)"
+                                        },
+                                        "value": {
+                                            "_type": "DV_QUANTITY",
+                                            "units": "um",
+                                            "magnitude": 550.0
+                                        },
+                                        "archetype_node_id": "at0001"
+                                    },
+                                    {
+                                        "_type": "ELEMENT",
+                                        "name": {
+                                            "_type": "DV_TEXT",
+                                            "value": "Measurement Method"
+                                        },
+                                        "value": {
+                                            "_type": "DV_CODED_TEXT",
+                                            "value": "Pachymetria optyczna",
+                                            "defining_code": {
+                                                "_type": "CODE_PHRASE",
+                                                "terminology_id": {
+                                                    "_type": "TERMINOLOGY_ID",
+                                                    "value": "local"
+                                                },
+                                                "code_string": "OPT"
+                                            }
+                                        },
+                                        "archetype_node_id": "at0002"
+                                    },
+                                    {
+                                        "_type": "ELEMENT",
+                                        "name": {
+                                            "_type": "DV_TEXT",
+                                            "value": "Correction parameter"
+                                        },
+                                        "value": {
+                                            "_type": "DV_QUANTITY",
+                                            "units": "mm[Hg]",
+                                            "magnitude": 0.0
+                                        },
+                                        "archetype_node_id": "at0003"
+                                    }
+                                ],
+                                "archetype_node_id": "openEHR-EHR-CLUSTER.corneal_thickness_details.v0"
+                            }
+                        ],
+                        "archetype_node_id": "at0068"
+                    },
+                    "data": {
+                        "name": {
+                            "_type": "DV_TEXT",
+                            "value": "Event Series"
+                        },
+                        "origin": {
+                            "_type": "DV_DATE_TIME",
+                            "value": "2025-04-22T10:44:31.098256788Z"
+                        },
+                        "events": [
+                            {
+                                "_type": "INTERVAL_EVENT",
+                                "name": {
+                                    "_type": "DV_TEXT",
+                                    "value": "Any event"
+                                },
+                                "time": {
+                                    "_type": "DV_DATE_TIME",
+                                    "value": "2025-04-22T10:44:31.098256788Z"
+                                },
+                                "state": {
+                                    "_type": "ITEM_TREE",
+                                    "name": {
+                                        "_type": "DV_TEXT",
+                                        "value": "Tree"
+                                    },
+                                    "items": [
+                                        {
+                                            "_type": "ELEMENT",
+                                            "name": {
+                                                "_type": "DV_TEXT",
+                                                "value": "Confounding factors"
+                                            },
+                                            "value": {
+                                                "_type": "DV_TEXT",
+                                                "value": "Brak czynnik\u00f3w zak\u0142\u00f3caj\u0105cych pomiar."
+                                            },
+                                            "archetype_node_id": "at0074"
+                                        }
+                                    ],
+                                    "archetype_node_id": "at0007"
+                                },
+                                "data": {
+                                    "_type": "ITEM_TREE",
+                                    "name": {
+                                        "_type": "DV_TEXT",
+                                        "value": "Tree"
+                                    },
+                                    "items": [
+                                        {
+                                            "_type": "ELEMENT",
+                                            "name": {
+                                                "_type": "DV_TEXT",
+                                                "value": "Eye examined"
+                                            },
+                                            "value": {
+                                                "_type": "DV_CODED_TEXT",
+                                                "value": "Left",
+                                                "defining_code": {
+                                                    "_type": "CODE_PHRASE",
+                                                    "terminology_id": {
+                                                        "_type": "TERMINOLOGY_ID",
+                                                        "value": "local"
+                                                    },
+                                                    "code_string": "at0058"
+                                                }
+                                            },
+                                            "archetype_node_id": "at0057"
+                                        },
+                                        {
+                                            "_type": "ELEMENT",
+                                            "name": {
+                                                "_type": "DV_TEXT",
+                                                "value": "Pressure"
+                                            },
+                                            "value": {
+                                                "_type": "DV_QUANTITY",
+                                                "units": "mm[Hg]",
+                                                "magnitude": 17.0
+                                            },
+                                            "archetype_node_id": "at0042"
+                                        },
+                                        {
+                                            "_type": "ELEMENT",
+                                            "name": {
+                                                "_type": "DV_TEXT",
+                                                "value": "Applanation time"
+                                            },
+                                            "value": {
+                                                "_type": "DV_QUANTITY",
+                                                "units": "millisec",
+                                                "magnitude": 21.0
+                                            },
+                                            "archetype_node_id": "at0065"
+                                        },
+                                        {
+                                            "_type": "ELEMENT",
+                                            "name": {
+                                                "_type": "DV_TEXT",
+                                                "value": "Clinical interpretation"
+                                            },
+                                            "value": {
+                                                "_type": "DV_TEXT",
+                                                "value": "Wynik w granicach normy."
+                                            },
+                                            "archetype_node_id": "at0061"
+                                        },
+                                        {
+                                            "_type": "ELEMENT",
+                                            "name": {
+                                                "_type": "DV_TEXT",
+                                                "value": "Comment"
+                                            },
+                                            "value": {
+                                                "_type": "DV_TEXT",
+                                                "value": "Pomiar przeprowadzono zgodnie z procedur\u0105."
+                                            },
+                                            "archetype_node_id": "at0063"
+                                        }
+                                    ],
+                                    "archetype_node_id": "at0003"
+                                },
+                                "width": {
+                                    "_type": "DV_DURATION",
+                                    "value": "PT42H"
+                                },
+                                "math_function": {
+                                    "_type": "DV_CODED_TEXT",
+                                    "value": "minimum",
+                                    "defining_code": {
+                                        "_type": "CODE_PHRASE",
+                                        "terminology_id": {
+                                            "_type": "TERMINOLOGY_ID",
+                                            "value": "openehr"
+                                        },
+                                        "code_string": "145"
+                                    }
+                                },
+                                "archetype_node_id": "at0002"
+                            }
+                        ],
+                        "archetype_node_id": "at0001"
+                    },
+                    "archetype_node_id": "openEHR-EHR-OBSERVATION.intraocular_pressure.v0"
+                }
+            ],
+            "archetype_node_id": "openEHR-EHR-SECTION.intraocular_pressure_study.v0"
+        }
+    ],
+    "archetype_node_id": "openEHR-EHR-COMPOSITION.encounter.v1",
+    "uid": {
+        "_type": "OBJECT_VERSION_ID",
+        "value": "b6498b75-335d-41da-a44e-ecb69e9bf0ee::local.ehrbase.org::1"
+    }
+}

@@ -1,0 +1,283 @@
+{
+    "resourceType": "Bundle",
+    "id": "333002d5-3eda-400b-b5bd-d468ca71e8cd",
+    "meta": {
+        "lastUpdated": "2025-04-22T10:44:40.766+00:00"
+    },
+    "type": "searchset",
+    "total": 1,
+    "link": [
+        {
+            "relation": "self",
+            "url": "http://localhost:8080/fhir/MedicationAdministration?_id=53&_include=*"
+        }
+    ],
+    "entry": [
+        {
+            "fullUrl": "http://localhost:8080/fhir/MedicationAdministration/53",
+            "resource": {
+                "resourceType": "MedicationAdministration",
+                "id": "53",
+                "meta": {
+                    "versionId": "1",
+                    "lastUpdated": "2025-04-22T10:44:40.731+00:00",
+                    "source": "#P0XqYqqSM87LofSC"
+                },
+                "basedOn": [
+                    {
+                        "reference": "CarePlan/52"
+                    }
+                ],
+                "status": "completed",
+                "medication": {
+                    "reference": {
+                        "reference": "Medication/50"
+                    }
+                },
+                "subject": {
+                    "reference": "Patient/1"
+                },
+                "occurenceDateTime": "2025-04-19T10:35:00+02:00",
+                "recorded": "2025-04-19T10:30:00+02:00",
+                "performer": [
+                    {
+                        "actor": {
+                            "reference": {
+                                "reference": "Practitioner/2"
+                            }
+                        }
+                    }
+                ],
+                "reason": [
+                    {
+                        "concept": {
+                            "text": "Neowaskularna posta\u0107 zwyrodnienia plamki zwi\u0105zanego z wiekiem (AMD)"
+                        }
+                    }
+                ],
+                "note": [
+                    {
+                        "text": "Leczenie wysi\u0119kowego AMD zgodnie z programem lekowym NFZ"
+                    }
+                ],
+                "dosage": {
+                    "text": "Mo\u017cna zastosowa\u0107 substytut w przypadku braku dost\u0119pno\u015bci oryginalnego preparatu",
+                    "site": {
+                        "text": "Cia\u0142o szkliste lewego oka"
+                    },
+                    "route": {
+                        "text": "Iniekcja doszklistkowa"
+                    },
+                    "dose": {
+                        "value": 2.0,
+                        "unit": "mg"
+                    }
+                }
+            },
+            "search": {
+                "mode": "match"
+            }
+        },
+        {
+            "fullUrl": "http://localhost:8080/fhir/Patient/1",
+            "resource": {
+                "resourceType": "Patient",
+                "id": "1",
+                "meta": {
+                    "versionId": "1",
+                    "lastUpdated": "2025-04-22T10:27:11.424+00:00",
+                    "source": "#OZ9CAFDiXKP5lAX7"
+                },
+                "identifier": [
+                    {
+                        "system": "urn:oid:2.16.840.1.113883.3.4424.1.1.616",
+                        "value": "80010112350"
+                    }
+                ]
+            },
+            "search": {
+                "mode": "include"
+            }
+        },
+        {
+            "fullUrl": "http://localhost:8080/fhir/Practitioner/2",
+            "resource": {
+                "resourceType": "Practitioner",
+                "id": "2",
+                "meta": {
+                    "versionId": "1",
+                    "lastUpdated": "2025-04-22T10:27:11.829+00:00",
+                    "source": "#iMq5IUyFtle47h9z"
+                },
+                "identifier": [
+                    {
+                        "system": "pl.gov.npwz",
+                        "value": "5634789"
+                    }
+                ],
+                "name": [
+                    {
+                        "family": "Wo\u017aniak",
+                        "given": [
+                            "Adam"
+                        ],
+                        "prefix": [
+                            "lek.",
+                            "med."
+                        ]
+                    }
+                ]
+            },
+            "search": {
+                "mode": "include"
+            }
+        },
+        {
+            "fullUrl": "http://localhost:8080/fhir/Medication/50",
+            "resource": {
+                "resourceType": "Medication",
+                "id": "50",
+                "meta": {
+                    "versionId": "1",
+                    "lastUpdated": "2025-04-22T10:44:40.643+00:00",
+                    "source": "#Yd4bXKRcmXRVjqG1"
+                },
+                "code": {
+                    "coding": [
+                        {
+                            "system": "http://snomed.info/sct",
+                            "code": "703840003",
+                            "display": "Aflibercept"
+                        }
+                    ],
+                    "text": "Aflibercept"
+                },
+                "marketingAuthorizationHolder": {
+                    "display": "Bayer Sp. z o.o."
+                },
+                "batch": {
+                    "lotNumber": "MED20250419PL",
+                    "expirationDate": "2026-03-31"
+                }
+            },
+            "search": {
+                "mode": "include"
+            }
+        },
+        {
+            "fullUrl": "http://localhost:8080/fhir/AllergyIntolerance/49",
+            "resource": {
+                "resourceType": "AllergyIntolerance",
+                "id": "49",
+                "meta": {
+                    "versionId": "1",
+                    "lastUpdated": "2025-04-22T10:44:40.604+00:00",
+                    "source": "#KmiM9Ik93THXWPKe"
+                },
+                "criticality": "low",
+                "patient": {
+                    "reference": "Patient/1"
+                },
+                "recordedDate": "2024-06-05T09:00:00+02:00",
+                "reaction": [
+                    {
+                        "substance": {
+                            "coding": [
+                                {
+                                    "system": "http://snomed.info/sct",
+                                    "code": "703840003",
+                                    "display": "Aflibercept"
+                                }
+                            ]
+                        },
+                        "manifestation": [
+                            {
+                                "concept": {
+                                    "text": "Przemijaj\u0105cy wzrost ci\u015bnienia \u015br\u00f3dga\u0142kowego"
+                                }
+                            }
+                        ]
+                    }
+                ]
+            },
+            "search": {
+                "mode": "match"
+            }
+        },
+        {
+            "fullUrl": "http://localhost:8080/fhir/CarePlan/52",
+            "resource": {
+                "resourceType": "CarePlan",
+                "id": "52",
+                "meta": {
+                    "versionId": "1",
+                    "lastUpdated": "2025-04-22T10:44:40.697+00:00",
+                    "source": "#V6usAg0lU5c5fH1L"
+                },
+                "status": "active",
+                "intent": "order",
+                "title": "Iniekcja doszklistkowa",
+                "description": "8 iniekcji doszklistkowych afliberceptu co 8 tygodni w ramach programu lekowego NFZ",
+                "subject": {
+                    "reference": "Patient/1"
+                },
+                "period": {
+                    "start": "2025-04-19T10:30:00+02:00",
+                    "end": "2025-12-19T10:30:00+02:00"
+                },
+                "created": "2025-04-19T10:30:00+02:00",
+                "contributor": [
+                    {
+                        "reference": "Practitioner/2"
+                    }
+                ],
+                "supportingInfo": [
+                    {
+                        "reference": "AllergyIntolerance/49"
+                    }
+                ],
+                "goal": [
+                    {
+                        "reference": "Goal/51"
+                    }
+                ]
+            },
+            "search": {
+                "mode": "match"
+            }
+        },
+        {
+            "fullUrl": "http://localhost:8080/fhir/Goal/51",
+            "resource": {
+                "resourceType": "Goal",
+                "id": "51",
+                "meta": {
+                    "versionId": "1",
+                    "lastUpdated": "2025-04-22T10:44:40.667+00:00",
+                    "source": "#EKQMNxBKzX499egv"
+                },
+                "lifecycleStatus": "active",
+                "achievementStatus": {
+                    "text": "W trakcie realizacji"
+                },
+                "description": {
+                    "text": "Leczenie mokrego AMD"
+                },
+                "subject": {
+                    "reference": "Patient/1"
+                },
+                "startCodeableConcept": {
+                    "text": "Rozpocz\u0105\u0107 po kwalifikacji do programu lekowego"
+                },
+                "addresses": [
+                    {
+                        "display": "Zako\u0144czy\u0107 po 8 cyklach leczenia lub pogorszeniu stanu klinicznego"
+                    }
+                ]
+            },
+            "search": {
+                "mode": "match"
+            }
+        }
+    ]
+}

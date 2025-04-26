@@ -1,0 +1,226 @@
+{
+    "resourceType": "Bundle",
+    "id": "24769793-b246-435c-b1bf-37120f69b380",
+    "meta": {
+        "lastUpdated": "2025-04-22T10:44:41.423+00:00"
+    },
+    "type": "searchset",
+    "total": 1,
+    "link": [
+        {
+            "relation": "self",
+            "url": "http://localhost:8080/fhir/MedicationRequest?_id=61&_include=*"
+        }
+    ],
+    "entry": [
+        {
+            "fullUrl": "http://localhost:8080/fhir/MedicationRequest/61",
+            "resource": {
+                "resourceType": "MedicationRequest",
+                "id": "61",
+                "meta": {
+                    "versionId": "1",
+                    "lastUpdated": "2025-04-22T10:44:41.386+00:00",
+                    "source": "#nKGqHtJzlcOSx8NO"
+                },
+                "identifier": [
+                    {
+                        "system": "http://ezdrowie.gov.pl/e-recepta/identyfikator",
+                        "value": "PL-2025-000123"
+                    }
+                ],
+                "status": "active",
+                "intent": "order",
+                "medication": {
+                    "reference": {
+                        "reference": "Medication/60"
+                    }
+                },
+                "subject": {
+                    "reference": "Patient/30"
+                },
+                "informationSource": [
+                    {
+                        "reference": "Organization/59"
+                    }
+                ],
+                "authoredOn": "2025-04-07T19:56:00+01:00",
+                "requester": {
+                    "reference": "Practitioner/31"
+                },
+                "reason": [
+                    {
+                        "concept": {
+                            "text": "B\u00f3l g\u0142owy"
+                        }
+                    }
+                ],
+                "note": [
+                    {
+                        "text": "W razie pogorszenia skonsultowa\u0107 si\u0119 z lekarzem"
+                    }
+                ],
+                "dosageInstruction": [
+                    {
+                        "text": "Paracetamol 500 mg, doustnie, 3x dziennie po posi\u0142ku przez 3 dni.",
+                        "patientInstruction": "Nie stosowa\u0107 na czczo",
+                        "timing": {
+                            "repeat": {
+                                "duration": 3.0,
+                                "durationUnit": "d",
+                                "frequency": 3,
+                                "period": 1.0,
+                                "periodUnit": "d"
+                            },
+                            "code": {
+                                "text": "3 razy dziennie po posi\u0142ku"
+                            }
+                        },
+                        "asNeeded": true,
+                        "route": {
+                            "text": "Doustnie"
+                        },
+                        "doseAndRate": [
+                            {
+                                "doseQuantity": {
+                                    "value": 1.0,
+                                    "unit": "tabletka"
+                                }
+                            }
+                        ],
+                        "maxDosePerPeriod": [
+                            {
+                                "numerator": {
+                                    "value": 6.0,
+                                    "unit": "tabletka"
+                                },
+                                "denominator": {
+                                    "value": 1.0,
+                                    "unit": "d"
+                                }
+                            }
+                        ]
+                    }
+                ],
+                "dispenseRequest": {
+                    "validityPeriod": {
+                        "start": "2025-04-07",
+                        "end": "2025-05-07"
+                    }
+                }
+            },
+            "search": {
+                "mode": "match"
+            }
+        },
+        {
+            "fullUrl": "http://localhost:8080/fhir/Medication/60",
+            "resource": {
+                "resourceType": "Medication",
+                "id": "60",
+                "meta": {
+                    "versionId": "1",
+                    "lastUpdated": "2025-04-22T10:44:41.364+00:00",
+                    "source": "#7V6WJjDnEoKHvNyV"
+                },
+                "code": {
+                    "text": "Paracetamol 500 mg tabletki powlekane"
+                },
+                "doseForm": {
+                    "text": "Tabletki powlekane"
+                },
+                "ingredient": [
+                    {
+                        "item": {
+                            "concept": {
+                                "text": "Paracetamolum"
+                            }
+                        },
+                        "strengthRatio": {
+                            "numerator": {
+                                "value": 500.0,
+                                "unit": "mg"
+                            },
+                            "denominator": {
+                                "value": 1.0,
+                                "unit": "tabletka"
+                            }
+                        }
+                    }
+                ]
+            },
+            "search": {
+                "mode": "include"
+            }
+        },
+        {
+            "fullUrl": "http://localhost:8080/fhir/Patient/30",
+            "resource": {
+                "resourceType": "Patient",
+                "id": "30",
+                "meta": {
+                    "versionId": "1",
+                    "lastUpdated": "2025-04-22T10:32:03.286+00:00",
+                    "source": "#yZWDJbP8jR010EPd"
+                },
+                "identifier": [
+                    {
+                        "system": "urn:oid:2.16.840.1.113883.3.4424.1.1.616",
+                        "value": "80010112345"
+                    }
+                ]
+            },
+            "search": {
+                "mode": "include"
+            }
+        },
+        {
+            "fullUrl": "http://localhost:8080/fhir/Practitioner/31",
+            "resource": {
+                "resourceType": "Practitioner",
+                "id": "31",
+                "meta": {
+                    "versionId": "1",
+                    "lastUpdated": "2025-04-22T10:32:03.312+00:00",
+                    "source": "#Pg57JlDXui5jL2WE"
+                },
+                "identifier": [
+                    {
+                        "system": "pl.gov.npwz",
+                        "value": "2844964"
+                    }
+                ],
+                "name": [
+                    {
+                        "family": "Kowalska",
+                        "given": [
+                            "Anna"
+                        ],
+                        "prefix": [
+                            "lek."
+                        ]
+                    }
+                ]
+            },
+            "search": {
+                "mode": "include"
+            }
+        },
+        {
+            "fullUrl": "http://localhost:8080/fhir/Organization/59",
+            "resource": {
+                "resourceType": "Organization",
+                "id": "59",
+                "meta": {
+                    "versionId": "1",
+                    "lastUpdated": "2025-04-22T10:44:41.345+00:00",
+                    "source": "#VNlaAyb6iFkrOAXo"
+                },
+                "name": "Przychodnia Rodzinna We Wroc\u0142awiu"
+            },
+            "search": {
+                "mode": "match"
+            }
+        }
+    ]
+}
