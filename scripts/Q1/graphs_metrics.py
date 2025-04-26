@@ -3,6 +3,7 @@ import json
 import statistics
 import pandas as pd
 from datetime import datetime
+from collections import deque
 
 VERBOSE = True
 DATA_DIRECTORY_PATH = "../../data/"
@@ -17,12 +18,29 @@ def avg_shortest_paths_from_root(G, root_node):
     else:
         return 0
 
-def dfs_depth(G, node, visited=None):
-    if visited is None:
-        visited = set()
-    visited.add(node)
-    depths = [dfs_depth(G, neighbor, visited.copy()) for neighbor in G.neighbors(node) if neighbor not in visited]
-    return 1 + max(depths, default=0)
+# def dfs_depth(G, node, visited=None):
+#     if visited is None:
+#         visited = set()
+#     visited.add(node)
+#     depths = [dfs_depth(G, neighbor, visited.copy()) for neighbor in G.neighbors(node) if neighbor not in visited]
+#     return 1 + max(depths, default=0)
+
+def bfs_depth(G, start):
+    visited = set()
+    queue = deque([(start, 0)])
+    max_depth = 0
+
+    while queue:
+        node, depth = queue.popleft()
+        if node in visited:
+            continue
+        visited.add(node)
+        max_depth = max(max_depth, depth)
+        for neighbor in G.neighbors(node):
+            if neighbor not in visited:
+                queue.append((neighbor, depth + 1))
+
+    return max_depth
 
 def collect_graph_stats(file_name):
     G = nx.DiGraph()
@@ -46,7 +64,7 @@ def collect_graph_stats(file_name):
     degrees = [deg for _, deg in G.degree()]
 
     if nx.is_directed_acyclic_graph(G):
-        max_depth = dfs_depth(G, root_node)
+        max_depth = bfs_depth(G, root_node)
     else:
         max_depth = None
 
