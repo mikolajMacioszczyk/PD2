@@ -57,7 +57,6 @@ def collect_graph_stats(file_name):
             diameter = nx.diameter(uG)
             avg_path_length = nx.average_shortest_path_length(uG)
             assortativity = nx.degree_assortativity_coefficient(uG)
-            cycles = len(list(nx.cycle_basis(uG))) # simple_cycles for undirected
     except nx.NetworkXError as x:
         print(f"Exception: {x}")
 
@@ -79,7 +78,6 @@ def collect_graph_stats(file_name):
         "diameter": diameter,
         "avg_path_length": avg_path_length,
         "assortativity": assortativity,
-        "cycles": cycles,
         "max_depth": max_depth,
         "avg_path_from_root": avg_path_from_root
     }
@@ -97,7 +95,6 @@ def display_graph_stats(graph_name, data):
     else:
         print('Graf nie jest spójny – średnica i średnia długość ścieżki nie może być policzona.')
     print(f"Współczynnik asortatywności: {data['assortativity']}")
-    print(f"Liczba cykli: {data['cycles']}")
     print(f"Maksymalna głębokość: {data['max_depth']}")
     print(f"Średnia długość ścieżki od korzenia: {data['avg_path_from_root']}")
     print()
@@ -149,7 +146,7 @@ def calculate_graphs_metrics():
     cols_to_average = [
         "num_nodes", "num_edges", "density", "max_degree", 
         "average_degree", "diameter", "avg_path_length", 
-        "assortativity", "cycles", "max_depth", "avg_path_from_root"
+        "assortativity", "max_depth", "avg_path_from_root"
     ]
     grouped = df.groupby("standard")[cols_to_average].mean().reset_index()
     grouped = grouped.round(3)

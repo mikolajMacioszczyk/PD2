@@ -9,7 +9,7 @@ def graphs_normal_distribution_test():
     standards = ["FHIR", "OpenEHR"]
     graph_metrics = [
         "num_nodes","num_edges","density","max_degree","average_degree","diameter",
-        "avg_path_length","assortativity","cycles","max_depth","avg_path_from_root"
+        "avg_path_length","assortativity","max_depth","avg_path_from_root"
         ]
     
     test_results = []

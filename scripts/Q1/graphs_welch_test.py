@@ -35,9 +35,6 @@ def graphs_welch_test():
             ["assortativity", "FHIR", "greater", "OpenEHR"],
             ["assortativity", "FHIR", "two-sided", "OpenEHR"],
 
-            ["cycles", "FHIR", "greater", "OpenEHR"],
-            ["cycles", "FHIR", "two-sided", "OpenEHR"],
-
             ["avg_path_from_root", "FHIR", "less", "OpenEHR"],
             ["avg_path_from_root", "FHIR", "two-sided", "OpenEHR"],
         ]
