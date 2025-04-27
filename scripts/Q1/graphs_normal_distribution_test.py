@@ -8,8 +8,8 @@ OUTPUT_FILE_PREFIX = "results/graphs_normal_distribution_test"
 def graphs_normal_distribution_test():
     standards = ["FHIR", "OpenEHR"]
     graph_metrics = [
-        "num_nodes","num_edges","density","max_degree","average_degree","diameter",
-        "avg_path_length","assortativity","max_depth","avg_path_from_root"
+        "num_nodes","num_edges","density","max_degree","average_degree",
+        "avg_path_from_root", "max_depth", "diameter", "assortativity",
         ]
     
     test_results = []

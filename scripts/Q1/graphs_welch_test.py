@@ -29,9 +29,6 @@ def graphs_welch_test():
 
             ["diameter", "FHIR", "less", "OpenEHR"],
 
-            ["avg_path_length", "FHIR", "less", "OpenEHR"],
-            ["avg_path_length", "FHIR", "two-sided", "OpenEHR"],
-
             ["assortativity", "FHIR", "greater", "OpenEHR"],
             ["assortativity", "FHIR", "two-sided", "OpenEHR"],
 
