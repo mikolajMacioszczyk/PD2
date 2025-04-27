@@ -5,8 +5,8 @@ import pandas as pd
 import json
 
 DATA_DIRECTORY_PATH = "../../data/"
-OUTPUT_FILE_PATH = "results/file_statistics.csv"
-GROUPED_OUTPUT_FILE_PATH = "results/file_statistics_grouped.csv"
+OUTPUT_FILE_PATH = "results/file_metrics.csv"
+GROUPED_OUTPUT_FILE_PATH = "results/file_metrics_grouped.csv"
 
 def extract_paths(data, current_path=""):
     paths = []

@@ -2,13 +2,12 @@ import networkx as nx
 import json
 import statistics
 import pandas as pd
-from datetime import datetime
 from collections import deque
 
 VERBOSE = True
 DATA_DIRECTORY_PATH = "../../data/"
-OUTPUT_FILE_PATH = "results/graphs_statistics.csv"
-GROUPED_OUTPUT_FILE_PATH = "results/graphs_statistics_grouped.csv"
+OUTPUT_FILE_PATH = "results/graphs_metrics.csv"
+GROUPED_OUTPUT_FILE_PATH = "results/graphs_metrics_grouped.csv"
 
 def avg_shortest_paths_from_root(G, root_node):
     lengths = nx.single_source_shortest_path_length(G, root_node)

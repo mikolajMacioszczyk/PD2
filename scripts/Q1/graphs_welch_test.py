@@ -2,7 +2,7 @@ from datetime import datetime
 import pandas as pd
 from welch_test import welch_test, display_result
 
-DEFAULT_FILE_NAME = "results/graphs_statistics.csv"
+DEFAULT_FILE_NAME = "results/graphs_metrics.csv"
 OUTPUT_FILE_PREFIX = "results/graphs_welch_test"
 
 def graphs_welch_test():

@@ -2,7 +2,7 @@ from datetime import datetime
 import pandas as pd
 from mann_whitneyu_test import mannwhitneyu_test, display_result
 
-DEFAULT_FILE_NAME = "results/graphs_statistics.csv"
+DEFAULT_FILE_NAME = "results/graphs_metrics.csv"
 OUTPUT_FILE_PREFIX = "results/graphs_mannwhitneyu_test"
 
 def graphs_mann_whitneyu_test():

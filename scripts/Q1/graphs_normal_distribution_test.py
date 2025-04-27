@@ -2,7 +2,7 @@ from datetime import datetime
 import pandas as pd
 from shapiro_test import display_result, normal_distribution_test
 
-DEFAULT_FILE_NAME = "results/graphs_statistics.csv"
+DEFAULT_FILE_NAME = "results/graphs_metrics.csv"
 OUTPUT_FILE_PREFIX = "results/graphs_normal_distribution_test"
 
 def graphs_normal_distribution_test():
