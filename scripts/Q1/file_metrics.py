@@ -6,6 +6,7 @@ import json
 
 DATA_DIRECTORY_PATH = "../../data/"
 OUTPUT_FILE_PATH = "results/file_statistics.csv"
+GROUPED_OUTPUT_FILE_PATH = "results/file_statistics_grouped.csv"
 
 def extract_paths(data, current_path=""):
     paths = []
@@ -114,6 +115,19 @@ def calculate_file_metrics():
     df = pd.DataFrame(stats_list)
     df.to_csv(OUTPUT_FILE_PATH, index=False)
     print(f"Zapisano statystyki do pliku {OUTPUT_FILE_PATH}")
+
+    cols_to_average = [
+        "size_bytes", "unique_keys", "avg_path_len"
+    ]
+
+    grouped = df.groupby("standard_format")[cols_to_average].agg(["mean", "var"]).reset_index()
+    grouped.columns = [
+        "standard_format" if col[0] == "standard_format" else f"{'avg_' if col[1]=='mean' else 'var_'}{col[0]}"
+        for col in grouped.columns
+    ]
+    grouped = grouped.round(3)
+    grouped.to_csv(GROUPED_OUTPUT_FILE_PATH, index=False)
+    print(f"Zapisano statystyki zgrupowane do pliku {GROUPED_OUTPUT_FILE_PATH}")
 
 if __name__ == "__main__":
     calculate_file_metrics()

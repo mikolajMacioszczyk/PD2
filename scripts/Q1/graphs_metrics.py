@@ -144,7 +144,12 @@ def calculate_graphs_metrics():
         "average_degree", "avg_path_from_root", "max_depth",
         "diameter", "assortativity" 
     ]
-    grouped = df.groupby("standard")[cols_to_average].mean().reset_index()
+
+    grouped = df.groupby("standard")[cols_to_average].agg(["mean", "var"]).reset_index()
+    grouped.columns = [
+        "standard" if col[0] == "standard" else f"{'avg_' if col[1]=='mean' else 'var_'}{col[0]}"
+        for col in grouped.columns
+    ]
     grouped = grouped.round(3)
     grouped.to_csv(GROUPED_OUTPUT_FILE_PATH, index=False)
     print(f"Zapisano statystyki zgrupowane do pliku {GROUPED_OUTPUT_FILE_PATH}")
