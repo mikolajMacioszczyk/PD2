@@ -3,6 +3,7 @@ import json
 import statistics
 import pandas as pd
 from collections import deque
+from utils import round_to_significant_figures
 
 VERBOSE = True
 DATA_DIRECTORY_PATH = "../../data/"
@@ -130,7 +131,7 @@ def calculate_graphs_metrics():
         final_stats["standard"] = item[1]
 
         for k, v in stats.items():
-            final_stats[k] = round(v, 3) if isinstance(v, float) else v
+            final_stats[k] = round_to_significant_figures(v, 3) if isinstance(v, float) else v
 
         stats_list.append(final_stats)
 
@@ -149,7 +150,9 @@ def calculate_graphs_metrics():
         "standard" if col[0] == "standard" else f"{'avg_' if col[1]=='mean' else 'var_'}{col[0]}"
         for col in grouped.columns
     ]
-    grouped = grouped.round(3)
+    for col in grouped.columns:
+        if col != "standard":
+            grouped[col] = grouped[col].apply(lambda x: round_to_significant_figures(x, 3))
     grouped.to_csv(GROUPED_OUTPUT_FILE_PATH, index=False)
     print(f"Zapisano statystyki zgrupowane do pliku {GROUPED_OUTPUT_FILE_PATH}")
 

@@ -1,8 +1,8 @@
-from datetime import datetime
 import json
 import os
 import pandas as pd
 import json
+from utils import round_to_significant_figures
 
 DATA_DIRECTORY_PATH = "../../data/"
 OUTPUT_FILE_PATH = "results/file_metrics.csv"
@@ -96,7 +96,7 @@ def calculate_file_metrics():
                 raise Exception(f"Invalid format for path: {file_path}")
             size = get_json_file_size_no_whitespace(file_path)
             unique_keys = count_unique_keys(file_path)
-            avg_path_len = round(average_path_length(file_path), 3)
+            avg_path_len = round_to_significant_figures(average_path_length(file_path), 3)
             output_name = get_output_name(item[0], item[1])
 
             final_stats = {}
@@ -125,7 +125,9 @@ def calculate_file_metrics():
         "standard_format" if col[0] == "standard_format" else f"{'avg_' if col[1]=='mean' else 'var_'}{col[0]}"
         for col in grouped.columns
     ]
-    grouped = grouped.round(3)
+    for col in grouped.columns:
+        if col != "standard_format":
+            grouped[col] = grouped[col].apply(lambda x: round_to_significant_figures(x, 3))
     grouped.to_csv(GROUPED_OUTPUT_FILE_PATH, index=False)
     print(f"Zapisano statystyki zgrupowane do pliku {GROUPED_OUTPUT_FILE_PATH}")
 
