@@ -95,7 +95,7 @@ def calculate_file_metrics():
                 raise Exception(f"Invalid format for path: {file_path}")
             size = get_json_file_size_no_whitespace(file_path)
             unique_keys = count_unique_keys(file_path)
-            avg_path_len = average_path_length(file_path)
+            avg_path_len = round(average_path_length(file_path), 3)
             output_name = get_output_name(item[0], item[1])
 
             final_stats = {}

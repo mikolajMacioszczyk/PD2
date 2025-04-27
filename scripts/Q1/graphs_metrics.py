@@ -136,7 +136,6 @@ def calculate_graphs_metrics():
         stats_list.append(final_stats)
 
     df = pd.DataFrame(stats_list)
-    timestamp = datetime.now().strftime("%Y_%m_%d_%H_%M_%S")
     df.to_csv(OUTPUT_FILE_PATH, index=False)
     print(f"Zapisano statystyki do pliku {OUTPUT_FILE_PATH}")
 
