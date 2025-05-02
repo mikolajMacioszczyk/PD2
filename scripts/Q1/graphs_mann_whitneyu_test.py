@@ -8,6 +8,7 @@ OUTPUT_FILE_PREFIX = "results/graphs_mannwhitneyu_test"
 def graphs_mann_whitneyu_test():
     graph_not_normal_distribution_metrics = [
             ["max_depth", "FHIR", "less", "OpenEHR"],
+            ["max_depth", "FHIR", "greater", "OpenEHR"],
             ["max_depth", "FHIR", "two-sided", "OpenEHR"],
         ]
     

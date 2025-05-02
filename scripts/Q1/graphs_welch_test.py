@@ -17,22 +17,29 @@ def graphs_welch_test():
             ["num_edges", "FHIR", "greater", "OpenEHR"],
             ["num_edges", "FHIR", "two-sided", "OpenEHR"],
 
+            ["density", "FHIR", "less", "OpenEHR"],
             ["density", "FHIR", "greater", "OpenEHR"],
+            ["density", "FHIR", "two-sided", "OpenEHR"],
 
             # No difference
             ["max_degree", "FHIR", "less", "OpenEHR"],
             ["max_degree", "FHIR", "greater", "OpenEHR"],
             ["max_degree", "FHIR", "two-sided", "OpenEHR"],
 
+            ["average_degree", "FHIR", "less", "OpenEHR"],
             ["average_degree", "FHIR", "greater", "OpenEHR"],
             ["average_degree", "FHIR", "two-sided", "OpenEHR"],
 
             ["diameter", "FHIR", "less", "OpenEHR"],
+            ["diameter", "FHIR", "greater", "OpenEHR"],
+            ["diameter", "FHIR", "two-sided", "OpenEHR"],
 
+            ["assortativity", "FHIR", "less", "OpenEHR"],
             ["assortativity", "FHIR", "greater", "OpenEHR"],
             ["assortativity", "FHIR", "two-sided", "OpenEHR"],
 
             ["avg_path_from_root", "FHIR", "less", "OpenEHR"],
+            ["avg_path_from_root", "FHIR", "greater", "OpenEHR"],
             ["avg_path_from_root", "FHIR", "two-sided", "OpenEHR"],
         ]
     

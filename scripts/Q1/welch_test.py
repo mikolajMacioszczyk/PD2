@@ -14,9 +14,9 @@ def welch_test(key_column, key_value1, key_value2, metric, mode, file_name):
     return {
         "key": f"{key_value1}-{key_value2}",
         "metric": metric,
-        "statistic": stat,
+        "statistic": round(stat, 5),
         "mode": mode,
-        "p_value": p,
+        "p_value": round(p, 5),
         # Tries to prove that the difference is statistically significant
         "is_significantly_different": p < P_VALUE_TRESHOLD
     }
