@@ -50,16 +50,17 @@ def find_ehr_by_subject_id(pesel, verbose=VERBOSE):
         print(f"Get EHR request failed with code {response.status_code} and message {response.text}")
     return None
 
-def get_latest_ehr_composition_id(ehr_id, verbose=VERBOSE):
+def get_latest_ehr_composition_id(ehr_id, composition_type, verbose=VERBOSE):
     AQL_QUERY = f"""
     SELECT 
         c/uid/value AS uid, 
         c/name/value AS name, 
-        c/context/start_time/value AS time_created 
+        c/context/start_time/value AS time_created
     FROM 
         EHR e CONTAINS COMPOSITION c 
     WHERE 
-        e/ehr_id/value = '{ehr_id}' 
+        e/ehr_id/value = '{ehr_id}'
+        AND c/name/value = '{composition_type}'
     ORDER BY 
         c/context/start_time/value DESC 
     LIMIT 1
