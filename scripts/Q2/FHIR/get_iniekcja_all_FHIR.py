@@ -1,10 +1,8 @@
-import requests
-import json
-from fhir_conf import FHIR_SERVER
+from fhir_utils import save_batch_response, send_batch_request
 
-PATIENT_ID = "207"
+PATIENT_ID = "20"
 
-def create_batch_bundle(patient_id):
+def create_get_all_iniekcja_batch_bundle(patient_id):
     return {
         "resourceType": "Bundle",
         "type": "batch",
@@ -43,16 +41,9 @@ def create_batch_bundle(patient_id):
         ]
     }
 
-def send_batch_request(bundle):
-    headers = {"Content-Type": "application/fhir+json"}
-    r = requests.post(FHIR_SERVER, headers=headers, json=bundle)
-    r.raise_for_status()
-    return r.json()
+if __name__ == "__main__":
+    batch_bundle = create_get_all_iniekcja_batch_bundle(PATIENT_ID)
+    batch_response = send_batch_request(batch_bundle)
     
-batch_bundle = create_batch_bundle(PATIENT_ID)
-batch_response = send_batch_request(batch_bundle)
-
-with open("fhir_batch.json", "w", encoding="utf-8") as f:
-    json.dump(batch_response, f, indent=2, ensure_ascii=False)
-
-print("Zapisano Bundle z MedicationAdministration i powiązanymi zasobami.")
+    save_batch_response(batch_response, "iniekcja.json")
+    print("Zapisano bundle injekcja.")
