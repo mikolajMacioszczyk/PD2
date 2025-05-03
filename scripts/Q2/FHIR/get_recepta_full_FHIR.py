@@ -1,8 +1,9 @@
 from fhir_utils import save_batch_response, send_batch_request
 
-PATIENT_ID = "1"
+PATIENT_ID = 1
+MEDICATION_REQUEST_ID = 5
 
-def create_get_full_recepta_batch_bundle(patient_id):
+def create_get_full_recepta_batch_bundle(medication_request_id):
     return {
         "resourceType": "Bundle",
         "type": "batch",
@@ -12,7 +13,7 @@ def create_get_full_recepta_batch_bundle(patient_id):
                     "method": "GET",
                     "url": (
                         f"MedicationRequest"
-                        f"?subject=Patient/{patient_id}"
+                        f"?_id={medication_request_id}"
                         f"&_include=MedicationRequest:medication"
                         f"&_include=MedicationRequest:subject"
                         f"&_include=MedicationRequest:requester"
@@ -23,7 +24,7 @@ def create_get_full_recepta_batch_bundle(patient_id):
     }
 
 if __name__ == "__main__":
-    batch_bundle = create_get_full_recepta_batch_bundle(PATIENT_ID)
+    batch_bundle = create_get_full_recepta_batch_bundle(MEDICATION_REQUEST_ID)
     batch_response = send_batch_request(batch_bundle)
     
     save_batch_response(batch_response, "recepta.json")
