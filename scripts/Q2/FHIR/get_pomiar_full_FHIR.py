@@ -28,9 +28,9 @@ if __name__ == "__main__":
     patient_id = get_patient_id_by_pesel(PATIENT_PESEL)
     print(f"Patient id = {patient_id}")
 
-    observation_list = get_resource_list_by_patient("Observation", "subject", patient_id)
-    last_updated = get_latest_updated_entry(observation_list)
-    print(f"Last updated observation = {last_updated['id']}")
+    resource_list = get_resource_list_by_patient("Observation", "subject", patient_id)
+    last_updated = get_latest_updated_entry(resource_list)
+    print(f"Last updated Observation = {last_updated['id']}")
 
     batch_bundle = create_get_full_pomiar_batch_bundle(last_updated['id'])
     batch_response = send_batch_request(batch_bundle)
