@@ -1,4 +1,5 @@
 import json
+import os
 import requests
 from dateutil.parser import parse as parse_date
 
@@ -13,6 +14,9 @@ def send_batch_request(bundle):
 
 
 def save_batch_response(batch_response, filename):
+    if not os.path.exists("results"):
+        os.makedirs("results")
+        
     with open(f"results/{filename}", "w", encoding="utf-8") as f:
         json.dump(batch_response, f, indent=2, ensure_ascii=False)
 
