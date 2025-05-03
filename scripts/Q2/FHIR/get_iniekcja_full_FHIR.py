@@ -1,4 +1,4 @@
-from fhir_utils import get_latest_resource_id_by_patient, get_patient_id_by_pesel, save_batch_response, send_batch_request
+from fhir_utils import get_resource, get_latest_resource_id_by_patient, get_patient_id_by_pesel, save_batch_response, send_batch_request
 
 PATIENT_PESEL = 80010112350
 
@@ -41,6 +41,10 @@ def create_get_full_iniekcja_batch_bundle(patient_id, medication_administration_
         ]
     }
 
+def get_medication_name(medication_administration_id):
+    resource_bundle = get_resource("MedicationAdministration", medication_administration_id, include="MedicationAdministration:medication", elements="medication")
+    return resource_bundle["entry"][1]["resource"]["code"]["text"]
+
 if __name__ == "__main__":
     patient_id = get_patient_id_by_pesel(PATIENT_PESEL)
     print(f"Patient id = {patient_id}")
@@ -53,3 +57,6 @@ if __name__ == "__main__":
     
     save_batch_response(batch_response, "iniekcja.json")
     print("Saved bundle for iniekcja.")
+
+    medication_name = get_medication_name(last_updated_resource_id)
+    print(f"Medication name = {medication_name}")

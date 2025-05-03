@@ -11,6 +11,27 @@ def send_batch_request(bundle):
     r.raise_for_status()
     return r.json()
 
+def get_resource(resource_type, resource_id, include=None, elements=None):
+    url = f"{FHIR_SERVER}/{resource_type}"
+
+    params = {
+        "_id": resource_id
+    }
+
+    if include:
+        params["_include"] = include
+
+    if elements:
+        params["_elements"] = elements
+
+    response = requests.get(url, params=params)
+
+    if response.status_code == 200:
+        return response.json()
+    else:
+        print(f"Request failed with status code {response.status_code}")
+        return None
+
 
 def save_batch_response(batch_response, filename):
     if not os.path.exists("results"):
