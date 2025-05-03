@@ -1,7 +1,6 @@
-from fhir_utils import save_batch_response, send_batch_request
+from fhir_utils import get_latest_updated_entry, get_patient_id_by_pesel, get_resource_list_by_patient, save_batch_response, send_batch_request
 
-PATIENT_ID = 13
-OBSERVATION_ID = 19
+PATIENT_PESEL = 80010112349
 
 def create_get_full_pomiar_batch_bundle(observation_id):
     return {
@@ -26,8 +25,15 @@ def create_get_full_pomiar_batch_bundle(observation_id):
     }
 
 if __name__ == "__main__":
-    batch_bundle = create_get_full_pomiar_batch_bundle(OBSERVATION_ID)
+    patient_id = get_patient_id_by_pesel(PATIENT_PESEL)
+    print(f"Patient id = {patient_id}")
+
+    observation_list = get_resource_list_by_patient("Observation", "subject", patient_id)
+    last_updated = get_latest_updated_entry(observation_list)
+    print(f"Last updated observation = {last_updated['id']}")
+
+    batch_bundle = create_get_full_pomiar_batch_bundle(last_updated['id'])
     batch_response = send_batch_request(batch_bundle)
     
     save_batch_response(batch_response, "pomiar.json")
-    print("Zapisano bundle pomiar.")
+    print("Saved bundle for pomiar.")

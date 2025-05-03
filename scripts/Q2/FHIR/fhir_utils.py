@@ -1,7 +1,8 @@
 import json
 import requests
+from dateutil.parser import parse as parse_date
 
-from fhir_conf import FHIR_SERVER
+from fhir_conf import FHIR_SERVER, VERBOSE
 
 
 def send_batch_request(bundle):
@@ -14,3 +15,57 @@ def send_batch_request(bundle):
 def save_batch_response(batch_response, filename):
     with open(f"results/{filename}", "w", encoding="utf-8") as f:
         json.dump(batch_response, f, indent=2, ensure_ascii=False)
+
+IDENTIFIER_SYSTEM = "urn:oid:2.16.840.1.113883.3.4424.1.1.616"
+def get_patient_id_by_pesel(identifier_value, verbose = VERBOSE):
+    search_url = f"{FHIR_SERVER}/Patient"
+    params = {
+        "identifier": f"{IDENTIFIER_SYSTEM}|{identifier_value}"
+    }
+
+    response = requests.get(search_url, params=params)
+
+    if response.status_code == 200:
+        bundle = response.json()
+        entries = bundle.get("entry", [])
+        
+        if entries:
+            if verbose:
+                print(f"Found {len(entries)} Patient(s):")
+            for entry in entries:
+                patient_id = entry["resource"]['id']
+                if verbose:
+                    print(f"Patient Id = {patient_id}")
+                return patient_id
+        else:
+            if verbose:
+                print("No patients found with that identifier.")
+            return None
+    else:
+        print(f"Error: {response.status_code}")
+        raise Exception(response.text)
+    
+def get_resource_list_by_patient(resource_type, property_name, patient_id):
+    url = f"{FHIR_SERVER}/{resource_type}"
+    params = {
+        property_name: f"Patient/{patient_id}"
+    }
+
+    response = requests.get(url, params=params)
+
+    if response.status_code == 200:
+        bundle = response.json()
+        entries = bundle.get("entry", [])
+
+        if not entries:
+            raise Exception("No observations found.")
+        else:
+            return entries
+    else:
+        raise Exception(f"Error {response.status_code}: {response.text}")
+
+def get_latest_updated_entry(entries):
+    def get_last_updated(entry):
+        return parse_date(entry["resource"]["meta"]["lastUpdated"])
+    sorted_entries = sorted(entries, key=get_last_updated, reverse=True)
+    return sorted_entries[0]["resource"]
