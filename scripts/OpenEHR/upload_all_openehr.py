@@ -14,14 +14,14 @@ WITH_TEMPLATES = True
 
 if __name__ == "__main__":
     if WITH_TEMPLATES:
-        upload_AMD_template()
-        upload_e_laboratory_template()
         upload_e_prescription_template()
         upload_e_refferal_template()
         upload_intraocular_pressure_study_template()
+        upload_AMD_template()
+        upload_e_laboratory_template()
 
-    upload_iniekcja_full()
-    upload_pomiar_full()
     upload_recepta_full()
     upload_skierowanie_full()
+    upload_pomiar_full()
+    upload_iniekcja_full()
     upload_wyniki_badan_full()
