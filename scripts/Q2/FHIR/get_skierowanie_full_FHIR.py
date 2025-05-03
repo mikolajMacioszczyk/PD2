@@ -1,8 +1,8 @@
 from fhir_utils import save_batch_response, send_batch_request
 
-PATIENT_ID = "20"
+PATIENT_ID = "6"
 
-def create_get_all_iniekcja_batch_bundle(patient_id):
+def create_get_full_skierowanie_batch_bundle(patient_id):
     return {
         "resourceType": "Bundle",
         "type": "batch",
@@ -11,11 +11,10 @@ def create_get_all_iniekcja_batch_bundle(patient_id):
                 "request": {
                     "method": "GET",
                     "url": (
-                        f"MedicationAdministration"
+                        f"ServiceRequest"
                         f"?subject=Patient/{patient_id}"
-                        f"&_include=MedicationAdministration:medication"
-                        f"&_include=MedicationAdministration:subject"
-                        f"&_include=MedicationAdministration:performer"
+                        f"&_include=ServiceRequest:subject"
+                        f"&_include=ServiceRequest:requester"
                     )
                 }
             },
@@ -23,9 +22,8 @@ def create_get_all_iniekcja_batch_bundle(patient_id):
                 "request": {
                     "method": "GET",
                     "url": (
-                        f"CarePlan"
+                        f"Condition"
                         f"?subject=Patient/{patient_id}"
-                        f"&_include=CarePlan:goal"
                     )
                 }
             },
@@ -42,8 +40,8 @@ def create_get_all_iniekcja_batch_bundle(patient_id):
     }
 
 if __name__ == "__main__":
-    batch_bundle = create_get_all_iniekcja_batch_bundle(PATIENT_ID)
+    batch_bundle = create_get_full_skierowanie_batch_bundle(PATIENT_ID)
     batch_response = send_batch_request(batch_bundle)
     
-    save_batch_response(batch_response, "iniekcja.json")
-    print("Zapisano bundle injekcja.")
+    save_batch_response(batch_response, "skierowanie.json")
+    print("Zapisano bundle skierowanie.")
