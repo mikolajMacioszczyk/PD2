@@ -1,5 +1,4 @@
 requests
-python-dateutil
 fhir.resources==8.0.0
 pydantic==2.11.1
 networkx==3.4.2

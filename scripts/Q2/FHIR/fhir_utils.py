@@ -1,7 +1,6 @@
 import json
 import os
 import requests
-from dateutil.parser import parse as parse_date
 
 from fhir_conf import FHIR_SERVER, VERBOSE
 
@@ -49,10 +48,12 @@ def get_patient_id_by_pesel(identifier_value, verbose = VERBOSE):
         print(f"Error: {response.status_code}")
         raise Exception(response.text)
     
-def get_resource_list_by_patient(resource_type, property_name, patient_id):
+def get_latest_resource_id_by_patient(resource_type, property_name, patient_id):
     url = f"{FHIR_SERVER}/{resource_type}"
     params = {
-        property_name: f"Patient/{patient_id}"
+        property_name: f"Patient/{patient_id}",
+        "_sort": "-_lastUpdated",
+        "_count": 1
     }
 
     response = requests.get(url, params=params)
@@ -62,14 +63,8 @@ def get_resource_list_by_patient(resource_type, property_name, patient_id):
         entries = bundle.get("entry", [])
 
         if not entries:
-            raise Exception("No observations found.")
+            raise Exception("No resources found.")
         else:
-            return entries
+            return entries[0]["resource"]['id']
     else:
         raise Exception(f"Error {response.status_code}: {response.text}")
-
-def get_latest_updated_entry(entries):
-    def get_last_updated(entry):
-        return parse_date(entry["resource"]["meta"]["lastUpdated"])
-    sorted_entries = sorted(entries, key=get_last_updated, reverse=True)
-    return sorted_entries[0]["resource"]
