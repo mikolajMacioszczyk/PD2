@@ -1,0 +1,7 @@
+10 users, 100 users, 1000 users
+
+Iniekcja:
+- full data
+- medication name
+- dose value and unit
+- ...

@@ -45,6 +45,11 @@ def get_medication_name(medication_administration_id):
     resource_bundle = get_resource("MedicationAdministration", medication_administration_id, include="MedicationAdministration:medication", elements="medication")
     return resource_bundle["entry"][1]["resource"]["code"]["text"]
 
+def get_dose_value_and_unit(medication_administration_id):
+    resource_bundle = get_resource("MedicationAdministration", medication_administration_id, elements="dosage")
+    dose = resource_bundle["entry"][0]["resource"]["dosage"]["dose"]
+    return f"{dose['value']} {dose['unit']}"
+
 if __name__ == "__main__":
     patient_id = get_patient_id_by_pesel(PATIENT_PESEL)
     print(f"Patient id = {patient_id}")
@@ -60,3 +65,6 @@ if __name__ == "__main__":
 
     medication_name = get_medication_name(last_updated_resource_id)
     print(f"Medication name = {medication_name}")
+
+    dose_value_unit = get_dose_value_and_unit(last_updated_resource_id)
+    print(f"Dose value and unit = {dose_value_unit}")
