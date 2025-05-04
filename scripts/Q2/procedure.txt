@@ -1,12 +1,19 @@
 Dla liczby użytkowników: 10, 100, 1000
 
-Plan leczenia:
-- komplet danych
-- nazwa leku: Aflibercept
-- Dawka: 2 mg
-- reakcja alergiczna: Przemijający wzrost ciśnienia śródgałkowego
+Recepta:
+- Komplet danych
+- Postać farmaceutyczna: tabletki powlekane
+- Częstotliwość: 3 razy dziennie
+- Okres ważności recepty: do 07.05.2025
 
 Pomiar:
-- imię i nazwisko lekarza: lek. Michał Szymański
+- Komplet danych
+- Imię i nazwisko lekarza: lek. Michał Szymański
 - Wynik pomiaru ciśnienia: 17 mmHg
 - Numer katalogowy urządzenia: DEVICE-PL-2020
+
+Plan leczenia:
+- Komplet danych
+- Nazwa leku: Aflibercept
+- Dawka: 2 mg
+- Reakcja alergiczna: Przemijający wzrost ciśnienia śródgałkowego

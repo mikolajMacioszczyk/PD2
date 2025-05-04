@@ -9,7 +9,7 @@
     ],
     "status": "active",
     "intent": "order",
-    "authoredOn": "2025-04-07T19:56:00+01:00",
+    "authoredOn": "2025-04-07T00:00:00+01:00",
     "medication": {
         "reference": {
             "reference": "Medication/paracetamol-500mg"
