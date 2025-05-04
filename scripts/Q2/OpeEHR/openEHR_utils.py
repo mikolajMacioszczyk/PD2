@@ -131,3 +131,35 @@ def get_property(ehr_id, composition_id, archetype_type, archetype_value, proper
     elif verbose:
         print(f"Get EHR compositions request failed with code {response.status_code} and message {response.text}")
     return None
+
+def get_top_level_property(ehr_id, composition_id, property_path, verbose=VERBOSE):
+    identifier = composition_id.split(":")[0]
+    aql_query = f"""
+    SELECT 
+        {property_path}
+    FROM 
+        EHR e
+        CONTAINS COMPOSITION c
+    WHERE 
+        e/ehr_id/value = '{ehr_id}'
+        AND c/uid/value = '{identifier}'
+    LIMIT 1
+    """
+
+    response = requests.post(
+        f"{BASE_URL}/query/aql",
+        headers=ehr_headers,
+        json={"q": aql_query}
+    )
+
+    if response.status_code == 200:
+        if verbose:
+            print(f"Get EHR request succeded. Response: {response.json()}")
+        result_set = response.json().get("rows", [])
+        if result_set:
+            return result_set[0]
+        elif verbose:
+            print(f"Failed to get requested property")
+    elif verbose:
+        print(f"Get EHR compositions request failed with code {response.status_code} and message {response.text}")
+    return None

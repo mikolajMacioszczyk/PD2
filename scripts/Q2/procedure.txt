@@ -1,7 +1,12 @@
 Dla liczby użytkowników: 10, 100, 1000
 
-Iniekcja:
+Plan leczenia:
 - komplet danych
 - nazwa leku: Aflibercept
 - Dawka: 2 mg
 - reakcja alergiczna: Przemijający wzrost ciśnienia śródgałkowego
+
+Pomiar:
+- imię i nazwisko lekarza: lek. Michał Szymański
+- Wynik pomiaru ciśnienia: 17 mmHg
+- Numer katalogowy urządzenia: DEVICE-PL-2020
