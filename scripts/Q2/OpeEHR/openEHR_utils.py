@@ -99,7 +99,7 @@ def get_composition_details(ehr_id, composition_id, verbose=VERBOSE):
         print(f"Get EHR composition request failed with code {response.status_code} and message {response.text}")
     return None
     
-def get_property(ehr_id, composition_id, archetype_type, archetype_value, property_path, verbose=VERBOSE):
+def get_property(ehr_id, composition_id, archetype_type, archetype_value, property_path, additional_condition = None, verbose=VERBOSE):
     identifier = composition_id.split(":")[0]
     aql_query = f"""
     SELECT 
@@ -113,6 +113,21 @@ def get_property(ehr_id, composition_id, archetype_type, archetype_value, proper
         AND c/uid/value = '{identifier}'
     LIMIT 1
     """
+
+    if additional_condition:
+        aql_query = f"""
+        SELECT 
+            o/{property_path}
+        FROM 
+            EHR e
+        CONTAINS COMPOSITION c
+        CONTAINS {archetype_type} o[{archetype_value}]
+        WHERE 
+            e/ehr_id/value = '{ehr_id}'
+            AND c/uid/value = '{identifier}'
+            AND {additional_condition}
+        LIMIT 1
+        """
 
     response = requests.post(
         f"{BASE_URL}/query/aql",

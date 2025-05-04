@@ -22,17 +22,17 @@ def create_get_full_recepta_batch_bundle(medication_request_id):
         ]
     }
 
-def get_pharmaceutical_form(observation_id):
-    resource_bundle = get_resource("MedicationRequest", observation_id, include="MedicationRequest:medication", elements="medication")
+def get_pharmaceutical_form(medication_request_id):
+    resource_bundle = get_resource("MedicationRequest", medication_request_id, include="MedicationRequest:medication", elements="medication")
     return resource_bundle["entry"][1]["resource"]["doseForm"]["text"]
 
-def get_frequency(observation_id):
-    resource_bundle = get_resource("MedicationRequest", observation_id, elements="dosageInstruction")
+def get_frequency(medication_request_id):
+    resource_bundle = get_resource("MedicationRequest", medication_request_id, elements="dosageInstruction")
     repeat = resource_bundle["entry"][0]["resource"]["dosageInstruction"][0]["timing"]["repeat"]
     return f"{repeat['frequency']}/{repeat['durationUnit']}"
 
-def get_validity_period(observation_id):
-    resource_bundle = get_resource("MedicationRequest", observation_id, elements="dispenseRequest")
+def get_validity_period(medication_request_id):
+    resource_bundle = get_resource("MedicationRequest", medication_request_id, elements="dispenseRequest")
     return resource_bundle["entry"][0]["resource"]["dispenseRequest"]["validityPeriod"]["end"]
 
 if __name__ == "__main__":

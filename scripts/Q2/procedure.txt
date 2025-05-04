@@ -23,3 +23,9 @@ Plan leczenia:
 - Nazwa leku: Aflibercept
 - Dawka: 2 mg
 - Reakcja alergiczna: Przemijający wzrost ciśnienia śródgałkowego
+
+Wyniki badan:
+- Komplet danych
+- Czas pobrania próbki: 2025-04-12T12:08:00
+- Wynik badania glukozy: 91 mg/dl
+- Kod SNOMED CT badania HbA1c: 43396009
