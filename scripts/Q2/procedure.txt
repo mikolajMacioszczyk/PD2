@@ -6,6 +6,12 @@ Recepta:
 - Częstotliwość: 3 razy dziennie
 - Okres ważności recepty: do 07.05.2025
 
+Skierowanie:
+- Komplet danych
+- Nazwa badania: Morfologia krwi
+- Problem zdrowotny: Przebyta infekcja wirusowa (grypa)
+- Alergen: Penicylina
+
 Pomiar:
 - Komplet danych
 - Imię i nazwisko lekarza: lek. Michał Szymański

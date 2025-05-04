@@ -30,6 +30,7 @@ def get_resource(resource_type, resource_id, include=None, elements=None):
         return response.json()
     else:
         print(f"Request failed with status code {response.status_code}")
+        print(f"Response = {response.content}")
         return None
     
 def get_resource_by_ref(resource_type, ref_name, ref_value, include=None, elements=None):
