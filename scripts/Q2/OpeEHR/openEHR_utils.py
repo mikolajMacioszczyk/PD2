@@ -21,8 +21,7 @@ ehr_headers = {
 }
 
 def find_ehr_by_subject_id(pesel, verbose=VERBOSE):
-
-    AQL_QUERY = f"""
+    aql_query = f"""
     SELECT
         e/ehr_id/value
     FROM
@@ -34,7 +33,7 @@ def find_ehr_by_subject_id(pesel, verbose=VERBOSE):
     response = requests.post(
         f"{BASE_URL}/query/aql",
         headers=ehr_headers,
-        json={"q": AQL_QUERY}
+        json={"q": aql_query}
     )
 
     if response.status_code == 200:
@@ -51,7 +50,7 @@ def find_ehr_by_subject_id(pesel, verbose=VERBOSE):
     return None
 
 def get_latest_ehr_composition_id(ehr_id, composition_type, verbose=VERBOSE):
-    AQL_QUERY = f"""
+    aql_query = f"""
     SELECT 
         c/uid/value AS uid, 
         c/name/value AS name, 
@@ -69,7 +68,7 @@ def get_latest_ehr_composition_id(ehr_id, composition_type, verbose=VERBOSE):
     response = requests.post(
         f"{BASE_URL}/query/aql",
         headers=ehr_headers,
-        json={"q": AQL_QUERY}
+        json={"q": aql_query}
     )
 
     if response.status_code == 200:
@@ -100,3 +99,35 @@ def get_composition_details(ehr_id, composition_id, verbose=VERBOSE):
         print(f"Get EHR composition request failed with code {response.status_code} and message {response.text}")
     return None
     
+def get_property(ehr_id, composition_id, archetype_type, property_path, verbose=VERBOSE):
+    identifier = composition_id.split(":")[0]
+    aql_query = f"""
+    SELECT 
+        o/{property_path}
+    FROM 
+        EHR e
+    CONTAINS COMPOSITION c
+    CONTAINS INSTRUCTION o[{archetype_type}]
+    WHERE 
+        e/ehr_id/value = '{ehr_id}'
+        AND c/uid/value = '{identifier}'
+    LIMIT 1
+    """
+
+    response = requests.post(
+        f"{BASE_URL}/query/aql",
+        headers=ehr_headers,
+        json={"q": aql_query}
+    )
+
+    if response.status_code == 200:
+        if verbose:
+            print(f"Get EHR request succeded. Response: {response.json()}")
+        result_set = response.json().get("rows", [])
+        if result_set:
+            return result_set[0]
+        elif verbose:
+            print(f"Failed to get requested property")
+    elif verbose:
+        print(f"Get EHR compositions request failed with code {response.status_code} and message {response.text}")
+    return None
