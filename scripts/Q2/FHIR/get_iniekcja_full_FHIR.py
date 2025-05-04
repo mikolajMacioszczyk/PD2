@@ -1,4 +1,4 @@
-from fhir_utils import get_resource, get_latest_resource_id_by_patient, get_patient_id_by_pesel, save_batch_response, send_batch_request
+from fhir_utils import get_resource, get_latest_resource_id_by_patient, get_patient_id_by_pesel, get_resource_by_ref, save_batch_response, send_batch_request
 
 PATIENT_PESEL = 80010112350
 
@@ -50,6 +50,10 @@ def get_dose_value_and_unit(medication_administration_id):
     dose = resource_bundle["entry"][0]["resource"]["dosage"]["dose"]
     return f"{dose['value']} {dose['unit']}"
 
+def get_allergy_reaction(patient_id):
+    resource_bundle = get_resource_by_ref("AllergyIntolerance", "patient", patient_id, elements="reaction")
+    return resource_bundle["entry"][0]["resource"]["reaction"][0]["manifestation"][0]["concept"]["text"]
+
 if __name__ == "__main__":
     patient_id = get_patient_id_by_pesel(PATIENT_PESEL)
     print(f"Patient id = {patient_id}")
@@ -68,3 +72,6 @@ if __name__ == "__main__":
 
     dose_value_unit = get_dose_value_and_unit(last_updated_resource_id)
     print(f"Dose value and unit = {dose_value_unit}")
+
+    allergy_reaction = get_allergy_reaction(patient_id)
+    print(f"Allergy reaction = {allergy_reaction}")

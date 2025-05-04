@@ -1,7 +1,7 @@
-10 users, 100 users, 1000 users
+Dla liczby użytkowników: 10, 100, 1000
 
 Iniekcja:
-- full data
-- medication name
-- dose value and unit
-- ...
+- komplet danych
+- nazwa leku: Aflibercept
+- Dawka: 2 mg
+- reakcja alergiczna: Przemijający wzrost ciśnienia śródgałkowego

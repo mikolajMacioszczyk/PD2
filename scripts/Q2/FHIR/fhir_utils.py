@@ -31,6 +31,27 @@ def get_resource(resource_type, resource_id, include=None, elements=None):
     else:
         print(f"Request failed with status code {response.status_code}")
         return None
+    
+def get_resource_by_ref(resource_type, ref_name, ref_value, include=None, elements=None):
+    url = f"{FHIR_SERVER}/{resource_type}"
+
+    params = {
+        ref_name: ref_value
+    }
+
+    if include:
+        params["_include"] = include
+
+    if elements:
+        params["_elements"] = elements
+
+    response = requests.get(url, params=params)
+
+    if response.status_code == 200:
+        return response.json()
+    else:
+        print(f"Request failed with status code {response.status_code}")
+        return None
 
 
 def save_batch_response(batch_response, filename):

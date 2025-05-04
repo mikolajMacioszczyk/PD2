@@ -5,14 +5,23 @@ PATIENT_PESEL = 80010112350
 def get_mediaction_name(ehr_id, composition_id):
     return get_property(ehr_id, 
                         composition_id,
-                        archetype_type="openEHR-EHR-INSTRUCTION.medication_order.v0",
+                        archetype_type="INSTRUCTION",
+                        archetype_value="openEHR-EHR-INSTRUCTION.medication_order.v0",
                         property_path="activities[at0001]/description[at0002]/items[at0070]/value/value")[0]
 
 def get_dose_value_and_unit(ehr_id, composition_id):
     return get_property(ehr_id, 
                         composition_id,
-                        archetype_type="openEHR-EHR-INSTRUCTION.medication_order.v0",
+                        archetype_type="INSTRUCTION",
+                        archetype_value="openEHR-EHR-INSTRUCTION.medication_order.v0",
                         property_path="activities[at0001]/description[at0002]/items[at0109]/value/value")[0]
+
+def get_allergy_reaction(ehr_id, composition_id):
+    return get_property(ehr_id, 
+                        composition_id,
+                        archetype_type="EVALUATION",
+                        archetype_value="openEHR-EHR-EVALUATION.adverse_reaction_risk.v1",
+                        property_path="data[at0001]/items[at0006]/value/value")[0]
 
 if __name__ == "__main__":
     ehr_id = find_ehr_by_subject_id(PATIENT_PESEL)
@@ -30,3 +39,6 @@ if __name__ == "__main__":
 
     dose_value_unit = get_dose_value_and_unit(ehr_id, last_updated_id)
     print(f"Dose value and unit = {dose_value_unit}")
+
+    allergy_reaction = get_allergy_reaction(ehr_id, last_updated_id)
+    print(f"Allergy reaction = {allergy_reaction}")
