@@ -14,18 +14,19 @@ from OpeEHR.openehr_conf import OPENEHR_SERVER
 FHIR_path = os.path.abspath(os.path.join(os.path.dirname(__file__), '..', 'FHIR'))
 sys.path.append(FHIR_path)
 
+from upload_recepta_fhir import upload_recepta_full as upload_recepta_fhir
 from upload_iniekcja import upload_iniekcja_full as upload_iniekcja_fhir
 
 OpenEHR_path = os.path.abspath(os.path.join(os.path.dirname(__file__), '..', 'OpenEHR'))
 sys.path.append(OpenEHR_path)
 
+from upload_recepta_openehr import upload_recepta_full as upload_recepta_openehr
 from upload_iniekcja_openehr import upload_iniekcja_full as upload_iniekcja_openehr
 
 USERS_PER_DOCUMENT_COUNT = 2
-DOCUMENT_TYPES = ["plan_leczenia"]
-DOCUMENT_CREATION_FACTORIES_FHIR = [upload_iniekcja_fhir]
-DOCUMENT_CREATION_FACTORIES_OPEN_EHR = [upload_iniekcja_openehr]
-# TODO ["recepta", "skierowanie", "pomiar", "wyniki_badan"]
+DOCUMENT_TYPES = ["recepta", "plan_leczenia"]
+DOCUMENT_CREATION_FACTORIES_FHIR = [upload_recepta_fhir, upload_iniekcja_fhir]
+DOCUMENT_CREATION_FACTORIES_OPEN_EHR = [upload_recepta_openehr, upload_iniekcja_openehr]
 
 print(f"FHIR server endpoint = {FHIR_SERVER}")
 print(f"OpenEHR server endpoint = {OPENEHR_SERVER}")
@@ -40,17 +41,18 @@ for i, (document_type, factory_fhir, factory_openehr) in enumerate(zip(DOCUMENT_
     tests_config[document_type] = {
         "pesels": document_pesels
     }
-    print(f"Pesels for {document_type}: {document_pesels}")
-
+    print(f"===== {document_type} =====")
+    print(f"Pesels: {document_pesels}")
     for pesel in document_pesels:
         factory_fhir(pesel, save=False, verbose=False)
         print(f"Created FHIR resources for {pesel}")
         factory_openehr(pesel, save=False, verbose=False)
         print(f"Created OpenEHR composition for {pesel}")
+    print()
 
 print(tests_config)
 
-# TODO: Initialize database
+# TODO: Initialize database [, "skierowanie", "pomiar", "wyniki_badan"]
 # TODO: Run tests
 
 
