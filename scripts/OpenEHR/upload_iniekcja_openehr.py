@@ -8,8 +8,8 @@ default_pesel = "80010112350"
 default_composition_file_name = 'AMD_treatment-flat.json'
 default_composition_file_path = f"{DATA_DIRECTORY_PATH}{MEDICAL_DOCUMENT_TYPE}/OpenEHR/input/{default_composition_file_name}"
 
-def upload_iniekcja_full():
-    upload_and_save(default_pesel, default_composition_file_path, TEMPLATE_ID, MEDICAL_DOCUMENT_TYPE)
+def upload_iniekcja_full(pesel=default_pesel, save=True):
+    upload_and_save(pesel, default_composition_file_path, TEMPLATE_ID, MEDICAL_DOCUMENT_TYPE, save)
 
 if __name__ == "__main__":
     upload_iniekcja_full()

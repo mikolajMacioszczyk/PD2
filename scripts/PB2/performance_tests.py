@@ -11,25 +11,42 @@ from utils import *
 from FHIR.fhir_conf import FHIR_SERVER
 from OpeEHR.openehr_conf import OPENEHR_SERVER
 
-# FHIR_path = os.path.abspath(os.path.join(os.path.dirname(__file__), '..', 'FHIR'))
-# sys.path.append(FHIR_path)
+FHIR_path = os.path.abspath(os.path.join(os.path.dirname(__file__), '..', 'FHIR'))
+sys.path.append(FHIR_path)
 
-# from fhir_conf import FHIR_SERVER
+from upload_iniekcja import upload_iniekcja_full as upload_iniekcja_fhir
 
-# OpenEHR_path = os.path.abspath(os.path.join(os.path.dirname(__file__), '..', 'OpenEHR'))
-# sys.path.append(OpenEHR_path)
+OpenEHR_path = os.path.abspath(os.path.join(os.path.dirname(__file__), '..', 'OpenEHR'))
+sys.path.append(OpenEHR_path)
 
-# from openehr_conf import OPENEHR_SERVER
+from upload_iniekcja_openehr import upload_iniekcja_full as upload_iniekcja_openehr
 
-USERS_PER_DOCUMENT_COUNT = 1
+USERS_PER_DOCUMENT_COUNT = 2
+# DOCUMENT_TYPES = ["recepta", "skierowanie", "pomiar", "plan_leczenia", "wyniki_badan"]
+DOCUMENT_TYPES = ["plan_leczenia"]
+DOCUMENT_CREATION_FACTORIES_FHIR = [upload_iniekcja_fhir]
+DOCUMENT_CREATION_FACTORIES_OPEN_EHR = [upload_iniekcja_openehr]
 
 print(f"FHIR server endpoint = {FHIR_SERVER}")
 print(f"OpenEHR server endpoint = {OPENEHR_SERVER}")
 
-DOCUMENT_TYPES_COUNT = 5
-pesels = generate_unique_11_digit_numbers(USERS_PER_DOCUMENT_COUNT * DOCUMENT_TYPES_COUNT)
+pesels = generate_unique_11_digit_numbers(USERS_PER_DOCUMENT_COUNT * len(DOCUMENT_TYPES))
 
-# TODO: Divide pesels into differnt medical document types
+tests_config = {}
+for i, (document_type, factory_fhir, factory_openehr) in enumerate(zip(DOCUMENT_TYPES, DOCUMENT_CREATION_FACTORIES_FHIR, DOCUMENT_CREATION_FACTORIES_OPEN_EHR)):
+    start_index = i * USERS_PER_DOCUMENT_COUNT
+    end_index = (i+1) * USERS_PER_DOCUMENT_COUNT
+    document_pesels = pesels[start_index:end_index]
+    tests_config[document_type] = {
+        "pesels": document_pesels
+    }
+
+    for pesel in document_pesels:
+        factory_fhir(pesel, save=False)
+        factory_openehr(pesel, save=False)
+
+print(tests_config)
+
 # TODO: Initialize database
 # TODO: Run tests
 

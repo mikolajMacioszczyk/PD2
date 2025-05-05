@@ -18,15 +18,18 @@ default_goal_file = "goal.json"
 default_care_plan_file = "care_plan.json"
 default_medication_administration_file = "medication_administration.json"
 
-def upload_iniekcja_full(patient_file = default_patient_file, 
-                            practitioner_file = default_practitioner_file,
-                            medication_file = default_medication_file,
-                            allergy_intolerance_file = default_allergy_intolerance_file,
-                            goal_file = default_goal_file,
-                            care_plan_file = default_care_plan_file,
-                            medication_administration_file = default_medication_administration_file):
+def upload_iniekcja_full(pesel,
+                        save = True,
+                        patient_file = default_patient_file, 
+                        practitioner_file = default_practitioner_file,
+                        medication_file = default_medication_file,
+                        allergy_intolerance_file = default_allergy_intolerance_file,
+                        goal_file = default_goal_file,
+                        care_plan_file = default_care_plan_file,
+                        medication_administration_file = default_medication_administration_file):
     # Load resources
     patient = load_fhir_resource(MEDICAL_DOCUMENT_TYPE, patient_file, Patient)
+    patient.identifier[0].value = str(pesel)
     practitioner = load_fhir_resource(MEDICAL_DOCUMENT_TYPE, practitioner_file, Practitioner)
     medication = load_fhir_resource(MEDICAL_DOCUMENT_TYPE, medication_file, Medication)
     allergy_intolerance = load_fhir_resource(MEDICAL_DOCUMENT_TYPE, allergy_intolerance_file, AllergyIntolerance)
@@ -66,15 +69,16 @@ def upload_iniekcja_full(patient_file = default_patient_file,
     medication_administration_id = post_resource(medication_administration)
     print("Medication Administration ID:", medication_administration_id)
 
-    resource_bundle = get_bundle(MedicationAdministration.__name__, medication_administration_id, [
-        { "name": AllergyIntolerance.__name__, "id": allergy_intolerance_id },
-        { "name": CarePlan.__name__, "id": care_plan_id },
-        { "name": Goal.__name__, "id": goal_id },
-    ])
-    if resource_bundle:
-        file_name = f"bundle-{MEDICAL_DOCUMENT_TYPE}-JSON-{medication_administration_id}.json"
-        save_to_output_file(resource_bundle, MEDICAL_DOCUMENT_TYPE, file_name)
-        print(f"Saved bundle to {file_name}")
+    if save:
+        resource_bundle = get_bundle(MedicationAdministration.__name__, medication_administration_id, [
+            { "name": AllergyIntolerance.__name__, "id": allergy_intolerance_id },
+            { "name": CarePlan.__name__, "id": care_plan_id },
+            { "name": Goal.__name__, "id": goal_id },
+        ])
+        if resource_bundle:
+            file_name = f"bundle-{MEDICAL_DOCUMENT_TYPE}-JSON-{medication_administration_id}.json"
+            save_to_output_file(resource_bundle, MEDICAL_DOCUMENT_TYPE, file_name)
+            print(f"Saved bundle to {file_name}")
 
 if __name__ == "__main__":
-    upload_iniekcja_full()
+    upload_iniekcja_full(pesel=80010112350)

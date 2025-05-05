@@ -73,9 +73,9 @@ def upload_composition(pesel, composition_file_path, template_id):
             print("No JSON body in response.")
     return None
 
-def upload_and_save(pesel, composition_file_path, template_id, medical_document_type):
+def upload_and_save(pesel, composition_file_path, template_id, medical_document_type, save=True):
     upload_result = upload_composition(pesel, composition_file_path, template_id)
-    if upload_result:
+    if upload_result and save:
         full_composition = get_composition(upload_result["ehr_id"], upload_result["composition_id"], COMPOSITION_FORMAT.JSON.value)
         if full_composition:
             file_name = f"composition-{medical_document_type}-JSON-{upload_result['composition_id']}.json"
