@@ -8,6 +8,7 @@ from fhir.resources.careplan import CarePlan
 
 from fhir_utils import get_bundle, post_resource, create_or_get_by_identifier, load_fhir_resource
 from file_output_fhir import save_to_output_file
+from fhir_conf import VERBOSE
 
 MEDICAL_DOCUMENT_TYPE = "iniekcja"
 default_patient_file = "patient.json"
@@ -26,7 +27,8 @@ def upload_iniekcja_full(pesel,
                         allergy_intolerance_file = default_allergy_intolerance_file,
                         goal_file = default_goal_file,
                         care_plan_file = default_care_plan_file,
-                        medication_administration_file = default_medication_administration_file):
+                        medication_administration_file = default_medication_administration_file,
+                        verbose = VERBOSE):
     # Load resources
     patient = load_fhir_resource(MEDICAL_DOCUMENT_TYPE, patient_file, Patient)
     patient.identifier[0].value = str(pesel)
@@ -39,35 +41,42 @@ def upload_iniekcja_full(pesel,
 
     # Add resources to the server
     patient_id = create_or_get_by_identifier(patient, patient.identifier[0].system)
-    print("Patient ID:", patient_id)
+    if verbose:
+        print("Patient ID:", patient_id)
 
     practitioner_id = create_or_get_by_identifier(practitioner, practitioner.identifier[0].system)
-    print("Practitioner ID:", practitioner_id)
+    if verbose:
+        print("Practitioner ID:", practitioner_id)
 
     allergy_intolerance.patient.reference = f"Patient/{patient_id}"
     allergy_intolerance_id = post_resource(allergy_intolerance)
-    print("Allergy Intolerance ID:", allergy_intolerance_id)
+    if verbose:
+        print("Allergy Intolerance ID:", allergy_intolerance_id)
 
     medication_id = post_resource(medication)
-    print("Medication ID:", medication_id)
+    if verbose:
+        print("Medication ID:", medication_id)
 
     goal.subject.reference = f"Patient/{patient_id}"
     goal_id = post_resource(goal)
-    print("Goal ID:", goal_id)
+    if verbose:
+        print("Goal ID:", goal_id)
 
     care_plan.subject.reference = f"Patient/{patient_id}"
     care_plan.contributor[0].reference = f"Practitioner/{practitioner_id}"
     care_plan.supportingInfo[0].reference = f"AllergyIntolerance/{allergy_intolerance_id}"
     care_plan.goal[0].reference = f"Goal/{goal_id}"
     care_plan_id = post_resource(care_plan)
-    print("Care Plan ID:", care_plan_id)
+    if verbose:
+        print("Care Plan ID:", care_plan_id)
 
     medication_administration.basedOn[0].reference = f"CarePlan/{care_plan_id}"
     medication_administration.medication.reference.reference = f"Medication/{medication_id}"
     medication_administration.subject.reference = f"Patient/{patient_id}"
     medication_administration.performer[0].actor.reference.reference = f"Practitioner/{practitioner_id}"
     medication_administration_id = post_resource(medication_administration)
-    print("Medication Administration ID:", medication_administration_id)
+    if verbose:
+        print("Medication Administration ID:", medication_administration_id)
 
     if save:
         resource_bundle = get_bundle(MedicationAdministration.__name__, medication_administration_id, [
@@ -78,7 +87,8 @@ def upload_iniekcja_full(pesel,
         if resource_bundle:
             file_name = f"bundle-{MEDICAL_DOCUMENT_TYPE}-JSON-{medication_administration_id}.json"
             save_to_output_file(resource_bundle, MEDICAL_DOCUMENT_TYPE, file_name)
-            print(f"Saved bundle to {file_name}")
+            if verbose:
+                print(f"Saved bundle to {file_name}")
 
 if __name__ == "__main__":
-    upload_iniekcja_full(pesel=80010112350)
+    upload_iniekcja_full(pesel=80010112350, verbose=True)

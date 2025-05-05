@@ -22,10 +22,10 @@ sys.path.append(OpenEHR_path)
 from upload_iniekcja_openehr import upload_iniekcja_full as upload_iniekcja_openehr
 
 USERS_PER_DOCUMENT_COUNT = 2
-# DOCUMENT_TYPES = ["recepta", "skierowanie", "pomiar", "plan_leczenia", "wyniki_badan"]
 DOCUMENT_TYPES = ["plan_leczenia"]
 DOCUMENT_CREATION_FACTORIES_FHIR = [upload_iniekcja_fhir]
 DOCUMENT_CREATION_FACTORIES_OPEN_EHR = [upload_iniekcja_openehr]
+# TODO ["recepta", "skierowanie", "pomiar", "wyniki_badan"]
 
 print(f"FHIR server endpoint = {FHIR_SERVER}")
 print(f"OpenEHR server endpoint = {OPENEHR_SERVER}")
@@ -40,10 +40,13 @@ for i, (document_type, factory_fhir, factory_openehr) in enumerate(zip(DOCUMENT_
     tests_config[document_type] = {
         "pesels": document_pesels
     }
+    print(f"Pesels for {document_type}: {document_pesels}")
 
     for pesel in document_pesels:
-        factory_fhir(pesel, save=False)
-        factory_openehr(pesel, save=False)
+        factory_fhir(pesel, save=False, verbose=False)
+        print(f"Created FHIR resources for {pesel}")
+        factory_openehr(pesel, save=False, verbose=False)
+        print(f"Created OpenEHR composition for {pesel}")
 
 print(tests_config)
 

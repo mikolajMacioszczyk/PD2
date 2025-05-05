@@ -32,12 +32,13 @@ def get_composition(ehr_id, composition_id, format_type):
         return None
 
 
-def upload_composition(pesel, composition_file_path, template_id):
+def upload_composition(pesel, composition_file_path, template_id, verbose=True):
     with open(composition_file_path, "r", encoding="utf-8") as file:
         composition_data = json.load(file)
 
     ehr_id = get_or_create_ehr(pesel)
-    print(f"EHR ID: {ehr_id}")
+    if verbose:
+        print(f"EHR ID: {ehr_id}")
     format_type = "FLAT"
 
     url = f"{OPENEHR_SERVER}ehrbase/rest/openehr/v1/ehr/{ehr_id}/composition"
@@ -53,12 +54,14 @@ def upload_composition(pesel, composition_file_path, template_id):
 
     response = requests.post(url, headers=headers, params=params, json=composition_data)
 
-    print(f"Status Code: {response.status_code}")
+    if verbose:
+        print(f"Status Code: {response.status_code}")
     if response.status_code == 204:
         location_url = response.headers.get("Location", "")
         if location_url:
             composition_id = location_url.rstrip("/").split("/")[-1]
-            print(f"Composition created with ID: {composition_id}")
+            if verbose:
+                print(f"Composition created with ID: {composition_id}")
             return {
                 "ehr_id": ehr_id,
                 "composition_id": composition_id
@@ -73,8 +76,8 @@ def upload_composition(pesel, composition_file_path, template_id):
             print("No JSON body in response.")
     return None
 
-def upload_and_save(pesel, composition_file_path, template_id, medical_document_type, save=True):
-    upload_result = upload_composition(pesel, composition_file_path, template_id)
+def upload_and_save(pesel, composition_file_path, template_id, medical_document_type, save=True, verbose=True):
+    upload_result = upload_composition(pesel, composition_file_path, template_id, verbose=verbose)
     if upload_result and save:
         full_composition = get_composition(upload_result["ehr_id"], upload_result["composition_id"], COMPOSITION_FORMAT.JSON.value)
         if full_composition:
