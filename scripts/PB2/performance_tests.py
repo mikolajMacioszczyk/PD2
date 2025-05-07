@@ -15,18 +15,24 @@ FHIR_path = os.path.abspath(os.path.join(os.path.dirname(__file__), '..', 'FHIR'
 sys.path.append(FHIR_path)
 
 from upload_recepta_fhir import upload_recepta_full as upload_recepta_fhir
+from upload_skierowanie_fhir import upload_skierowanie_full as upload_skierowanie_fhir
+from upload_pomiar import upload_pomiar_full as upload_pomiar_fhir
 from upload_iniekcja import upload_iniekcja_full as upload_iniekcja_fhir
+from upload_wyniki_badan import upload_wyniki_badan_full as upload_wyniki_badan_fhir
 
 OpenEHR_path = os.path.abspath(os.path.join(os.path.dirname(__file__), '..', 'OpenEHR'))
 sys.path.append(OpenEHR_path)
 
 from upload_recepta_openehr import upload_recepta_full as upload_recepta_openehr
+from upload_skierowanie_openehr import upload_skierowanie_full as upload_skierowanie_openehr
+from upload_pomiar_openehr import upload_pomiar_full as upload_pomiar_openehr
 from upload_iniekcja_openehr import upload_iniekcja_full as upload_iniekcja_openehr
+from upload_wyniki_badan_openehr import upload_wyniki_badan_full as upload_wyniki_badan_openehr
 
 USERS_PER_DOCUMENT_COUNT = 2
-DOCUMENT_TYPES = ["recepta", "plan_leczenia"]
-DOCUMENT_CREATION_FACTORIES_FHIR = [upload_recepta_fhir, upload_iniekcja_fhir]
-DOCUMENT_CREATION_FACTORIES_OPEN_EHR = [upload_recepta_openehr, upload_iniekcja_openehr]
+DOCUMENT_TYPES = ["recepta", "skierowanie", "pomiar", "plan_leczenia", "wyniki_badan"]
+DOCUMENT_CREATION_FACTORIES_FHIR = [upload_recepta_fhir, upload_skierowanie_fhir, upload_pomiar_fhir, upload_iniekcja_fhir, upload_wyniki_badan_fhir]
+DOCUMENT_CREATION_FACTORIES_OPEN_EHR = [upload_recepta_openehr, upload_skierowanie_openehr, upload_pomiar_openehr, upload_iniekcja_openehr, upload_wyniki_badan_openehr]
 
 print(f"FHIR server endpoint = {FHIR_SERVER}")
 print(f"OpenEHR server endpoint = {OPENEHR_SERVER}")
@@ -52,7 +58,6 @@ for i, (document_type, factory_fhir, factory_openehr) in enumerate(zip(DOCUMENT_
 
 print(tests_config)
 
-# TODO: Initialize database [, "skierowanie", "pomiar", "wyniki_badan"]
 # TODO: Run tests
 
 
