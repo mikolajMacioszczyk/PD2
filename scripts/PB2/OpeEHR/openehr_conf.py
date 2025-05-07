@@ -1,2 +1,10 @@
-OPENEHR_SERVER = "http://localhost:8081/"
-VERBOSE = False
+import os
+import sys
+
+configuration_path = os.path.abspath(os.path.join(os.path.dirname(__file__), '..', '..', 'configuration'))
+sys.path.append(configuration_path)
+
+import configuration
+
+OPENEHR_SERVER = configuration.OPENEHR_SERVER
+VERBOSE = configuration.VERBOSE
