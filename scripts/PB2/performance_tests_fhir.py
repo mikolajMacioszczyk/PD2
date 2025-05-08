@@ -76,7 +76,7 @@ class PatientWithRecepta(Patient):
     def get_whole_data(self):
         batch_bundle = create_get_full_recepta_batch_bundle(self.medication_request_id)
         headers = {"Content-Type": "application/fhir+json"}
-        recepta_response = self.client.post(FHIR_SERVER, name="get_recepta_full", headers=headers, data=json.dumps(batch_bundle), verify=False)
+        recepta_response = self.client.post(FHIR_SERVER, name="get_recepta_full_fhir", headers=headers, data=json.dumps(batch_bundle), verify=False)
         if recepta_response.status_code == 200:
             log(f"Got recepta full data patient with pesel {self.pesel} and id {self.patient_id}", LogLevel.DEBUG)
         else:
@@ -84,15 +84,19 @@ class PatientWithRecepta(Patient):
 
     @task(1)
     def get_pharmaceutical_form(self):
-        self._get_resource("get_pharmaceutical_form", "MedicationRequest", self.medication_request_id, include="MedicationRequest:medication", elements="medication")
+        self._get_resource("get_pharmaceutical_form_fhir", 
+                           "MedicationRequest", 
+                           self.medication_request_id, 
+                           include="MedicationRequest:medication", 
+                           elements="medication")
     
     @task(1)
     def get_frequency(self):
-        self._get_resource("get_frequency", "MedicationRequest", self.medication_request_id, elements="dosageInstruction")
+        self._get_resource("get_frequency_fhir", "MedicationRequest", self.medication_request_id, elements="dosageInstruction")
 
     @task(1)
     def get_validity_period(self):
-        self._get_resource("get_validity_period", "MedicationRequest", self.medication_request_id, elements="dispenseRequest")
+        self._get_resource("get_validity_period_fhir", "MedicationRequest", self.medication_request_id, elements="dispenseRequest")
 
 class PatientWithSkierowanie(Patient):
     fixed_count = USERS_PER_DOCUMENT_COUNT
@@ -112,7 +116,7 @@ class PatientWithSkierowanie(Patient):
     def get_whole_data(self):
         batch_bundle = create_get_full_skierowanie_batch_bundle(self.patient_id, self.service_request_id)
         headers = {"Content-Type": "application/fhir+json"}
-        recepta_response = self.client.post(FHIR_SERVER, name="get_skierowanie_full", headers=headers, data=json.dumps(batch_bundle), verify=False)
+        recepta_response = self.client.post(FHIR_SERVER, name="get_skierowanie_full_fhir", headers=headers, data=json.dumps(batch_bundle), verify=False)
         if recepta_response.status_code == 200:
             log(f"Got skierowanie full data patient with pesel {self.pesel} and id {self.patient_id}", LogLevel.DEBUG)
         else:
@@ -120,11 +124,11 @@ class PatientWithSkierowanie(Patient):
 
     @task(1)
     def get_test_name(self):
-        self._get_resource("get_test_name", "ServiceRequest", self.service_request_id, elements="code")
+        self._get_resource("get_test_name_fhir", "ServiceRequest", self.service_request_id, elements="code")
 
     @task(1)
     def get_health_problem(self):
-        request_name = "get_health_problem"
+        request_name = "get_health_problem_fhir"
         get_health_problem_batch_bundle = create_get_health_problem_batch_bundle(self.patient_id, self.service_request_id)
         headers = {"Content-Type": "application/fhir+json"}
         response = self.client.post(FHIR_SERVER, name=request_name, headers=headers, data=json.dumps(get_health_problem_batch_bundle), verify=False)
@@ -133,7 +137,7 @@ class PatientWithSkierowanie(Patient):
 
     @task(1)
     def get_alergen(self):
-        request_name = "get_alergen"
+        request_name = "get_alergen_fhir"
         get_alergen_batch_bundle = create_get_alergen_batch_bundle(self.patient_id, self.service_request_id)
         headers = {"Content-Type": "application/fhir+json"}
         response = self.client.post(FHIR_SERVER, name=request_name, headers=headers, data=json.dumps(get_alergen_batch_bundle), verify=False)
@@ -158,7 +162,7 @@ class PatientWithPomiar(Patient):
     def get_whole_data(self):
         batch_bundle = create_get_full_pomiar_batch_bundle(self.observation_id)
         headers = {"Content-Type": "application/fhir+json"}
-        recepta_response = self.client.post(FHIR_SERVER, name="get_pomiar_full", headers=headers, data=json.dumps(batch_bundle), verify=False)
+        recepta_response = self.client.post(FHIR_SERVER, name="get_pomiar_full_fhir", headers=headers, data=json.dumps(batch_bundle), verify=False)
         if recepta_response.status_code == 200:
             log(f"Got pomiar full data patient with pesel {self.pesel} and id {self.patient_id}", LogLevel.DEBUG)
         else:
@@ -166,15 +170,15 @@ class PatientWithPomiar(Patient):
 
     @task(1)
     def get_doctor_name(self):
-        self._get_resource("get_doctor_name", "Observation", self.observation_id, include="Observation:performer", elements="performer")
+        self._get_resource("get_doctor_name_fhir", "Observation", self.observation_id, include="Observation:performer", elements="performer")
 
     @task(1)
     def get_pressure_measurement_result(self):
-        self._get_resource("get_pressure_measurement_result", "Observation", self.observation_id, elements="valueQuantity")
+        self._get_resource("get_pressure_measurement_result_fhir", "Observation", self.observation_id, elements="valueQuantity")
 
     @task(1)
     def get_device_part_number(self):
-        self._get_resource("get_device_part_number", "Observation", self.observation_id, include="Observation:device", elements="device")
+        self._get_resource("get_device_part_number_fhir", "Observation", self.observation_id, include="Observation:device", elements="device")
 
 class PatientWithPlanLeczenia(Patient):
     fixed_count = USERS_PER_DOCUMENT_COUNT
@@ -194,7 +198,7 @@ class PatientWithPlanLeczenia(Patient):
     def get_whole_data(self):
         batch_bundle = create_get_full_iniekcja_batch_bundle(self.patient_id, self.medication_administration_id)
         headers = {"Content-Type": "application/fhir+json"}
-        recepta_response = self.client.post(FHIR_SERVER, name="get_plan_leczenia_full", headers=headers, data=json.dumps(batch_bundle), verify=False)
+        recepta_response = self.client.post(FHIR_SERVER, name="get_plan_leczenia_full_fhir", headers=headers, data=json.dumps(batch_bundle), verify=False)
         if recepta_response.status_code == 200:
             log(f"Got plan leczenia full data patient with pesel {self.pesel} and id {self.patient_id}", LogLevel.DEBUG)
         else:
@@ -202,15 +206,15 @@ class PatientWithPlanLeczenia(Patient):
 
     @task(1)
     def get_medication_name(self):
-        self._get_resource("get_medication_name", "MedicationAdministration", self.medication_administration_id, include="MedicationAdministration:medication", elements="medication")
+        self._get_resource("get_medication_name_fhir", "MedicationAdministration", self.medication_administration_id, include="MedicationAdministration:medication", elements="medication")
 
     @task(1)
     def get_dose_value_and_unit(self):
-        self._get_resource("get_dose_value_and_unit", "MedicationAdministration", self.medication_administration_id, elements="dosage")
+        self._get_resource("get_dose_value_and_unit_fhir", "MedicationAdministration", self.medication_administration_id, elements="dosage")
 
     @task(1)
     def get_allergy_reaction(self):
-        request_name = "get_allergy_reaction"
+        request_name = "get_allergy_reaction_fhir"
         get_allergy_reaction_batch_bundle = create_get_allergy_reaction_batch_bundle(self.patient_id, self.medication_administration_id)
         headers = {"Content-Type": "application/fhir+json"}
         response = self.client.post(FHIR_SERVER, name=request_name, headers=headers, data=json.dumps(get_allergy_reaction_batch_bundle), verify=False)
@@ -235,7 +239,7 @@ class PatientWithWynikiBadan(Patient):
     def get_whole_data(self):
         batch_bundle = create_get_full_wyniki_badan_batch_bundle(self.diagnostic_report_id)
         headers = {"Content-Type": "application/fhir+json"}
-        recepta_response = self.client.post(FHIR_SERVER, name="get_wyniki_badan_full", headers=headers, data=json.dumps(batch_bundle), verify=False)
+        recepta_response = self.client.post(FHIR_SERVER, name="get_wyniki_badan_full_fhir", headers=headers, data=json.dumps(batch_bundle), verify=False)
         if recepta_response.status_code == 200:
             log(f"Got wyniki badan full data patient with pesel {self.pesel} and id {self.patient_id}", LogLevel.DEBUG)
         else:
@@ -243,12 +247,16 @@ class PatientWithWynikiBadan(Patient):
 
     @task(1)
     def get_specimen_collection_time(self):
-        self._get_resource("get_specimen_collection_time", "DiagnosticReport", self.diagnostic_report_id, include="DiagnosticReport:specimen", elements="specimen")
+        self._get_resource("get_specimen_collection_time_fhir", 
+                           "DiagnosticReport", 
+                           self.diagnostic_report_id, 
+                           include="DiagnosticReport:specimen", 
+                           elements="specimen")
 
     @task(1)
     def get_glucose_result(self):
-        self._get_resource("get_glucose_result", "DiagnosticReport", self.diagnostic_report_id, include="DiagnosticReport:result", elements="result")
+        self._get_resource("get_glucose_result_fhir", "DiagnosticReport", self.diagnostic_report_id, include="DiagnosticReport:result", elements="result")
 
     @task(1)
     def get_HbA1c_SNOMED_CT(self):
-        self._get_resource("get_HbA1c_SNOMED_CT", "DiagnosticReport", self.diagnostic_report_id, include="DiagnosticReport:result", elements="specimen")
+        self._get_resource("get_HbA1c_SNOMED_CT_fhir", "DiagnosticReport", self.diagnostic_report_id, include="DiagnosticReport:result", elements="specimen")

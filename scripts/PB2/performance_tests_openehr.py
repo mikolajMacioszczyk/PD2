@@ -21,6 +21,7 @@ sys.path.append(OpenEHR_path)
 from upload_recepta_openehr import upload_recepta_full as upload_recepta_openehr
 from upload_skierowanie_openehr import upload_skierowanie_full as upload_skierowanie_openehr
 from upload_pomiar_openehr import upload_pomiar_full as upload_pomiar_openehr
+from upload_iniekcja_openehr import upload_iniekcja_full as upload_plan_leczenia_openehr
 
 specify_logging_level(LogLevel.INFO)
 USERS_PER_DOCUMENT_COUNT = 1
@@ -129,7 +130,7 @@ class PatientWithRecepta(Patient):
     @task(1)
     def get_whole_data(self):
         request_url = f"{BASE_URL}/ehr/{self.ehr_id}/composition/{self.encoded_identifier}"
-        recepta_response = self.client.get(request_url, name="get_recepta_full", headers=ehr_headers, verify=False)
+        recepta_response = self.client.get(request_url, name="get_recepta_full_openehr", headers=ehr_headers, verify=False)
         if recepta_response.status_code == 200:
             log(f"Got recepta full data patient with pesel {self.pesel} and ehr id {self.ehr_id}", LogLevel.DEBUG)
         else:
@@ -138,7 +139,7 @@ class PatientWithRecepta(Patient):
 
     @task(1)
     def get_pharmaceutical_form(self):
-        self._get_property("get_pharmaceutical_form", 
+        self._get_property("get_pharmaceutical_form_openehr", 
                             self.ehr_id, 
                             self.composition_id,
                             archetype_type="CLUSTER",
@@ -147,7 +148,7 @@ class PatientWithRecepta(Patient):
     
     @task(1)
     def get_frequency(self):
-        self._get_property("get_frequency", 
+        self._get_property("get_frequency_openehr", 
                             self.ehr_id, 
                             self.composition_id,
                             archetype_type="CLUSTER",
@@ -156,7 +157,7 @@ class PatientWithRecepta(Patient):
 
     @task(1)
     def get_validity_period(self):
-        self._get_property("get_validity_period", 
+        self._get_property("get_validity_period_openehr", 
                             self.ehr_id, 
                             self.composition_id,
                             archetype_type="CLUSTER",
@@ -181,7 +182,7 @@ class PatientWithSkierowanie(Patient):
     @task(1)
     def get_whole_data(self):
         request_url = f"{BASE_URL}/ehr/{self.ehr_id}/composition/{self.encoded_identifier}"
-        skierowanie_response = self.client.get(request_url, name="get_skierowanie_full", headers=ehr_headers, verify=False)
+        skierowanie_response = self.client.get(request_url, name="get_skierowanie_full_openehr", headers=ehr_headers, verify=False)
         if skierowanie_response.status_code == 200:
             log(f"Got skierowanie full data patient with pesel {self.pesel} and ehr id {self.ehr_id}", LogLevel.DEBUG)
         else:
@@ -190,7 +191,7 @@ class PatientWithSkierowanie(Patient):
 
     @task(1)
     def get_test_name(self):
-        self._get_property("get_test_name", 
+        self._get_property("get_test_name_openehr", 
                             self.ehr_id, 
                             self.composition_id,
                             archetype_type="OBSERVATION",
@@ -199,7 +200,7 @@ class PatientWithSkierowanie(Patient):
 
     @task(1)
     def get_health_problem(self):
-        self._get_property("get_health_problem", 
+        self._get_property("get_health_problem_openehr", 
                             self.ehr_id, 
                             self.composition_id,
                             archetype_type="EVALUATION",
@@ -208,7 +209,7 @@ class PatientWithSkierowanie(Patient):
 
     @task(1)
     def get_alergen(self):
-        self._get_property("get_alergen", 
+        self._get_property("get_alergen_openehr", 
                             self.ehr_id, 
                             self.composition_id,
                             archetype_type="EVALUATION",
@@ -233,7 +234,7 @@ class PatientWithPomiar(Patient):
     @task(1)
     def get_whole_data(self):
         request_url = f"{BASE_URL}/ehr/{self.ehr_id}/composition/{self.encoded_identifier}"
-        pomiar_response = self.client.get(request_url, name="get_pomiar_full", headers=ehr_headers, verify=False)
+        pomiar_response = self.client.get(request_url, name="get_pomiar_full_openehr", headers=ehr_headers, verify=False)
         if pomiar_response.status_code == 200:
             log(f"Got pomiar full data patient with pesel {self.pesel} and ehr id {self.ehr_id}", LogLevel.DEBUG)
         else:
@@ -242,14 +243,14 @@ class PatientWithPomiar(Patient):
 
     @task(1)
     def get_doctor_name(self):
-        self._get_top_level_property("get_doctor_name", 
+        self._get_top_level_property("get_doctor_name_openehr", 
                             self.ehr_id, 
                             self.composition_id,
                             property_path="c/composer/name AS composer_name")
 
     @task(1)
     def get_pressure_measurement_result(self):
-        self._get_property("get_pressure_measurement_result", 
+        self._get_property("get_pressure_measurement_result_openehr", 
                             self.ehr_id, 
                             self.composition_id,
                             archetype_type="OBSERVATION",
@@ -258,54 +259,64 @@ class PatientWithPomiar(Patient):
         
     @task(1)
     def get_device_part_number(self):
-        self._get_property("get_device_part_number", 
+        self._get_property("get_device_part_number_openehr", 
                             self.ehr_id, 
                             self.composition_id,
                             archetype_type="CLUSTER",
                             archetype_value="openEHR-EHR-CLUSTER.device_details.v1",
                             property_path="items[at0007]/value/value")
  
-    
-# class PatientWithPlanLeczenia(Patient):
-#     fixed_count = USERS_PER_DOCUMENT_COUNT
-#     host = FHIR_SERVER
+class PatientWithPlanLeczenia(Patient):
+    fixed_count = USERS_PER_DOCUMENT_COUNT
+    host = OPENEHR_SERVER
 
-#     def on_start(self):
-#         try:
-#             self.pesel = pesels_queue.get_nowait()
-#             (patient_id, medication_administration_id) = upload_iniekcja_fhir(self.pesel, save=False, verbose=False)
-#             self.patient_id = patient_id
-#             self.medication_administration_id = medication_administration_id
-#             log(f"Created medication administration resources for patient with pesel: {self.pesel} and id: {self.patient_id} in FHIR", LogLevel.INFO)
-#         except:
-#             raise Exception("No more PESELS available!")
+    def on_start(self):
+        try:
+            self.pesel = pesels_queue.get_nowait()
+            (ehr_id, composition_id) = upload_plan_leczenia_openehr(self.pesel, save=False, verbose=False)
+            self.ehr_id = ehr_id
+            self.composition_id = composition_id
+            self.encoded_identifier = urllib.parse.quote_plus(composition_id)
+            log(f"Created plan leczenia composition for patient with pesel: {self.pesel} and ehr id: {self.ehr_id} in OpenEHR", LogLevel.INFO)
+        except:
+            raise Exception("No more PESELS available!")
         
-#     @task(1)
-#     def get_whole_data(self):
-#         batch_bundle = create_get_full_iniekcja_batch_bundle(self.patient_id, self.medication_administration_id)
-#         headers = {"Content-Type": "application/fhir+json"}
-#         recepta_response = self.client.post(FHIR_SERVER, name="get_plan_leczenia_full", headers=headers, data=json.dumps(batch_bundle), verify=False)
-#         if recepta_response.status_code == 200:
-#             log(f"Got plan leczenia full data patient with pesel {self.pesel} and id {self.patient_id}", LogLevel.DEBUG)
-#         else:
-#             log(f"Failed to get plan leczenia full data patient with pesel: {self.pesel} and id: {self.patient_id}", LogLevel.WARNING)
+    @task(1)
+    def get_whole_data(self):
+        request_url = f"{BASE_URL}/ehr/{self.ehr_id}/composition/{self.encoded_identifier}"
+        plan_leczenia_response = self.client.get(request_url, name="get_plan_leczenia_full_openehr", headers=ehr_headers, verify=False)
+        if plan_leczenia_response.status_code == 200:
+            log(f"Got plan leczenia full data patient with pesel {self.pesel} and ehr id {self.ehr_id}", LogLevel.DEBUG)
+        else:
+            log(f"Failed to get plan leczenia full data patient with pesel: {self.pesel} and ehr id: {self.ehr_id}", LogLevel.WARNING)
+            log(plan_leczenia_response.content, LogLevel.WARNING)    
 
-#     @task(1)
-#     def get_medication_name(self):
-#         self._get_resource("get_medication_name", "MedicationAdministration", self.medication_administration_id, include="MedicationAdministration:medication", elements="medication")
-
-#     @task(1)
-#     def get_dose_value_and_unit(self):
-#         self._get_resource("get_dose_value_and_unit", "MedicationAdministration", self.medication_administration_id, elements="dosage")
-
-#     @task(1)
-#     def get_allergy_reaction(self):
-#         request_name = "get_allergy_reaction"
-#         get_allergy_reaction_batch_bundle = create_get_allergy_reaction_batch_bundle(self.patient_id, self.medication_administration_id)
-#         headers = {"Content-Type": "application/fhir+json"}
-#         response = self.client.post(FHIR_SERVER, name=request_name, headers=headers, data=json.dumps(get_allergy_reaction_batch_bundle), verify=False)
+    @task(1)
+    def get_mediaction_name(self):
+        self._get_property("get_mediaction_name_openehr", 
+                            self.ehr_id, 
+                            self.composition_id,
+                            archetype_type="INSTRUCTION",
+                            archetype_value="openEHR-EHR-INSTRUCTION.medication_order.v0",
+                            property_path="activities[at0001]/description[at0002]/items[at0070]/value/value")
         
-#         self._handle_response(response, request_name)
+    @task(1)
+    def get_dose_value_and_unit(self):
+        self._get_property("get_dose_value_and_unit_openehr", 
+                            self.ehr_id, 
+                            self.composition_id,
+                            archetype_type="INSTRUCTION",
+                            archetype_value="openEHR-EHR-INSTRUCTION.medication_order.v0",
+                            property_path="activities[at0001]/description[at0002]/items[at0109]/value/value")
+        
+    @task(1)
+    def get_allergy_reaction(self):
+        self._get_property("get_allergy_reaction_openehr", 
+                            self.ehr_id, 
+                            self.composition_id,
+                            archetype_type="EVALUATION",
+                            archetype_value="openEHR-EHR-EVALUATION.adverse_reaction_risk.v1",
+                            property_path="data[at0001]/items[at0006]/value/value")
 
 # class PatientWithWynikiBadan(Patient):
 #     fixed_count = USERS_PER_DOCUMENT_COUNT
