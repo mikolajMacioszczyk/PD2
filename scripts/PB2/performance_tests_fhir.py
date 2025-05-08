@@ -5,12 +5,14 @@ import sys
 from locust import HttpUser, between, task
 import urllib3
 import json
-from FHIR.recepta_queries_definitions import create_get_full_recepta_batch_bundle
+from FHIR.queries_definitions import *
 from FHIR.fhir_conf import FHIR_SERVER
 from utils import *
 from queue import Queue
+import logging
 
 ## ignore HTTPS errors in console
+logging.getLogger("urllib3.connection").setLevel(logging.ERROR)
 urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
 
 FHIR_path = os.path.abspath(os.path.join(os.path.dirname(__file__), '..', 'FHIR'))
@@ -22,7 +24,7 @@ from upload_pomiar import upload_pomiar_full as upload_pomiar_fhir
 from upload_iniekcja import upload_iniekcja_full as upload_iniekcja_fhir
 from upload_wyniki_badan import upload_wyniki_badan_full as upload_wyniki_badan_fhir
 
-specify_logging_level(LogLevel.DEBUG)
+specify_logging_level(LogLevel.WARNING)
 USERS_PER_DOCUMENT_COUNT = 2
 DOCUMENT_TYPES = ["recepta", "skierowanie", "pomiar", "plan_leczenia", "wyniki_badan"]
 
@@ -31,13 +33,32 @@ pesels_queue = Queue()
 for pesel_from_queue in all_pesels:
     pesels_queue.put(pesel_from_queue)
 
-class UserTestData:
-    def __init__(self, pesel, document_type):
-        self.pesel = pesel
-        self.document_type = document_type
-        self.document_identifier = None
+class Patient(HttpUser):
+    abstract = True
+    
+    def _get_resource(self, request_name, resource_type, resource_id, include=None, elements=None):
+        url = f"{FHIR_SERVER}/{resource_type}"
 
-class PatientWithRecepta(HttpUser):
+        params = {
+            "_id": resource_id
+        }
+
+        if include:
+            params["_include"] = include
+
+        if elements:
+            params["_elements"] = elements
+
+        response = self.client.get(url, params=params, name=request_name)
+        self._handle_response(response, request_name)
+
+    def _handle_response(self, response, request_name):
+        if response.status_code == 200:
+            log(f"Got {request_name} for patient with pesel {self.pesel} and id {self.patient_id}", LogLevel.DEBUG)
+        else:
+            log(f"Failed to get {request_name} for patient with pesel {self.pesel} and id {self.patient_id}", LogLevel.WARNING)
+
+class PatientWithRecepta(Patient):
     fixed_count = USERS_PER_DOCUMENT_COUNT
     host = FHIR_SERVER
 
@@ -63,46 +84,62 @@ class PatientWithRecepta(HttpUser):
 
     @task(1)
     def get_pharmaceutical_form(self):
-        recepta_response = self._get_resource("get_pharmaceutical_form", "MedicationRequest", self.medication_request_id, include="MedicationRequest:medication", elements="medication")
-        if recepta_response.status_code == 200:
-            log(f"Got pharmaceutical form for patient with pesel {self.pesel} and id {self.patient_id}", LogLevel.DEBUG)
-        else:
-            log(f"Failed to get pharmaceutical form for patient with pesel {self.pesel} and id {self.patient_id}", LogLevel.WARNING)
-
+        self._get_resource("get_pharmaceutical_form", "MedicationRequest", self.medication_request_id, include="MedicationRequest:medication", elements="medication")
+    
     @task(1)
     def get_frequency(self):
-        recepta_response = self._get_resource("get_frequency", "MedicationRequest", self.medication_request_id, elements="dosageInstruction")
-        if recepta_response.status_code == 200:
-            log(f"Got frequency for patient with pesel {self.pesel} and id {self.patient_id}", LogLevel.DEBUG)
-        else:
-            log(f"Failed to get frequency for patient with pesel {self.pesel} and id {self.patient_id}", LogLevel.WARNING)
+        self._get_resource("get_frequency", "MedicationRequest", self.medication_request_id, elements="dosageInstruction")
 
     @task(1)
     def get_validity_period(self):
-        recepta_response = self._get_resource("get_validity_period", "MedicationRequest", self.medication_request_id, elements="dispenseRequest")
+        self._get_resource("get_validity_period", "MedicationRequest", self.medication_request_id, elements="dispenseRequest")
+
+class PatientWithSkierowanie(Patient):
+    fixed_count = USERS_PER_DOCUMENT_COUNT
+    host = FHIR_SERVER
+
+    def on_start(self):
+        try:
+            self.pesel = pesels_queue.get_nowait()
+            (patient_id, service_request_id) = upload_skierowanie_fhir(self.pesel, save=False, verbose=False)
+            self.patient_id = patient_id
+            self.service_request_id = service_request_id
+            log(f"Created skierowanie resources for patient with pesel: {self.pesel} and id: {self.patient_id} in FHIR", LogLevel.INFO)
+        except:
+            raise Exception("No more PESELS available!")
+        
+    @task(1)
+    def get_whole_data(self):
+        batch_bundle = create_get_full_skierowanie_batch_bundle(self.patient_id, self.service_request_id)
+        headers = {"Content-Type": "application/fhir+json"}
+        recepta_response = self.client.post(FHIR_SERVER, name="get_skierowanie_full", headers=headers, data=json.dumps(batch_bundle), verify=False)
         if recepta_response.status_code == 200:
-            log(f"Got validity period for patient with pesel {self.pesel} and id {self.patient_id}", LogLevel.DEBUG)
+            log(f"Got skierowanie full data patient with pesel {self.pesel} and id {self.patient_id}", LogLevel.DEBUG)
         else:
-            log(f"Failed to get validity period for patient with pesel {self.pesel} and id {self.patient_id}", LogLevel.WARNING)
+            log(f"Failed to get skierowanie full data patient with pesel: {self.pesel} and id: {self.patient_id}", LogLevel.WARNING)
+
+    @task(1)
+    def get_test_name(self):
+        self._get_resource("get_test_name", "ServiceRequest", self.service_request_id, elements="code")
+
+    @task(1)
+    def get_health_problem(self):
+        request_name = "get_health_problem"
+        get_health_problem_batch_bundle = create_get_health_problem_batch_bundle(self.patient_id, self.service_request_id)
+        headers = {"Content-Type": "application/fhir+json"}
+        response = self.client.post(FHIR_SERVER, name=request_name, headers=headers, data=json.dumps(get_health_problem_batch_bundle), verify=False)
         
-    def _get_resource(self, request_name, resource_type, resource_id, include=None, elements=None):
-        url = f"{FHIR_SERVER}/{resource_type}"
+        self._handle_response(response, request_name)
 
-        params = {
-            "_id": resource_id
-        }
-
-        if include:
-            params["_include"] = include
-
-        if elements:
-            params["_elements"] = elements
-
-        return self.client.get(url, params=params, name=request_name)
-
+    @task(1)
+    def get_alergen(self):
+        request_name = "get_alergen"
+        get_alergen_batch_bundle = create_get_alergen_batch_bundle(self.patient_id, self.service_request_id)
+        headers = {"Content-Type": "application/fhir+json"}
+        response = self.client.post(FHIR_SERVER, name=request_name, headers=headers, data=json.dumps(get_alergen_batch_bundle), verify=False)
         
-
-
+        self._handle_response(response, request_name)
+    
 
 # class OrganizationUser(HttpUser):
 #     wait_time = between(1, 5)

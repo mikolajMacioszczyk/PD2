@@ -1,73 +1,14 @@
 from fhir_utils import get_latest_resource_id_by_patient, get_patient_id_by_pesel, get_resource, get_resource_by_ref, save_batch_response, send_batch_request
+from FHIR.queries_definitions import *
 
 PATIENT_PESEL = 80010112346
-
-def create_get_full_skierowanie_batch_bundle(patient_id, service_request_id):
-    return {
-        "resourceType": "Bundle",
-        "type": "batch",
-        "entry": [
-            {
-                "request": {
-                    "method": "GET",
-                    "url": (
-                        f"ServiceRequest"
-                        f"?_id={service_request_id}"
-                        f"&_include=ServiceRequest:subject"
-                        f"&_include=ServiceRequest:requester"
-                    )
-                }
-            },
-            {
-                "request": {
-                    "method": "GET",
-                    "url": (
-                        f"Condition"
-                        f"?subject=Patient/{patient_id}"
-                    )
-                }
-            },
-            {
-                "request": {
-                    "method": "GET",
-                    "url": (
-                        f"AllergyIntolerance"
-                        f"?patient=Patient/{patient_id}"
-                    )
-                }
-            }
-        ]
-    }
 
 def get_test_name(service_request_id):
     resource_bundle = get_resource("ServiceRequest", service_request_id, elements="code")
     return resource_bundle["entry"][0]["resource"]["code"]["concept"]["text"]
 
 def get_health_problem(service_request_id, patient_id):
-    resource_bundle = send_batch_request({
-        "resourceType": "Bundle",
-        "type": "batch",
-        "entry": [
-            {
-                "request": {
-                    "method": "GET",
-                    "url": (
-                        f"ServiceRequest"
-                        f"?_id={service_request_id}"
-                    )
-                }
-            },
-            {
-                "request": {
-                    "method": "GET",
-                    "url": (
-                        f"Condition"
-                        f"?subject=Patient/{patient_id}"
-                    )
-                }
-            }
-        ]
-    })
+    resource_bundle = send_batch_request(create_get_health_problem_batch_bundle(patient_id, service_request_id))
     service_request = resource_bundle["entry"][0]["resource"]["entry"][0]["resource"]
     condition_references = [item["reference"]["reference"].split("/")[1] for item in service_request["reason"]]
 
@@ -78,30 +19,7 @@ def get_health_problem(service_request_id, patient_id):
     return conditions
 
 def get_alergen(service_request_id, patient_id):
-    resource_bundle = send_batch_request({
-        "resourceType": "Bundle",
-        "type": "batch",
-        "entry": [
-            {
-                "request": {
-                    "method": "GET",
-                    "url": (
-                        f"ServiceRequest"
-                        f"?_id={service_request_id}"
-                    )
-                }
-            },
-            {
-                "request": {
-                    "method": "GET",
-                    "url": (
-                        f"AllergyIntolerance"
-                        f"?patient=Patient/{patient_id}"
-                    )
-                }
-            }
-        ]
-    })
+    resource_bundle = send_batch_request(create_get_alergen_batch_bundle(patient_id, service_request_id))
     service_request = resource_bundle["entry"][0]["resource"]["entry"][0]["resource"]
     supporting_info_references = [item["reference"]["reference"].split("/")[1] 
                                   for item in service_request["supportingInfo"]
