@@ -21,7 +21,7 @@ sys.path.append(OpenEHR_path)
 from upload_recepta_openehr import upload_recepta_full as upload_recepta_openehr
 
 specify_logging_level(LogLevel.INFO)
-USERS_PER_DOCUMENT_COUNT = 2
+USERS_PER_DOCUMENT_COUNT = 1
 DOCUMENT_TYPES = ["recepta", "skierowanie", "pomiar", "plan_leczenia", "wyniki_badan"]
 
 all_pesels = generate_unique_11_digit_numbers(USERS_PER_DOCUMENT_COUNT * len(DOCUMENT_TYPES))
@@ -37,8 +37,55 @@ ehr_headers = {
     'Prefer': 'return=representation'
 }
 
+BASE_URL = f"{OPENEHR_SERVER}ehrbase/rest/openehr/v1"
+
 class Patient(HttpUser):
     abstract = True
+
+    def _get_property(self, request_name, ehr_id, composition_id, archetype_type, archetype_value, property_path, additional_condition = None, verbose=False):
+        identifier = composition_id.split(":")[0]
+        aql_query = f"""
+        SELECT 
+            o/{property_path}
+        FROM 
+            EHR e
+        CONTAINS COMPOSITION c
+        CONTAINS {archetype_type} o[{archetype_value}]
+        WHERE 
+            e/ehr_id/value = '{ehr_id}'
+            AND c/uid/value = '{identifier}'
+        LIMIT 1
+        """
+
+        if additional_condition:
+            aql_query = f"""
+            SELECT 
+                o/{property_path}
+            FROM 
+                EHR e
+            CONTAINS COMPOSITION c
+            CONTAINS {archetype_type} o[{archetype_value}]
+            WHERE 
+                e/ehr_id/value = '{ehr_id}'
+                AND c/uid/value = '{identifier}'
+                AND {additional_condition}
+            LIMIT 1
+            """
+
+        response = self.client.post(
+            f"{BASE_URL}/query/aql",
+            headers=ehr_headers,
+            json={"q": aql_query},
+            name=request_name
+        )
+
+        self._handle_response(response, request_name)
+    
+    def _handle_response(self, response, request_name):
+        if response.status_code == 200:
+            log(f"Got {request_name} for patient with pesel {self.pesel} and ehr id {self.ehr_id}", LogLevel.DEBUG)
+        else:
+            log(f"Failed to get {request_name} for patient with pesel {self.pesel} and ehr id {self.ehr_id}", LogLevel.WARNING)
     
 class PatientWithRecepta(Patient):
     fixed_count = USERS_PER_DOCUMENT_COUNT
@@ -57,7 +104,7 @@ class PatientWithRecepta(Patient):
         
     @task(1)
     def get_whole_data(self):
-        request_url = f"{OPENEHR_SERVER}ehrbase/rest/openehr/v1/ehr/{self.ehr_id}/composition/{self.encoded_identifier}"
+        request_url = f"{BASE_URL}/ehr/{self.ehr_id}/composition/{self.encoded_identifier}"
         recepta_response = self.client.get(request_url, name="get_recepta_full", headers=ehr_headers, verify=False)
         if recepta_response.status_code == 200:
             log(f"Got recepta full data patient with pesel {self.pesel} and ehr id {self.ehr_id}", LogLevel.DEBUG)
@@ -65,17 +112,32 @@ class PatientWithRecepta(Patient):
             log(f"Failed to get recepta full data patient with pesel: {self.pesel} and ehr id: {self.ehr_id}", LogLevel.WARNING)
             log(recepta_response.content, LogLevel.WARNING)
 
-    # @task(1)
-    # def get_pharmaceutical_form(self):
-    #     self._get_resource("get_pharmaceutical_form", "MedicationRequest", self.medication_request_id, include="MedicationRequest:medication", elements="medication")
+    @task(1)
+    def get_pharmaceutical_form(self):
+        self._get_property("get_pharmaceutical_form", 
+                            self.ehr_id, 
+                            self.composition_id,
+                            archetype_type="CLUSTER",
+                            archetype_value="openEHR-EHR-CLUSTER.medication_substance.v0",
+                            property_path="items[at0133]/value/value")
     
-    # @task(1)
-    # def get_frequency(self):
-    #     self._get_resource("get_frequency", "MedicationRequest", self.medication_request_id, elements="dosageInstruction")
+    @task(1)
+    def get_frequency(self):
+        self._get_property("get_frequency", 
+                            self.ehr_id, 
+                            self.composition_id,
+                            archetype_type="CLUSTER",
+                            archetype_value="openEHR-EHR-CLUSTER.timing_daily.v0",
+                            property_path="items[at0003]/value")
 
-    # @task(1)
-    # def get_validity_period(self):
-    #     self._get_resource("get_validity_period", "MedicationRequest", self.medication_request_id, elements="dispenseRequest")
+    @task(1)
+    def get_validity_period(self):
+        self._get_property("get_validity_period", 
+                            self.ehr_id, 
+                            self.composition_id,
+                            archetype_type="CLUSTER",
+                            archetype_value="openEHR-EHR-CLUSTER.medication_authorisation.v0",
+                            property_path="items[at0072]/value/value")
 
 # class PatientWithSkierowanie(Patient):
 #     fixed_count = USERS_PER_DOCUMENT_COUNT
