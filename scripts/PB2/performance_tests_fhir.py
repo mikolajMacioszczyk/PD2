@@ -147,10 +147,10 @@ class PatientWithPomiar(Patient):
     def on_start(self):
         try:
             self.pesel = pesels_queue.get_nowait()
-            (patient_id, observation_id) = upload_skierowanie_fhir(self.pesel, save=False, verbose=False)
+            (patient_id, observation_id) = upload_pomiar_fhir(self.pesel, save=False, verbose=False)
             self.patient_id = patient_id
             self.observation_id = observation_id
-            log(f"Created observation resources for patient with pesel: {self.pesel} and id: {self.patient_id} in FHIR", LogLevel.INFO)
+            log(f"Created pomiar resources for patient with pesel: {self.pesel} and id: {self.patient_id} in FHIR", LogLevel.INFO)
         except:
             raise Exception("No more PESELS available!")
         
@@ -158,11 +158,11 @@ class PatientWithPomiar(Patient):
     def get_whole_data(self):
         batch_bundle = create_get_full_pomiar_batch_bundle(self.observation_id)
         headers = {"Content-Type": "application/fhir+json"}
-        recepta_response = self.client.post(FHIR_SERVER, name="get_observation_full", headers=headers, data=json.dumps(batch_bundle), verify=False)
+        recepta_response = self.client.post(FHIR_SERVER, name="get_pomiar_full", headers=headers, data=json.dumps(batch_bundle), verify=False)
         if recepta_response.status_code == 200:
-            log(f"Got observation full data patient with pesel {self.pesel} and id {self.patient_id}", LogLevel.DEBUG)
+            log(f"Got pomiar full data patient with pesel {self.pesel} and id {self.patient_id}", LogLevel.DEBUG)
         else:
-            log(f"Failed to get observation full data patient with pesel: {self.pesel} and id: {self.patient_id}", LogLevel.WARNING)
+            log(f"Failed to get pomiar full data patient with pesel: {self.pesel} and id: {self.patient_id}", LogLevel.WARNING)
 
     @task(1)
     def get_doctor_name(self):
@@ -176,77 +176,43 @@ class PatientWithPomiar(Patient):
     def get_device_part_number(self):
         self._get_resource("get_device_part_number", "Observation", self.observation_id, include="Observation:device", elements="device")
 
+class PatientWithPlanLeczenia(Patient):
+    fixed_count = USERS_PER_DOCUMENT_COUNT
+    host = FHIR_SERVER
 
-# class OrganizationUser(HttpUser):
-#     wait_time = between(1, 5)
-#     host = BASKET_HOST
+    def on_start(self):
+        try:
+            self.pesel = pesels_queue.get_nowait()
+            (patient_id, medication_administration_id) = upload_iniekcja_fhir(self.pesel, save=False, verbose=False)
+            self.patient_id = patient_id
+            self.medication_administration_id = medication_administration_id
+            log(f"Created medication administration resources for patient with pesel: {self.pesel} and id: {self.patient_id} in FHIR", LogLevel.INFO)
+        except:
+            raise Exception("No more PESELS available!")
+        
+    @task(1)
+    def get_whole_data(self):
+        batch_bundle = create_get_full_iniekcja_batch_bundle(self.patient_id, self.medication_administration_id)
+        headers = {"Content-Type": "application/fhir+json"}
+        recepta_response = self.client.post(FHIR_SERVER, name="get_plan_leczenia_full", headers=headers, data=json.dumps(batch_bundle), verify=False)
+        if recepta_response.status_code == 200:
+            log(f"Got plan leczenia full data patient with pesel {self.pesel} and id {self.patient_id}", LogLevel.DEBUG)
+        else:
+            log(f"Failed to get plan leczenia full data patient with pesel: {self.pesel} and id: {self.patient_id}", LogLevel.WARNING)
 
-#     def on_start(self) -> None:
-#         global counter
-#         counter = counter + 1
-#         log(f'Counter = {counter}', LogLevel.DEBUG)
-#         self.user = UserTestData(counter, '')
-#         self.create_new_basket()
-#         return super().on_start()
-    
-#     # POST
-#     @task(1)
-#     def create_new_basket_task(self):
-#         self.create_new_basket()
+    @task(1)
+    def get_medication_name(self):
+        self._get_resource("get_medication_name", "MedicationAdministration", self.medication_administration_id, include="MedicationAdministration:medication", elements="medication")
 
-#     # GET
-#     @task(5)
-#     def get_basket_task(self):
-#         self.get_basket()
+    @task(1)
+    def get_dose_value_and_unit(self):
+        self._get_resource("get_dose_value_and_unit", "MedicationAdministration", self.medication_administration_id, elements="dosage")
 
-#     # PUT
-#     @task(10)
-#     def add_product_task(self):
-#         self.add_product()
-
-#     def create_new_basket(self):
-#         headers = {
-#             "Content-Type": "application/json" 
-#         }
-
-#         create_basket_response = self.client.post("/Basket/guest", name="create basket", headers=headers, data=json.dumps({}), verify=False)
-
-#         if create_basket_response.status_code == 200:
-#             response_json = create_basket_response.json()
-#             self.user.basket_id = response_json.get('id')
-#             log(f"Setting basket id for user {self.user.basket_id}", LogLevel.DEBUG)
-#         else:
-#             log(f"User {self.user.id} failed to create basket -> status code {create_basket_response.status_code}.", LogLevel.WARNING)
-#             log(create_basket_response.text, LogLevel.WARNING)
-
-#     def get_basket(self):
-#         headers = {
-#             "Content-Type": "application/json" 
-#         }
-
-#         log(f"Getting basket {self.user.basket_id}", LogLevel.DEBUG)
-#         get_basket_response = self.client.get(f"/Basket/{self.user.basket_id}", name="get basket", headers=headers, verify=False)
-
-#         if get_basket_response.status_code == 200:
-#             log(f"Got basket {self.user.basket_id} from basket for user {self.user.id}", LogLevel.DEBUG)
-#         else:
-#             log(f"User {self.user.id} failed to get basket with id {self.user.basket_id} -> status code {get_basket_response.status_code}.", LogLevel.WARNING)
-#             log(get_basket_response.text, LogLevel.WARNING)
-
-#     def add_product(self):
-#         headers = {
-#             "Content-Type": "application/json" 
-#         }
-
-#         product_id = self.get_random_product_id()
-#         log(f"Adding product {product_id} to basket {self.user.basket_id}", LogLevel.DEBUG)
-#         add_product_response = self.client.put(f"/Basket/{self.user.basket_id}/product/{product_id}/add", name="add product to basket", headers=headers, data=json.dumps({}), verify=False)
-
-#         if add_product_response.status_code == 200:
-#             log(f"Added product {product_id} to basket for user {self.user.id}", LogLevel.DEBUG)
-#         else:
-#             log(f"User {self.user.id} failed to add product {product_id} to basket {self.user.basket_id} -> status code {add_product_response.status_code}.", LogLevel.WARNING)
-#             log(add_product_response.text, LogLevel.WARNING)
-
-#     def get_random_product_id(self):
-#         return random.choice(catalog_product_ids)
+    @task(1)
+    def get_allergy_reaction(self):
+        request_name = "get_allergy_reaction"
+        get_allergy_reaction_batch_bundle = create_get_allergy_reaction_batch_bundle(self.patient_id, self.medication_administration_id)
+        headers = {"Content-Type": "application/fhir+json"}
+        response = self.client.post(FHIR_SERVER, name=request_name, headers=headers, data=json.dumps(get_allergy_reaction_batch_bundle), verify=False)
+        
+        self._handle_response(response, request_name)

@@ -128,3 +128,77 @@ def create_get_full_pomiar_batch_bundle(observation_id):
             },
         ]
     }
+
+def create_get_full_iniekcja_batch_bundle(patient_id, medication_administration_id):
+    return {
+        "resourceType": "Bundle",
+        "type": "batch",
+        "entry": [
+            {
+                "request": {
+                    "method": "GET",
+                    "url": (
+                        f"MedicationAdministration"
+                        f"?_id={medication_administration_id}"
+                        f"&_include=MedicationAdministration:medication"
+                        f"&_include=MedicationAdministration:subject"
+                        f"&_include=MedicationAdministration:performer"
+                    )
+                }
+            },
+            {
+                "request": {
+                    "method": "GET",
+                    "url": (
+                        f"CarePlan"
+                        f"?subject=Patient/{patient_id}"
+                        f"&_include=CarePlan:goal"
+                    )
+                }
+            },
+            {
+                "request": {
+                    "method": "GET",
+                    "url": (
+                        f"AllergyIntolerance"
+                        f"?patient=Patient/{patient_id}"
+                    )
+                }
+            }
+        ]
+    }
+
+def create_get_allergy_reaction_batch_bundle(patient_id, medication_administration_id):
+    return {
+        "resourceType": "Bundle",
+        "type": "batch",
+        "entry": [
+            {
+                "request": {
+                    "method": "GET",
+                    "url": (
+                        f"MedicationAdministration"
+                        f"?_id={medication_administration_id}"
+                    )
+                }
+            },
+            {
+                "request": {
+                    "method": "GET",
+                    "url": (
+                        f"CarePlan"
+                        f"?patient=Patient/{patient_id}"
+                    )
+                }
+            },
+            {
+                "request": {
+                    "method": "GET",
+                    "url": (
+                        f"AllergyIntolerance"
+                        f"?patient=Patient/{patient_id}"
+                    )
+                }
+            }
+        ]
+    }
