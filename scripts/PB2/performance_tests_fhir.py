@@ -1,7 +1,6 @@
 # run me with: locust -f .\performance_tests_fhir.py  --csv stats/performance_tests_fhir
 # run me with: python3 -m locust -f ./performance_tests_fhir.py --headless -u 10 -r 1 --csv stats/performance_tests_fhir --run-time 1h
 import os
-import random
 import sys
 from locust import HttpUser, between, task
 import urllib3
@@ -26,15 +25,11 @@ from upload_wyniki_badan import upload_wyniki_badan_full as upload_wyniki_badan_
 specify_logging_level(LogLevel.DEBUG)
 USERS_PER_DOCUMENT_COUNT = 2
 DOCUMENT_TYPES = ["recepta", "skierowanie", "pomiar", "plan_leczenia", "wyniki_badan"]
-# DOCUMENT_CREATION_FACTORIES_FHIR = [upload_recepta_fhir, upload_skierowanie_fhir, upload_pomiar_fhir, upload_iniekcja_fhir, upload_wyniki_badan_fhir]
 
 all_pesels = generate_unique_11_digit_numbers(USERS_PER_DOCUMENT_COUNT * len(DOCUMENT_TYPES))
 pesels_queue = Queue()
 for pesel_from_queue in all_pesels:
     pesels_queue.put(pesel_from_queue)
-
-# TODO: Create User for each document type
-# TODO: Run tests
 
 class UserTestData:
     def __init__(self, pesel, document_type):
@@ -65,6 +60,47 @@ class PatientWithRecepta(HttpUser):
             log(f"Got recepta full data patient with pesel {self.pesel} and id {self.patient_id}", LogLevel.DEBUG)
         else:
             log(f"Failed to get recepta full data patient with pesel: {self.pesel} and id: {self.patient_id}", LogLevel.WARNING)
+
+    @task(1)
+    def get_pharmaceutical_form(self):
+        recepta_response = self._get_resource("get_pharmaceutical_form", "MedicationRequest", self.medication_request_id, include="MedicationRequest:medication", elements="medication")
+        if recepta_response.status_code == 200:
+            log(f"Got pharmaceutical form for patient with pesel {self.pesel} and id {self.patient_id}", LogLevel.DEBUG)
+        else:
+            log(f"Failed to get pharmaceutical form for patient with pesel {self.pesel} and id {self.patient_id}", LogLevel.WARNING)
+
+    @task(1)
+    def get_frequency(self):
+        recepta_response = self._get_resource("get_frequency", "MedicationRequest", self.medication_request_id, elements="dosageInstruction")
+        if recepta_response.status_code == 200:
+            log(f"Got frequency for patient with pesel {self.pesel} and id {self.patient_id}", LogLevel.DEBUG)
+        else:
+            log(f"Failed to get frequency for patient with pesel {self.pesel} and id {self.patient_id}", LogLevel.WARNING)
+
+    @task(1)
+    def get_validity_period(self):
+        recepta_response = self._get_resource("get_validity_period", "MedicationRequest", self.medication_request_id, elements="dispenseRequest")
+        if recepta_response.status_code == 200:
+            log(f"Got validity period for patient with pesel {self.pesel} and id {self.patient_id}", LogLevel.DEBUG)
+        else:
+            log(f"Failed to get validity period for patient with pesel {self.pesel} and id {self.patient_id}", LogLevel.WARNING)
+        
+    def _get_resource(self, request_name, resource_type, resource_id, include=None, elements=None):
+        url = f"{FHIR_SERVER}/{resource_type}"
+
+        params = {
+            "_id": resource_id
+        }
+
+        if include:
+            params["_include"] = include
+
+        if elements:
+            params["_elements"] = elements
+
+        return self.client.get(url, params=params, name=request_name)
+
+        
 
 
 
