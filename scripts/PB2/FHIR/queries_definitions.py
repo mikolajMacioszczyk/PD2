@@ -202,3 +202,25 @@ def create_get_allergy_reaction_batch_bundle(patient_id, medication_administrati
             }
         ]
     }
+
+def create_get_full_wyniki_badan_batch_bundle(diagnostic_report_id):
+    return {
+        "resourceType": "Bundle",
+        "type": "batch",
+        "entry": [
+            {
+                "request": {
+                    "method": "GET",
+                    "url": (
+                        f"DiagnosticReport"
+                        f"?_id={diagnostic_report_id}"
+                        f"&_include=DiagnosticReport:subject"
+                        f"&_include=DiagnosticReport:performer"
+                        f"&_include=DiagnosticReport:specimen"
+                        f"&_include=DiagnosticReport:result"
+                        f"&_include=DiagnosticReport:*"
+                    )
+                }
+            },
+        ]
+    }

@@ -85,5 +85,7 @@ def upload_wyniki_badan_full(pesel,
             if verbose:
                 print(f"Saved bundle to {file_name}")
 
+    return (patient_id, diagnostic_report_id)
+
 if __name__ == "__main__":
     upload_wyniki_badan_full(pesel=80010112347, verbose=True)

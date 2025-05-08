@@ -216,3 +216,39 @@ class PatientWithPlanLeczenia(Patient):
         response = self.client.post(FHIR_SERVER, name=request_name, headers=headers, data=json.dumps(get_allergy_reaction_batch_bundle), verify=False)
         
         self._handle_response(response, request_name)
+
+class PatientWithWynikiBadan(Patient):
+    fixed_count = USERS_PER_DOCUMENT_COUNT
+    host = FHIR_SERVER
+
+    def on_start(self):
+        try:
+            self.pesel = pesels_queue.get_nowait()
+            (patient_id, diagnostic_report_id) = upload_wyniki_badan_fhir(self.pesel, save=False, verbose=False)
+            self.patient_id = patient_id
+            self.diagnostic_report_id = diagnostic_report_id
+            log(f"Created diagnostic report resources for patient with pesel: {self.pesel} and id: {self.patient_id} in FHIR", LogLevel.INFO)
+        except:
+            raise Exception("No more PESELS available!")
+        
+    @task(1)
+    def get_whole_data(self):
+        batch_bundle = create_get_full_wyniki_badan_batch_bundle(self.diagnostic_report_id)
+        headers = {"Content-Type": "application/fhir+json"}
+        recepta_response = self.client.post(FHIR_SERVER, name="get_wyniki_badan_full", headers=headers, data=json.dumps(batch_bundle), verify=False)
+        if recepta_response.status_code == 200:
+            log(f"Got wyniki badan full data patient with pesel {self.pesel} and id {self.patient_id}", LogLevel.DEBUG)
+        else:
+            log(f"Failed to get wyniki badan full data patient with pesel: {self.pesel} and id: {self.patient_id}", LogLevel.WARNING)
+
+    @task(1)
+    def get_specimen_collection_time(self):
+        self._get_resource("get_specimen_collection_time", "DiagnosticReport", self.diagnostic_report_id, include="DiagnosticReport:specimen", elements="specimen")
+
+    @task(1)
+    def get_glucose_result(self):
+        self._get_resource("get_glucose_result", "DiagnosticReport", self.diagnostic_report_id, include="DiagnosticReport:result", elements="result")
+
+    @task(1)
+    def get_HbA1c_SNOMED_CT(self):
+        self._get_resource("get_HbA1c_SNOMED_CT", "DiagnosticReport", self.diagnostic_report_id, include="DiagnosticReport:result", elements="specimen")

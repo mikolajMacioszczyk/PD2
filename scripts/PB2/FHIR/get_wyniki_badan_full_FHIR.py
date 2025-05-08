@@ -1,28 +1,7 @@
 from fhir_utils import get_latest_resource_id_by_patient, get_patient_id_by_pesel, get_resource, save_batch_response, send_batch_request
+from FHIR.queries_definitions import create_get_full_wyniki_badan_batch_bundle
 
 PATIENT_PESEL = 80010112347
-
-def create_get_full_wyniki_badan_batch_bundle(diagnostic_report_id):
-    return {
-        "resourceType": "Bundle",
-        "type": "batch",
-        "entry": [
-            {
-                "request": {
-                    "method": "GET",
-                    "url": (
-                        f"DiagnosticReport"
-                        f"?_id={diagnostic_report_id}"
-                        f"&_include=DiagnosticReport:subject"
-                        f"&_include=DiagnosticReport:performer"
-                        f"&_include=DiagnosticReport:specimen"
-                        f"&_include=DiagnosticReport:result"
-                        f"&_include=DiagnosticReport:*"
-                    )
-                }
-            },
-        ]
-    }
 
 def get_specimen_collection_time(diagnostic_report_id):
     resource_bundle = get_resource("DiagnosticReport", diagnostic_report_id, include="DiagnosticReport:specimen", elements="specimen")
