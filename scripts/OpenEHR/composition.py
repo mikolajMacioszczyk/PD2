@@ -90,3 +90,4 @@ def upload_and_save(pesel, composition_file_path, template_id, medical_document_
             file_name = f"composition-{medical_document_type}-FLAT-{upload_result['composition_id']}.json"
             save_to_output_file(flat_composition, medical_document_type, file_name)
             print(f"Saved flat composition to {file_name}")
+    return (upload_result["ehr_id"], upload_result["composition_id"])
