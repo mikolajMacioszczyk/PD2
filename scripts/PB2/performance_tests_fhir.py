@@ -1,15 +1,18 @@
-# run me with: locust -f .\basket_requests.py  --csv stats/basket_requests
-# run me with: python3 -m locust -f ./basket_requests.py --headless -u 50 -r 1 --csv stats/basket_requests --run-time 1h
+# run me with: locust -f .\performance_tests_fhir.py  --csv stats/performance_tests_fhir
+# run me with: python3 -m locust -f ./performance_tests_fhir.py --headless -u 10 -r 1 --csv stats/performance_tests_fhir --run-time 1h
 import os
 import random
 import sys
 from locust import HttpUser, between, task
 import urllib3
 import json
-from utils import *
-
+from FHIR.recepta_queries_definitions import create_get_full_recepta_batch_bundle
 from FHIR.fhir_conf import FHIR_SERVER
-from OpeEHR.openehr_conf import OPENEHR_SERVER
+from utils import *
+from queue import Queue
+
+## ignore HTTPS errors in console
+urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
 
 FHIR_path = os.path.abspath(os.path.join(os.path.dirname(__file__), '..', 'FHIR'))
 sys.path.append(FHIR_path)
@@ -20,71 +23,50 @@ from upload_pomiar import upload_pomiar_full as upload_pomiar_fhir
 from upload_iniekcja import upload_iniekcja_full as upload_iniekcja_fhir
 from upload_wyniki_badan import upload_wyniki_badan_full as upload_wyniki_badan_fhir
 
-OpenEHR_path = os.path.abspath(os.path.join(os.path.dirname(__file__), '..', 'OpenEHR'))
-sys.path.append(OpenEHR_path)
-
-from upload_recepta_openehr import upload_recepta_full as upload_recepta_openehr
-from upload_skierowanie_openehr import upload_skierowanie_full as upload_skierowanie_openehr
-from upload_pomiar_openehr import upload_pomiar_full as upload_pomiar_openehr
-from upload_iniekcja_openehr import upload_iniekcja_full as upload_iniekcja_openehr
-from upload_wyniki_badan_openehr import upload_wyniki_badan_full as upload_wyniki_badan_openehr
-
+specify_logging_level(LogLevel.DEBUG)
 USERS_PER_DOCUMENT_COUNT = 2
 DOCUMENT_TYPES = ["recepta", "skierowanie", "pomiar", "plan_leczenia", "wyniki_badan"]
-DOCUMENT_CREATION_FACTORIES_FHIR = [upload_recepta_fhir, upload_skierowanie_fhir, upload_pomiar_fhir, upload_iniekcja_fhir, upload_wyniki_badan_fhir]
-DOCUMENT_CREATION_FACTORIES_OPEN_EHR = [upload_recepta_openehr, upload_skierowanie_openehr, upload_pomiar_openehr, upload_iniekcja_openehr, upload_wyniki_badan_openehr]
+# DOCUMENT_CREATION_FACTORIES_FHIR = [upload_recepta_fhir, upload_skierowanie_fhir, upload_pomiar_fhir, upload_iniekcja_fhir, upload_wyniki_badan_fhir]
 
-print(f"FHIR server endpoint = {FHIR_SERVER}")
-print(f"OpenEHR server endpoint = {OPENEHR_SERVER}")
+all_pesels = generate_unique_11_digit_numbers(USERS_PER_DOCUMENT_COUNT * len(DOCUMENT_TYPES))
+pesels_queue = Queue()
+for pesel_from_queue in all_pesels:
+    pesels_queue.put(pesel_from_queue)
 
-pesels = generate_unique_11_digit_numbers(USERS_PER_DOCUMENT_COUNT * len(DOCUMENT_TYPES))
-
-tests_config = {}
-for i, (document_type, factory_fhir, factory_openehr) in enumerate(zip(DOCUMENT_TYPES, DOCUMENT_CREATION_FACTORIES_FHIR, DOCUMENT_CREATION_FACTORIES_OPEN_EHR)):
-    start_index = i * USERS_PER_DOCUMENT_COUNT
-    end_index = (i+1) * USERS_PER_DOCUMENT_COUNT
-    document_pesels = pesels[start_index:end_index]
-    tests_config[document_type] = {
-        "pesels": document_pesels
-    }
-    print(f"===== {document_type} =====")
-    print(f"Pesels: {document_pesels}")
-    for pesel in document_pesels:
-        factory_fhir(pesel, save=False, verbose=False)
-        print(f"Created FHIR resources for {pesel}")
-        factory_openehr(pesel, save=False, verbose=False)
-        print(f"Created OpenEHR composition for {pesel}")
-    print()
-
-print(tests_config)
-
+# TODO: Create User for each document type
 # TODO: Run tests
 
+class UserTestData:
+    def __init__(self, pesel, document_type):
+        self.pesel = pesel
+        self.document_type = document_type
+        self.document_identifier = None
 
-# url = f'{CATALOG_HOST}/ActiveProducts'
-# catalog_data = fetch_data_from_api(url)
-# items = catalog_data.get('items', [])
-# catalog_product_ids = [item['id'] for item in items]
+class PatientWithRecepta(HttpUser):
+    fixed_count = USERS_PER_DOCUMENT_COUNT
+    host = FHIR_SERVER
 
-# ## ignore HTTPS errors in console
-# urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
+    def on_start(self):
+        try:
+            self.pesel = pesels_queue.get_nowait()
+            (patient_id, medication_request_id) = upload_recepta_fhir(self.pesel, save=False, verbose=False)
+            self.patient_id = patient_id
+            self.medication_request_id = medication_request_id
+            log(f"Created recepta resources for patient with pesel: {self.pesel} and id: {self.patient_id} in FHIR", LogLevel.INFO)
+        except:
+            raise Exception("No more PESELS available!")
+        
+    @task(1)
+    def get_whole_data(self):
+        batch_bundle = create_get_full_recepta_batch_bundle(self.medication_request_id)
+        headers = {"Content-Type": "application/fhir+json"}
+        recepta_response = self.client.post(FHIR_SERVER, name="get_recepta_full", headers=headers, data=json.dumps(batch_bundle), verify=False)
+        if recepta_response.status_code == 200:
+            log(f"Got recepta full data patient with pesel {self.pesel} and id {self.patient_id}", LogLevel.DEBUG)
+        else:
+            log(f"Failed to get recepta full data patient with pesel: {self.pesel} and id: {self.patient_id}", LogLevel.WARNING)
 
-# dataset_id = str(uuid.uuid4())
-# dataset_name = generate_random_string(8)
-# organization_name = generate_random_string(8)0
-# organization_disease_datasets_id = str(uuid.uuid4())
-# subscription_id = str(uuid.uuid4())
-# consent_version_id = str(uuid.uuid4())
-# consent_definition_id = str(uuid.uuid4())
 
-# wait_until_user_confirms('y')
-
-# class UserTestData:
-#     def __init__(self, id, basket_id):
-#         self.id = id
-#         self.basket_id = basket_id
-
-# counter = 0
 
 # class OrganizationUser(HttpUser):
 #     wait_time = between(1, 5)

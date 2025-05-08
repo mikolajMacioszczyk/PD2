@@ -1,26 +1,7 @@
 from fhir_utils import get_latest_resource_id_by_patient, get_patient_id_by_pesel, get_resource, save_batch_response, send_batch_request
+from recepta_queries_definitions import create_get_full_recepta_batch_bundle
 
 PATIENT_PESEL = 80010112345
-
-def create_get_full_recepta_batch_bundle(medication_request_id):
-    return {
-        "resourceType": "Bundle",
-        "type": "batch",
-        "entry": [
-            {
-                "request": {
-                    "method": "GET",
-                    "url": (
-                        f"MedicationRequest"
-                        f"?_id={medication_request_id}"
-                        f"&_include=MedicationRequest:medication"
-                        f"&_include=MedicationRequest:subject"
-                        f"&_include=MedicationRequest:requester"
-                    )
-                }
-            }
-        ]
-    }
 
 def get_pharmaceutical_form(medication_request_id):
     resource_bundle = get_resource("MedicationRequest", medication_request_id, include="MedicationRequest:medication", elements="medication")

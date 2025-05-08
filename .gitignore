@@ -1,5 +1,6 @@
 **/results/**/*.csv
 **/results/**/*.json
+scripts/PB2/stats
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
