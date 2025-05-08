@@ -19,6 +19,7 @@ OpenEHR_path = os.path.abspath(os.path.join(os.path.dirname(__file__), '..', 'Op
 sys.path.append(OpenEHR_path)
 
 from upload_recepta_openehr import upload_recepta_full as upload_recepta_openehr
+from upload_skierowanie_openehr import upload_skierowanie_full as upload_skierowanie_openehr
 
 specify_logging_level(LogLevel.INFO)
 USERS_PER_DOCUMENT_COUNT = 1
@@ -139,52 +140,58 @@ class PatientWithRecepta(Patient):
                             archetype_value="openEHR-EHR-CLUSTER.medication_authorisation.v0",
                             property_path="items[at0072]/value/value")
 
-# class PatientWithSkierowanie(Patient):
-#     fixed_count = USERS_PER_DOCUMENT_COUNT
-#     host = FHIR_SERVER
+class PatientWithSkierowanie(Patient):
+    fixed_count = USERS_PER_DOCUMENT_COUNT
+    host = OPENEHR_SERVER
 
-#     def on_start(self):
-#         try:
-#             self.pesel = pesels_queue.get_nowait()
-#             (patient_id, service_request_id) = upload_skierowanie_fhir(self.pesel, save=False, verbose=False)
-#             self.patient_id = patient_id
-#             self.service_request_id = service_request_id
-#             log(f"Created skierowanie resources for patient with pesel: {self.pesel} and id: {self.patient_id} in FHIR", LogLevel.INFO)
-#         except:
-#             raise Exception("No more PESELS available!")
+    def on_start(self):
+        try:
+            self.pesel = pesels_queue.get_nowait()
+            (ehr_id, composition_id) = upload_skierowanie_openehr(self.pesel, save=False, verbose=False)
+            self.ehr_id = ehr_id
+            self.composition_id = composition_id
+            self.encoded_identifier = urllib.parse.quote_plus(composition_id)
+            log(f"Created skierowanie composition for patient with pesel: {self.pesel} and ehr id: {self.ehr_id} in OpenEHR", LogLevel.INFO)
+        except:
+            raise Exception("No more PESELS available!")
         
-#     @task(1)
-#     def get_whole_data(self):
-#         batch_bundle = create_get_full_skierowanie_batch_bundle(self.patient_id, self.service_request_id)
-#         headers = {"Content-Type": "application/fhir+json"}
-#         recepta_response = self.client.post(FHIR_SERVER, name="get_skierowanie_full", headers=headers, data=json.dumps(batch_bundle), verify=False)
-#         if recepta_response.status_code == 200:
-#             log(f"Got skierowanie full data patient with pesel {self.pesel} and id {self.patient_id}", LogLevel.DEBUG)
-#         else:
-#             log(f"Failed to get skierowanie full data patient with pesel: {self.pesel} and id: {self.patient_id}", LogLevel.WARNING)
+    @task(1)
+    def get_whole_data(self):
+        request_url = f"{BASE_URL}/ehr/{self.ehr_id}/composition/{self.encoded_identifier}"
+        skierowanie_response = self.client.get(request_url, name="get_skierowanie_full", headers=ehr_headers, verify=False)
+        if skierowanie_response.status_code == 200:
+            log(f"Got skierowanie full data patient with pesel {self.pesel} and ehr id {self.ehr_id}", LogLevel.DEBUG)
+        else:
+            log(f"Failed to get skierowanie full data patient with pesel: {self.pesel} and ehr id: {self.ehr_id}", LogLevel.WARNING)
+            log(skierowanie_response.content, LogLevel.WARNING)
 
-#     @task(1)
-#     def get_test_name(self):
-#         self._get_resource("get_test_name", "ServiceRequest", self.service_request_id, elements="code")
+    @task(1)
+    def get_test_name(self):
+        self._get_property("get_test_name", 
+                            self.ehr_id, 
+                            self.composition_id,
+                            archetype_type="OBSERVATION",
+                            archetype_value="openEHR-EHR-OBSERVATION.lab_test.v1",
+                            property_path="data[at0001]/events[at0002]/data[at0003]/items[at0005]/value/value")
 
-#     @task(1)
-#     def get_health_problem(self):
-#         request_name = "get_health_problem"
-#         get_health_problem_batch_bundle = create_get_health_problem_batch_bundle(self.patient_id, self.service_request_id)
-#         headers = {"Content-Type": "application/fhir+json"}
-#         response = self.client.post(FHIR_SERVER, name=request_name, headers=headers, data=json.dumps(get_health_problem_batch_bundle), verify=False)
-        
-#         self._handle_response(response, request_name)
+    @task(1)
+    def get_health_problem(self):
+        self._get_property("get_health_problem", 
+                            self.ehr_id, 
+                            self.composition_id,
+                            archetype_type="EVALUATION",
+                            archetype_value="openEHR-EHR-EVALUATION.problem.v1",
+                            property_path="data[at0001]/items[at0002]/value/value")
 
-#     @task(1)
-#     def get_alergen(self):
-#         request_name = "get_alergen"
-#         get_alergen_batch_bundle = create_get_alergen_batch_bundle(self.patient_id, self.service_request_id)
-#         headers = {"Content-Type": "application/fhir+json"}
-#         response = self.client.post(FHIR_SERVER, name=request_name, headers=headers, data=json.dumps(get_alergen_batch_bundle), verify=False)
-        
-#         self._handle_response(response, request_name)
-
+    @task(1)
+    def get_alergen(self):
+        self._get_property("get_alergen", 
+                            self.ehr_id, 
+                            self.composition_id,
+                            archetype_type="EVALUATION",
+                            archetype_value="openEHR-EHR-EVALUATION.adverse.v1",
+                            property_path="data[at0002]/items[at0003]/value/value")
+    
 # class PatientWithPomiar(Patient):
 #     fixed_count = USERS_PER_DOCUMENT_COUNT
 #     host = FHIR_SERVER
