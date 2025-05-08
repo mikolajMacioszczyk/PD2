@@ -20,6 +20,7 @@ sys.path.append(OpenEHR_path)
 
 from upload_recepta_openehr import upload_recepta_full as upload_recepta_openehr
 from upload_skierowanie_openehr import upload_skierowanie_full as upload_skierowanie_openehr
+from upload_pomiar_openehr import upload_pomiar_full as upload_pomiar_openehr
 
 specify_logging_level(LogLevel.INFO)
 USERS_PER_DOCUMENT_COUNT = 1
@@ -43,7 +44,7 @@ BASE_URL = f"{OPENEHR_SERVER}ehrbase/rest/openehr/v1"
 class Patient(HttpUser):
     abstract = True
 
-    def _get_property(self, request_name, ehr_id, composition_id, archetype_type, archetype_value, property_path, additional_condition = None, verbose=False):
+    def _get_property(self, request_name, ehr_id, composition_id, archetype_type, archetype_value, property_path, additional_condition = None):
         identifier = composition_id.split(":")[0]
         aql_query = f"""
         SELECT 
@@ -73,6 +74,28 @@ class Patient(HttpUser):
             LIMIT 1
             """
 
+        response = self.client.post(
+            f"{BASE_URL}/query/aql",
+            headers=ehr_headers,
+            json={"q": aql_query},
+            name=request_name
+        )
+
+        self._handle_response(response, request_name)
+
+    def _get_top_level_property(self, request_name, ehr_id, composition_id, property_path):
+        identifier = composition_id.split(":")[0]
+        aql_query = f"""
+        SELECT 
+            {property_path}
+        FROM 
+            EHR e
+            CONTAINS COMPOSITION c
+        WHERE 
+            e/ehr_id/value = '{ehr_id}'
+            AND c/uid/value = '{identifier}'
+        LIMIT 1
+        """
         response = self.client.post(
             f"{BASE_URL}/query/aql",
             headers=ehr_headers,
@@ -191,43 +214,58 @@ class PatientWithSkierowanie(Patient):
                             archetype_type="EVALUATION",
                             archetype_value="openEHR-EHR-EVALUATION.adverse.v1",
                             property_path="data[at0002]/items[at0003]/value/value")
-    
-# class PatientWithPomiar(Patient):
-#     fixed_count = USERS_PER_DOCUMENT_COUNT
-#     host = FHIR_SERVER
-
-#     def on_start(self):
-#         try:
-#             self.pesel = pesels_queue.get_nowait()
-#             (patient_id, observation_id) = upload_pomiar_fhir(self.pesel, save=False, verbose=False)
-#             self.patient_id = patient_id
-#             self.observation_id = observation_id
-#             log(f"Created pomiar resources for patient with pesel: {self.pesel} and id: {self.patient_id} in FHIR", LogLevel.INFO)
-#         except:
-#             raise Exception("No more PESELS available!")
         
-#     @task(1)
-#     def get_whole_data(self):
-#         batch_bundle = create_get_full_pomiar_batch_bundle(self.observation_id)
-#         headers = {"Content-Type": "application/fhir+json"}
-#         recepta_response = self.client.post(FHIR_SERVER, name="get_pomiar_full", headers=headers, data=json.dumps(batch_bundle), verify=False)
-#         if recepta_response.status_code == 200:
-#             log(f"Got pomiar full data patient with pesel {self.pesel} and id {self.patient_id}", LogLevel.DEBUG)
-#         else:
-#             log(f"Failed to get pomiar full data patient with pesel: {self.pesel} and id: {self.patient_id}", LogLevel.WARNING)
+class PatientWithPomiar(Patient):
+    fixed_count = USERS_PER_DOCUMENT_COUNT
+    host = OPENEHR_SERVER
 
-#     @task(1)
-#     def get_doctor_name(self):
-#         self._get_resource("get_doctor_name", "Observation", self.observation_id, include="Observation:performer", elements="performer")
+    def on_start(self):
+        try:
+            self.pesel = pesels_queue.get_nowait()
+            (ehr_id, composition_id) = upload_pomiar_openehr(self.pesel, save=False, verbose=False)
+            self.ehr_id = ehr_id
+            self.composition_id = composition_id
+            self.encoded_identifier = urllib.parse.quote_plus(composition_id)
+            log(f"Created pomiar composition for patient with pesel: {self.pesel} and ehr id: {self.ehr_id} in OpenEHR", LogLevel.INFO)
+        except:
+            raise Exception("No more PESELS available!")
+        
+    @task(1)
+    def get_whole_data(self):
+        request_url = f"{BASE_URL}/ehr/{self.ehr_id}/composition/{self.encoded_identifier}"
+        pomiar_response = self.client.get(request_url, name="get_pomiar_full", headers=ehr_headers, verify=False)
+        if pomiar_response.status_code == 200:
+            log(f"Got pomiar full data patient with pesel {self.pesel} and ehr id {self.ehr_id}", LogLevel.DEBUG)
+        else:
+            log(f"Failed to get pomiar full data patient with pesel: {self.pesel} and ehr id: {self.ehr_id}", LogLevel.WARNING)
+            log(pomiar_response.content, LogLevel.WARNING)
 
-#     @task(1)
-#     def get_pressure_measurement_result(self):
-#         self._get_resource("get_pressure_measurement_result", "Observation", self.observation_id, elements="valueQuantity")
+    @task(1)
+    def get_doctor_name(self):
+        self._get_top_level_property("get_doctor_name", 
+                            self.ehr_id, 
+                            self.composition_id,
+                            property_path="c/composer/name AS composer_name")
 
-#     @task(1)
-#     def get_device_part_number(self):
-#         self._get_resource("get_device_part_number", "Observation", self.observation_id, include="Observation:device", elements="device")
-
+    @task(1)
+    def get_pressure_measurement_result(self):
+        self._get_property("get_pressure_measurement_result", 
+                            self.ehr_id, 
+                            self.composition_id,
+                            archetype_type="OBSERVATION",
+                            archetype_value="openEHR-EHR-OBSERVATION.intraocular_pressure.v0",
+                            property_path="data[at0001]/events[at0002]/data[at0003]/items[at0042]/value")
+        
+    @task(1)
+    def get_device_part_number(self):
+        self._get_property("get_device_part_number", 
+                            self.ehr_id, 
+                            self.composition_id,
+                            archetype_type="CLUSTER",
+                            archetype_value="openEHR-EHR-CLUSTER.device_details.v1",
+                            property_path="items[at0007]/value/value")
+ 
+    
 # class PatientWithPlanLeczenia(Patient):
 #     fixed_count = USERS_PER_DOCUMENT_COUNT
 #     host = FHIR_SERVER
