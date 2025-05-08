@@ -22,6 +22,8 @@ from upload_recepta_openehr import upload_recepta_full as upload_recepta_openehr
 from upload_skierowanie_openehr import upload_skierowanie_full as upload_skierowanie_openehr
 from upload_pomiar_openehr import upload_pomiar_full as upload_pomiar_openehr
 from upload_iniekcja_openehr import upload_iniekcja_full as upload_plan_leczenia_openehr
+from upload_wyniki_badan_openehr import upload_wyniki_badan_full as upload_wyniki_badan_openehr
+
 
 specify_logging_level(LogLevel.INFO)
 USERS_PER_DOCUMENT_COUNT = 1
@@ -318,38 +320,55 @@ class PatientWithPlanLeczenia(Patient):
                             archetype_value="openEHR-EHR-EVALUATION.adverse_reaction_risk.v1",
                             property_path="data[at0001]/items[at0006]/value/value")
 
-# class PatientWithWynikiBadan(Patient):
-#     fixed_count = USERS_PER_DOCUMENT_COUNT
-#     host = FHIR_SERVER
+class PatientWithWynikiBadan(Patient):
+    fixed_count = USERS_PER_DOCUMENT_COUNT
+    host = OPENEHR_SERVER
 
-#     def on_start(self):
-#         try:
-#             self.pesel = pesels_queue.get_nowait()
-#             (patient_id, diagnostic_report_id) = upload_wyniki_badan_fhir(self.pesel, save=False, verbose=False)
-#             self.patient_id = patient_id
-#             self.diagnostic_report_id = diagnostic_report_id
-#             log(f"Created diagnostic report resources for patient with pesel: {self.pesel} and id: {self.patient_id} in FHIR", LogLevel.INFO)
-#         except:
-#             raise Exception("No more PESELS available!")
+    def on_start(self):
+        try:
+            self.pesel = pesels_queue.get_nowait()
+            (ehr_id, composition_id) = upload_wyniki_badan_openehr(self.pesel, save=False, verbose=False)
+            self.ehr_id = ehr_id
+            self.composition_id = composition_id
+            self.encoded_identifier = urllib.parse.quote_plus(composition_id)
+            log(f"Created wyniki badan composition for patient with pesel: {self.pesel} and ehr id: {self.ehr_id} in OpenEHR", LogLevel.INFO)
+        except:
+            raise Exception("No more PESELS available!")
         
-#     @task(1)
-#     def get_whole_data(self):
-#         batch_bundle = create_get_full_wyniki_badan_batch_bundle(self.diagnostic_report_id)
-#         headers = {"Content-Type": "application/fhir+json"}
-#         recepta_response = self.client.post(FHIR_SERVER, name="get_wyniki_badan_full", headers=headers, data=json.dumps(batch_bundle), verify=False)
-#         if recepta_response.status_code == 200:
-#             log(f"Got wyniki badan full data patient with pesel {self.pesel} and id {self.patient_id}", LogLevel.DEBUG)
-#         else:
-#             log(f"Failed to get wyniki badan full data patient with pesel: {self.pesel} and id: {self.patient_id}", LogLevel.WARNING)
+    @task(1)
+    def get_whole_data(self):
+        request_url = f"{BASE_URL}/ehr/{self.ehr_id}/composition/{self.encoded_identifier}"
+        wyniki_badan_response = self.client.get(request_url, name="get_wyniki_badan_full_openehr", headers=ehr_headers, verify=False)
+        if wyniki_badan_response.status_code == 200:
+            log(f"Got wyniki badan full data patient with pesel {self.pesel} and ehr id {self.ehr_id}", LogLevel.DEBUG)
+        else:
+            log(f"Failed to get wyniki badan full data patient with pesel: {self.pesel} and ehr id: {self.ehr_id}", LogLevel.WARNING)
+            log(wyniki_badan_response.content, LogLevel.WARNING) 
 
-#     @task(1)
-#     def get_specimen_collection_time(self):
-#         self._get_resource("get_specimen_collection_time", "DiagnosticReport", self.diagnostic_report_id, include="DiagnosticReport:specimen", elements="specimen")
-
-#     @task(1)
-#     def get_glucose_result(self):
-#         self._get_resource("get_glucose_result", "DiagnosticReport", self.diagnostic_report_id, include="DiagnosticReport:result", elements="result")
-
-#     @task(1)
-#     def get_HbA1c_SNOMED_CT(self):
-#         self._get_resource("get_HbA1c_SNOMED_CT", "DiagnosticReport", self.diagnostic_report_id, include="DiagnosticReport:result", elements="specimen")
+    @task(1)
+    def get_specimen_collection_time(self):
+        self._get_property("get_specimen_collection_time_openehr", 
+                            self.ehr_id, 
+                            self.composition_id,
+                            archetype_type="CLUSTER",
+                            archetype_value="openEHR-EHR-CLUSTER.specimen.v1",
+                            property_path="items[at0015]/value/value")  
+        
+    @task(1)
+    def get_glucose_result(self):
+        self._get_property("get_glucose_result_openehr", 
+                            self.ehr_id, 
+                            self.composition_id,
+                            archetype_type="CLUSTER",
+                            archetype_value="openEHR-EHR-CLUSTER.laboratory_test_analyte.v1",
+                            property_path="items[at0001]/value")  
+        
+    @task(1)
+    def get_HbA1c_SNOMED_CT(self):
+        self._get_property("get_HbA1c_SNOMED_CT_openehr", 
+                            self.ehr_id, 
+                            self.composition_id,
+                            archetype_type="CLUSTER",
+                            archetype_value="openEHR-EHR-CLUSTER.laboratory_test_analyte.v1",
+                            property_path="items[at0024]/value/defining_code/code_string",
+                            additional_condition="o/name/value = 'HbA1c'")  
