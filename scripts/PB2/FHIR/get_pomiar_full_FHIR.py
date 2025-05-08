@@ -1,28 +1,7 @@
 from fhir_utils import get_latest_resource_id_by_patient, get_patient_id_by_pesel, get_resource, save_batch_response, send_batch_request
+from FHIR.queries_definitions import create_get_full_pomiar_batch_bundle
 
 PATIENT_PESEL = 80010112349
-
-def create_get_full_pomiar_batch_bundle(observation_id):
-    return {
-        "resourceType": "Bundle",
-        "type": "batch",
-        "entry": [
-            {
-                "request": {
-                    "method": "GET",
-                    "url": (
-                        f"Observation"
-                        f"?_id={observation_id}"
-                        f"&_include=Observation:subject"
-                        f"&_include=Observation:device"
-                        f"&_include=Observation:encounter"
-                        f"&_include=Observation:performer"
-                        f"&_include:iterate=Device:definition"
-                    )
-                }
-            },
-        ]
-    }
 
 def get_doctor_name(observation_id):
     resource_bundle = get_resource("Observation", observation_id, include="Observation:performer", elements="performer")

@@ -106,3 +106,25 @@ def create_get_alergen_batch_bundle(patient_id, service_request_id):
             }
         ]
     }
+
+def create_get_full_pomiar_batch_bundle(observation_id):
+    return {
+        "resourceType": "Bundle",
+        "type": "batch",
+        "entry": [
+            {
+                "request": {
+                    "method": "GET",
+                    "url": (
+                        f"Observation"
+                        f"?_id={observation_id}"
+                        f"&_include=Observation:subject"
+                        f"&_include=Observation:device"
+                        f"&_include=Observation:encounter"
+                        f"&_include=Observation:performer"
+                        f"&_include:iterate=Device:definition"
+                    )
+                }
+            },
+        ]
+    }

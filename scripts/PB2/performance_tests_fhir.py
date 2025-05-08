@@ -139,7 +139,43 @@ class PatientWithSkierowanie(Patient):
         response = self.client.post(FHIR_SERVER, name=request_name, headers=headers, data=json.dumps(get_alergen_batch_bundle), verify=False)
         
         self._handle_response(response, request_name)
-    
+
+class PatientWithPomiar(Patient):
+    fixed_count = USERS_PER_DOCUMENT_COUNT
+    host = FHIR_SERVER
+
+    def on_start(self):
+        try:
+            self.pesel = pesels_queue.get_nowait()
+            (patient_id, observation_id) = upload_skierowanie_fhir(self.pesel, save=False, verbose=False)
+            self.patient_id = patient_id
+            self.observation_id = observation_id
+            log(f"Created observation resources for patient with pesel: {self.pesel} and id: {self.patient_id} in FHIR", LogLevel.INFO)
+        except:
+            raise Exception("No more PESELS available!")
+        
+    @task(1)
+    def get_whole_data(self):
+        batch_bundle = create_get_full_pomiar_batch_bundle(self.observation_id)
+        headers = {"Content-Type": "application/fhir+json"}
+        recepta_response = self.client.post(FHIR_SERVER, name="get_observation_full", headers=headers, data=json.dumps(batch_bundle), verify=False)
+        if recepta_response.status_code == 200:
+            log(f"Got observation full data patient with pesel {self.pesel} and id {self.patient_id}", LogLevel.DEBUG)
+        else:
+            log(f"Failed to get observation full data patient with pesel: {self.pesel} and id: {self.patient_id}", LogLevel.WARNING)
+
+    @task(1)
+    def get_doctor_name(self):
+        self._get_resource("get_doctor_name", "Observation", self.observation_id, include="Observation:performer", elements="performer")
+
+    @task(1)
+    def get_pressure_measurement_result(self):
+        self._get_resource("get_pressure_measurement_result", "Observation", self.observation_id, elements="valueQuantity")
+
+    @task(1)
+    def get_device_part_number(self):
+        self._get_resource("get_device_part_number", "Observation", self.observation_id, include="Observation:device", elements="device")
+
 
 # class OrganizationUser(HttpUser):
 #     wait_time = between(1, 5)
