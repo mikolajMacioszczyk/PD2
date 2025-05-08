@@ -1,4 +1,4 @@
-# run me with: locust -f .\performance_tests_openehr.py  --csv stats/performance_tests_openehr
+# run me with: locust -f .\performance_tests_openehr.py  --csv stats/performance_tests_openehr 
 # run me with: python3 -m locust -f ./performance_tests_openehr.py --headless -u 10 -r 1 --csv stats/performance_tests_openehr --run-time 1h
 import os
 import sys
@@ -23,10 +23,15 @@ from upload_skierowanie_openehr import upload_skierowanie_full as upload_skierow
 from upload_pomiar_openehr import upload_pomiar_full as upload_pomiar_openehr
 from upload_iniekcja_openehr import upload_iniekcja_full as upload_plan_leczenia_openehr
 from upload_wyniki_badan_openehr import upload_wyniki_badan_full as upload_wyniki_badan_openehr
-
+from upload_AMD_treatment_template import upload_AMD_template
+from upload_e_laboratory_test_result_template import upload_e_laboratory_template
+from upload_e_prescription_template import upload_e_prescription_template
+from upload_e_referral_template import upload_e_refferal_template
+from upload_intraocular_pressure_study_template import upload_intraocular_pressure_study_template
 
 specify_logging_level(LogLevel.INFO)
-USERS_PER_DOCUMENT_COUNT = 1
+USERS_PER_DOCUMENT_COUNT = 20
+UPLOAD_TEMPLATES = True
 DOCUMENT_TYPES = ["recepta", "skierowanie", "pomiar", "plan_leczenia", "wyniki_badan"]
 
 all_pesels = generate_unique_11_digit_numbers(USERS_PER_DOCUMENT_COUNT * len(DOCUMENT_TYPES))
@@ -34,7 +39,12 @@ pesels_queue = Queue()
 for pesel_from_queue in all_pesels:
     pesels_queue.put(pesel_from_queue)
 
-# TODO: Upload templates
+if UPLOAD_TEMPLATES:
+    upload_AMD_template()
+    upload_e_laboratory_template()
+    upload_e_prescription_template()
+    upload_e_refferal_template()
+    upload_intraocular_pressure_study_template()
 
 ehr_headers = {
     'Content-Type': 'application/json',

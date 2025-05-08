@@ -25,7 +25,7 @@ from upload_iniekcja import upload_iniekcja_full as upload_iniekcja_fhir
 from upload_wyniki_badan import upload_wyniki_badan_full as upload_wyniki_badan_fhir
 
 specify_logging_level(LogLevel.WARNING)
-USERS_PER_DOCUMENT_COUNT = 1
+USERS_PER_DOCUMENT_COUNT = 20
 DOCUMENT_TYPES = ["recepta", "skierowanie", "pomiar", "plan_leczenia", "wyniki_badan"]
 
 all_pesels = generate_unique_11_digit_numbers(USERS_PER_DOCUMENT_COUNT * len(DOCUMENT_TYPES))

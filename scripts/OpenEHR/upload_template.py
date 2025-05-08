@@ -7,7 +7,7 @@ headers = {
     'Content-Type': 'application/xml'
 }
 
-def upload_template(template_file_name, medical_document_type):
+def upload_template(template_file_name, medical_document_type, verbose_conflict=False):
     template_file_path = f"{DATA_DIRECTORY_PATH}{medical_document_type}/OpenEHR/input/{template_file_name}"
 
     with open(template_file_path, 'rb') as file:
@@ -17,5 +17,8 @@ def upload_template(template_file_name, medical_document_type):
 
     if response.status_code == 201:
         print("Template created")
+    elif response.status_code == 409:
+        if verbose_conflict:
+            print(f'Conflict while creating template: {response.text}')
     else:
         print(f'Template creation failed: {response.text}')
