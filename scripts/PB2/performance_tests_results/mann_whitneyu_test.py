@@ -51,6 +51,18 @@ def run_mann_whitneyu_test():
             ["Requests/s", "FHIR", "less", "OpenEHR", True],
             ["Requests/s", "FHIR", "greater", "OpenEHR", True],
             ["Requests/s", "FHIR", "two-sided", "OpenEHR", True],
+
+            ["90%", "FHIR", "less", "OpenEHR", True],
+            ["90%", "FHIR", "greater", "OpenEHR", True],
+            ["90%", "FHIR", "two-sided", "OpenEHR", True],
+
+            ["90%", "FHIR", "less", "OpenEHR", False],
+            ["90%", "FHIR", "greater", "OpenEHR", False],
+            ["90%", "FHIR", "two-sided", "OpenEHR", False],
+
+            ["99%", "FHIR", "less", "OpenEHR", True],
+            ["99%", "FHIR", "greater", "OpenEHR", True],
+            ["99%", "FHIR", "two-sided", "OpenEHR", True],
         ]
     
     test_results = []

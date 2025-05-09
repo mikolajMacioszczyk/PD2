@@ -5,3 +5,12 @@ True,Average Response Time,256.0,two-sided,0.0,True
 True,Requests/s,15.0,less,1e-05,True
 True,Requests/s,15.0,greater,0.99999,False
 True,Requests/s,15.0,two-sided,2e-05,True
+True,90%,164.0,less,0.9297,False
+True,90%,164.0,greater,0.0759,False
+True,90%,164.0,two-sided,0.1518,False
+False,90%,25.0,less,0.99774,False
+False,90%,25.0,greater,0.00439,True
+False,90%,25.0,two-sided,0.00878,True
+True,99%,256.0,less,1.0,False
+True,99%,256.0,greater,0.0,True
+True,99%,256.0,two-sided,0.0,True

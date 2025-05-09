@@ -60,6 +60,10 @@ def run_welch_test():
             ["Requests/s", "FHIR", "less", "OpenEHR", False],
             ["Requests/s", "FHIR", "greater", "OpenEHR", False],
             ["Requests/s", "FHIR", "two-sided", "OpenEHR", False],
+
+            ["99%", "FHIR", "less", "OpenEHR", False],
+            ["99%", "FHIR", "greater", "OpenEHR", False],
+            ["99%", "FHIR", "two-sided", "OpenEHR", False],
         ]
     
     test_results = []

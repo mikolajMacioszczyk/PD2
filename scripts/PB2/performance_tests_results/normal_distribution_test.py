@@ -41,7 +41,7 @@ def display_result(result):
 def run_normal_distribution_test():
     standards = ["FHIR", "OpenEHR"]
     metrics = [
-        "Median Response Time","Average Response Time","Requests/s"
+        "Median Response Time","Average Response Time","Requests/s", "90%", "99%"
         ]
     
     test_results = []

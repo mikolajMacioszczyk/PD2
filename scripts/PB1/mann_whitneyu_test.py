@@ -8,7 +8,6 @@ def mannwhitneyu_test(key_column, key_value1, key_value2, metric, mode, file_nam
     metric_1 = df[df[key_column] == key_value1][metric]
     metric_2 = df[df[key_column] == key_value2][metric]
 
-    # Test t-Studenta z korektą Welcha (nierówne wariancje)
     stat, p = mannwhitneyu(metric_1.tolist(), metric_2.tolist(), alternative=mode)
 
     return {
