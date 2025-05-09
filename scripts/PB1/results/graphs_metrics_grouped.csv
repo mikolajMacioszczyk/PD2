@@ -1,0 +1,3 @@
+standard,avg_num_nodes,var_num_nodes,avg_num_edges,var_num_edges,avg_density,var_density,avg_max_degree,var_max_degree,avg_average_degree,var_average_degree,avg_avg_path_from_root,var_avg_path_from_root,avg_max_depth,var_max_depth,avg_diameter,var_diameter,avg_assortativity,var_assortativity
+FHIR,34.8,23.7,36.0,30.0,0.031,1.64e-05,8.6,5.3,2.07,0.00775,2.3,0.0519,4.6,0.3,7.4,1.3,-0.197,0.0518
+OpenEHR,42.6,83.3,41.6,83.3,0.0244,3.37e-05,9.4,6.3,1.95,0.00015,5.33,0.228,7.2,0.2,9.2,2.7,-0.481,0.0146

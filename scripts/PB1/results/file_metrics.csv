@@ -1,0 +1,16 @@
+output_name,medical_document,standard,format,standard_format,file_name,size_bytes,unique_keys,avg_path_len
+recepta_FHIR,recepta,FHIR,JSON,FHIR_JSON,bundle-recepta-JSON-61.json,3068,61,3.91
+recepta_OpenEHR,recepta,OpenEHR,FLAT,OpenEHR_FLAT,composition-recepta-FLAT-4f929863-98da-4d11-9d7e-245c70e5233c.json,4900,61,1.0
+recepta_OpenEHR,recepta,OpenEHR,JSON,OpenEHR_JSON,composition-recepta-JSON-4f929863-98da-4d11-9d7e-245c70e5233c.json,8887,40,5.86
+skierowanie_FHIR,skierowanie,FHIR,JSON,FHIR_JSON,bundle-skierowanie-JSON-66.json,4162,48,3.66
+skierowanie_OpenEHR,skierowanie,OpenEHR,FLAT,OpenEHR_FLAT,composition-skierowanie-FLAT-c5ef2ea2-0a4f-47ec-b10c-8ebf92b6653c.json,7785,82,1.0
+skierowanie_OpenEHR,skierowanie,OpenEHR,JSON,OpenEHR_JSON,composition-skierowanie-JSON-c5ef2ea2-0a4f-47ec-b10c-8ebf92b6653c.json,12839,42,4.86
+wyniki_badan_FHIR,wyniki_badan,FHIR,JSON,FHIR_JSON,bundle-wyniki_badan-JSON-71.json,3996,45,3.64
+wyniki_badan_OpenEHR,wyniki_badan,OpenEHR,FLAT,OpenEHR_FLAT,composition-wyniki_badan-FLAT-327abec2-841a-48b9-b921-6020c18ba9be.json,5439,53,1.0
+wyniki_badan_OpenEHR,wyniki_badan,OpenEHR,JSON,OpenEHR_JSON,composition-wyniki_badan-JSON-327abec2-841a-48b9-b921-6020c18ba9be.json,7256,37,6.02
+pomiar_FHIR,pomiar,FHIR,JSON,FHIR_JSON,bundle-pomiar-JSON-58.json,4622,63,3.7
+pomiar_OpenEHR,pomiar,OpenEHR,FLAT,OpenEHR_FLAT,composition-pomiar-FLAT-b6498b75-335d-41da-a44e-ecb69e9bf0ee.json,9407,82,1.0
+pomiar_OpenEHR,pomiar,OpenEHR,JSON,OpenEHR_JSON,composition-pomiar-JSON-b6498b75-335d-41da-a44e-ecb69e9bf0ee.json,11616,43,6.02
+iniekcja_FHIR,iniekcja,FHIR,JSON,FHIR_JSON,bundle-iniekcja-JSON-53.json,4290,68,3.59
+iniekcja_OpenEHR,iniekcja,OpenEHR,FLAT,OpenEHR_FLAT,composition-iniekcja-FLAT-81436fcf-a548-4c29-b7ff-b66d58ced40b.json,6410,70,1.0
+iniekcja_OpenEHR,iniekcja,OpenEHR,JSON,OpenEHR_JSON,composition-iniekcja-JSON-81436fcf-a548-4c29-b7ff-b66d58ced40b.json,9310,38,5.5

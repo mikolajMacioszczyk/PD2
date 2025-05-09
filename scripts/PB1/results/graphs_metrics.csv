@@ -1,0 +1,11 @@
+graph_name,medical_document,standard,num_nodes,num_edges,density,max_degree,average_degree,avg_path_from_root,max_depth,diameter,assortativity
+recepta_FHIR,recepta,FHIR,31,30,0.0323,9,1.94,2.07,4,7,-0.198
+recepta_OpenEHR,recepta,OpenEHR,44,43,0.0227,11,1.95,5.58,8,9,-0.368
+skierowanie_FHIR,skierowanie,FHIR,37,39,0.0293,9,2.11,2.53,5,7,-0.273
+skierowanie_OpenEHR,skierowanie,OpenEHR,51,50,0.0196,7,1.96,4.56,7,12,-0.36
+wyniki_badan_FHIR,wyniki_badan,FHIR,30,31,0.0356,7,2.07,2.07,4,6,0.0993
+wyniki_badan_OpenEHR,wyniki_badan,OpenEHR,30,29,0.0333,8,1.93,5.66,7,8,-0.511
+pomiar_FHIR,pomiar,FHIR,42,43,0.025,12,2.05,2.32,5,8,-0.518
+pomiar_OpenEHR,pomiar,OpenEHR,51,50,0.0196,13,1.96,5.68,7,8,-0.514
+iniekcja_FHIR,iniekcja,FHIR,34,37,0.033,6,2.18,2.52,5,9,-0.0935
+iniekcja_OpenEHR,iniekcja,OpenEHR,37,36,0.027,8,1.95,5.17,7,9,-0.651

@@ -1,0 +1,4 @@
+key,metric,statistic,mode,p_value,is_significantly_different
+FHIR-OpenEHR,max_depth,0.0,less,0.00428,True
+FHIR-OpenEHR,max_depth,0.0,greater,0.9978,False
+FHIR-OpenEHR,max_depth,0.0,two-sided,0.00856,True

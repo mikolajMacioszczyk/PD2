@@ -1,0 +1,10 @@
+key_column,key_value,metric,w_statistic,p_value,is_normal
+standard_format,FHIR_JSON,size_bytes,0.8945241642596338,0.3803645851382468,True
+standard_format,FHIR_JSON,unique_keys,0.8981873062637507,0.39994802516586025,True
+standard_format,FHIR_JSON,avg_path_len,0.8404636156538591,0.16620746168312983,True
+standard_format,OpenEHR_FLAT,size_bytes,0.9481131713677443,0.72370376484496,True
+standard_format,OpenEHR_FLAT,unique_keys,0.9016835895807814,0.4192606414657549,True
+standard_format,OpenEHR_FLAT,avg_path_len,1.0,1.0,True
+standard_format,OpenEHR_JSON,size_bytes,0.9586800914191689,0.7987633401862277,True
+standard_format,OpenEHR_JSON,unique_keys,0.9436515041358035,0.6918561790489305,True
+standard_format,OpenEHR_JSON,avg_path_len,0.8332905525510166,0.14721303715076967,True

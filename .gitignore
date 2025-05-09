@@ -1,4 +1,4 @@
-**/results/**/*.csv
+**/results/*/*.csv
 **/results/**/*.json
 scripts/PB2/stats
 

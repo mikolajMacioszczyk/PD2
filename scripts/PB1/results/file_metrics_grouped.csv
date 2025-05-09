@@ -1,0 +1,4 @@
+standard_format,avg_size_bytes,var_size_bytes,avg_unique_keys,var_unique_keys,avg_avg_path_len,var_avg_path_len
+FHIR_JSON,4030.0,341000.0,57.0,99.5,3.7,0.0154
+OpenEHR_FLAT,6790.0,3350000.0,69.6,164.0,1.0,0.0
+OpenEHR_JSON,9980.0,4980000.0,40.0,6.5,5.65,0.241
