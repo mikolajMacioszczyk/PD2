@@ -1,0 +1,7 @@
+simple_data_requests,metric,statistic,mode,p_value,is_significantly_different
+True,Average Response Time,256.0,less,1.0,False
+True,Average Response Time,256.0,greater,0.0,True
+True,Average Response Time,256.0,two-sided,0.0,True
+True,Requests/s,15.0,less,1e-05,True
+True,Requests/s,15.0,greater,0.99999,False
+True,Requests/s,15.0,two-sided,2e-05,True

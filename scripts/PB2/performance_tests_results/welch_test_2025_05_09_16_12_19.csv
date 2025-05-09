@@ -1,0 +1,13 @@
+simple_data_requests,metric,statistic,mode,p_value,is_significantly_different
+True,Median Response Time,1.15096,less,0.86936,False
+True,Median Response Time,1.15096,greater,0.13064,False
+True,Median Response Time,1.15096,two-sided,0.26127,False
+False,Median Response Time,12.675,less,1.0,False
+False,Median Response Time,12.675,greater,0.0,True
+False,Median Response Time,12.675,two-sided,1e-05,True
+False,Average Response Time,12.93999,less,1.0,False
+False,Average Response Time,12.93999,greater,0.0,True
+False,Average Response Time,12.93999,two-sided,1e-05,True
+False,Requests/s,-6.85351,less,0.0001,True
+False,Requests/s,-6.85351,greater,0.9999,False
+False,Requests/s,-6.85351,two-sided,0.00021,True
