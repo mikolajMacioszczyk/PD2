@@ -40,7 +40,7 @@ Projekt wykorzystuje następujące wersje oprogramowania:
 | **EHRbase**              | `ehrbase/ehrbase:2.16.0`                                             |
 | **PostgreSQL (openEHR)** | `ehrbase/ehrbase-v2-postgres:16.2`                                   |
 
-## Instalacja zależności i uruchamianie środowiska
+## Instalacja zależności i reprodukcja badań
 
 Przed uruchomieniem skryptów należy zainstalować wymagane pakiety:
 
@@ -48,8 +48,56 @@ Przed uruchomieniem skryptów należy zainstalować wymagane pakiety:
 pip install -r requirements.txt
 ```
 
+### Etap przygotowania
+
 Aby uruchomić oba serwery (FHIR i openEHR), wystarczy wykonać skrypt start-compose.bat, który wykorzystuje pliki docker-compose oraz konfigurację z pliku .env.
 
 ``` cmd
 start-compose.bat
+```
+
+Transformacja i wgranie dokumentów medycznych na odpowiednie serwery wykonywana jest za pomocą skrytpów Python znajdujących się w folderze scripts/{standard}.
+
+Dla openEHR: 
+
+``` cmd
+cd scripts/FHIR
+python upload_all_openehr.py
+```
+
+Dla FHIR: 
+
+``` cmd
+cd scripts/FHIR
+python upload_all_fhir.py
+```
+
+### Pytanie badawcze 1
+
+Skrypty umożliwiające reprodukcję PB1 znadjują się w folderze scripts/PB1.
+Wyliczenie metryk i testów istotności statystycznej wykonywane jest za pomoca jednego skryptu main.py. W wyniku jego działania zapisywane sa pliki CSV ze wszystkimi rezultatami.
+
+``` cmd
+cd scripts/PB1
+python main.py
+```
+
+### Pytanie badawcze 2
+
+Procedura testów wydajnosciowych dla openEHR i FHIR zapisane jest odpowiednio w skryptach: performance_tests_openehr.pl i performance_tests_fhir.py.
+Ich uruchomienie wymaga działającego serwera danego stadnardu. Rekomenduje się uruchomienie testów niezależnie, żeby działanie serwerów nie wpływało na siebie.
+W wyniku działania narzedzia Locust zapisywane są wyniki miar statystycznych w plikach CSV.
+
+Dla openEHR: 
+
+``` cmd
+cd scripts/PB2
+locust -f .\performance_tests_openehr.py  --csv stats/performance_tests_openehr
+```
+
+Dla FHIR: 
+
+``` cmd
+cd scripts/PB2
+locust -f .\performance_tests_fhir.py  --csv stats/performance_tests_fhir
 ```
